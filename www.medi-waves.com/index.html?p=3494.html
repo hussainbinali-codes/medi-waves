@@ -1614,8 +1614,8 @@ document.querySelectorAll('.nav-links > li').forEach(li => {
   const panel = li.querySelector('.mega, .mega-simple');
   if (!panel) return;
   let closeTimer = null;
-  const open = () => { clearTimeout(closeTimer); li.classList.add('mega-open'); };
-  const scheduleClose = () => { closeTimer = setTimeout(() => li.classList.remove('mega-open'), 400); };
+  const open = () => { clearTimeout(closeTimer); li.classList.add('mega-open'); document.body.style.overflow = 'hidden'; };
+  const scheduleClose = () => { closeTimer = setTimeout(() => { li.classList.remove('mega-open'); if (!document.querySelector('.nav-links > li.mega-open')) { document.body.style.overflow = ''; } }, 400); };
   li.addEventListener('mouseenter', open);
   li.addEventListener('mouseleave', scheduleClose);
   panel.addEventListener('mouseenter', open);
