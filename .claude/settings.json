@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import bs4; print\\('bs4 ok', bs4.__version__\\)\")",
+      "Bash(open \"TEST-product.html\" \"TEST-category.html\" \"TEST-about.html\" \"TEST-contact.html\" \"digital-fetal-doppler/TEST-product.html\")"
+    ]
+  }
+}

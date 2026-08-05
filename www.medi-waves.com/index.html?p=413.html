@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Us – Medi Waves Inc</title>
+<meta name="robots" content="max-image-preview:large" />
+<meta name="description" content="Medi Waves Inc — established in 2000, manufacturer and exporter of hospital furniture, infant care equipment, ICU beds, infusion pumps, electrosurgical units and ward equipment, trusted by hospitals, governments and NGOs worldwide." />
+<link rel="icon" href="https://hardikmeditech.com/medi-waves/wp-content/uploads/2023/05/LOGO-MWI.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="https://hardikmeditech.com/medi-waves/wp-content/uploads/2023/05/LOGO-MWI.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ============ DESIGN TOKENS ============ */
+:root{
+  --navy:#0F2744;
+  --blue:#0C54A0;
+  --blue-dark:#083D78;
+  --teal:#E31E24;
+  --gold:#E31E24;
+  --gold-light:#F2696D;
+  --ink:#0F2744;
+  --gray-900:#131A2B;
+  --gray-700:#4A5568;
+  --gray-500:#7A8699;
+  --gray-200:#E5EAF1;
+  --gray-100:#F4F7FB;
+  --white:#FFFFFF;
+  --radius-lg:24px;
+  --radius-md:18px;
+  --radius-sm:12px;
+  --shadow-sm:0 2px 8px rgba(15,39,68,.06);
+  --shadow-md:0 12px 32px rgba(15,39,68,.10);
+  --shadow-lg:0 24px 60px rgba(15,39,68,.16);
+  --space-1:8px; --space-2:16px; --space-3:24px; --space-4:32px;
+  --space-5:48px; --space-6:64px; --space-7:96px; --space-8:128px;
+  --container:1280px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --grad-brand:linear-gradient(135deg,var(--blue) 0%,var(--teal) 100%);
+  --grad-brand-2:linear-gradient(120deg,#0C54A0 0%,#E31E24 50%,#0C54A0 100%);
+  --glass-bg:rgba(255,255,255,.65);
+  --glass-border:rgba(255,255,255,.55);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  color:var(--gray-900);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4,h5{
+  font-family:'Plus Jakarta Sans','Manrope',sans-serif;
+  color:var(--navy);
+  margin:0;
+  line-height:1.15;
+  letter-spacing:-.02em;
+  font-weight:800;
+}
+p{margin:0;color:var(--gray-700);line-height:1.75;font-size:15.5px;max-width:65ch;}
+.eyebrow,.mega-cat h4,.nav-links>li>a{font-family:'Manrope','Plus Jakarta Sans',sans-serif;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--space-4);}
+section{padding:var(--space-7) 0;position:relative;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--blue);background:rgba(12,84,160,.08);
+  padding:6px 16px;border-radius:999px;margin-bottom:var(--space-2);
+}
+.eyebrow .accent{color:#E5484D;font-weight:800;}
+.section-head{max-width:680px;margin:0 auto var(--space-6);text-align:center;}
+.section-head h2{font-size:clamp(28px,4vw,42px);}
+.section-head p{margin-top:14px;font-size:17px;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;
+  padding:15px 30px;border-radius:999px;cursor:pointer;border:none;
+  transition:all .35s var(--ease);position:relative;overflow:hidden;white-space:nowrap;
+}
+.btn-primary{background:var(--grad-brand-2);background-size:220% auto;background-position:0% center;color:#fff;box-shadow:0 8px 24px rgba(12,84,160,.32);}
+.btn-primary:hover{background-position:100% center;transform:translateY(-3px) scale(1.02);box-shadow:0 16px 36px rgba(12,84,160,.42);}
+.btn-outline{background:#fff;color:var(--navy);border:1.5px solid var(--gray-200);}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-3px) scale(1.02);box-shadow:var(--shadow-md);}
+.btn-ghost-light{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);}
+.btn-ghost-light:hover{background:rgba(255,255,255,.22);transform:translateY(-3px) scale(1.02);}
+.btn::before{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.45),transparent);
+  transform:skewX(-20deg);transition:left .7s var(--ease);pointer-events:none;}
+.btn:hover::before{left:130%;}
+.btn .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.5);transform:scale(0);animation:ripple .6s var(--ease);pointer-events:none;}
+@keyframes ripple{to{transform:scale(3);opacity:0;}}
+
+.reveal{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0) scale(1);}
+
+/* ============ SCROLL PROGRESS BAR ============ */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;z-index:2000;
+  background:linear-gradient(90deg,var(--blue),var(--teal));box-shadow:0 0 10px rgba(12,84,160,.6);
+  transition:width .1s linear;}
+
+/* ============ PAGE LOADER ============ */
+.page-loader{position:fixed;inset:0;z-index:5000;background:var(--navy);display:flex;align-items:center;justify-content:center;overflow:hidden;
+  transition:opacity .6s var(--ease),visibility .6s var(--ease);}
+.page-loader.done{opacity:0;visibility:hidden;pointer-events:none;}
+.page-loader::before{content:"";position:absolute;top:-160px;right:-120px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(12,84,160,.3),transparent 70%);}
+.page-loader::after{content:"";position:absolute;bottom:-180px;left:-140px;width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(227,30,36,.22),transparent 70%);}
+.page-loader-brand{position:relative;display:flex;align-items:center;gap:16px;overflow:hidden;padding:6px 0;}
+.page-loader .mark{width:64px;height:64px;border-radius:16px;background:#fff;padding:11px;flex:none;
+  display:flex;align-items:center;justify-content:center;opacity:0;
+  animation:loaderMarkIn .6s var(--ease) .1s forwards,loaderPulse 1.1s ease-in-out .7s infinite;}
+.page-loader .mark img{width:100%;height:100%;object-fit:contain;}
+.page-loader-text{overflow:hidden;}
+.page-loader-name{font-family:'Plus Jakarta Sans';font-weight:800;font-size:26px;color:#fff;white-space:nowrap;
+  transform:translateX(-110%);animation:loaderSlide .7s var(--ease) .35s forwards;}
+.page-loader-tag{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:700;
+  white-space:nowrap;opacity:0;transform:translateY(8px);animation:loaderTextIn .6s var(--ease) .75s forwards;margin-top:4px;}
+@keyframes loaderMarkIn{from{opacity:0;transform:scale(.6) rotate(-12deg);}to{opacity:1;transform:scale(1) rotate(0);}}
+@keyframes loaderSlide{to{transform:translateX(0);}}
+@keyframes loaderTextIn{to{opacity:1;transform:translateY(0);}}
+@keyframes loaderPulse{0%,100%{box-shadow:0 0 0 0 rgba(227,30,36,.5);}50%{box-shadow:0 0 0 14px rgba(227,30,36,0);}}
+
+/* ============ CURSOR SPOTLIGHT ============ */
+.spotlight{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:0;transition:opacity .4s;
+  background:radial-gradient(420px circle at var(--x,50%) var(--y,50%),rgba(12,84,160,.14),transparent 70%);}
+.hero:hover .spotlight{opacity:1;}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+}
+
+/* ============ NAVBAR ============ */
+.nav-wrap{position:fixed;top:16px;left:0;right:0;z-index:1000;display:flex;justify-content:center;padding:0 20px;transition:top .3s var(--ease);}
+.navbar{
+  width:100%;max-width:1320px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:8px 14px 8px 18px;
+  background:var(--glass-bg);
+  backdrop-filter:blur(24px) saturate(180%);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  border:1px solid var(--glass-border);
+  border-radius:999px;
+  box-shadow:0 8px 32px rgba(15,39,68,.10);
+  transition:all .35s var(--ease);
+}
+.nav-wrap.scrolled{top:8px;}
+.nav-wrap.scrolled .navbar{background:rgba(255,255,255,.92);box-shadow:0 12px 44px rgba(15,39,68,.16);}
+.nav-logo{display:flex;align-items:center;gap:14px;font-family:'Plus Jakarta Sans';font-weight:800;font-size:24px;color:var(--navy);position:relative;}
+.nav-logo .mark{width:60px;height:60px;border-radius:16px;padding:8px;display:flex;align-items:center;justify-content:center;flex:none;position:relative;transition:transform .4s var(--ease),box-shadow .4s var(--ease);}
+.nav-logo .mark img{width:100%;height:100%;object-fit:contain;}
+.nav-logo:hover .mark{transform:translateY(-2px) rotate(-4deg) scale(1.06);background-position:100% center;}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0;}
+.nav-links>li{position:relative;}
+.nav-links>li>a{
+  display:flex;align-items:center;gap:5px;padding:12px 16px;border-radius:999px;
+  font-size:14.5px;font-weight:600;color:var(--navy);position:relative;
+}
+.nav-links>li>a .underline{position:absolute;left:16px;right:16px;bottom:7px;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease);}
+.nav-links>li>a:hover .underline{transform:scaleX(1);}
+.nav-links>li>a:hover{color:var(--blue);}
+.nav-links>li>a svg{width:10px;height:10px;transition:transform .25s;}
+.nav-links>li:hover>a svg{transform:rotate(180deg);}
+.nav-links>li>a.active{color:var(--blue);}
+.nav-links>li>a.active .underline{transform:scaleX(1);}
+.nav-right{display:flex;align-items:center;gap:8px;}
+.icon-btn{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:transparent;border:none;cursor:pointer;color:var(--navy);transition:all .25s var(--ease);}
+.icon-btn:hover{background:var(--gray-100);color:var(--blue);transform:scale(1.08);}
+.icon-btn svg{transition:transform .25s var(--ease);}
+.icon-btn:hover svg{transform:scale(1.1);}
+.nav-cta{margin-left:6px;}
+
+/* mega menu */
+.mega{
+  --mp-blue:#0066FF; --mp-cyan:#00B4D8; --mp-bg:#FFFFFF; --mp-bg-2:#F8FAFC;
+  --mp-border:#E7EDF5; --mp-hover:#F4F9FF; --mp-heading:#0F172A; --mp-body:#475569; --mp-muted:#94A3B8;
+  position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(-15px);
+  width:1040px;max-width:94vw;
+  background:var(--mp-bg);
+  border-radius:24px;box-shadow:0 20px 60px rgba(15,23,42,.08);
+  overflow:hidden;
+  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s;
+  border:1px solid var(--mp-border);
+}
+.nav-links>li.mega-open .mega,.nav-links>li:hover .mega{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.mega::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px;}
+
+/* search + chips */
+.mega-search-row{padding:24px 32px 18px;border-bottom:1px solid var(--mp-border);}
+.mega-search{display:flex;align-items:center;gap:10px;background:var(--mp-bg-2);border:1px solid var(--mp-border);
+  border-radius:14px;padding:11px 16px;transition:border-color .2s;}
+.mega-search:focus-within{border-color:var(--mp-blue);}
+.mega-search svg{width:16px;height:16px;color:var(--mp-muted);flex:none;}
+.mega-search input{flex:1;border:none;background:none;outline:none;font-size:13.5px;color:var(--mp-heading);font-family:'Inter',sans-serif;}
+.mega-search input::placeholder{color:var(--mp-muted);}
+.mega-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.mega-chip{border:1px solid var(--mp-border);background:var(--mp-bg);color:var(--mp-body);font-size:12px;font-weight:600;
+  padding:7px 14px;border-radius:999px;cursor:pointer;transition:all .18s ease;}
+.mega-chip:hover{background:var(--mp-hover);border-color:#cfe2ff;}
+.mega-chip.active{background:var(--mp-blue);border-color:var(--mp-blue);color:#fff;}
+
+/* columns */
+.mega-columns{display:grid;grid-template-columns:repeat(3,1fr) 1.1fr;gap:0;padding:28px 32px;}
+.mega-category{padding:0 20px;border-right:1px solid var(--mp-border);transition:opacity .15s;}
+.mega-category:first-child{padding-left:0;}
+.mega-category.mega-empty{opacity:.35;pointer-events:none;}
+.mega-cat-top{display:flex;align-items:center;gap:11px;margin-bottom:14px;padding-bottom:13px;border-bottom:1px solid var(--mp-border);cursor:default;}
+.mega-cat-icon{width:38px;height:38px;border-radius:11px;background:var(--mp-hover);color:var(--mp-blue);
+  font-size:17px;display:flex;align-items:center;justify-content:center;flex:none;}
+.mega-cat-top h4{font-size:21px;font-weight:700;color:var(--mp-blue);margin-bottom:2px;letter-spacing:-.01em;}
+.mega-cat-top p{font-size:11.5px;color:var(--mp-muted);font-weight:600;line-height:1.4;text-transform:uppercase;letter-spacing:.03em;}
+.mega-products{display:flex;flex-direction:column;gap:2px;}
+.mega-product{display:flex;align-items:flex-start;gap:8px;padding:10px 12px 10px 14px;margin:0 -12px;border-radius:10px;
+  box-shadow:inset 2px 0 0 0 transparent;transition:background .15s ease,box-shadow .2s ease,padding .2s ease;}
+.mega-product-arrow{font-size:13px;color:var(--mp-muted);flex:none;transition:transform .2s ease,color .2s ease;line-height:1.5;}
+.mega-product b{display:block;font-size:14px;font-weight:500;color:var(--mp-heading);line-height:1.4;transition:color .15s ease;}
+.mega-product em{display:block;font-style:normal;font-size:11.5px;font-weight:400;color:var(--mp-muted);margin-top:1px;}
+.mega-product:hover{background:#F8FBFF;box-shadow:inset 2px 0 0 0 var(--mp-blue);padding-left:18px;}
+.mega-product:hover .mega-product-arrow{transform:translateX(3px);color:var(--mp-blue);}
+.mega-product:hover b{color:var(--mp-blue);}
+.mega-product.mega-hidden{display:none;}
+
+/* featured column */
+.mega-featured{padding-left:24px;display:flex;flex-direction:column;}
+.mega-featured-img{border-radius:16px;overflow:hidden;aspect-ratio:16/10;position:relative;background:linear-gradient(160deg,var(--navy),#1B3A5C);margin-bottom:16px;}
+.mega-featured-img img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.04);}
+.mega-featured-img::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(0,102,255,.16),transparent 55%);}
+.mega-featured h3{font-size:22px;font-weight:700;color:var(--mp-heading);line-height:1.25;margin-bottom:8px;}
+.mega-featured>p{font-size:13px;color:var(--mp-body);line-height:1.6;margin-bottom:16px;}
+.mega-btn-primary,.mega-btn-secondary{display:block;text-align:center;font-size:13.5px;font-weight:700;padding:12px 18px;
+  border-radius:14px;transition:all .2s ease;}
+.mega-btn-primary{background:var(--mp-blue);color:#fff;box-shadow:0 8px 20px rgba(0,102,255,.28);margin-bottom:10px;}
+.mega-btn-primary:hover{box-shadow:0 10px 26px rgba(0,102,255,.4);transform:translateY(-1px);}
+.mega-btn-secondary{background:var(--mp-bg-2);color:var(--mp-heading);border:1px solid var(--mp-border);}
+.mega-btn-secondary:hover{background:var(--mp-hover);border-color:#cfe2ff;}
+.mega-trust{display:flex;flex-direction:column;gap:9px;margin-top:18px;padding-top:16px;border-top:1px solid var(--mp-border);}
+.mega-trust span{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--mp-body);}
+
+/* bottom bar */
+.mega-viewall{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 32px;
+  background:var(--mp-bg-2);border-top:1px solid var(--mp-border);transition:background .18s ease;}
+.mega-viewall:hover{background:var(--mp-hover);}
+.mega-viewall b{font-size:14px;font-weight:600;color:var(--mp-heading);display:block;}
+.mega-viewall small{font-size:12px;color:var(--mp-muted);font-weight:400;}
+.mega-viewall-arrow{font-size:16px;color:var(--mp-blue);transition:transform .2s ease;flex:none;}
+.mega-viewall:hover .mega-viewall-arrow{transform:translateX(5px);}
+
+@media (max-width:1180px){
+  .mega{width:600px;}
+  .mega-columns{grid-template-columns:1fr 1fr;gap:20px 0;}
+  .mega-category{border-right:none;border-bottom:1px solid var(--mp-border);padding-bottom:18px;margin-bottom:4px;}
+  .mega-category:nth-child(2){padding-left:20px;}
+  .mega-featured{grid-column:1 / -1;padding-left:0;border-top:1px solid var(--mp-border);padding-top:20px;}
+}
+
+.mega-simple{position:absolute;top:calc(100% + 20px);left:0;min-width:260px;
+  background:rgba(255,255,255,.9);backdrop-filter:blur(22px) saturate(180%);
+  border-radius:18px;box-shadow:0 24px 50px -16px rgba(15,39,68,.26);padding:10px;
+  opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px);transition:all .3s var(--ease);border:1px solid rgba(255,255,255,.7);}
+.nav-links>li.mega-open .mega-simple,.nav-links>li:hover .mega-simple{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);}
+.mega-simple::before{content:"";position:absolute;left:0;right:0;top:-20px;height:20px;}
+.mega-simple a{display:block;padding:11px 14px;border-radius:10px;font-size:14px;font-weight:600;color:var(--gray-700);transition:background .1s ease-out,color .1s ease-out,padding-left .1s ease-out;}
+.mega-simple a:hover{background:rgba(12,84,160,.08);color:var(--blue);padding-left:18px;}
+
+.hamburger{display:none;width:38px;height:38px;border-radius:50%;border:none;background:transparent;cursor:pointer;
+  flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+.hamburger span{width:19px;height:2px;border-radius:2px;background:var(--navy);transition:transform .3s var(--ease),opacity .3s var(--ease);}
+
+@media (max-width:1024px){
+  .nav-links,.nav-right .icon-btn{display:none;}
+  .nav-cta{display:none;}
+  .hamburger{display:flex;}
+}
+
+/* ============ MOBILE DRAWER ============ */
+.mobile-scrim{position:fixed;inset:0;background:rgba(15,39,68,.5);backdrop-filter:blur(3px);z-index:1998;
+  opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s var(--ease);}
+.mobile-scrim.open{opacity:1;visibility:visible;}
+.mobile-drawer{position:fixed;top:0;right:0;bottom:0;width:min(380px,88vw);background:#fff;z-index:1999;
+  box-shadow:-24px 0 60px rgba(15,39,68,.22);transform:translateX(100%);transition:transform .4s var(--ease);
+  display:flex;flex-direction:column;overflow-y:auto;}
+.mobile-drawer.open{transform:translateX(0);}
+.mobile-drawer-head{display:flex;align-items:center;justify-content:space-between;padding:20px;border-bottom:1px solid var(--gray-200);flex:none;}
+.mobile-close{width:36px;height:36px;border-radius:50%;border:none;background:var(--gray-100);color:var(--navy);font-size:15px;cursor:pointer;}
+.mobile-drawer-body{padding:12px 16px 28px;display:flex;flex-direction:column;gap:2px;}
+.mobile-link{display:block;padding:15px 10px;font-size:16px;font-weight:700;color:var(--navy);border-bottom:1px solid var(--gray-100);}
+.mobile-link.active{color:var(--blue);}
+.mobile-accordion{border-bottom:1px solid var(--gray-100);}
+.mobile-accordion-head{width:100%;display:flex;align-items:center;justify-content:space-between;padding:15px 10px;
+  background:none;border:none;font-family:'Plus Jakarta Sans';font-size:16px;font-weight:700;color:var(--navy);cursor:pointer;text-align:left;}
+.mobile-accordion-head svg{width:10px;height:6px;transition:transform .3s var(--ease);}
+.mobile-accordion.open .mobile-accordion-head svg{transform:rotate(180deg);}
+.mobile-accordion.open .mobile-accordion-head{color:var(--blue);}
+.mobile-accordion-body{max-height:0;overflow:hidden;transition:max-height .4s var(--ease);padding:0 10px;}
+.mobile-accordion.open .mobile-accordion-body{max-height:900px;padding-bottom:10px;}
+.mobile-accordion-body h6{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin:14px 0 6px;font-weight:800;}
+.mobile-accordion-body a{display:block;padding:9px 8px;border-radius:8px;font-size:14.5px;font-weight:500;color:var(--gray-700);}
+.mobile-accordion-body a:active,.mobile-accordion-body a:hover{background:var(--gray-100);color:var(--blue);}
+.mobile-drawer-cta{display:flex;flex-direction:column;gap:10px;margin-top:20px;padding:0 10px;}
+@media (min-width:1025px){.mobile-drawer,.mobile-scrim{display:none;}}
+
+/* ============ PAGE HERO (inner pages) ============ */
+.page-hero{
+  position:relative;padding:170px 0 var(--space-6);isolation:isolate;overflow:hidden;
+  background:
+    linear-gradient(135deg,rgba(227,30,36,.18) 0%,rgba(227,30,36,.08) 28%,transparent 62%),
+    radial-gradient(ellipse 80% 60% at 15% 0%,rgba(12,84,160,.10),transparent 60%),
+    radial-gradient(ellipse 70% 60% at 100% 20%,rgba(227,30,36,.12),transparent 55%),
+    linear-gradient(180deg,#F7FAFF 0%,#FFFFFF 100%);
+}
+.page-hero::before{
+  content:"";position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(12,84,160,.12) 0%,rgba(12,84,160,0) 70%);
+}
+.page-hero::after{
+  content:"";position:absolute;bottom:-260px;left:-220px;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(227,30,36,.10) 0%,rgba(227,30,36,0) 70%);
+}
+.page-hero .container{position:relative;z-index:2;text-align:center;}
+.page-hero h1{font-size:clamp(34px,5vw,58px);letter-spacing:-.03em;}
+.page-hero h1 .accent{background:linear-gradient(120deg,var(--blue),var(--teal),var(--blue));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;position:relative;display:inline-block;}
+.page-hero p.lead{font-size:18px;margin:20px auto 0;max-width:640px;}
+.page-hero .eyebrow{margin-left:auto;margin-right:auto;}
+.breadcrumb{display:flex;justify-content:center;gap:8px;font-size:13px;color:var(--gray-500);font-weight:600;margin-top:22px;}
+.breadcrumb a{color:var(--blue);}
+
+/* ============ ABOUT SECTIONS ============ */
+.about-split{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6);align-items:center;}
+.about-visual{position:relative;}
+.about-visual .plate{
+  border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:0 30px 70px -20px rgba(15,39,68,.35),0 10px 30px rgba(12,84,160,.14),0 0 0 1px rgba(255,255,255,.5) inset;
+  aspect-ratio:4/3.4;position:relative;background:linear-gradient(160deg,var(--navy),#1B3A5C);
+}
+.about-visual .plate img{width:100%;height:100%;object-fit:cover;filter:saturate(1.08) contrast(1.06) brightness(1.02);}
+.about-visual .plate::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(12,84,160,.16) 0%,transparent 45%,rgba(15,39,68,.38) 100%);}
+.about-visual::before{
+  content:"";position:absolute;inset:-20px;border-radius:calc(var(--radius-lg) + 20px);
+  background:conic-gradient(from 0deg,var(--blue),var(--teal),var(--blue));
+  opacity:.14;filter:blur(28px);z-index:-1;
+}
+.about-badge{position:absolute;bottom:-18px;left:-18px;z-index:3;background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);
+  padding:16px 20px;display:flex;align-items:center;gap:12px;}
+.about-badge b{font-family:'Plus Jakarta Sans';font-size:26px;background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent;display:block;}
+.about-badge span{font-size:12px;color:var(--gray-500);font-weight:600;}
+.about-copy p{margin-top:16px;font-size:16px;}
+.about-copy .eyebrow{margin-bottom:14px;}
+@media (max-width:900px){.about-split{grid-template-columns:1fr;}.about-visual{margin-bottom:40px;}.about-badge{left:10px;bottom:-14px;}}
+
+.value-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3);}
+.value-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:32px;
+  transition:all .35s var(--ease);position:relative;overflow:hidden;}
+.value-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;
+  background:var(--grad-brand-2);background-size:200% auto;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s var(--ease);pointer-events:none;}
+.value-card:hover{box-shadow:0 30px 60px -16px rgba(15,39,68,.22);transform:translateY(-8px);}
+.value-card:hover::before{opacity:1;}
+.value-ic{width:50px;height:50px;border-radius:14px;background:var(--gray-100);color:var(--blue);
+  display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;transition:all .35s var(--ease);}
+.value-card:hover .value-ic{background:var(--grad-brand);color:#fff;transform:rotate(-6deg) scale(1.08);}
+.value-card h3{font-size:19px;margin-bottom:10px;}
+.value-card p{font-size:14.5px;}
+@media (max-width:760px){.value-grid{grid-template-columns:1fr;}}
+
+.about-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);}
+.gallery-frame{border-radius:var(--radius-md);overflow:hidden;aspect-ratio:4/3;background:var(--gray-100);
+  box-shadow:0 2px 8px rgba(15,23,42,.06),0 20px 40px -20px rgba(15,23,42,.12);position:relative;}
+.gallery-frame img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+.gallery-frame:hover img{transform:scale(1.06);}
+@media (max-width:820px){.about-gallery{grid-template-columns:1fr 1fr;}}
+@media (max-width:520px){.about-gallery{grid-template-columns:1fr;}}
+
+/* ============ CLIENTS MARQUEE ============ */
+.clients-band{background:linear-gradient(180deg,#fff 0%,#F6FBFF 45%,#fff 100%);}
+.marquee-mask{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+.marquee-track{display:flex;gap:var(--space-5);width:max-content;animation:marquee 26s linear infinite;align-items:center;}
+.marquee-mask:hover .marquee-track{animation-play-state:paused;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.client-logo{height:56px;width:140px;display:flex;align-items:center;justify-content:center;background:#fff;
+  border:1px solid var(--gray-200);border-radius:14px;padding:10px 16px;flex:none;}
+.client-logo img{max-height:100%;max-width:100%;object-fit:contain;filter:grayscale(1) contrast(1.1) opacity(.75);transition:filter .3s;}
+.client-logo:hover img{filter:grayscale(0) opacity(1);}
+
+/* ============ FOOTER ============ */
+footer{background:var(--navy);color:rgba(255,255,255,.72);padding:var(--space-7) 0 var(--space-3);position:relative;overflow:hidden;}
+footer::before{content:"";position:absolute;top:-200px;left:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(12,84,160,.18),transparent 70%);pointer-events:none;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1.2fr;gap:var(--space-4);position:relative;z-index:1;}
+.footer-logo{display:flex;align-items:center;gap:14px;font-family:'Plus Jakarta Sans';font-weight:800;font-size:21px;color:#fff;margin-bottom:16px;}
+.footer-logo .mark{width:56px;height:56px;border-radius:15px;padding:8px;display:flex;align-items:center;justify-content:center;position:relative;}
+.footer-logo .mark img{width:100%;height:100%;object-fit:contain;}
+footer h6{color:#fff;font-size:13.5px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px;font-weight:700;}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;}
+footer ul a{font-size:14px;color:rgba(255,255,255,.65);transition:color .25s,padding-left .25s;position:relative;display:inline-block;}
+footer ul a::before{content:"→";position:absolute;left:-16px;opacity:0;transition:all .25s var(--ease);color:var(--teal);}
+footer ul a:hover{color:#fff;padding-left:16px;}
+footer ul a:hover::before{opacity:1;left:0;}
+.footer-newsletter{display:flex;margin-top:14px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);transition:border-color .3s;}
+.footer-newsletter:focus-within{border-color:var(--teal);}
+.footer-newsletter input{flex:1;background:transparent;border:none;padding:12px 16px;color:#fff;font-size:13.5px;outline:none;}
+.footer-newsletter button{background:var(--grad-brand);border:none;color:#fff;padding:0 20px;cursor:pointer;font-weight:700;transition:opacity .25s;}
+.footer-newsletter button:hover{opacity:.85;}
+.footer-social{display:flex;gap:10px;margin-top:18px;}
+.footer-social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#fff;transition:all .3s var(--ease);border:1px solid rgba(255,255,255,.1);}
+.footer-social a svg{width:16px;height:16px;}
+.footer-social a:hover{background:var(--grad-brand);transform:translateY(-3px);box-shadow:0 8px 18px rgba(12,84,160,.35);border-color:transparent;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:var(--space-6);padding-top:var(--space-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,.5);position:relative;z-index:1;}
+@media (max-width:980px){.footer-grid{grid-template-columns:1fr 1fr;}}
+
+/* ============ BACK TO TOP ============ */
+.back-to-top{position:fixed;right:24px;bottom:24px;width:48px;height:48px;border-radius:50%;
+  background:var(--grad-brand);color:#fff;border:none;cursor:pointer;box-shadow:0 12px 28px rgba(12,84,160,.38);
+  display:flex;align-items:center;justify-content:center;z-index:900;
+  opacity:0;visibility:hidden;transform:translateY(12px);transition:all .35s var(--ease);}
+.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.back-to-top:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 16px 34px rgba(12,84,160,.46);}
+.back-to-top svg{width:18px;height:18px;}
+
+/* ============ CHATBOT ============ */
+.chat-fab{position:fixed;left:24px;bottom:24px;width:60px;height:60px;border-radius:50%;
+  background:var(--grad-brand-2);background-size:200% auto;color:#fff;border:none;cursor:pointer;
+  box-shadow:0 14px 32px rgba(12,84,160,.4);display:flex;align-items:center;justify-content:center;z-index:901;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);}
+.chat-fab:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 18px 38px rgba(12,84,160,.48);}
+.chat-fab svg{width:24px;height:24px;transition:opacity .2s,transform .2s;}
+.chat-fab .ic-close{position:absolute;opacity:0;transform:scale(.5) rotate(-45deg);}
+.chat-fab.open .ic-chat{opacity:0;transform:scale(.5) rotate(45deg);}
+.chat-fab.open .ic-close{opacity:1;transform:scale(1) rotate(0);}
+.chat-fab-ping{position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--teal);opacity:0;animation:chatPing 2.6s ease-out infinite;pointer-events:none;}
+.chat-fab.open .chat-fab-ping{display:none;}
+@keyframes chatPing{0%{opacity:.6;transform:scale(.9);}80%{opacity:0;transform:scale(1.25);}100%{opacity:0;}}
+.chat-badge{position:absolute;top:-2px;right:-2px;width:18px;height:18px;border-radius:50%;background:#e0245e;color:#fff;
+  font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid #fff;}
+.chat-badge.hide{display:none;}
+
+.chat-panel{position:fixed;left:24px;bottom:96px;width:360px;max-width:calc(100vw - 48px);height:520px;max-height:calc(100vh - 140px);
+  background:#fff;border-radius:22px;box-shadow:0 30px 70px -18px rgba(15,39,68,.35);border:1px solid var(--gray-200);
+  display:flex;flex-direction:column;overflow:hidden;z-index:900;
+  opacity:0;visibility:hidden;transform:translateY(16px) scale(.97);transform-origin:bottom left;
+  transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;}
+.chat-panel.open{opacity:1;visibility:visible;transform:translateY(0) scale(1);}
+.chat-head{background:linear-gradient(120deg,var(--navy),var(--blue-dark));padding:18px 20px;display:flex;align-items:center;gap:12px;flex:none;position:relative;overflow:hidden;}
+.chat-head::before{content:"";position:absolute;top:-60px;right:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(227,30,36,.35),transparent 70%);}
+.chat-head-avatar{width:38px;height:38px;border-radius:50%;background:#fff;padding:6px;flex:none;position:relative;z-index:1;}
+.chat-head-avatar img{width:100%;height:100%;object-fit:contain;}
+.chat-head-info{position:relative;z-index:1;}
+.chat-head-info b{color:#fff;font-size:14.5px;display:block;}
+.chat-head-info span{color:rgba(255,255,255,.65);font-size:11.5px;display:flex;align-items:center;gap:5px;}
+.chat-head-info span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(227,30,36,.25);}
+.chat-body{flex:1;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:12px;background:var(--gray-100);}
+.chat-msg{max-width:82%;font-size:13.5px;line-height:1.5;padding:11px 14px;border-radius:14px;animation:fadeIn .3s var(--ease);}
+.chat-msg.bot{align-self:flex-start;background:#fff;color:var(--gray-900);border-bottom-left-radius:4px;box-shadow:var(--shadow-sm);}
+.chat-msg.user{align-self:flex-end;background:var(--grad-brand);color:#fff;border-bottom-right-radius:4px;}
+.chat-typing{align-self:flex-start;background:#fff;border-radius:14px;border-bottom-left-radius:4px;padding:13px 16px;box-shadow:var(--shadow-sm);display:flex;gap:4px;}
+.chat-typing span{width:6px;height:6px;border-radius:50%;background:var(--gray-500);animation:typingDot 1.2s ease-in-out infinite;}
+.chat-typing span:nth-child(2){animation-delay:.15s;} .chat-typing span:nth-child(3){animation-delay:.3s;}
+@keyframes typingDot{0%,60%,100%{transform:translateY(0);opacity:.5;}30%{transform:translateY(-4px);opacity:1;}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.chat-chips{display:flex;flex-wrap:wrap;gap:7px;padding:2px 0 4px;}
+.chat-chip{background:#fff;border:1.5px solid var(--gray-200);color:var(--navy);font-size:12px;font-weight:600;
+  padding:8px 13px;border-radius:999px;cursor:pointer;transition:all .2s var(--ease);text-align:left;}
+.chat-chip:hover{border-color:var(--blue);color:var(--blue);background:rgba(12,84,160,.06);}
+.chat-foot{flex:none;padding:12px;border-top:1px solid var(--gray-200);background:#fff;display:flex;gap:8px;}
+.chat-foot input{flex:1;border:1.5px solid var(--gray-200);border-radius:999px;padding:10px 16px;font-size:13px;outline:none;transition:border-color .2s;font-family:'Inter',sans-serif;}
+.chat-foot input:focus{border-color:var(--blue);}
+.chat-foot button{width:38px;height:38px;border-radius:50%;border:none;background:var(--grad-brand);color:#fff;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none;transition:transform .2s;}
+.chat-foot button:hover{transform:scale(1.08);}
+.chat-foot button svg{width:15px;height:15px;}
+@media (max-width:480px){.chat-panel{left:12px;right:12px;width:auto;bottom:88px;}.chat-fab{left:16px;}}
+.chat-intro{position:fixed;left:92px;bottom:40px;z-index:899;background:#fff;color:var(--navy);
+  padding:11px 18px;border-radius:14px;box-shadow:0 14px 32px -8px rgba(15,39,68,.28);
+  font-size:13.5px;font-weight:700;white-space:nowrap;border:1px solid var(--gray-200);
+  opacity:0;visibility:hidden;transform:translateX(-14px) scale(.95);
+  transition:opacity .4s var(--ease),transform .4s var(--ease),visibility .4s;}
+.chat-intro::before{content:"";position:absolute;left:-7px;bottom:16px;width:14px;height:14px;
+  background:#fff;border-left:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);
+  transform:rotate(45deg);border-radius:0 0 0 3px;}
+.chat-intro.show{opacity:1;visibility:visible;transform:translateX(0) scale(1);}
+@media (max-width:480px){.chat-intro{display:none;}}
+
+/* ============ FINAL CTA ============ */
+.cta-banner{
+  border-radius:32px;background:linear-gradient(120deg,var(--navy) 0%,var(--blue-dark) 60%,var(--blue) 100%);
+  background-size:200% 200%;
+  padding:var(--space-7) var(--space-5);text-align:center;position:relative;overflow:hidden;color:#fff;
+  box-shadow:0 40px 80px -24px rgba(12,84,160,.4);
+}
+.cta-banner::before{content:"";position:absolute;top:-140px;right:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(227,30,36,.35),transparent 70%);}
+.cta-banner::after{content:"";position:absolute;bottom:-160px;left:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.08),transparent 70%);}
+.cta-spotlight{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:radial-gradient(360px circle at var(--x,50%) var(--y,50%),rgba(255,255,255,.16),transparent 70%);}
+.cta-banner:hover .cta-spotlight{opacity:1;}
+.cta-banner h2{color:#fff;font-size:clamp(28px,4vw,40px);position:relative;z-index:1;}
+.cta-banner p{color:rgba(255,255,255,.78);max-width:560px;margin:16px auto 0;position:relative;z-index:1;}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px;position:relative;z-index:1;}
+
+@media (max-width:640px){
+  section{padding:56px 0;}
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ NAVBAR ============ -->
+<div class="nav-wrap" id="navWrap">
+  <nav class="navbar">
+    <a href="index.php.html" class="nav-logo">
+      <span class="mark"><img src="wp-content/uploads/thegem/logos/cropped/mwi-icon.png" alt="Medi Waves Inc"></span>
+      Medi Waves Inc
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.php.html">Home <span class="underline"></span></a></li>
+      <li><a href="index.html%3Fp=413.html" class="active">About <span class="underline"></span></a></li>
+      <li>
+        <a href="index.html%3Fp=982.html">Products <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg><span class="underline"></span></a>
+        <div class="mega" id="productsMega">
+          <div class="mega-search-row">
+            <div class="mega-search">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <input type="text" id="megaSearchInput" placeholder="Search products…" autocomplete="off">
+            </div>
+            <div class="mega-chips" id="megaChips">
+              <button class="mega-chip active" data-tag="all">Popular</button>
+              <button class="mega-chip" data-tag="new">New Arrivals</button>
+              <button class="mega-chip" data-tag="best">Best Sellers</button>
+              <button class="mega-chip" data-tag="icu">ICU</button>
+              <button class="mega-chip" data-tag="neonatal">Neonatal</button>
+              <button class="mega-chip" data-tag="surgical">Surgical</button>
+            </div>
+          </div>
+
+          <div class="mega-columns" id="megaColumns">
+            <div class="mega-category">
+              <div class="mega-cat-top">
+                <span class="mega-cat-icon">🍼</span>
+                <div><h4>Infant Care</h4><p>Warmers &amp; neonatal monitoring</p></div>
+              </div>
+              <div class="mega-products">
+                <a class="mega-product" href="index.html%3Fp=3494.html" data-tags="new best neonatal" data-name="infant radiant warmer"><span class="mega-product-arrow">→</span><span><b>Infant Radiant Warmer</b><em>Servo-controlled heating</em></span></a>
+                <a class="mega-product" href="index.html%3Fp=3605.html" data-tags="best neonatal" data-name="infant incubator"><span class="mega-product-arrow">→</span><span><b>Infant Incubator</b><em>Climate-controlled care</em></span></a>
+                <a class="mega-product" href="index.html%3Fp=3334.html" data-tags="neonatal" data-name="led phototherapy unit"><span class="mega-product-arrow">→</span><span><b>LED Phototherapy Unit</b><em>Jaundice management</em></span></a>
+                <a class="mega-product" href="digital-fetal-doppler/index.html" data-tags="neonatal" data-name="fetal doppler"><span class="mega-product-arrow">→</span><span><b>Fetal Doppler</b><em>Prenatal monitoring</em></span></a>
+                <a class="mega-product" href="digital-baby-weighing-scale-p-016/index.html" data-tags="neonatal" data-name="digital baby weighing scale"><span class="mega-product-arrow">→</span><span><b>Digital Baby Weighing Scale</b><em>Precision measurement</em></span></a>
+              </div>
+            </div>
+
+            <div class="mega-category">
+              <div class="mega-cat-top">
+                <span class="mega-cat-icon">🛏️</span>
+                <div><h4>Hospital Furniture</h4><p>ICU beds &amp; patient furniture</p></div>
+              </div>
+              <div class="mega-products">
+                <a class="mega-product" href="index.html%3Fp=998.html" data-tags="best icu" data-name="electric icu beds"><span class="mega-product-arrow">→</span><span><b>Electric ICU Beds</b><em>3 &amp; 4-function electric</em></span></a>
+                <a class="mega-product" href="index.html%3Fp=1004.html" data-tags="neonatal" data-name="pediatric beds"><span class="mega-product-arrow">→</span><span><b>Pediatric Beds</b><em>Height adjustable</em></span></a>
+                <a class="mega-product" href="index.html%3Fp=1010.html" data-tags="surgical" data-name="gynecological tables"><span class="mega-product-arrow">→</span><span><b>Gynecological Tables</b><em>Hydraulic tilt</em></span></a>
+                <a class="mega-product" href="index.html%3Fp=1012.html" data-tags="icu" data-name="patient transfer trolleys"><span class="mega-product-arrow">→</span><span><b>Patient Transfer Trolleys</b><em>Mobile, easy-clean</em></span></a>
+                <a class="mega-product" href="index.html%3Fp=1022.html" data-tags="icu" data-name="ward equipment"><span class="mega-product-arrow">→</span><span><b>Ward Equipment</b><em>Lockers, chairs, trolleys</em></span></a>
+              </div>
+            </div>
+
+            <div class="mega-category">
+              <div class="mega-cat-top">
+                <span class="mega-cat-icon">⚡</span>
+                <div><h4>Electromedicals</h4><p>Diagnostics &amp; surgical devices</p></div>
+              </div>
+              <div class="mega-products">
+                <a class="mega-product" href="index.html%3Fp=6080.html" data-tags="best icu" data-name="infusion pumps"><span class="mega-product-arrow">→</span><span><b>Infusion Pumps</b><em>Volumetric &amp; syringe</em></span></a>
+                <a class="mega-product" href="index.html%3Fp=989.html" data-tags="new best surgical" data-name="electro surgical units"><span class="mega-product-arrow">→</span><span><b>Electro Surgical Units</b><em>Bipolar/monopolar cutting</em></span></a>
+                <a class="mega-product" href="index.html%3Fp=6222.html" data-tags="" data-name="bp apparatus"><span class="mega-product-arrow">→</span><span><b>BP Apparatus</b><em>Digital &amp; manual</em></span></a>
+                <a class="mega-product" href="index.html%3Fp=7188.html" data-tags="icu" data-name="respiratory devices"><span class="mega-product-arrow">→</span><span><b>Respiratory Devices</b><em>Critical care support</em></span></a>
+                <a class="mega-product" href="index.html%3Fp=7003.html" data-tags="new icu" data-name="oxygen concentrators"><span class="mega-product-arrow">→</span><span><b>Oxygen Concentrators</b><em>Continuous flow</em></span></a>
+              </div>
+            </div>
+
+            <div class="mega-featured">
+              <div class="mega-featured-img"><img src="wp-content/uploads/2023/04/Electric-ICU-Bed-3-Function-EHB-03-768x768.jpg" alt="Hospital equipment"></div>
+              <h3>Need Help Choosing Equipment?</h3>
+              <p>Talk with our product specialists and receive recommendations based on your hospital requirements.</p>
+              <a href="index.html%3Fp=6.html" class="mega-btn-primary">Talk to an Expert →</a>
+              <a href="index.html%3Fp=6.html" class="mega-btn-secondary">Download Catalogue</a>
+              <div class="mega-trust">
+                <span>🌍 Export Worldwide</span>
+                <span>🏥 Trusted by Hospitals</span>
+                <span>🛡 ISO Certified</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="index.html%3Fp=982.html" class="mega-viewall">
+            <span><b>Browse Complete Medical Catalogue</b><small>View All Products</small></span>
+            <span class="mega-viewall-arrow">→</span>
+          </a>
+        </div>
+      </li>
+      <li>
+        <a href="index.html%3Fp=7833.html">Child Monitoring <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg><span class="underline"></span></a>
+        <div class="mega-simple">
+          <a href="index.html%3Fp=7764.html">Child Growth Monitoring System</a>
+          <a href="index.html%3Fp=7758.html">Child Health Monitoring System</a>
+        </div>
+      </li>
+      <li><a href="index.html%3Fp=6.html">Contact <span class="underline"></span></a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="icon-btn" aria-label="Search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <a class="btn btn-outline" href="index.html%3Fp=6.html" style="padding:10px 20px;font-size:13.5px;">Contact</a>
+      <a class="btn btn-primary nav-cta" href="index.html%3Fp=6.html" style="padding:10px 22px;font-size:13.5px;">Request Quote</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- ============ MOBILE DRAWER ============ -->
+<div class="mobile-scrim" id="mobileScrim"></div>
+<nav class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <div class="mobile-drawer-head">
+    <a href="index.php.html" class="nav-logo"><span class="mark"><img src="wp-content/uploads/thegem/logos/cropped/mwi-icon.png" alt="Medi Waves Inc"></span>Medi Waves Inc</a>
+    <button class="mobile-close" id="mobileCloseBtn" aria-label="Close menu">✕</button>
+  </div>
+  <div class="mobile-drawer-body">
+    <a class="mobile-link" href="index.php.html">Home</a>
+    <a class="mobile-link active" href="index.html%3Fp=413.html">About</a>
+
+    <div class="mobile-accordion">
+      <button class="mobile-accordion-head" aria-expanded="false">Products <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <div class="mobile-accordion-body">
+        <h6>Infant Care</h6>
+        <a href="index.html%3Fp=3494.html">Infant Radiant Warmer</a>
+        <a href="index.html%3Fp=3605.html">Infant Incubator</a>
+        <a href="index.html%3Fp=3334.html">LED Phototherapy Unit</a>
+        <a href="digital-fetal-doppler/index.html">Fetal Doppler</a>
+        <a href="digital-baby-weighing-scale-p-016/index.html">Digital Baby Weighing Scale</a>
+        <h6>Hospital Furniture</h6>
+        <a href="index.html%3Fp=998.html">Electric ICU Beds</a>
+        <a href="index.html%3Fp=1004.html">Pediatric Beds</a>
+        <a href="index.html%3Fp=1010.html">Gynecological Tables</a>
+        <a href="index.html%3Fp=1012.html">Patient Transfer Trolleys</a>
+        <a href="index.html%3Fp=1022.html">Ward Equipment</a>
+        <h6>Electromedicals</h6>
+        <a href="index.html%3Fp=6080.html">Infusion Pumps</a>
+        <a href="index.html%3Fp=989.html">Electro Surgical Units</a>
+        <a href="index.html%3Fp=6222.html">BP Apparatus</a>
+        <a href="index.html%3Fp=7188.html">Respiratory Devices</a>
+        <a href="index.html%3Fp=7003.html">Oxygen Concentrators</a>
+      </div>
+    </div>
+
+    <div class="mobile-accordion">
+      <button class="mobile-accordion-head" aria-expanded="false">Child Monitoring <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <div class="mobile-accordion-body">
+        <a href="index.html%3Fp=7764.html">Child Growth Monitoring System</a>
+        <a href="index.html%3Fp=7758.html">Child Health Monitoring System</a>
+      </div>
+    </div>
+
+    <a class="mobile-link" href="index.html%3Fp=6.html">Contact</a>
+
+    <div class="mobile-drawer-cta">
+      <a class="btn btn-outline" href="index.html%3Fp=6.html" style="width:100%;">Contact</a>
+      <a class="btn btn-primary" href="index.html%3Fp=6.html" style="width:100%;">Request Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="spotlight" id="heroSpotlight"></div>
+  <div class="container">
+    <div class="eyebrow">Manufacturers &amp; Exporters <span class="accent">Since 2000</span></div>
+    <h1>About <span class="accent">Medi Waves Inc.</span></h1>
+    <p class="lead">A quarter-century of precision manufacturing — hospital furniture, infant care equipment, ICU beds, infusion pumps and electro-surgical units built for modern healthcare, and trusted by hospitals, governments and NGOs worldwide.</p>
+    <div class="breadcrumb"><a href="index.php.html">Home</a><span>/</span><span>About Us</span></div>
+  </div>
+</section>
+
+<!-- ============ COMPANY INTRO ============ -->
+<section>
+  <div class="container about-split">
+    <div class="about-visual reveal">
+      <div class="plate">
+        <img src="wp-content/uploads/2023/05/Factory1.jpg" alt="Medi Waves Inc factory">
+      </div>
+      <div class="about-badge">
+        <b>2000</b>
+        <span>Year Established</span>
+      </div>
+    </div>
+    <div class="about-copy reveal">
+      <div class="eyebrow">Our Company</div>
+      <h2 style="font-size:clamp(26px,3.4vw,38px);">Medi Waves Inc.</h2>
+      <p>The Company Medi Waves Inc. was established in the year 2000, with its head office located at the Industrial Hub of Delhi and manufacturing unit at HSIIDC Kundli, Sonepat, Haryana, enjoying the highly developed economic expansion and convenient transportation access.</p>
+      <p>We are combined with manufacturing, supply and service of Hospital Furniture, Emergency and Ward Equipment. We have our own state-of-the-art manufacturing units of various Medical, Hospital and Surgical instruments and equipment for Hospitals, Nursing Homes, Health Clinics, Physiotherapy Centres etc. and have a long list of satisfactory customers.</p>
+      <div class="hero-ctas" style="display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;">
+        <a href="index.html%3Fp=982.html" class="btn btn-primary magnetic">Explore Products</a>
+        <a href="index.html%3Fp=6.html" class="btn btn-outline magnetic">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section style="background:linear-gradient(180deg,#fff 0%,#F6FBFF 45%,#fff 100%);">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">100% Genuine Quality Products</div>
+      <h2>We Provide 100% Genuine Quality Products.</h2>
+      <p>We are devoted to providing a one-stop sales model to customers; we give more importance to customer satisfaction.</p>
+    </div>
+    <div class="value-grid">
+      <div class="value-card reveal">
+        <div class="value-ic">🎯</div>
+        <h3>We are Professional</h3>
+        <p>Our vision is providing world-class products and service, improving the health-care system worldwide to the top level. Wish you will enjoy our products and service in the near future.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-ic">🤝</div>
+        <h3>We are Trusted</h3>
+        <p>Our success has been mainly achieved by following the corporate philosophy of being firmly committed to "Integrity is the base, Customer is the first."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FACILITY GALLERY ============ -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Inside Medi Waves</div>
+      <h2>Our Manufacturing Facility</h2>
+      <p>A glimpse of our production floor and manufacturing operations at Kundli, Sonepat, Haryana.</p>
+    </div>
+    <div class="about-gallery">
+      <div class="gallery-frame reveal"><img src="wp-content/uploads/2023/05/IMAGE1.jpg" alt="Medi Waves manufacturing facility"></div>
+      <div class="gallery-frame reveal"><img src="wp-content/uploads/2023/05/IMAGE2.jpg" alt="Medi Waves manufacturing facility"></div>
+      <div class="gallery-frame reveal"><img src="wp-content/uploads/2023/05/IMAGE3.jpg" alt="Medi Waves manufacturing facility"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTS ============ -->
+<section class="clients-band">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Clients</div>
+      <h2>OUR Clients</h2>
+      <p>Working with leading hospitals, humanitarian and procurement organizations across the globe.</p>
+    </div>
+  </div>
+  <div class="marquee-mask">
+    <div class="marquee-track">
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/BAXTER.jpg" alt="Baxter"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/PFIZER.jpg" alt="Pfizer"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/UNOPS.jpg" alt="UNOPS"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/UNICEFcl.jpg" alt="UNICEF"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/UNFPA.jpg" alt="UNFPA"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/CRY-Foundation.jpg" alt="CRY Foundation"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/Fight-For-Hunger.jpg" alt="Fight For Hunger"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/UNHCR.jpg" alt="UNHCR"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/WHO.jpg" alt="WHO"></div>
+      <!-- duplicate set for seamless marquee loop -->
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/BAXTER.jpg" alt="Baxter"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/PFIZER.jpg" alt="Pfizer"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/UNOPS.jpg" alt="UNOPS"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/UNICEFcl.jpg" alt="UNICEF"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/UNFPA.jpg" alt="UNFPA"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/CRY-Foundation.jpg" alt="CRY Foundation"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/Fight-For-Hunger.jpg" alt="Fight For Hunger"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/UNHCR.jpg" alt="UNHCR"></div>
+      <div class="client-logo"><img src="wp-content/uploads/2023/05/WHO.jpg" alt="WHO"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section>
+  <div class="container">
+    <div class="cta-banner reveal" id="ctaBanner">
+      <div class="cta-spotlight" id="ctaSpotlight"></div>
+      <h2>Looking for Reliable Medical Equipment?</h2>
+      <p>Get in touch with our team for product specifications, pricing and export documentation.</p>
+      <div class="cta-actions">
+        <a href="index.html%3Fp=6.html" class="btn btn-primary magnetic" style="background:#fff;color:var(--navy);">Request a Quote</a>
+        <a href="index.html%3Fp=6.html" class="btn btn-ghost-light magnetic">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span class="mark"><img src="wp-content/uploads/thegem/logos/cropped/mwi-icon.png" alt="Medi Waves Inc"></span>Medi Waves Inc</div>
+        <p style="color:rgba(255,255,255,.6);font-size:13.5px;max-width:280px;">Manufacturers &amp; exporters of quality medical &amp; hospital equipment since 2000.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/people/Medi-Waves/100063703286551/" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.2-1.5 1.6-1.5H17V3.7C16.6 3.6 15.5 3.5 14.2 3.5c-2.7 0-4.6 1.6-4.6 4.7v2.7H6.9V14h2.7v7h3.9Z"/></svg></a>
+          <a href="https://in.linkedin.com/company/medi-waves-inc" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3.25a1.96 1.96 0 1 0 0 3.92 1.96 1.96 0 0 0 0-3.92ZM20.4 20h-3.37v-5.9c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V20h-3.37V8.5h3.24v1.57h.05c.45-.86 1.56-1.76 3.2-1.76 3.43 0 4.06 2.25 4.06 5.18V20Z"/></svg></a>
+          <a href="https://www.instagram.com/mediwavesinc/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h6>Products</h6>
+        <ul>
+          <li><a href="index.html%3Fp=991.html">Infant Care</a></li>
+          <li><a href="index.html%3Fp=6503.html">Hospital Beds</a></li>
+          <li><a href="index.html%3Fp=6511.html">Tables &amp; Trolleys</a></li>
+          <li><a href="index.html%3Fp=1022.html">Ward Equipment</a></li>
+          <li><a href="index.html%3Fp=6080.html">Infusion Pumps</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Company</h6>
+        <ul>
+          <li><a href="index.html%3Fp=413.html">About Us</a></li>
+          <li><a href="index.html%3Fp=6.html">Contact Us</a></li>
+          <li><a href="index.php.html#certs">Certifications</a></li>
+          <li><a href="index.php.html#process">Manufacturing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Resources</h6>
+        <ul>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Disclaimer</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="index.html%3Fp=6.html">Request Catalogue</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Contact</h6>
+        <ul>
+          <li>Office: B-68, G.T. Karnal Road Industrial Area, Delhi-110033, India</li>
+          <li>Works: 92, Sec-57, Phase-IV, HSIIDC Kundli, Sonepat, Haryana - 131028</li>
+          <li><a href="mailto:info@medi-waves.com">info@medi-waves.com</a></li>
+          <li><a href="tel:+911142384227">+91-11-4238-4227</a></li>
+        </ul>
+        <div class="footer-newsletter">
+          <input type="email" placeholder="Your email address">
+          <button>Join</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Medi Waves Inc. All rights reserved.</span>
+      <span>Designed for global healthcare excellence.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<!-- ============ CHATBOT ============ -->
+<button class="chat-fab" id="chatFab" aria-label="Open chat">
+  <span class="chat-fab-ping"></span>
+  <svg class="ic-chat" viewBox="0 0 24 24" fill="none"><path d="M21 12a8 8 0 1 1-3.4-6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 4v5h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0"/><path d="M4 12a8 8 0 0 0 13.3 6L21 19l-1-3.7A8 8 0 0 0 4 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+  <svg class="ic-close" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  <span class="chat-badge" id="chatBadge">1</span>
+</button>
+<div class="chat-intro" id="chatIntro">👋 Need help? Chat with us</div>
+
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Medi Waves assistant">
+  <div class="chat-head">
+    <div class="chat-head-avatar"><img src="wp-content/uploads/thegem/logos/cropped/mwi-icon.png" alt="Medi Waves"></div>
+    <div class="chat-head-info"><b>Medi Waves Assistant</b><span>Online now</span></div>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-foot">
+    <input type="text" id="chatInput" placeholder="Ask a question…" autocomplete="off">
+    <button id="chatSend" aria-label="Send"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20l16-8L4 4l2 8-2 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+  </div>
+</div>
+
+<script>
+// scroll progress bar
+const scrollProgress = document.getElementById('scrollProgress');
+function updateProgress(){
+  const h = document.documentElement;
+  const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  scrollProgress.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateProgress);
+
+// hero spotlight follow
+const heroEl = document.querySelector('.page-hero');
+const spotlight = document.getElementById('heroSpotlight');
+if (heroEl && spotlight) {
+  heroEl.addEventListener('mousemove', (e) => {
+    const rect = heroEl.getBoundingClientRect();
+    spotlight.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+    spotlight.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+  });
+}
+
+// magnetic buttons
+document.querySelectorAll('.magnetic').forEach(btn => {
+  btn.addEventListener('mousemove', (e) => {
+    const rect = btn.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) * .25;
+    const y = (e.clientY - rect.top - rect.height / 2) * .35;
+    btn.style.transform = `translate(${x}px, ${y}px)`;
+  });
+  btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0,0)'; });
+});
+
+// products mega menu: live search + tag chip filtering
+(function () {
+  const mega = document.getElementById('productsMega');
+  if (!mega) return;
+  const searchInput = document.getElementById('megaSearchInput');
+  const chips = document.querySelectorAll('#megaChips .mega-chip');
+  const categories = mega.querySelectorAll('.mega-category');
+  let activeTag = 'all';
+
+  function applyFilter() {
+    const query = searchInput.value.trim().toLowerCase();
+    categories.forEach(cat => {
+      let visibleCount = 0;
+      cat.querySelectorAll('.mega-product').forEach(prod => {
+        const tags = (prod.dataset.tags || '').split(' ');
+        const matchesTag = activeTag === 'all' || tags.includes(activeTag);
+        const matchesQuery = !query || prod.dataset.name.includes(query);
+        const show = matchesTag && matchesQuery;
+        prod.classList.toggle('mega-hidden', !show);
+        if (show) visibleCount++;
+      });
+      cat.classList.toggle('mega-empty', visibleCount === 0);
+    });
+  }
+
+  searchInput.addEventListener('input', applyFilter);
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeTag = chip.dataset.tag;
+      applyFilter();
+    });
+  });
+})();
+
+// mega menu: hover-intent with close delay so it never vanishes mid-move
+document.querySelectorAll('.nav-links > li').forEach(li => {
+  const panel = li.querySelector('.mega, .mega-simple');
+  if (!panel) return;
+  let closeTimer = null;
+  const open = () => { clearTimeout(closeTimer); li.classList.add('mega-open'); };
+  const scheduleClose = () => { closeTimer = setTimeout(() => li.classList.remove('mega-open'), 400); };
+  li.addEventListener('mouseenter', open);
+  li.addEventListener('mouseleave', scheduleClose);
+  panel.addEventListener('mouseenter', open);
+  panel.addEventListener('mouseleave', scheduleClose);
+  li.querySelector(':scope > a')?.addEventListener('focus', open);
+  li.addEventListener('focusout', (e) => { if (!li.contains(e.relatedTarget)) scheduleClose(); });
+});
+
+// mobile drawer
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileDrawer = document.getElementById('mobileDrawer');
+const mobileScrim = document.getElementById('mobileScrim');
+const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+function openDrawer() {
+  mobileDrawer.classList.add('open'); mobileScrim.classList.add('open');
+  mobileDrawer.setAttribute('aria-hidden', 'false');
+  hamburgerBtn.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  mobileDrawer.classList.remove('open'); mobileScrim.classList.remove('open');
+  mobileDrawer.setAttribute('aria-hidden', 'true');
+  hamburgerBtn.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+hamburgerBtn?.addEventListener('click', openDrawer);
+mobileCloseBtn?.addEventListener('click', closeDrawer);
+mobileScrim?.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeDrawer(); });
+
+document.querySelectorAll('.mobile-accordion-head').forEach(head => {
+  head.addEventListener('click', () => {
+    const acc = head.parentElement;
+    const isOpen = acc.classList.contains('open');
+    document.querySelectorAll('.mobile-accordion.open').forEach(a => { a.classList.remove('open'); a.querySelector('.mobile-accordion-head').setAttribute('aria-expanded', 'false'); });
+    if (!isOpen) { acc.classList.add('open'); head.setAttribute('aria-expanded', 'true'); }
+  });
+});
+
+// sticky navbar shrink
+const navWrap = document.getElementById('navWrap');
+window.addEventListener('scroll', () => {
+  navWrap.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => io.observe(el));
+
+// back to top
+const backToTop = document.getElementById('backToTop');
+if (backToTop) {
+  window.addEventListener('scroll', () => backToTop.classList.toggle('show', window.scrollY > 600));
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+// chatbot
+(function () {
+  const fab = document.getElementById('chatFab');
+  const panel = document.getElementById('chatPanel');
+  const body = document.getElementById('chatBody');
+  const badge = document.getElementById('chatBadge');
+  const input = document.getElementById('chatInput');
+  const sendBtn = document.getElementById('chatSend');
+  if (!fab || !panel || !body) return;
+
+  const faq = [
+    { q: 'What products do you manufacture?', keywords: ['product', 'range', 'manufactur', 'make', 'sell', 'offer'],
+      a: 'We manufacture Infant Care equipment (warmers, incubators, phototherapy units), Hospital Beds (electric, pediatric, manual), Tables & Trolleys, Ward Equipment, Infusion Pumps and Electro-Surgical Units. You can browse the full range in the Product Categories section on our homepage.' },
+    { q: 'Are your products certified?', keywords: ['certif', 'iso', 'ce mark', 'fda', 'standard', 'quality', 'approved'],
+      a: 'Yes — our products are manufactured to ISO 9001 quality management standards, carry CE Marking, follow FDA device safety guidelines, and every batch is quality-tested in-house before dispatch.' },
+    { q: 'Which countries do you export to?', keywords: ['export', 'countr', 'ship', 'global', 'worldwide', 'international'],
+      a: 'Medi Waves exports to 50+ countries and has supplied 10,000+ hospitals and institutions worldwide over 25+ years, working with hospitals, governments, NGOs and international organizations.' },
+    { q: 'Where is your factory located?', keywords: ['factory', 'facility', 'located', 'address', 'where are you', 'manufacturing unit'],
+      a: 'Our manufacturing facility is at 92, Sec-57, Phase-IV, HSIIDC Kundli, Sonepat, Haryana - 131028. Our office is at B-68, G.T. Karnal Road Industrial Area, Delhi-110033, India.' },
+    { q: 'How do I get a price quote?', keywords: ['price', 'quote', 'quotation', 'cost', 'how much'],
+      a: 'Click "Request Quote" in the navigation bar or the "Request a Quote" button — our team will get back to you with product specifications, pricing and export documentation.' },
+    { q: 'Can I download your catalogue?', keywords: ['catalogue', 'catalog', 'brochure', 'pdf', 'download'],
+      a: 'Yes — use the "Download Catalogue" button in the mega menu or contact us to request our full product catalogue.' },
+    { q: 'How can I contact your sales team?', keywords: ['contact', 'phone', 'email', 'call', 'reach', 'sales team'],
+      a: 'You can reach us at info@medi-waves.com or +91-11-4238-4227, or use the Contact link in the navigation bar to send us a message directly.' },
+    { q: 'When was Medi Waves founded?', keywords: ['found', 'establish', 'history', 'since when', 'started'],
+      a: 'Medi Waves Inc. was established in the year 2000, with our head office in Delhi and manufacturing unit at HSIIDC Kundli, Sonepat, Haryana.' },
+  ];
+
+  function scrollBody() { body.scrollTop = body.scrollHeight; }
+
+  function addMessage(text, from) {
+    const el = document.createElement('div');
+    el.className = 'chat-msg ' + from;
+    el.textContent = text;
+    body.appendChild(el);
+    scrollBody();
+  }
+
+  function addChips(items) {
+    const wrap = document.createElement('div');
+    wrap.className = 'chat-chips';
+    items.forEach(item => {
+      const chip = document.createElement('button');
+      chip.className = 'chat-chip';
+      chip.textContent = item.q;
+      chip.addEventListener('click', () => askQuestion(item));
+      wrap.appendChild(chip);
+    });
+    body.appendChild(wrap);
+    scrollBody();
+  }
+
+  function botReply(text, showSuggestions) {
+    const typing = document.createElement('div');
+    typing.className = 'chat-typing';
+    typing.innerHTML = '<span></span><span></span><span></span>';
+    body.appendChild(typing);
+    scrollBody();
+    setTimeout(() => {
+      typing.remove();
+      addMessage(text, 'bot');
+      if (showSuggestions) addChips(faq.slice(0, 4));
+    }, 550 + Math.random() * 300);
+  }
+
+  function askQuestion(item) {
+    addMessage(item.q, 'user');
+    botReply(item.a, false);
+  }
+
+  function matchQuestion(text) {
+    const lower = text.toLowerCase();
+    let best = null, bestScore = 0;
+    faq.forEach(item => {
+      let score = 0;
+      item.keywords.forEach(k => { if (lower.includes(k)) score++; });
+      if (score > bestScore) { bestScore = score; best = item; }
+    });
+    return best;
+  }
+
+  function handleUserInput() {
+    const text = input.value.trim();
+    if (!text) return;
+    addMessage(text, 'user');
+    input.value = '';
+    const match = matchQuestion(text);
+    if (match) {
+      botReply(match.a, false);
+    } else {
+      botReply("I don't have an exact answer for that — please reach us at info@medi-waves.com or +91-11-4238-4227, or use the Contact Sales button for a direct response.", false);
+    }
+  }
+
+  // intro callout: draw attention to the chat button for a couple seconds on first load
+  const intro = document.getElementById('chatIntro');
+  let introTimer = null;
+  function hideIntro() { intro?.classList.remove('show'); clearTimeout(introTimer); }
+  if (intro) {
+    setTimeout(() => {
+      intro.classList.add('show');
+      introTimer = setTimeout(hideIntro, 4500);
+    }, 1800);
+  }
+
+  let started = false;
+  function openChat() {
+    hideIntro();
+    panel.classList.add('open');
+    fab.classList.add('open');
+    badge.classList.add('hide');
+    if (!started) {
+      started = true;
+      botReply("Hi! I'm the Medi Waves assistant. Ask me anything about our products, certifications, or how to get a quote — or pick a question below.", true);
+    }
+  }
+  function closeChat() {
+    panel.classList.remove('open');
+    fab.classList.remove('open');
+  }
+
+  fab.addEventListener('click', () => {
+    panel.classList.contains('open') ? closeChat() : openChat();
+  });
+  sendBtn.addEventListener('click', handleUserInput);
+  input.addEventListener('keydown', (e) => { if (e.key === 'Enter') handleUserInput(); });
+  document.addEventListener('click', (e) => {
+    if (panel.classList.contains('open') && !panel.contains(e.target) && !fab.contains(e.target)) closeChat();
+  });
+})();
+
+// footer newsletter (prevent page reload, simple inline confirmation)
+const footerNewsletter = document.querySelector('.footer-newsletter button');
+footerNewsletter?.addEventListener('click', (e) => {
+  e.preventDefault();
+  const input = document.querySelector('.footer-newsletter input');
+  if (input && input.value.trim()) {
+    footerNewsletter.textContent = '✓ Joined';
+    input.value = '';
+    setTimeout(() => { footerNewsletter.textContent = 'Join'; }, 2500);
+  }
+});
+
+// final CTA banner: cursor-tracked spotlight
+const ctaBanner = document.getElementById('ctaBanner');
+const ctaSpotlight = document.getElementById('ctaSpotlight');
+if (ctaBanner && ctaSpotlight) {
+  ctaBanner.addEventListener('mousemove', (e) => {
+    const rect = ctaBanner.getBoundingClientRect();
+    ctaSpotlight.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+    ctaSpotlight.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+  });
+}
+
+// button ripple
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('click', function (e) {
+    const rect = this.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    ripple.style.left = (e.clientX - rect.left) + 'px';
+    ripple.style.top = (e.clientY - rect.top) + 'px';
+    this.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  });
+});
+</script>
+
+</body>
+</html>
