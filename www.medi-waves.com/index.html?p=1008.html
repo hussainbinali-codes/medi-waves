@@ -385,6 +385,45 @@ var zilla_likes = {"ajaxurl":"https:\/\/www.medi-waves.com\/wp-admin\/admin-ajax
 .mw-newnav-spacer{height:104px;}
 </style>
 
+
+<style id="pw-product-card-css">
+:root{--navy:#0F2744;--blue:#0C54A0;--blue-dark:#083D78;--teal:#E31E24;--gold:#E31E24;--gray-900:#131A2B;--gray-700:#4A5568;--gray-500:#5B6472;--gray-200:#E5EAF1;--gray-100:#F4F7FB;--radius-lg:24px;--radius-md:18px;--space-3:24px;--space-4:32px;--space-6:64px;--container:1280px;--ease:cubic-bezier(.22,1,.36,1);}
+#pw-products{padding:var(--space-6) 0;background:#fff;}
+#pw-products .container{max-width:var(--container);margin:0 auto;padding:0 var(--space-4);}
+.hf-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.cat-card{--accent:#0C54A0;position:relative;border-radius:20px;overflow:visible;aspect-ratio:1/1.05;display:block;text-decoration:none;cursor:pointer;transition:transform .45s cubic-bezier(.34,1.3,.4,1);opacity:0;transform:translateY(30px) scale(.95);filter:blur(6px);}
+.cat-card.in{opacity:1;transform:translateY(0) scale(1);filter:blur(0);transition:opacity .7s var(--ease),transform .7s var(--ease),filter .7s var(--ease);}
+.hf-grid>.cat-card:nth-child(1){transition-delay:0ms;} .hf-grid>.cat-card:nth-child(2){transition-delay:60ms;}
+.hf-grid>.cat-card:nth-child(3){transition-delay:120ms;} .hf-grid>.cat-card:nth-child(4){transition-delay:180ms;}
+.hf-grid>.cat-card:nth-child(5){transition-delay:240ms;} .hf-grid>.cat-card:nth-child(6){transition-delay:300ms;}
+.hf-grid>.cat-card:nth-child(7){transition-delay:360ms;} .hf-grid>.cat-card:nth-child(8){transition-delay:420ms;}
+.hf-grid>.cat-card:nth-child(9){transition-delay:480ms;} .hf-grid>.cat-card:nth-child(10){transition-delay:540ms;}
+.hf-grid>.cat-card:nth-child(11){transition-delay:600ms;} .hf-grid>.cat-card:nth-child(12){transition-delay:660ms;}
+.hf-grid>.cat-card:nth-child(n+13){transition-delay:700ms;}
+.cat-card:hover{transform:translateY(-8px);}
+.cat-glow{position:absolute;inset:-24px;border-radius:36px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:0;filter:blur(30px);transition:opacity .4s ease;z-index:0;pointer-events:none;}
+.cat-card:hover .cat-glow{opacity:.35;}
+.cat-frame{position:relative;width:100%;height:100%;border-radius:20px;overflow:hidden;background:var(--gray-100);box-shadow:0 2px 8px rgba(15,23,42,.06),0 20px 40px -20px rgba(15,23,42,.12);z-index:1;}
+.cat-card::after{content:"";position:absolute;inset:0;border-radius:20px;padding:1.5px;z-index:3;pointer-events:none;background:linear-gradient(120deg,var(--accent),transparent 40%,var(--accent) 80%);background-size:220% 220%;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s;}
+.cat-card:hover::after{opacity:1;}
+.cat-img-wrap{position:absolute;inset:0;overflow:hidden;}
+.cat-img-wrap img{width:100%;height:100%;object-fit:contain;padding:22px;background:#fff;transition:transform .7s cubic-bezier(.16,1,.3,1),opacity .5s ease;filter:saturate(1.05) contrast(1.02);opacity:0;}
+.cat-img-wrap img.pw-loaded{opacity:1;}
+.cat-card:hover .cat-img-wrap img{transform:scale(1.06);}
+.cat-img-wrap::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(15,23,42,.22) 100%);z-index:1;pointer-events:none;}
+.cat-panel{position:absolute;left:10px;right:10px;bottom:10px;z-index:4;border-radius:14px;background:rgba(255,255,255,.8);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid rgba(255,255,255,.65);box-shadow:0 10px 24px -10px rgba(15,23,42,.22);padding:13px 14px;transition:transform .4s cubic-bezier(.16,1,.3,1),background .3s;}
+.cat-card:hover .cat-panel{transform:translateY(-5px);background:rgba(255,255,255,.92);}
+.cat-panel-top{display:flex;align-items:center;gap:7px;margin-bottom:0;}
+.cat-panel-top h5{font-family:'Plus Jakarta Sans','Manrope',sans-serif !important;text-transform:none !important;letter-spacing:-.01em !important;font-size:13.5px;color:var(--navy);font-weight:700;flex:1;min-width:0;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0 !important;}
+.cat-cta-row{display:flex;align-items:center;justify-content:space-between;padding-top:9px;margin-top:9px;border-top:1px solid rgba(15,23,42,.07);}
+.cat-cta-row span:first-child{font-family:'Inter',sans-serif !important;text-transform:none !important;font-size:12px;font-weight:700;color:var(--navy);}
+.cat-explore{width:24px;height:24px;border-radius:50%;background:var(--gray-100);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:12px;flex:none;transition:all .3s cubic-bezier(.16,1,.3,1);}
+.cat-card:hover .cat-explore{background:var(--accent);color:#fff;transform:translateX(4px) rotate(45deg);}
+@media (max-width:1180px){.hf-grid{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:900px){.hf-grid{grid-template-columns:repeat(2,1fr);gap:16px;}}
+@media (max-width:640px){.hf-grid{grid-template-columns:1fr;gap:16px;}.cat-card{aspect-ratio:4/3.3;}}
+@media (prefers-reduced-motion:reduce){.cat-card{opacity:1;transform:none;filter:none;}}
+</style>
 </head>
 
 
@@ -1242,258 +1281,7 @@ window.addEventListener('scroll', () => {
 											</div><!-- .container -->
 
 					<div class="fullwidth-content">		<div data-elementor-type="wp-page" data-elementor-id="1008" class="elementor elementor-1008">
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-4e6977f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4e6977f" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-f9e872e" data-id="f9e872e" data-element_type="column" data-settings="{&quot;thegem_parallax_activate&quot;:&quot;yes&quot;,&quot;thegem_parallax_type&quot;:&quot;vertical&quot;}">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-b924fe1 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styled-textbox" data-id="b924fe1" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;,&quot;thegem_elementor_preset&quot;:&quot;basic&quot;}" data-widget_type="thegem-styled-textbox.default">
-				<div class="elementor-widget-container">
-					
-<div class="gem-textbox styled-textbox-basic">
-
-	
-		<div class="gem-textbox-top gem-textbox-top-none default-fill">
-					</div>
-	
-	<div class="gem-textbox-inner">
-
-		<div class="gem-textbox-content default-background icon-top gem-textbox-icon-horizontal-center centered-box button-bottom">
-
-							<div class="gem-texbox-icon-image-wrapper">
-
-											<div class="gem-image">
-							<span>
-								<img width="1500" height="1500" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01.jpg" class="attachment-full size-full wp-image-5439" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01.jpg 1500w, https://www.medi-waves.com/wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01-300x300.jpg 300w, https://www.medi-waves.com/wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01-1024x1024.jpg 1024w, https://www.medi-waves.com/wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01-150x150.jpg 150w, https://www.medi-waves.com/wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01-768x768.jpg 768w, https://www.medi-waves.com/wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01-256x256.jpg 256w" sizes="(max-width: 1500px) 100vw, 1500px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705c9b467c9"  /><script>window.tgpQueue.add('tgpli-6a705c9b467c9')</script><noscript><img width="1500" height="1500" src="wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01.jpg" class="attachment-full size-full wp-image-5439" alt="" srcset="wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01.jpg 1500w, wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01-300x300.jpg 300w, wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01-1024x1024.jpg 1024w, wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01-150x150.jpg 150w, wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01-768x768.jpg 768w, wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01-256x256.jpg 256w" sizes="(max-width: 1500px) 100vw, 1500px" /></noscript>							</span>
-						</div>
-
-					
-											<a href="index.html%3Fp=1791.html" class="gem-styled-textbox-icon-image-link"></a>
-
-					
-				</div>
-			
-			<div class="gem-texbox-text-wrapper">
-
-									
-						<h5 class="gem-textbox-title title-h5 bold">
-							Labour Delivery Room Bed CHT-01						</h5>
-
-					
-					
-				
-														<div class="gem-button-container gem-widget-button">
-												<a class="gem-button gem-button-size-small gem-button-text-weight-bold gem-button-style-flat" href="index.html%3Fp=1791.html">
-							<span class="gem-inner-wrapper-btn">
-																<span class="gem-text-button">
-									Learn More								</span>
-							</span>
-						</a>
-					</div>
-				
-			</div>
-
-		</div>
-
-	</div>
-
-	
-		<div class="gem-textbox-bottom gem-textbox-bottom-none default-fill">
-				</div>
-	
-	
-</div>
-				</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-11e900a" data-id="11e900a" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-0aeb314 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styled-textbox" data-id="0aeb314" data-element_type="widget" data-settings="{&quot;thegem_elementor_preset&quot;:&quot;basic&quot;}" data-widget_type="thegem-styled-textbox.default">
-				<div class="elementor-widget-container">
-					
-<div class="gem-textbox styled-textbox-basic">
-
-	
-		<div class="gem-textbox-top gem-textbox-top-none default-fill">
-					</div>
-	
-	<div class="gem-textbox-inner">
-
-		<div class="gem-textbox-content default-background icon-top centered-box button-bottom gem-textbox-icon-image-wrapping-none">
-
-							<div class="gem-texbox-icon-image-wrapper">
-
-											<div class="gem-image">
-							<span>
-								<img width="1500" height="1500" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02.jpg" class="attachment-full size-full wp-image-5443" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02.jpg 1500w, https://www.medi-waves.com/wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02-300x300.jpg 300w, https://www.medi-waves.com/wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02-1024x1024.jpg 1024w, https://www.medi-waves.com/wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02-150x150.jpg 150w, https://www.medi-waves.com/wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02-768x768.jpg 768w, https://www.medi-waves.com/wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02-256x256.jpg 256w" sizes="(max-width: 1500px) 100vw, 1500px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705c9b467ef"  /><script>window.tgpQueue.add('tgpli-6a705c9b467ef')</script><noscript><img width="1500" height="1500" src="wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02.jpg" class="attachment-full size-full wp-image-5443" alt="" srcset="wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02.jpg 1500w, wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02-300x300.jpg 300w, wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02-1024x1024.jpg 1024w, wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02-150x150.jpg 150w, wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02-768x768.jpg 768w, wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02-256x256.jpg 256w" sizes="(max-width: 1500px) 100vw, 1500px" /></noscript>							</span>
-						</div>
-
-					
-											<a href="index.html%3Fp=1810.html" class="gem-styled-textbox-icon-image-link"></a>
-
-					
-				</div>
-			
-			<div class="gem-texbox-text-wrapper">
-
-									
-						<h5 class="gem-textbox-title title-h5 bold">
-							Gynecological Table Electric OHT-02						</h5>
-
-					
-					
-				
-														<div class="gem-button-container gem-widget-button">
-												<a class="gem-button gem-button-size-small gem-button-text-weight-bold gem-button-style-flat" href="index.html%3Fp=1810.html">
-							<span class="gem-inner-wrapper-btn">
-																<span class="gem-text-button">
-									Learn More								</span>
-							</span>
-						</a>
-					</div>
-				
-			</div>
-
-		</div>
-
-	</div>
-
-	
-		<div class="gem-textbox-bottom gem-textbox-bottom-none default-fill">
-				</div>
-	
-	
-</div>
-				</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-4f25f4a" data-id="4f25f4a" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-3e1b4cf flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styled-textbox" data-id="3e1b4cf" data-element_type="widget" data-settings="{&quot;thegem_elementor_preset&quot;:&quot;basic&quot;}" data-widget_type="thegem-styled-textbox.default">
-				<div class="elementor-widget-container">
-					
-<div class="gem-textbox styled-textbox-basic">
-
-	
-		<div class="gem-textbox-top gem-textbox-top-none default-fill">
-					</div>
-	
-	<div class="gem-textbox-inner">
-
-		<div class="gem-textbox-content default-background icon-top centered-box button-bottom gem-textbox-icon-image-wrapping-none">
-
-							<div class="gem-texbox-icon-image-wrapper">
-
-											<div class="gem-image">
-							<span>
-								<img width="1500" height="1500" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03.jpg" class="attachment-full size-full wp-image-5447" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03.jpg 1500w, https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03-300x300.jpg 300w, https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03-1024x1024.jpg 1024w, https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03-150x150.jpg 150w, https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03-768x768.jpg 768w, https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03-256x256.jpg 256w" sizes="(max-width: 1500px) 100vw, 1500px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705c9b467fa"  /><script>window.tgpQueue.add('tgpli-6a705c9b467fa')</script><noscript><img width="1500" height="1500" src="wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03.jpg" class="attachment-full size-full wp-image-5447" alt="" srcset="wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03.jpg 1500w, wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03-300x300.jpg 300w, wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03-1024x1024.jpg 1024w, wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03-150x150.jpg 150w, wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03-768x768.jpg 768w, wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03-256x256.jpg 256w" sizes="(max-width: 1500px) 100vw, 1500px" /></noscript>							</span>
-						</div>
-
-					
-											<a href="index.html%3Fp=1832.html" class="gem-styled-textbox-icon-image-link"></a>
-
-					
-				</div>
-			
-			<div class="gem-texbox-text-wrapper">
-
-									
-						<h5 class="gem-textbox-title title-h5 bold">
-							Obsteric Bed Telescopic OHT-03						</h5>
-
-					
-					
-				
-														<div class="gem-button-container gem-widget-button">
-												<a class="gem-button gem-button-size-small gem-button-text-weight-bold gem-button-style-flat" href="index.html%3Fp=1832.html">
-							<span class="gem-inner-wrapper-btn">
-																<span class="gem-text-button">
-									Learn More								</span>
-							</span>
-						</a>
-					</div>
-				
-			</div>
-
-		</div>
-
-	</div>
-
-	
-		<div class="gem-textbox-bottom gem-textbox-bottom-none default-fill">
-				</div>
-	
-	
-</div>
-				</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-ace479b" data-id="ace479b" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-5bfc679 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styled-textbox" data-id="5bfc679" data-element_type="widget" data-settings="{&quot;thegem_elementor_preset&quot;:&quot;basic&quot;}" data-widget_type="thegem-styled-textbox.default">
-				<div class="elementor-widget-container">
-					
-<div class="gem-textbox styled-textbox-basic">
-
-	
-		<div class="gem-textbox-top gem-textbox-top-none default-fill">
-					</div>
-	
-	<div class="gem-textbox-inner">
-
-		<div class="gem-textbox-content default-background icon-top centered-box button-bottom gem-textbox-icon-image-wrapping-none">
-
-							<div class="gem-texbox-icon-image-wrapper">
-
-											<div class="gem-image">
-							<span>
-								<img width="1500" height="1500" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04.jpg" class="attachment-full size-full wp-image-5451" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04.jpg 1500w, https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04-300x300.jpg 300w, https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04-1024x1024.jpg 1024w, https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04-150x150.jpg 150w, https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04-768x768.jpg 768w, https://www.medi-waves.com/wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04-256x256.jpg 256w" sizes="(max-width: 1500px) 100vw, 1500px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705c9b46804"  /><script>window.tgpQueue.add('tgpli-6a705c9b46804')</script><noscript><img width="1500" height="1500" src="wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04.jpg" class="attachment-full size-full wp-image-5451" alt="" srcset="wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04.jpg 1500w, wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04-300x300.jpg 300w, wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04-1024x1024.jpg 1024w, wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04-150x150.jpg 150w, wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04-768x768.jpg 768w, wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04-256x256.jpg 256w" sizes="(max-width: 1500px) 100vw, 1500px" /></noscript>							</span>
-						</div>
-
-					
-											<a href="index.html%3Fp=1843.html" class="gem-styled-textbox-icon-image-link"></a>
-
-					
-				</div>
-			
-			<div class="gem-texbox-text-wrapper">
-
-									
-						<h5 class="gem-textbox-title title-h5 bold">
-							Obstetric Bed Telescopic OHT-04						</h5>
-
-					
-					
-				
-														<div class="gem-button-container gem-widget-button">
-												<a class="gem-button gem-button-size-small gem-button-text-weight-bold gem-button-style-flat" href="index.html%3Fp=1843.html">
-							<span class="gem-inner-wrapper-btn">
-																<span class="gem-text-button">
-									Learn More								</span>
-							</span>
-						</a>
-					</div>
-				
-			</div>
-
-		</div>
-
-	</div>
-
-	
-		<div class="gem-textbox-bottom gem-textbox-bottom-none default-fill">
-				</div>
-	
-	
-</div>
-				</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
+						<section id="pw-products"><div class="container"><div class="hf-grid"><a class="cat-card" href="index.html%3Fp=1791.html" style="--accent:#0C54A0"><span class="cat-glow"></span><div class="cat-frame"><div class="cat-img-wrap"><img src="wp-content/uploads/2023/05/Labour-Delivery-Room-Bed-LDR-OHT-01.jpg" alt="Labour Delivery Room Bed CHT-01" loading="lazy"></div><div class="cat-panel"><div class="cat-panel-top"><h5>Labour Delivery Room Bed CHT-01</h5></div><div class="cat-cta-row"><span>Learn More</span><span class="cat-explore">&#8594;</span></div></div></div></a><a class="cat-card" href="index.html%3Fp=1810.html" style="--accent:#38BDF8"><span class="cat-glow"></span><div class="cat-frame"><div class="cat-img-wrap"><img src="wp-content/uploads/2023/05/Gynecological-table-Electric-OHT-02.jpg" alt="Gynecological Table Electric OHT-02" loading="lazy"></div><div class="cat-panel"><div class="cat-panel-top"><h5>Gynecological Table Electric OHT-02</h5></div><div class="cat-cta-row"><span>Learn More</span><span class="cat-explore">&#8594;</span></div></div></div></a><a class="cat-card" href="index.html%3Fp=1832.html" style="--accent:#8B5CF6"><span class="cat-glow"></span><div class="cat-frame"><div class="cat-img-wrap"><img src="wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-03.jpg" alt="Obsteric Bed Telescopic OHT-03" loading="lazy"></div><div class="cat-panel"><div class="cat-panel-top"><h5>Obsteric Bed Telescopic OHT-03</h5></div><div class="cat-cta-row"><span>Learn More</span><span class="cat-explore">&#8594;</span></div></div></div></a><a class="cat-card" href="index.html%3Fp=1843.html" style="--accent:#E31E24"><span class="cat-glow"></span><div class="cat-frame"><div class="cat-img-wrap"><img src="wp-content/uploads/2023/05/Obstetric-Bed-Telescopic-OHT-04.jpg" alt="Obstetric Bed Telescopic OHT-04" loading="lazy"></div><div class="cat-panel"><div class="cat-panel-top"><h5>Obstetric Bed Telescopic OHT-04</h5></div><div class="cat-cta-row"><span>Learn More</span><span class="cat-explore">&#8594;</span></div></div></div></a></div></div></section>
 				</div>
 		</div>
 					<div class="container">
@@ -1646,5 +1434,32 @@ var thegem_section_parallax = [];
 </script>
 <script type="text/javascript" src="wp-content/plugins/thegem-elements-elementor/inc/elementor/widgets/section-parallax/assets/js/thegem-section-parallax.js" id="thegem-section-parallax-js"></script>
 <script type="text/javascript">(function() {var parent = document.getElementById("page");var deferredFile1 = document.createElement("link");deferredFile1.rel = "stylesheet";deferredFile1.type = "text/css";deferredFile1.href = "https://www.medi-waves.com/wp-content/themes/thegem-elementor/css/icons-fontawesome.css?ver=5.10.5.2";document.body.appendChild(deferredFile1);window.addEventListener("load",function(){var elem = document.getElementById("thegem-preloader-inline-css");setTimeout(function() { if (elem!==null && elem.parentNode!==null) elem.parentNode.removeChild(elem) }, 300); });})();</script>
+
+<script>
+(function(){
+  var cards = document.querySelectorAll('#pw-products .cat-card');
+  if (!cards.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  cards.forEach(function(el){ io.observe(el); });
+  cards.forEach(function(card){
+    var img = card.querySelector('img');
+    if (img) {
+      if (img.complete) img.classList.add('pw-loaded');
+      else img.addEventListener('load', function(){ img.classList.add('pw-loaded'); });
+    }
+    card.addEventListener('click', function(e){
+      var rect = card.getBoundingClientRect();
+      var ripple = document.createElement('span');
+      var size = Math.max(rect.width, rect.height);
+      ripple.style.cssText = 'position:absolute;border-radius:50%;pointer-events:none;background:rgba(255,255,255,.5);z-index:5;transform:scale(0);animation:pwRipple .6s ease-out;width:' + size + 'px;height:' + size + 'px;left:' + (e.clientX - rect.left - size/2) + 'px;top:' + (e.clientY - rect.top - size/2) + 'px;';
+      card.querySelector('.cat-frame').appendChild(ripple);
+      setTimeout(function(){ ripple.remove(); }, 650);
+    });
+  });
+})();
+</script>
+<style>@keyframes pwRipple{to{transform:scale(3);opacity:0;}}</style>
 </body>
 </html>
