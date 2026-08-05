@@ -849,6 +849,7 @@ panel.addEventListener('mouseenter', open);
 panel.addEventListener('mouseleave', scheduleClose);
 li.querySelector(':scope > a')?.addEventListener('focus', open);
 li.addEventListener('focusout', (e) => { if (!li.contains(e.relatedTarget)) scheduleClose(); });
+panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { clearTimeout(closeTimer); li.classList.remove('mega-open'); document.body.style.overflow = ''; }));
 });
 const hamburgerBtn = document.getElementById('hamburgerBtn');
 const mobileDrawer = document.getElementById('mobileDrawer');
