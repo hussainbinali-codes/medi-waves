@@ -178,7 +178,7 @@ section{padding:var(--space-7) 0;position:relative;}
 
 /* mega menu */
 .mega{
-  --mp-blue:#0066FF; --mp-cyan:#00B4D8; --mp-bg:#FFFFFF; --mp-bg-2:#F8FAFC;
+  --mp-blue:#E31E24; --mp-cyan:#00B4D8; --mp-bg:#FFFFFF; --mp-bg-2:#F8FAFC;
   --mp-border:#E7EDF5; --mp-hover:#F4F9FF; --mp-heading:#0F172A; --mp-body:#475569; --mp-muted:#94A3B8;
   position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(-15px);
   width:1040px;max-width:94vw;
@@ -235,7 +235,7 @@ section{padding:var(--space-7) 0;position:relative;}
 .mega-featured>p{font-size:13px;color:var(--mp-body);line-height:1.6;margin-bottom:16px;}
 .mega-btn-primary,.mega-btn-secondary{display:block;text-align:center;font-size:13.5px;font-weight:700;padding:12px 18px;
   border-radius:14px;transition:all .2s ease;}
-.mega-btn-primary{background:var(--mp-blue);color:#fff;box-shadow:0 8px 20px rgba(0,102,255,.28);margin-bottom:10px;}
+.mega-btn-primary{background:var(--mp-blue);color:#fff;box-shadow:0 8px 20px rgba(227,30,36,.28);margin-bottom:10px;}
 .mega-btn-primary:hover{box-shadow:0 10px 26px rgba(0,102,255,.4);transform:translateY(-1px);}
 .mega-btn-secondary{background:var(--mp-bg-2);color:var(--mp-heading);border:1px solid var(--mp-border);}
 .mega-btn-secondary:hover{background:var(--mp-hover);border-color:#cfe2ff;}
@@ -384,10 +384,10 @@ section{padding:var(--space-7) 0;position:relative;}
 .marquee-track{display:flex;gap:var(--space-5);width:max-content;animation:marquee 26s linear infinite;align-items:center;}
 .marquee-mask:hover .marquee-track{animation-play-state:paused;}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.client-logo{height:56px;width:140px;display:flex;align-items:center;justify-content:center;background:#fff;
+.client-logo{height:96px;width:220px;display:flex;align-items:center;justify-content:center;background:#fff;
   border:1px solid var(--gray-200);border-radius:14px;padding:10px 16px;flex:none;}
-.client-logo img{max-height:100%;max-width:100%;object-fit:contain;filter:grayscale(1) contrast(1.1) opacity(.75);transition:filter .3s;}
-.client-logo:hover img{filter:grayscale(0) opacity(1);}
+.client-logo img{max-height:100%;max-width:100%;object-fit:contain;filter:contrast(1.1) opacity(.9);transition:filter .3s,opacity .3s,transform .3s;}
+.client-logo:hover img{opacity:1;transform:scale(1.05);}
 
 /* ============ FOOTER ============ */
 footer{background:var(--navy);color:rgba(255,255,255,.72);padding:var(--space-7) 0 var(--space-3);position:relative;overflow:hidden;}
@@ -542,7 +542,6 @@ footer ul a:hover::before{opacity:1;left:0;}
           <div class="mega-columns" id="megaColumns">
             <div class="mega-category">
               <div class="mega-cat-top">
-                <span class="mega-cat-icon">🍼</span>
                 <div><h4>Infant Care</h4><p>Warmers &amp; neonatal monitoring</p></div>
               </div>
               <div class="mega-products">
@@ -556,7 +555,6 @@ footer ul a:hover::before{opacity:1;left:0;}
 
             <div class="mega-category">
               <div class="mega-cat-top">
-                <span class="mega-cat-icon">🛏️</span>
                 <div><h4>Hospital Furniture</h4><p>ICU beds &amp; patient furniture</p></div>
               </div>
               <div class="mega-products">
@@ -570,7 +568,6 @@ footer ul a:hover::before{opacity:1;left:0;}
 
             <div class="mega-category">
               <div class="mega-cat-top">
-                <span class="mega-cat-icon">⚡</span>
                 <div><h4>Electromedicals</h4><p>Diagnostics &amp; surgical devices</p></div>
               </div>
               <div class="mega-products">
@@ -589,9 +586,9 @@ footer ul a:hover::before{opacity:1;left:0;}
               <a href="index.html%3Fp=6.html" class="mega-btn-primary">Talk to an Expert →</a>
               <a href="index.html%3Fp=6.html" class="mega-btn-secondary">Download Catalogue</a>
               <div class="mega-trust">
-                <span>🌍 Export Worldwide</span>
-                <span>🏥 Trusted by Hospitals</span>
-                <span>🛡 ISO Certified</span>
+                <span>Export Worldwide</span>
+                <span>Trusted by Hospitals</span>
+                <span>ISO Certified</span>
               </div>
             </div>
           </div>
