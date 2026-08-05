@@ -689,8 +689,7 @@ var zilla_likes = {"ajaxurl":"https:\/\/www.medi-waves.com\/wp-admin\/admin-ajax
       <li><a href="../../index.html%3Fp=6.html">Contact <span class="underline"></span></a></li>
     </ul>
     <div class="nav-right">
-      <button class="icon-btn" aria-label="Search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-      <a class="btn btn-outline" href="../../index.html%3Fp=6.html" style="padding:10px 20px;font-size:13.5px;">Contact</a>
+      <button class="icon-btn" id="navSearchBtn" aria-label="Search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <a class="btn btn-primary nav-cta" href="../../index.html%3Fp=6.html" style="padding:10px 22px;font-size:13.5px;">Request Quote</a>
       <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -801,6 +800,16 @@ window.addEventListener('scroll', updateProgress);
 })();
 
 // mega menu: hover-intent with close delay so it never vanishes mid-move
+(function () {
+const searchBtn = document.getElementById('navSearchBtn');
+const megaSearchInput = document.getElementById('megaSearchInput');
+if (!searchBtn || !megaSearchInput) return;
+searchBtn.addEventListener('click', () => {
+const li = megaSearchInput.closest('.nav-links > li');
+if (li) { li.classList.add('mega-open'); document.body.style.overflow = 'hidden'; }
+megaSearchInput.focus();
+});
+})();
 document.querySelectorAll('.nav-links > li').forEach(li => {
   const panel = li.querySelector('.mega, .mega-simple');
   if (!panel) return;
