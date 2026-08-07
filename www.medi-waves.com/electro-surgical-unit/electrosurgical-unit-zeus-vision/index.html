@@ -808,20 +808,33 @@ if (li) { li.classList.add('mega-open'); document.body.style.overflow = 'hidden'
 megaSearchInput.focus();
 });
 })();
+(function(){
+var mwSuppressedLi = null;
+function mwArmInitialHoverGuard(){
+  mwSuppressedLi = null;
+  document.querySelectorAll('.nav-links > li').forEach(function(li){
+    if (li.matches(':hover')) { mwSuppressedLi = li; }
+  });
+}
+mwArmInitialHoverGuard();
+window.addEventListener('pageshow', mwArmInitialHoverGuard);
 document.querySelectorAll('.nav-links > li').forEach(li => {
   const panel = li.querySelector('.mega, .mega-simple');
   if (!panel) return;
   let closeTimer = null;
-  const open = () => { clearTimeout(closeTimer); li.classList.add('mega-open'); document.body.style.overflow = 'hidden'; };
+  const reallyOpen = () => { clearTimeout(closeTimer); li.classList.add('mega-open'); document.body.style.overflow = 'hidden'; };
+  const open = () => { if (mwSuppressedLi === li) return; reallyOpen(); };
   const scheduleClose = () => { closeTimer = setTimeout(() => { li.classList.remove('mega-open'); if (!document.querySelector('.nav-links > li.mega-open')) { document.body.style.overflow = ''; } }, 400); };
+  const handleLeave = () => { if (mwSuppressedLi === li) { mwSuppressedLi = null; } scheduleClose(); };
   li.addEventListener('mouseenter', open);
-  li.addEventListener('mouseleave', scheduleClose);
+  li.addEventListener('mouseleave', handleLeave);
   panel.addEventListener('mouseenter', open);
-  panel.addEventListener('mouseleave', scheduleClose);
-  li.querySelector(':scope > a')?.addEventListener('focus', open);
-  li.addEventListener('focusout', (e) => { if (!li.contains(e.relatedTarget)) scheduleClose(); });
+  panel.addEventListener('mouseleave', handleLeave);
+  li.querySelector(':scope > a')?.addEventListener('focus', reallyOpen);
+  li.addEventListener('focusout', (e) => { if (!li.contains(e.relatedTarget)) handleLeave(); });
 panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { clearTimeout(closeTimer); li.classList.remove('mega-open'); document.body.style.overflow = ''; }));
 });
+})();
 
 // mobile drawer
 const hamburgerBtn = document.getElementById('hamburgerBtn');
