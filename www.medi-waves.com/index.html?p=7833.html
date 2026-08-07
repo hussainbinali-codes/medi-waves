@@ -881,7 +881,7 @@ footer ul a:hover::before{opacity:1;left:0;}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease);}
 .faq-a p{padding:0 22px 20px;font-size:13.5px;color:var(--gray-500);line-height:1.6;}
 </style>
-<script id="pd-nav-state-reset">(function(){function mwResetNavState(){document.querySelectorAll('.nav-links > li.mega-open').forEach(function(li){li.classList.remove('mega-open');});document.body.style.overflow='';var d=document.getElementById('mobileDrawer'),s=document.getElementById('mobileScrim'),h=document.getElementById('hamburgerBtn');if(d){d.classList.remove('open');d.setAttribute('aria-hidden','true');}if(s){s.classList.remove('open');}if(h){h.setAttribute('aria-expanded','false');}}window.addEventListener('pageshow', mwResetNavState);document.addEventListener('DOMContentLoaded', mwResetNavState);})();</script></head>
+<script id="pd-nav-state-reset">(function(){function mwResetNavState(){document.querySelectorAll('.nav-links > li.mega-open').forEach(function(li){li.classList.remove('mega-open');});document.body.style.overflow='';var d=document.getElementById('mobileDrawer'),s=document.getElementById('mobileScrim'),h=document.getElementById('hamburgerBtn');if(d){d.classList.remove('open');d.setAttribute('aria-hidden','true');}if(s){s.classList.remove('open');}if(h){h.setAttribute('aria-expanded','false');}}window.addEventListener('pageshow', mwResetNavState);document.addEventListener('DOMContentLoaded', mwResetNavState);})();</script><style id="prod-card-clickable-css">.prod-card{cursor:pointer;}</style></head>
 <body>
 
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -1980,5 +1980,16 @@ if (benefitRows.length) {
 }
 </script>
 
-</body>
+<script id="prod-card-clickable-js">
+(function(){
+  document.querySelectorAll('.prod-card').forEach(function(card){
+    var link = card.querySelector('a.more');
+    if (!link) return;
+    card.addEventListener('click', function(e){
+      if (e.target.closest('a, button')) return;
+      window.location.href = link.getAttribute('href');
+    });
+  });
+})();
+</script></body>
 </html>
