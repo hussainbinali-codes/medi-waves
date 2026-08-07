@@ -269,7 +269,7 @@ var zilla_likes = {"ajaxurl":"https:\/\/www.medi-waves.com\/wp-admin\/admin-ajax
   border:1px solid var(--mp-border);
   text-align:left;
 }
-.mw-newnav-scope .nav-links>li.mega-open .mega,.mw-newnav-scope .nav-links>li:hover .mega{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.mw-newnav-scope .nav-links>li.mega-open .mega{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
 .mw-newnav-scope .mega::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px;}
 
 .mw-newnav-scope .mega-search-row{padding:24px 32px 18px;border-bottom:1px solid var(--mp-border);}
@@ -340,7 +340,7 @@ var zilla_likes = {"ajaxurl":"https:\/\/www.medi-waves.com\/wp-admin\/admin-ajax
   background:rgba(255,255,255,.9);backdrop-filter:blur(22px) saturate(180%);
   border-radius:18px;box-shadow:0 24px 50px -16px rgba(15,39,68,.26);padding:10px;
   opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px);transition:all .3s var(--mwnav-ease);border:1px solid rgba(255,255,255,.7);}
-.mw-newnav-scope .nav-links>li.mega-open .mega-simple,.mw-newnav-scope .nav-links>li:hover .mega-simple{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);}
+.mw-newnav-scope .nav-links>li.mega-open .mega-simple{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);}
 .mw-newnav-scope .mega-simple::before{content:"";position:absolute;left:0;right:0;top:-20px;height:20px;}
 .mw-newnav-scope .mega-simple a{display:block;padding:11px 14px;border-radius:10px;font-size:14px;font-weight:600;color:var(--mwnav-gray-700);transition:background .1s ease-out,color .1s ease-out,padding-left .1s ease-out;}
 .mw-newnav-scope .mega-simple a:hover{background:rgba(12,84,160,.08);color:var(--mwnav-blue);padding-left:18px;}
@@ -497,7 +497,7 @@ var zilla_likes = {"ajaxurl":"https:\/\/www.medi-waves.com\/wp-admin\/admin-ajax
 }
 @media (max-width:640px){.hf-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr)) !important;}}
 .block-content{padding-top:36px !important;}#pw-products{padding-top:0 !important;padding-bottom:var(--space-6) !important;}#page-title{padding-top:56px !important;padding-bottom:30px !important;}.hf-grid{grid-template-columns:repeat(auto-fill,minmax(248px,1fr)) !important;}.cat-img-wrap img{padding:10px !important;}</style>
-</head>
+<script id="pd-nav-state-reset">(function(){function mwResetNavState(){document.querySelectorAll('.nav-links > li.mega-open').forEach(function(li){li.classList.remove('mega-open');});document.body.style.overflow='';var d=document.getElementById('mobileDrawer'),s=document.getElementById('mobileScrim'),h=document.getElementById('hamburgerBtn');if(d){d.classList.remove('open');d.setAttribute('aria-hidden','true');}if(s){s.classList.remove('open');}if(h){h.setAttribute('aria-expanded','false');}}window.addEventListener('pageshow', mwResetNavState);document.addEventListener('DOMContentLoaded', mwResetNavState);})();</script></head>
 
 
 <body class="page-template page-template-page-fullwidth page-template-page-fullwidth-php page page-id-1018 page-parent elementor-default elementor-kit-8 elementor-page elementor-page-1018">

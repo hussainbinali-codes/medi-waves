@@ -127,7 +127,7 @@ section{padding:var(--space-7) 0;position:relative;}
   opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease);
   border:1px solid var(--gray-200);
 }
-.nav-links>li:hover .mega{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.nav-links>li.mega-open .mega{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
 .mega h4{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:12px;font-weight:700;}
 .mega a{display:block;font-size:14px;color:var(--gray-700);padding:6px 0;font-weight:500;transition:color .2s,padding-left .2s;}
 .mega a:hover{color:var(--blue);padding-left:4px;}
@@ -504,7 +504,7 @@ footer ul a:hover{color:#fff;}
   .elementor-container.elementor-column-gap-thegem .elementor-row{gap:26px;}
 }
 </style>
-</head>
+<script id="pd-nav-state-reset">(function(){function mwResetNavState(){document.querySelectorAll('.nav-links > li.mega-open').forEach(function(li){li.classList.remove('mega-open');});document.body.style.overflow='';var d=document.getElementById('mobileDrawer'),s=document.getElementById('mobileScrim'),h=document.getElementById('hamburgerBtn');if(d){d.classList.remove('open');d.setAttribute('aria-hidden','true');}if(s){s.classList.remove('open');}if(h){h.setAttribute('aria-expanded','false');}}window.addEventListener('pageshow', mwResetNavState);document.addEventListener('DOMContentLoaded', mwResetNavState);})();</script></head>
 <body>
 <div class="nav-wrap" id="navWrap">
   <nav class="navbar">

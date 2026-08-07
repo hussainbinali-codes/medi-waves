@@ -225,7 +225,7 @@ section{padding:var(--space-7) 0;position:relative;}
   opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s;
   border:1px solid var(--mp-border);
 }
-.nav-links>li.mega-open .mega,.nav-links>li:hover .mega{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.nav-links>li.mega-open .mega{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
 .mega::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px;}
 
 /* search + chips */
@@ -300,7 +300,7 @@ section{padding:var(--space-7) 0;position:relative;}
   background:rgba(255,255,255,.9);backdrop-filter:blur(22px) saturate(180%);
   border-radius:18px;box-shadow:0 24px 50px -16px rgba(15,39,68,.26);padding:10px;
   opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px);transition:all .3s var(--ease);border:1px solid rgba(255,255,255,.7);}
-.nav-links>li.mega-open .mega-simple,.nav-links>li:hover .mega-simple{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);}
+.nav-links>li.mega-open .mega-simple{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);}
 .mega-simple::before{content:"";position:absolute;left:0;right:0;top:-20px;height:20px;}
 .mega-simple a{display:block;padding:11px 14px;border-radius:10px;font-size:14px;font-weight:600;color:var(--gray-700);transition:background .1s ease-out,color .1s ease-out,padding-left .1s ease-out;}
 .mega-simple a:hover{background:rgba(12,84,160,.08);color:var(--blue);padding-left:18px;}
@@ -876,7 +876,7 @@ footer ul a:hover::before{opacity:1;left:0;}
 .prod-detail-ctas{display:flex;gap:14px;margin-top:var(--space-4);flex-wrap:wrap;}
 @media (max-width:900px){.prod-detail-grid{grid-template-columns:1fr;}}
 </style>
-</head>
+<script id="pd-nav-state-reset">(function(){function mwResetNavState(){document.querySelectorAll('.nav-links > li.mega-open').forEach(function(li){li.classList.remove('mega-open');});document.body.style.overflow='';var d=document.getElementById('mobileDrawer'),s=document.getElementById('mobileScrim'),h=document.getElementById('hamburgerBtn');if(d){d.classList.remove('open');d.setAttribute('aria-hidden','true');}if(s){s.classList.remove('open');}if(h){h.setAttribute('aria-expanded','false');}}window.addEventListener('pageshow', mwResetNavState);document.addEventListener('DOMContentLoaded', mwResetNavState);})();</script></head>
 <body>
 
 <div class="scroll-progress" id="scrollProgress"></div>
