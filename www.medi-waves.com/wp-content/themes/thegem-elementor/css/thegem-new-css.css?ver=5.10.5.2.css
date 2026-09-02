@@ -166,13 +166,13 @@ blockquote:after {
 	color: #00bfa5;
 }
 .gem-list.gem-list-color-3  > ul > li:before {
-	color: #0c54a0;
+	color: #155eef;
 }
 .gem-list.gem-list-color-4  > ul > li:before {
 	color: #ffb932;
 }
 .gem-list.gem-list-color-5  > ul > li:before {
-	color: #e31e24;
+	color: #22b8cf;
 }
 .gem-list.gem-list-color-6  > ul > li:before {
 	color: #7e57c2;
@@ -1748,5 +1748,5 @@ div.wpcf7-validation-errors {
     font-weight:200;
 }
 .products-grid-form p.button input:hover{
-    background:#0c54a0;
+    background:#155eef;
 }

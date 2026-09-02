@@ -82,12 +82,12 @@
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border: 2px solid transparent;
-	border-top-color: #0c54a0;
+	border-top-color: #155eef;
 	-webkit-animation: PreloaderSpin 3s linear infinite;
 	animation: PreloaderSpin 3s linear infinite;
 }
 .preloader-spin:before {
-	border-top-color: #0c54a0;
+	border-top-color: #155eef;
 }
 #page-preloader .page-preloader-spin:after,
 .block-preloader .page-preloader-spin:after,
@@ -166,7 +166,7 @@
 	border-radius: 50%;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
-	border: 2px solid #0c54a0;
+	border: 2px solid #155eef;
 	border-top-color: transparent !important;
 	-webkit-animation: PreloaderSpin 1.3s linear infinite;
 	animation: PreloaderSpin 1.3s linear infinite;

@@ -450,7 +450,7 @@ blockquote > :first-child,
 	background-color: #b6c6c9;
 }
 .vc_pagination.vc_pagination-style-thegem.vc_pagination-shape-circle .vc_active .vc_pagination-trigger {
-	background-color: #0c54a0;
+	background-color: #155eef;
 }
 .vc_pagination.vc_pagination-style-thegem.vc_pagination-shape-square .vc_pagination-trigger {
 	width: 16px;
@@ -462,7 +462,7 @@ blockquote > :first-child,
 	background-color: #3c3950;
 }
 .vc_pagination.vc_pagination-style-thegem.vc_pagination-shape-square .vc_active .vc_pagination-trigger {
-	background-color: #0c54a0;
+	background-color: #155eef;
 }
 
 
@@ -1422,7 +1422,7 @@ a .socials-item-icon {
 .socials-colored a .socials-item-icon.googleplus,
 .socials-colored-hover a:hover .socials-item-icon.google-plus,
 .socials-colored-hover a:hover .socials-item-icon.googleplus {
-	color: #e31e24;
+	color: #22b8cf;
 }
 .socials-item-icon.tumblr::before {
 	content: '\e604';
@@ -1506,7 +1506,7 @@ a .socials-item-icon {
 }
 .socials-colored a .socials-item-icon.skype,
 .socials-colored-hover a:hover .socials-item-icon.skype {
-	color: #0c54a0;
+	color: #155eef;
 }
 .socials-item-icon.youtube::before {
 	content: '\e610';
@@ -1565,7 +1565,7 @@ a .socials-item-icon {
 }
 .socials-colored a .socials-item-icon.telegram,
 .socials-colored-hover a:hover .socials-item-icon.telegram {
-	color: #0c54a0;
+	color: #155eef;
 }
 .socials-item-icon.vk::before {
 	content: '\e648';
@@ -3427,7 +3427,7 @@ body.single-thegem_templates.template-type-portfolio:not(.elementor-editor-activ
 	color: #5f727f;
 }
 .widget .vc_tta.vc_tta-color-thegem.vc_tta-style-classic .vc_tta-tab > a {
-	color: #0c54a0;
+	color: #155eef;
 }
 .vc_tta.vc_tta-color-thegem.vc_tta-style-classic .vc_tta-tab > a:hover,
 .vc_tta.vc_tta-color-thegem.vc_tta-style-classic .vc_tta-tab > a:focus {
@@ -4148,8 +4148,8 @@ body .fancybox-title-over-wrap {
 }
 .vc_tta.vc_tta-color-thegem.vc_tta-style-simple_dashed .vc_tta-controls-icon::before,
 .vc_tta.vc_tta-color-thegem.vc_tta-style-simple_dashed .vc_tta-controls-icon::after {
-	border-color: #0c54a0;
-	color: #0c54a0;
+	border-color: #155eef;
+	color: #155eef;
 }
 .vc_tta.vc_tta-color-thegem.vc_tta-style-simple_dashed .vc_active .vc_tta-panel-heading .vc_tta-controls-icon::before,
 .vc_tta.vc_tta-color-thegem.vc_tta-style-simple_dashed .vc_active .vc_tta-panel-heading .vc_tta-controls-icon::after {
@@ -5467,7 +5467,7 @@ form.mc4wp-form input[type="date"] {
 .yikes-mailchimp-container .splash-shop-4-style.yikes-easy-mc-form label.label-inline > input:focus{ outline: none !important; }
 .yikes-mailchimp-container .splash-shop-4-style .submit-button-inline-label{width: 155px; min-width: 155px; height: 45px; }
 .yikes-mailchimp-container .splash-shop-4-style .submit-button-inline-label > span { display: none; }
-.yikes-mailchimp-container .splash-shop-4-style .submit-button-inline-label .yikes-easy-mc-submit-button{ background: #e31e24; color: #fff; border: none; font-family: 'Montserrat';  font-weight: 700;  text-transform: uppercase; padding-right: 30px; padding-left: 30px; position: relative; border-radius: 0; height: 45px; }
+.yikes-mailchimp-container .splash-shop-4-style .submit-button-inline-label .yikes-easy-mc-submit-button{ background: #22b8cf; color: #fff; border: none; font-family: 'Montserrat';  font-weight: 700;  text-transform: uppercase; padding-right: 30px; padding-left: 30px; position: relative; border-radius: 0; height: 45px; }
 .yikes-mailchimp-container .splash-shop-4-style button { transition: all 0.3s; -webkit-transition: all 0.3s;}
 .yikes-mailchimp-container .splash-shop-4-style button:hover { background: #212121; color: #fff; transition: all 0.3s; -webkit-transition: all 0.3s;}
 @media(max-width: 1200px){
@@ -5511,7 +5511,7 @@ form.submitting .wpcf7-spinner {
 	text-transform: uppercase;
 }
 .yikes-easy-mc-form.app-sparta-style.yikes-easy-mc-form .yikes-easy-mc-submit-button:hover {
-	background-color: #0C54A0;
+	background-color: #155EEF;
 }
 .yikes-easy-mc-form.app-sparta-style.yikes-easy-mc-form  .yikes-easy-mc-email {
 	background: transparent;
@@ -6320,7 +6320,7 @@ body.thegem-effects-disabled #page .wpb_animate_when_almost_visible.wpb_appear {
 
 .thegem-heading .label {
 	color: #ffffff;
-	background-color: var(--thegem-to-styled-color1, #0C54A0);
+	background-color: var(--thegem-to-styled-color1, #155EEF);
 	font-size: var(--thegem-to-h6-font-size-tiny, 7px);
 	line-height: 1;
 	padding: 0.3em 0.5em;

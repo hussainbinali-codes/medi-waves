@@ -24,7 +24,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/manifest.webmanifest" />
-<meta name="theme-color" content="#0C54A0" />
+<meta name="theme-color" content="#155EEF" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -32,31 +32,31 @@
 <style>
 /* ============ DESIGN TOKENS ============ */
 :root{
-  --navy:#0F2744;
-  --blue:#0C54A0;
-  --blue-dark:#083D78;
-  --teal:#E31E24;
-  --gold:#E31E24;
-  --gold-light:#F2696D;
-  --ink:#0F2744;
-  --gray-900:#131A2B;
-  --gray-700:#4A5568;
-  --gray-500:#7A8699;
-  --gray-200:#E5EAF1;
-  --gray-100:#F4F7FB;
+  --navy:#0B1F3A;
+  --blue:#155EEF;
+  --blue-dark:#0D47C7;
+  --teal:#22B8CF;
+  --gold:#22B8CF;
+  --gold-light:#B6ECF3;
+  --ink:#0B1F3A;
+  --gray-900:#0B1F3A;
+  --gray-700:#475467;
+  --gray-500:#475467;
+  --gray-200:#E4EAF0;
+  --gray-100:#F5FAFC;
   --white:#FFFFFF;
   --radius-lg:24px;
   --radius-md:18px;
   --radius-sm:12px;
-  --shadow-sm:0 2px 8px rgba(15,39,68,.06);
-  --shadow-md:0 12px 32px rgba(15,39,68,.10);
-  --shadow-lg:0 24px 60px rgba(15,39,68,.16);
+  --shadow-sm:0 2px 8px rgba(11,31,58,.06);
+  --shadow-md:0 12px 32px rgba(11,31,58,.10);
+  --shadow-lg:0 24px 60px rgba(11,31,58,.16);
   --space-1:8px; --space-2:16px; --space-3:24px; --space-4:32px;
   --space-5:48px; --space-6:64px; --space-7:96px; --space-8:128px;
   --container:1280px;
   --ease:cubic-bezier(.22,1,.36,1);
   --grad-brand:linear-gradient(135deg,var(--blue) 0%,var(--teal) 100%);
-  --grad-brand-2:linear-gradient(120deg,#0C54A0 0%,#E31E24 50%,#0C54A0 100%);
+  --grad-brand-2:linear-gradient(120deg,#155EEF 0%,#22B8CF 50%,#155EEF 100%);
   --glass-bg:rgba(255,255,255,.65);
   --glass-border:rgba(255,255,255,.55);
 }
@@ -87,7 +87,7 @@ section{padding:var(--space-7) 0;position:relative;}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
   font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--blue);background:rgba(12,84,160,.08);
+  color:var(--blue);background:rgba(21,94,239,.08);
   padding:6px 16px;border-radius:999px;margin-bottom:var(--space-2);
 }
 .eyebrow .accent{color:#E5484D;font-weight:800;}
@@ -100,8 +100,8 @@ section{padding:var(--space-7) 0;position:relative;}
   padding:15px 30px;border-radius:999px;cursor:pointer;border:none;
   transition:all .35s var(--ease);position:relative;overflow:hidden;white-space:nowrap;
 }
-.btn-primary{background:var(--grad-brand-2);background-size:220% auto;background-position:0% center;color:#fff;box-shadow:0 8px 24px rgba(12,84,160,.32);}
-.btn-primary:hover{background-position:100% center;transform:translateY(-3px) scale(1.02);box-shadow:0 16px 36px rgba(12,84,160,.42);}
+.btn-primary{background:var(--grad-brand-2);background-size:220% auto;background-position:0% center;color:#fff;box-shadow:0 8px 24px rgba(21,94,239,.32);}
+.btn-primary:hover{background-position:100% center;transform:translateY(-3px) scale(1.02);box-shadow:0 16px 36px rgba(21,94,239,.42);}
 .btn-outline{background:#fff;color:var(--navy);border:1.5px solid var(--gray-200);}
 .btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-3px) scale(1.02);box-shadow:var(--shadow-md);}
 .btn-ghost-light{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);}
@@ -118,7 +118,7 @@ section{padding:var(--space-7) 0;position:relative;}
 
 /* ============ SCROLL PROGRESS BAR ============ */
 .scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;z-index:2000;
-  background:linear-gradient(90deg,var(--blue),var(--teal));box-shadow:0 0 10px rgba(12,84,160,.6);
+  background:linear-gradient(90deg,var(--blue),var(--teal));box-shadow:0 0 10px rgba(21,94,239,.6);
   transition:width .1s linear;}
 
 /* ============ PAGE LOADER ============ */
@@ -126,9 +126,9 @@ section{padding:var(--space-7) 0;position:relative;}
   transition:opacity .6s var(--ease),visibility .6s var(--ease);}
 .page-loader.done{opacity:0;visibility:hidden;pointer-events:none;}
 .page-loader::before{content:"";position:absolute;top:-160px;right:-120px;width:420px;height:420px;border-radius:50%;
-  background:radial-gradient(circle,rgba(12,84,160,.3),transparent 70%);}
+  background:radial-gradient(circle,rgba(21,94,239,.3),transparent 70%);}
 .page-loader::after{content:"";position:absolute;bottom:-180px;left:-140px;width:400px;height:400px;border-radius:50%;
-  background:radial-gradient(circle,rgba(227,30,36,.22),transparent 70%);}
+  background:radial-gradient(circle,rgba(34,184,207,.22),transparent 70%);}
 .page-loader-brand{position:relative;display:flex;align-items:center;gap:16px;overflow:hidden;padding:6px 0;}
 .page-loader .mark{width:64px;height:64px;border-radius:16px;background:#fff;padding:11px;flex:none;
   display:flex;align-items:center;justify-content:center;opacity:0;
@@ -142,11 +142,11 @@ section{padding:var(--space-7) 0;position:relative;}
 @keyframes loaderMarkIn{from{opacity:0;transform:scale(.6) rotate(-12deg);}to{opacity:1;transform:scale(1) rotate(0);}}
 @keyframes loaderSlide{to{transform:translateX(0);}}
 @keyframes loaderTextIn{to{opacity:1;transform:translateY(0);}}
-@keyframes loaderPulse{0%,100%{box-shadow:0 0 0 0 rgba(227,30,36,.5);}50%{box-shadow:0 0 0 14px rgba(227,30,36,0);}}
+@keyframes loaderPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,184,207,.5);}50%{box-shadow:0 0 0 14px rgba(34,184,207,0);}}
 
 /* ============ CURSOR SPOTLIGHT ============ */
 .spotlight{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:0;transition:opacity .4s;
-  background:radial-gradient(420px circle at var(--x,50%) var(--y,50%),rgba(12,84,160,.14),transparent 70%);}
+  background:radial-gradient(420px circle at var(--x,50%) var(--y,50%),rgba(21,94,239,.14),transparent 70%);}
 .hero:hover .spotlight{opacity:1;}
 
 @media (prefers-reduced-motion:reduce){
@@ -164,11 +164,11 @@ section{padding:var(--space-7) 0;position:relative;}
   -webkit-backdrop-filter:blur(24px) saturate(180%);
   border:1px solid var(--glass-border);
   border-radius:999px;
-  box-shadow:0 8px 32px rgba(15,39,68,.10);
+  box-shadow:0 8px 32px rgba(11,31,58,.10);
   transition:all .35s var(--ease);
 }
 .nav-wrap.scrolled{top:8px;}
-.nav-wrap.scrolled .navbar{background:rgba(255,255,255,.92);box-shadow:0 12px 44px rgba(15,39,68,.16);}
+.nav-wrap.scrolled .navbar{background:rgba(255,255,255,.92);box-shadow:0 12px 44px rgba(11,31,58,.16);}
 .nav-logo{display:flex;align-items:center;gap:14px;font-family:'Plus Jakarta Sans';font-weight:800;font-size:24px;color:var(--navy);position:relative;}
 .nav-logo .mark{width:60px;height:60px;border-radius:16px;padding:8px;display:flex;align-items:center;justify-content:center;flex:none;position:relative;transition:transform .4s var(--ease),box-shadow .4s var(--ease);}
 .nav-logo .mark img{width:100%;height:100%;object-fit:contain;}
@@ -195,13 +195,13 @@ section{padding:var(--space-7) 0;position:relative;}
 
 /* mega menu */
 .mega{
-  --mp-blue:#E31E24; --mp-cyan:#00B4D8; --mp-bg:#FFFFFF; --mp-bg-2:#F8FAFC;
-  --mp-border:#E7EDF5; --mp-hover:#F4F9FF; --mp-heading:#0F172A; --mp-body:#475569; --mp-muted:#94A3B8;
-  position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(-15px);
+  --mp-blue:#155EEF; --mp-cyan:#22B8CF; --mp-bg:#FFFFFF; --mp-bg-2:#F5FAFC;
+  --mp-border:#E4EAF0; --mp-hover:#F5FAFC; --mp-heading:#0B1F3A; --mp-body:#475467; --mp-muted:#475467;
+  position:absolute;top:calc(100% + 34px);left:50%;transform:translateX(-50%) translateY(-15px);
   width:1040px;max-width:94vw;
   background:var(--mp-bg);
-  border-radius:24px;box-shadow:0 20px 60px rgba(15,23,42,.08);
-  overflow:hidden;
+  border-radius:24px;box-shadow:0 20px 60px rgba(11,31,58,.08);
+  overflow:hidden;max-height:calc(100vh - 140px);overflow-y:auto;
   opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s;
   border:1px solid var(--mp-border);
 }
@@ -219,7 +219,7 @@ section{padding:var(--space-7) 0;position:relative;}
 .mega-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
 .mega-chip{border:1px solid var(--mp-border);background:var(--mp-bg);color:var(--mp-body);font-size:12px;font-weight:600;
   padding:7px 14px;border-radius:999px;cursor:pointer;transition:all .18s ease;}
-.mega-chip:hover{background:var(--mp-hover);border-color:#cfe2ff;}
+.mega-chip:hover{background:var(--mp-hover);border-color:#eef6ff;}
 .mega-chip.active{background:var(--mp-blue);border-color:var(--mp-blue);color:#fff;}
 
 /* columns */
@@ -245,17 +245,17 @@ section{padding:var(--space-7) 0;position:relative;}
 
 /* featured column */
 .mega-featured{padding-left:24px;display:flex;flex-direction:column;}
-.mega-featured-img{border-radius:16px;overflow:hidden;aspect-ratio:16/10;position:relative;background:linear-gradient(160deg,var(--navy),#1B3A5C);margin-bottom:16px;}
+.mega-featured-img{border-radius:16px;overflow:hidden;aspect-ratio:16/10;position:relative;background:linear-gradient(160deg,var(--navy),#123A63);margin-bottom:16px;}
 .mega-featured-img img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.04);}
-.mega-featured-img::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(0,102,255,.16),transparent 55%);}
+.mega-featured-img::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(21,94,239,.16),transparent 55%);}
 .mega-featured h3{font-size:22px;font-weight:700;color:var(--mp-heading);line-height:1.25;margin-bottom:8px;}
 .mega-featured>p{font-size:13px;color:var(--mp-body);line-height:1.6;margin-bottom:16px;}
 .mega-btn-primary,.mega-btn-secondary{display:block;text-align:center;font-size:13.5px;font-weight:700;padding:12px 18px;
   border-radius:14px;transition:all .2s ease;}
-.mega-btn-primary{background:var(--mp-blue);color:#fff;box-shadow:0 8px 20px rgba(227,30,36,.28);margin-bottom:10px;}
-.mega-btn-primary:hover{box-shadow:0 10px 26px rgba(0,102,255,.4);transform:translateY(-1px);}
+.mega-btn-primary{background:var(--mp-blue);color:#fff;box-shadow:0 8px 20px rgba(21,94,239,.28);margin-bottom:10px;}
+.mega-btn-primary:hover{box-shadow:0 10px 26px rgba(21,94,239,.4);transform:translateY(-1px);}
 .mega-btn-secondary{background:var(--mp-bg-2);color:var(--mp-heading);border:1px solid var(--mp-border);}
-.mega-btn-secondary:hover{background:var(--mp-hover);border-color:#cfe2ff;}
+.mega-btn-secondary:hover{background:var(--mp-hover);border-color:#eef6ff;}
 .mega-trust{display:flex;flex-direction:column;gap:9px;margin-top:18px;padding-top:16px;border-top:1px solid var(--mp-border);}
 .mega-trust span{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--mp-body);}
 
@@ -276,14 +276,14 @@ section{padding:var(--space-7) 0;position:relative;}
   .mega-featured{grid-column:1 / -1;padding-left:0;border-top:1px solid var(--mp-border);padding-top:20px;}
 }
 
-.mega-simple{position:absolute;top:calc(100% + 20px);left:0;min-width:260px;
+.mega-simple{position:absolute;top:calc(100% + 38px);left:0;min-width:260px;
   background:rgba(255,255,255,.9);backdrop-filter:blur(22px) saturate(180%);
-  border-radius:18px;box-shadow:0 24px 50px -16px rgba(15,39,68,.26);padding:10px;
+  border-radius:18px;box-shadow:0 24px 50px -16px rgba(11,31,58,.26);padding:10px;
   opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px);transition:all .3s var(--ease);border:1px solid rgba(255,255,255,.7);}
 .nav-links>li.mega-open .mega-simple{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);}
 .mega-simple::before{content:"";position:absolute;left:0;right:0;top:-20px;height:20px;}
 .mega-simple a{display:block;padding:11px 14px;border-radius:10px;font-size:14px;font-weight:600;color:var(--gray-700);transition:background .1s ease-out,color .1s ease-out,padding-left .1s ease-out;}
-.mega-simple a:hover{background:rgba(12,84,160,.08);color:var(--blue);padding-left:18px;}
+.mega-simple a:hover{background:rgba(21,94,239,.08);color:var(--blue);padding-left:18px;}
 
 .hamburger{display:none;width:38px;height:38px;border-radius:50%;border:none;background:transparent;cursor:pointer;
   flex-direction:column;align-items:center;justify-content:center;gap:5px;}
@@ -296,11 +296,11 @@ section{padding:var(--space-7) 0;position:relative;}
 }
 
 /* ============ MOBILE DRAWER ============ */
-.mobile-scrim{position:fixed;inset:0;background:rgba(15,39,68,.5);backdrop-filter:blur(3px);z-index:1998;
+.mobile-scrim{position:fixed;inset:0;background:rgba(11,31,58,.5);backdrop-filter:blur(3px);z-index:1998;
   opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s var(--ease);}
 .mobile-scrim.open{opacity:1;visibility:visible;}
 .mobile-drawer{position:fixed;top:0;right:0;bottom:0;width:min(380px,88vw);background:#fff;z-index:1999;
-  box-shadow:-24px 0 60px rgba(15,39,68,.22);transform:translateX(100%);transition:transform .4s var(--ease);
+  box-shadow:-24px 0 60px rgba(11,31,58,.22);transform:translateX(100%);transition:transform .4s var(--ease);
   display:flex;flex-direction:column;overflow-y:auto;}
 .mobile-drawer.open{transform:translateX(0);}
 .mobile-drawer-head{display:flex;align-items:center;justify-content:space-between;padding:20px;border-bottom:1px solid var(--gray-200);flex:none;}
@@ -326,18 +326,18 @@ section{padding:var(--space-7) 0;position:relative;}
 .page-hero{
   position:relative;padding:170px 0 var(--space-6);isolation:isolate;overflow:hidden;
   background:
-    linear-gradient(135deg,rgba(227,30,36,.18) 0%,rgba(227,30,36,.08) 28%,transparent 62%),
-    radial-gradient(ellipse 80% 60% at 15% 0%,rgba(12,84,160,.10),transparent 60%),
-    radial-gradient(ellipse 70% 60% at 100% 20%,rgba(227,30,36,.12),transparent 55%),
+    linear-gradient(135deg,rgba(34,184,207,.18) 0%,rgba(34,184,207,.08) 28%,transparent 62%),
+    radial-gradient(ellipse 80% 60% at 15% 0%,rgba(21,94,239,.10),transparent 60%),
+    radial-gradient(ellipse 70% 60% at 100% 20%,rgba(34,184,207,.12),transparent 55%),
     linear-gradient(180deg,#F7FAFF 0%,#FFFFFF 100%);
 }
 .page-hero::before{
   content:"";position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(12,84,160,.12) 0%,rgba(12,84,160,0) 70%);
+  background:radial-gradient(circle,rgba(21,94,239,.12) 0%,rgba(21,94,239,0) 70%);
 }
 .page-hero::after{
   content:"";position:absolute;bottom:-260px;left:-220px;width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(227,30,36,.10) 0%,rgba(227,30,36,0) 70%);
+  background:radial-gradient(circle,rgba(34,184,207,.10) 0%,rgba(34,184,207,0) 70%);
 }
 .page-hero .container{position:relative;z-index:2;text-align:center;}
 .page-hero h1{font-size:clamp(34px,5vw,58px);letter-spacing:-.03em;}
@@ -352,11 +352,11 @@ section{padding:var(--space-7) 0;position:relative;}
 .about-visual{position:relative;}
 .about-visual .plate{
   border-radius:var(--radius-lg);overflow:hidden;
-  box-shadow:0 30px 70px -20px rgba(15,39,68,.35),0 10px 30px rgba(12,84,160,.14),0 0 0 1px rgba(255,255,255,.5) inset;
-  aspect-ratio:4/3.4;position:relative;background:linear-gradient(160deg,var(--navy),#1B3A5C);
+  box-shadow:0 30px 70px -20px rgba(11,31,58,.35),0 10px 30px rgba(21,94,239,.14),0 0 0 1px rgba(255,255,255,.5) inset;
+  aspect-ratio:4/3.4;position:relative;background:linear-gradient(160deg,var(--navy),#123A63);
 }
 .about-visual .plate img{width:100%;height:100%;object-fit:cover;filter:saturate(1.08) contrast(1.06) brightness(1.02);}
-.about-visual .plate::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(12,84,160,.16) 0%,transparent 45%,rgba(15,39,68,.38) 100%);}
+.about-visual .plate::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(21,94,239,.16) 0%,transparent 45%,rgba(11,31,58,.38) 100%);}
 .about-visual::before{
   content:"";position:absolute;inset:-20px;border-radius:calc(var(--radius-lg) + 20px);
   background:conic-gradient(from 0deg,var(--blue),var(--teal),var(--blue));
@@ -378,7 +378,7 @@ section{padding:var(--space-7) 0;position:relative;}
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s var(--ease);pointer-events:none;}
-.value-card:hover{box-shadow:0 30px 60px -16px rgba(15,39,68,.22);transform:translateY(-8px);}
+.value-card:hover{box-shadow:0 30px 60px -16px rgba(11,31,58,.22);transform:translateY(-8px);}
 .value-card:hover::before{opacity:1;}
 .value-ic{width:50px;height:50px;border-radius:14px;background:var(--gray-100);color:var(--blue);
   display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;transition:all .35s var(--ease);}
@@ -389,7 +389,7 @@ section{padding:var(--space-7) 0;position:relative;}
 
 .about-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);}
 .gallery-frame{border-radius:var(--radius-md);overflow:hidden;aspect-ratio:4/3;background:var(--gray-100);
-  box-shadow:0 2px 8px rgba(15,23,42,.06),0 20px 40px -20px rgba(15,23,42,.12);position:relative;}
+  position:relative;}
 .gallery-frame img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
 .gallery-frame:hover img{transform:scale(1.06);}
 @media (max-width:820px){.about-gallery{grid-template-columns:1fr 1fr;}}
@@ -408,7 +408,7 @@ section{padding:var(--space-7) 0;position:relative;}
 
 /* ============ FOOTER ============ */
 footer{background:var(--navy);color:rgba(255,255,255,.72);padding:var(--space-7) 0 var(--space-3);position:relative;overflow:hidden;}
-footer::before{content:"";position:absolute;top:-200px;left:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(12,84,160,.18),transparent 70%);pointer-events:none;}
+footer::before{content:"";position:absolute;top:-200px;left:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(21,94,239,.18),transparent 70%);pointer-events:none;}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1.2fr;gap:var(--space-4);position:relative;z-index:1;}
 .footer-logo{display:flex;align-items:center;gap:14px;font-family:'Plus Jakarta Sans';font-weight:800;font-size:21px;color:#fff;margin-bottom:16px;}
 .footer-logo .mark{width:56px;height:56px;border-radius:15px;padding:8px;display:flex;align-items:center;justify-content:center;position:relative;}
@@ -427,90 +427,38 @@ footer ul a:hover::before{opacity:1;left:0;}
 .footer-social{display:flex;gap:10px;margin-top:18px;}
 .footer-social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#fff;transition:all .3s var(--ease);border:1px solid rgba(255,255,255,.1);}
 .footer-social a svg{width:16px;height:16px;}
-.footer-social a:hover{background:var(--grad-brand);transform:translateY(-3px);box-shadow:0 8px 18px rgba(12,84,160,.35);border-color:transparent;}
+.footer-social a:hover{background:var(--grad-brand);transform:translateY(-3px);box-shadow:0 8px 18px rgba(21,94,239,.35);border-color:transparent;}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:var(--space-6);padding-top:var(--space-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,.5);position:relative;z-index:1;}
 @media (max-width:980px){.footer-grid{grid-template-columns:1fr 1fr;}}
 
 /* ============ BACK TO TOP ============ */
 .back-to-top{position:fixed;right:24px;bottom:96px;width:48px;height:48px;border-radius:50%;
-  background:var(--grad-brand);color:#fff;border:none;cursor:pointer;box-shadow:0 12px 28px rgba(12,84,160,.38);
+  background:var(--grad-brand);color:#fff;border:none;cursor:pointer;box-shadow:0 12px 28px rgba(21,94,239,.38);
   display:flex;align-items:center;justify-content:center;z-index:900;
   opacity:0;visibility:hidden;transform:translateY(12px);transition:all .35s var(--ease);}
 .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
-.back-to-top:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 16px 34px rgba(12,84,160,.46);}
+.back-to-top:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 16px 34px rgba(21,94,239,.46);}
 .back-to-top svg{width:18px;height:18px;}
 
-/* ============ CHATBOT ============ */
-.chat-fab{position:fixed;right:24px;bottom:24px;width:60px;height:60px;border-radius:50%;
-  background:var(--grad-brand-2);background-size:200% auto;color:#fff;border:none;cursor:pointer;
-  box-shadow:0 14px 32px rgba(12,84,160,.4);display:flex;align-items:center;justify-content:center;z-index:901;
-  transition:transform .3s var(--ease),box-shadow .3s var(--ease);}
-.chat-fab:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 18px 38px rgba(12,84,160,.48);}
-.chat-fab svg{width:24px;height:24px;transition:opacity .2s,transform .2s;}
-.chat-fab .ic-close{position:absolute;opacity:0;transform:scale(.5) rotate(-45deg);}
-.chat-fab.open .ic-chat{opacity:0;transform:scale(.5) rotate(45deg);}
-.chat-fab.open .ic-close{opacity:1;transform:scale(1) rotate(0);}
-.chat-fab-ping{position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--teal);opacity:0;animation:chatPing 2.6s ease-out infinite;pointer-events:none;}
-.chat-fab.open .chat-fab-ping{display:none;}
+/* ============ WHATSAPP FLOAT BUTTON ============ */
+.wa-fab-wrap{position:fixed;right:24px;bottom:24px;z-index:920;display:flex;align-items:center}
+.wa-fab{position:relative;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;border:none;cursor:pointer;box-shadow:0 14px 32px rgba(37,211,102,.45);display:flex;align-items:center;justify-content:center;transition:transform .3s var(--ease),box-shadow .3s var(--ease);flex-shrink:0}
+.wa-fab svg{width:30px;height:30px;display:block}
+.wa-fab-ping{position:absolute;inset:-4px;border-radius:50%;border:2px solid #25D366;opacity:0;animation:chatPing 2.6s ease-out infinite;pointer-events:none}
+.wa-fab:hover,.wa-fab:focus-visible{transform:translateY(-4px) scale(1.08);box-shadow:0 18px 38px rgba(37,211,102,.55)}
+.wa-fab-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%) translateX(6px);background:#fff;color:var(--navy);padding:9px 16px;border-radius:12px;box-shadow:0 14px 32px -8px rgba(11,31,58,.28);font-size:13.5px;font-weight:700;white-space:nowrap;border:1px solid var(--gray-200);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s}
+.wa-fab-wrap:hover .wa-fab-tooltip,.wa-fab:focus-visible+.wa-fab-tooltip{opacity:1;visibility:visible;transform:translateY(-50%) translateX(0)}
 @keyframes chatPing{0%{opacity:.6;transform:scale(.9);}80%{opacity:0;transform:scale(1.25);}100%{opacity:0;}}
-.chat-badge{position:absolute;top:-2px;right:-2px;width:18px;height:18px;border-radius:50%;background:#e0245e;color:#fff;
-  font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid #fff;}
-.chat-badge.hide{display:none;}
-
-.chat-panel{position:fixed;right:24px;bottom:96px;width:360px;max-width:calc(100vw - 48px);height:520px;max-height:calc(100vh - 140px);
-  background:#fff;border-radius:22px;box-shadow:0 30px 70px -18px rgba(15,39,68,.35);border:1px solid var(--gray-200);
-  display:flex;flex-direction:column;overflow:hidden;z-index:900;
-  opacity:0;visibility:hidden;transform:translateY(16px) scale(.97);transform-origin:bottom left;
-  transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;}
-.chat-panel.open{opacity:1;visibility:visible;transform:translateY(0) scale(1);}
-.chat-head{background:linear-gradient(120deg,var(--navy),var(--blue-dark));padding:18px 20px;display:flex;align-items:center;gap:12px;flex:none;position:relative;overflow:hidden;}
-.chat-head::before{content:"";position:absolute;top:-60px;right:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(227,30,36,.35),transparent 70%);}
-.chat-head-avatar{width:38px;height:38px;border-radius:50%;background:#fff;padding:6px;flex:none;position:relative;z-index:1;}
-.chat-head-avatar img{width:100%;height:100%;object-fit:contain;}
-.chat-head-info{position:relative;z-index:1;}
-.chat-head-info b{color:#fff;font-size:14.5px;display:block;}
-.chat-head-info span{color:rgba(255,255,255,.65);font-size:11.5px;display:flex;align-items:center;gap:5px;}
-.chat-head-info span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(227,30,36,.25);}
-.chat-body{flex:1;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:12px;background:var(--gray-100);}
-.chat-msg{max-width:82%;font-size:13.5px;line-height:1.5;padding:11px 14px;border-radius:14px;animation:fadeIn .3s var(--ease);}
-.chat-msg.bot{align-self:flex-start;background:#fff;color:var(--gray-900);border-bottom-left-radius:4px;box-shadow:var(--shadow-sm);}
-.chat-msg.user{align-self:flex-end;background:var(--grad-brand);color:#fff;border-bottom-right-radius:4px;}
-.chat-typing{align-self:flex-start;background:#fff;border-radius:14px;border-bottom-left-radius:4px;padding:13px 16px;box-shadow:var(--shadow-sm);display:flex;gap:4px;}
-.chat-typing span{width:6px;height:6px;border-radius:50%;background:var(--gray-500);animation:typingDot 1.2s ease-in-out infinite;}
-.chat-typing span:nth-child(2){animation-delay:.15s;} .chat-typing span:nth-child(3){animation-delay:.3s;}
-@keyframes typingDot{0%,60%,100%{transform:translateY(0);opacity:.5;}30%{transform:translateY(-4px);opacity:1;}}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
-.chat-chips{display:flex;flex-wrap:wrap;gap:7px;padding:2px 0 4px;}
-.chat-chip{background:#fff;border:1.5px solid var(--gray-200);color:var(--navy);font-size:12px;font-weight:600;
-  padding:8px 13px;border-radius:999px;cursor:pointer;transition:all .2s var(--ease);text-align:left;}
-.chat-chip:hover{border-color:var(--blue);color:var(--blue);background:rgba(12,84,160,.06);}
-.chat-foot{flex:none;padding:12px;border-top:1px solid var(--gray-200);background:#fff;display:flex;gap:8px;}
-.chat-foot input{flex:1;border:1.5px solid var(--gray-200);border-radius:999px;padding:10px 16px;font-size:13px;outline:none;transition:border-color .2s;font-family:'Inter',sans-serif;}
-.chat-foot input:focus{border-color:var(--blue);}
-.chat-foot button{width:38px;height:38px;border-radius:50%;border:none;background:var(--grad-brand);color:#fff;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none;transition:transform .2s;}
-.chat-foot button:hover{transform:scale(1.08);}
-.chat-foot button svg{width:15px;height:15px;}
-@media (max-width:480px){.chat-panel{left:12px;right:12px;width:auto;bottom:88px;}.chat-fab{left:16px;}}
-.chat-intro{position:fixed;right:92px;bottom:40px;z-index:899;background:#fff;color:var(--navy);
-  padding:11px 18px;border-radius:14px;box-shadow:0 14px 32px -8px rgba(15,39,68,.28);
-  font-size:13.5px;font-weight:700;white-space:nowrap;border:1px solid var(--gray-200);
-  opacity:0;visibility:hidden;transform:translateX(-14px) scale(.95);
-  transition:opacity .4s var(--ease),transform .4s var(--ease),visibility .4s;}
-.chat-intro::before{content:"";position:absolute;left:-7px;bottom:16px;width:14px;height:14px;
-  background:#fff;border-left:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);
-  transform:rotate(45deg);border-radius:0 0 0 3px;}
-.chat-intro.show{opacity:1;visibility:visible;transform:translateX(0) scale(1);}
-@media (max-width:480px){.chat-intro{display:none;}}
+@media (max-width:480px){.wa-fab-wrap{right:16px;bottom:88px}.wa-fab{width:52px;height:52px}.wa-fab svg{width:27px;height:27px}.wa-fab-tooltip{display:none}}
 
 /* ============ FINAL CTA ============ */
 .cta-banner{
   border-radius:32px;background:linear-gradient(120deg,var(--navy) 0%,var(--blue-dark) 60%,var(--blue) 100%);
   background-size:200% 200%;
   padding:var(--space-7) var(--space-5);text-align:center;position:relative;overflow:hidden;color:#fff;
-  box-shadow:0 40px 80px -24px rgba(12,84,160,.4);
+  box-shadow:0 40px 80px -24px rgba(21,94,239,.4);
 }
-.cta-banner::before{content:"";position:absolute;top:-140px;right:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(227,30,36,.35),transparent 70%);}
+.cta-banner::before{content:"";position:absolute;top:-140px;right:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(34,184,207,.35),transparent 70%);}
 .cta-banner::after{content:"";position:absolute;bottom:-160px;left:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.08),transparent 70%);}
 .cta-spotlight{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;
   background:radial-gradient(360px circle at var(--x,50%) var(--y,50%),rgba(255,255,255,.16),transparent 70%);}
@@ -524,6 +472,12 @@ footer ul a:hover::before{opacity:1;left:0;}
 }
 </style>
 <script id="pd-nav-state-reset">(function(){function mwResetNavState(){document.querySelectorAll('.nav-links > li.mega-open').forEach(function(li){li.classList.remove('mega-open');});document.body.style.overflow='';var d=document.getElementById('mobileDrawer'),s=document.getElementById('mobileScrim'),h=document.getElementById('hamburgerBtn');if(d){d.classList.remove('open');d.setAttribute('aria-hidden','true');}if(s){s.classList.remove('open');}if(h){h.setAttribute('aria-expanded','false');}}window.addEventListener('pageshow', mwResetNavState);document.addEventListener('DOMContentLoaded', mwResetNavState);})();</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.medi-waves.com/"}, {"@type": "ListItem", "position": 2, "name": "About Us"}]}</script>
+<style id="mw-responsive-fix">
+img,svg,video,iframe,embed,object{max-width:100%;height:auto;}
+table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-collapse:collapse;}
+table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:left;}
+@media (max-width:600px){table th,table td{padding:6px 8px;font-size:13.5px;}}
+</style>
 </head>
 <body>
 
@@ -560,7 +514,7 @@ footer ul a:hover::before{opacity:1;left:0;}
           <div class="mega-columns" id="megaColumns">
             <div class="mega-category">
               <div class="mega-cat-top">
-                <div><h4>Infant Care</h4><p>Warmers &amp; neonatal monitoring</p></div>
+                <div><h4>Baby Care Equipments</h4><p>Warmers &amp; neonatal monitoring</p></div>
               </div>
               <div class="mega-products">
                 <a class="mega-product" href="/infant-care/radiant-warmer-p-001a/" data-tags="new best neonatal" data-name="infant radiant warmer"><span class="mega-product-arrow">→</span><span><b>Infant Radiant Warmer</b><em>Servo-controlled heating</em></span></a>
@@ -602,7 +556,7 @@ footer ul a:hover::before{opacity:1;left:0;}
               <h3>Need Help Choosing Equipment?</h3>
               <p>Talk with our product specialists and receive recommendations based on your hospital requirements.</p>
               <a href="/contact/" class="mega-btn-primary">Talk to an Expert →</a>
-              <a href="/contact/" class="mega-btn-secondary">Download Catalogue</a>
+              <a href="/wp-content/uploads/catalogues/Furniture_Cat.pdf" target="_blank" rel="noopener" class="mega-btn-secondary">Download Catalogue</a>
               <div class="mega-trust">
                 <span>Export Worldwide</span>
                 <span>Trusted by Hospitals</span>
@@ -650,7 +604,7 @@ footer ul a:hover::before{opacity:1;left:0;}
     <div class="mobile-accordion">
       <button class="mobile-accordion-head" aria-expanded="false">Products <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
       <div class="mobile-accordion-body">
-        <h6>Infant Care</h6>
+        <h6>Baby Care Equipments</h6>
         <a href="/infant-care/radiant-warmer-p-001a/">Infant Radiant Warmer</a>
         <a href="/infant-care/infant-incubator-p-002/">Infant Incubator</a>
         <a href="/infant-care/led-phototherapy-unit-p-003/">LED Phototherapy Unit</a>
@@ -827,7 +781,7 @@ footer ul a:hover::before{opacity:1;left:0;}
       <div>
         <h6>Products</h6>
         <ul>
-          <li><a href="/infant-care/">Infant Care</a></li>
+          <li><a href="/baby-care-eqiupments/">Baby Care Equipments</a></li>
           <li><a href="/hospital-beds/">Hospital Beds</a></li>
           <li><a href="/hospital-tables-trolley/">Tables &amp; Trolleys</a></li>
           <li><a href="/ward-equipments/">Ward Equipment</a></li>
@@ -877,25 +831,13 @@ footer ul a:hover::before{opacity:1;left:0;}
   <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
 
-<!-- ============ CHATBOT ============ -->
-<button class="chat-fab" id="chatFab" aria-label="Open chat">
-  <span class="chat-fab-ping"></span>
-  <svg class="ic-chat" viewBox="0 0 24 24" fill="none"><path d="M21 12a8 8 0 1 1-3.4-6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 4v5h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0"/><path d="M4 12a8 8 0 0 0 13.3 6L21 19l-1-3.7A8 8 0 0 0 4 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-  <svg class="ic-close" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
-  <span class="chat-badge" id="chatBadge">1</span>
-</button>
-<div class="chat-intro" id="chatIntro">👋 Need help? Chat with us</div>
-
-<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Medi Waves assistant">
-  <div class="chat-head">
-    <div class="chat-head-avatar"><img src="/wp-content/uploads/thegem/logos/cropped/mwi-icon.png" alt="Medi Waves"></div>
-    <div class="chat-head-info"><b>Medi Waves Assistant</b><span>Online now</span></div>
-  </div>
-  <div class="chat-body" id="chatBody"></div>
-  <div class="chat-foot">
-    <input type="text" id="chatInput" placeholder="Ask a question…" autocomplete="off">
-    <button id="chatSend" aria-label="Send"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20l16-8L4 4l2 8-2 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
-  </div>
+<!-- ============ WHATSAPP FLOAT BUTTON ============ -->
+<div class="wa-fab-wrap" id="waFabWrap">
+  <a class="wa-fab" id="waFab" href="#" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <span class="wa-fab-ping"></span>
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.42.65 4.68 1.78 6.63L4 29l7.53-1.75a12.9 12.9 0 0 0 4.49.8h.01c6.63 0 12.02-5.4 12.02-12.03C28.05 8.4 22.65 3 16.02 3Zm0 22.06h-.01a9.98 9.98 0 0 1-5.1-1.4l-.37-.22-4.47 1.04 1.07-4.36-.24-.38a9.98 9.98 0 0 1-1.54-5.32c0-5.52 4.5-10.02 10.03-10.02 2.68 0 5.2 1.05 7.09 2.94a9.94 9.94 0 0 1 2.94 7.08c0 5.53-4.5 10.02-10.02 10.02Zm5.5-7.51c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.35.22-.65.08-.3-.15-1.27-.47-2.42-1.5a9.05 9.05 0 0 1-1.67-2.08c-.18-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.65-.94-2.26-.24-.6-.5-.51-.68-.52h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.5.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.78-.72 2.03-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35Z"/></svg>
+  </a>
+  <span class="wa-fab-tooltip">Chat with us on WhatsApp</span>
 </div>
 
 <script>
@@ -1057,136 +999,16 @@ if (backToTop) {
   backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
-// chatbot
-(function () {
-  const fab = document.getElementById('chatFab');
-  const panel = document.getElementById('chatPanel');
-  const body = document.getElementById('chatBody');
-  const badge = document.getElementById('chatBadge');
-  const input = document.getElementById('chatInput');
-  const sendBtn = document.getElementById('chatSend');
-  if (!fab || !panel || !body) return;
-
-  const faq = [
-    { q: 'What products do you manufacture?', keywords: ['product', 'range', 'manufactur', 'make', 'sell', 'offer'],
-      a: 'We manufacture Infant Care equipment (warmers, incubators, phototherapy units), Hospital Beds (electric, pediatric, manual), Tables & Trolleys, Ward Equipment, Infusion Pumps and Electro-Surgical Units. You can browse the full range in the Product Categories section on our homepage.' },
-    { q: 'Are your products certified?', keywords: ['certif', 'iso', 'ce mark', 'fda', 'standard', 'quality', 'approved'],
-      a: 'Yes — our products are manufactured to ISO 9001 quality management standards, carry CE Marking, follow FDA device safety guidelines, and every batch is quality-tested in-house before dispatch.' },
-    { q: 'Which countries do you export to?', keywords: ['export', 'countr', 'ship', 'global', 'worldwide', 'international'],
-      a: 'Medi Waves exports to 50+ countries and has supplied 10,000+ hospitals and institutions worldwide over 25+ years, working with hospitals, governments, NGOs and international organizations.' },
-    { q: 'Where is your factory located?', keywords: ['factory', 'facility', 'located', 'address', 'where are you', 'manufacturing unit'],
-      a: 'Our manufacturing facility is at 92, Sec-57, Phase-IV, HSIIDC Kundli, Sonepat, Haryana - 131028. Our office is at B-68, G.T. Karnal Road Industrial Area, Delhi-110033, India.' },
-    { q: 'How do I get a price quote?', keywords: ['price', 'quote', 'quotation', 'cost', 'how much'],
-      a: 'Click "Request Quote" in the navigation bar or the "Request a Quote" button — our team will get back to you with product specifications, pricing and export documentation.' },
-    { q: 'Can I download your catalogue?', keywords: ['catalogue', 'catalog', 'brochure', 'pdf', 'download'],
-      a: 'Yes — use the "Download Catalogue" button in the mega menu or contact us to request our full product catalogue.' },
-    { q: 'How can I contact your sales team?', keywords: ['contact', 'phone', 'email', 'call', 'reach', 'sales team'],
-      a: 'You can reach us at info@medi-waves.com or +91-11-4238-4227, or use the Contact link in the navigation bar to send us a message directly.' },
-    { q: 'When was Medi Waves founded?', keywords: ['found', 'establish', 'history', 'since when', 'started'],
-      a: 'Medi Waves Inc. was established in the year 2000, with our head office in Delhi and manufacturing unit at HSIIDC Kundli, Sonepat, Haryana.' },
-  ];
-
-  function scrollBody() { body.scrollTop = body.scrollHeight; }
-
-  function addMessage(text, from) {
-    const el = document.createElement('div');
-    el.className = 'chat-msg ' + from;
-    el.textContent = text;
-    body.appendChild(el);
-    scrollBody();
-  }
-
-  function addChips(items) {
-    const wrap = document.createElement('div');
-    wrap.className = 'chat-chips';
-    items.forEach(item => {
-      const chip = document.createElement('button');
-      chip.className = 'chat-chip';
-      chip.textContent = item.q;
-      chip.addEventListener('click', () => askQuestion(item));
-      wrap.appendChild(chip);
-    });
-    body.appendChild(wrap);
-    scrollBody();
-  }
-
-  function botReply(text, showSuggestions) {
-    const typing = document.createElement('div');
-    typing.className = 'chat-typing';
-    typing.innerHTML = '<span></span><span></span><span></span>';
-    body.appendChild(typing);
-    scrollBody();
-    setTimeout(() => {
-      typing.remove();
-      addMessage(text, 'bot');
-      if (showSuggestions) addChips(faq.slice(0, 4));
-    }, 550 + Math.random() * 300);
-  }
-
-  function askQuestion(item) {
-    addMessage(item.q, 'user');
-    botReply(item.a, false);
-  }
-
-  function matchQuestion(text) {
-    const lower = text.toLowerCase();
-    let best = null, bestScore = 0;
-    faq.forEach(item => {
-      let score = 0;
-      item.keywords.forEach(k => { if (lower.includes(k)) score++; });
-      if (score > bestScore) { bestScore = score; best = item; }
-    });
-    return best;
-  }
-
-  function handleUserInput() {
-    const text = input.value.trim();
-    if (!text) return;
-    addMessage(text, 'user');
-    input.value = '';
-    const match = matchQuestion(text);
-    if (match) {
-      botReply(match.a, false);
-    } else {
-      botReply("I don't have an exact answer for that — please reach us at info@medi-waves.com or +91-11-4238-4227, or use the Contact Sales button for a direct response.", false);
-    }
-  }
-
-  // intro callout: draw attention to the chat button for a couple seconds on first load
-  const intro = document.getElementById('chatIntro');
-  let introTimer = null;
-  function hideIntro() { intro?.classList.remove('show'); clearTimeout(introTimer); }
-  if (intro) {
-    setTimeout(() => {
-      intro.classList.add('show');
-      introTimer = setTimeout(hideIntro, 4500);
-    }, 1800);
-  }
-
-  let started = false;
-  function openChat() {
-    hideIntro();
-    panel.classList.add('open');
-    fab.classList.add('open');
-    badge.classList.add('hide');
-    if (!started) {
-      started = true;
-      botReply("Hi! I'm the Medi Waves assistant. Ask me anything about our products, certifications, or how to get a quote — or pick a question below.", true);
-    }
-  }
-  function closeChat() {
-    panel.classList.remove('open');
-    fab.classList.remove('open');
-  }
-
-  fab.addEventListener('click', () => {
-    panel.classList.contains('open') ? closeChat() : openChat();
-  });
-  sendBtn.addEventListener('click', handleUserInput);
-  input.addEventListener('keydown', (e) => { if (e.key === 'Enter') handleUserInput(); });
-  document.addEventListener('click', (e) => {
-    if (panel.classList.contains('open') && !panel.contains(e.target) && !fab.contains(e.target)) closeChat();
-  });
+(function(){
+  var config = {
+    phone: '919811072024',
+    message: 'Hello, I would like to know more.'
+  };
+  var link = document.getElementById('waFab');
+  if (!link) return;
+  var url = 'https://wa.me/' + config.phone;
+  if (config.message) url += '?text=' + encodeURIComponent(config.message);
+  link.setAttribute('href', url);
 })();
 
 // footer newsletter (prevent page reload, simple inline confirmation)

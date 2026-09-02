@@ -1,7 +1,18 @@
 # Canonicalize to https://www.medi-waves.com (single redirect, no chains)
+# Treat the request as secure if EITHER %{HTTPS} is on (direct TLS at the
+# origin) OR X-Forwarded-Proto is https (TLS terminated upstream, e.g. by
+# Cloudflare). Checking %{HTTPS} alone loops forever under Cloudflare's
+# "Flexible" SSL mode, since edge-to-origin there is plain HTTP and the
+# origin would see %{HTTPS} off even though the visitor is already on
+# https:// -- it would redirect, Cloudflare would re-terminate TLS and
+# forward over HTTP again, and so on.
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteCond %{HTTP_HOST} ^(www\.)?medi-waves\.com$ [NC]
+  RewriteRule ^ https://www.medi-waves.com%{REQUEST_URI} [L,R=301]
+
   RewriteCond %{HTTP_HOST} !^www\.medi-waves\.com$ [NC]
   RewriteCond %{HTTP_HOST} ^(www\.)?medi-waves\.com$ [NC]
   RewriteRule ^ https://www.medi-waves.com%{REQUEST_URI} [L,R=301]
