@@ -358,7 +358,7 @@ var zilla_likes = {"ajaxurl":"https:\/\/www.medi-waves.com\/wp-admin\/admin-ajax
 .mw-newnav-scope .hamburger span{width:19px;height:2px;border-radius:2px;background:var(--mwnav-navy);transition:transform .3s var(--mwnav-ease),opacity .3s var(--mwnav-ease);}
 
 @media (max-width:1024px){
-  .mw-newnav-scope .nav-links,.mw-newnav-scope .mw-newnav-scope .nav-right .icon-btn{display:none;}
+  .mw-newnav-scope .nav-links,.mw-newnav-scope .nav-right .icon-btn{display:none;}
   .mw-newnav-scope .nav-cta{display:none;}
   .mw-newnav-scope .hamburger{display:flex;}
 }
@@ -407,6 +407,8 @@ table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:to
 table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:left;}
 @media (max-width:600px){table th,table td{padding:6px 8px;font-size:13.5px;}}
 </style>
+<link rel="stylesheet" href="/assets/css/products-menu.css">
+<link rel="stylesheet" href="/assets/css/site-search.css">
 </head>
 
 
@@ -618,88 +620,11 @@ table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:l
       <li><a href="../index.html%3Fp=413.html">About <span class="underline"></span></a></li>
       <li>
         <a href="../index.html%3Fp=982.html">Products <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg><span class="underline"></span></a>
-        <div class="mega" id="productsMega">
-          <div class="mega-search-row">
-            <div class="mega-search">
-              <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <input type="text" id="megaSearchInput" placeholder="Search products…" autocomplete="off" aria-label="Search products">
-            </div>
-            <div class="mega-chips" id="megaChips">
-              <button class="mega-chip active" data-tag="all">Popular</button>
-              <button class="mega-chip" data-tag="new">New Arrivals</button>
-              <button class="mega-chip" data-tag="best">Best Sellers</button>
-              <button class="mega-chip" data-tag="icu">ICU</button>
-              <button class="mega-chip" data-tag="neonatal">Neonatal</button>
-              <button class="mega-chip" data-tag="surgical">Surgical</button>
-            </div>
-          </div>
-
-          <div class="mega-columns" id="megaColumns">
-            <div class="mega-category">
-              <div class="mega-cat-top">
-                <div><h4>Baby Care Equipments</h4><p>Warmers &amp; neonatal monitoring</p></div>
-              </div>
-              <div class="mega-products">
-                <a class="mega-product" href="../index.html%3Fp=3494.html" data-tags="new best neonatal" data-name="infant radiant warmer"><span class="mega-product-arrow">→</span><span><b>Infant Radiant Warmer</b><em>Servo-controlled heating</em></span></a>
-                <a class="mega-product" href="../index.html%3Fp=3605.html" data-tags="best neonatal" data-name="infant incubator"><span class="mega-product-arrow">→</span><span><b>Infant Incubator</b><em>Climate-controlled care</em></span></a>
-                <a class="mega-product" href="../index.html%3Fp=3334.html" data-tags="neonatal" data-name="led phototherapy unit"><span class="mega-product-arrow">→</span><span><b>LED Phototherapy Unit</b><em>Jaundice management</em></span></a>
-                <a class="mega-product" href="../digital-fetal-doppler/index.html" data-tags="neonatal" data-name="fetal doppler"><span class="mega-product-arrow">→</span><span><b>Fetal Doppler</b><em>Prenatal monitoring</em></span></a>
-                <a class="mega-product" href="../digital-baby-weighing-scale-p-016/index.html" data-tags="neonatal" data-name="digital baby weighing scale"><span class="mega-product-arrow">→</span><span><b>Digital Baby Weighing Scale</b><em>Precision measurement</em></span></a>
-              </div>
-            </div>
-
-            <div class="mega-category">
-              <div class="mega-cat-top">
-                <div><h4>Hospital Furniture</h4><p>ICU beds &amp; patient furniture</p></div>
-              </div>
-              <div class="mega-products">
-                <a class="mega-product" href="../index.html%3Fp=998.html" data-tags="best icu" data-name="electric icu beds"><span class="mega-product-arrow">→</span><span><b>Electric ICU Beds</b><em>3 &amp; 4-function electric</em></span></a>
-                <a class="mega-product" href="../index.html%3Fp=1004.html" data-tags="neonatal" data-name="pediatric beds"><span class="mega-product-arrow">→</span><span><b>Pediatric Beds</b><em>Height adjustable</em></span></a>
-                <a class="mega-product" href="../index.html%3Fp=1010.html" data-tags="surgical" data-name="gynecological tables"><span class="mega-product-arrow">→</span><span><b>Gynecological Tables</b><em>Hydraulic tilt</em></span></a>
-                <a class="mega-product" href="../index.html%3Fp=1012.html" data-tags="icu" data-name="patient transfer trolleys"><span class="mega-product-arrow">→</span><span><b>Patient Transfer Trolleys</b><em>Mobile, easy-clean</em></span></a>
-                <a class="mega-product" href="../index.html%3Fp=1022.html" data-tags="icu" data-name="ward equipment"><span class="mega-product-arrow">→</span><span><b>Ward Equipment</b><em>Lockers, chairs, trolleys</em></span></a>
-              </div>
-            </div>
-
-            <div class="mega-category">
-              <div class="mega-cat-top">
-                <div><h4>Electromedicals</h4><p>Diagnostics &amp; surgical devices</p></div>
-              </div>
-              <div class="mega-products">
-                <a class="mega-product" href="../index.html%3Fp=6080.html" data-tags="best icu" data-name="infusion pumps"><span class="mega-product-arrow">→</span><span><b>Infusion Pumps</b><em>Volumetric &amp; syringe</em></span></a>
-                <a class="mega-product" href="../index.html%3Fp=989.html" data-tags="new best surgical" data-name="electro surgical units"><span class="mega-product-arrow">→</span><span><b>Electro Surgical Units</b><em>Bipolar/monopolar cutting</em></span></a>
-                <a class="mega-product" href="../index.html%3Fp=6222.html" data-tags="" data-name="bp apparatus"><span class="mega-product-arrow">→</span><span><b>BP Apparatus</b><em>Digital &amp; manual</em></span></a>
-                <a class="mega-product" href="../index.html%3Fp=7188.html" data-tags="icu" data-name="respiratory devices"><span class="mega-product-arrow">→</span><span><b>Respiratory Devices</b><em>Critical care support</em></span></a>
-                <a class="mega-product" href="../index.html%3Fp=7003.html" data-tags="new icu" data-name="oxygen concentrators"><span class="mega-product-arrow">→</span><span><b>Oxygen Concentrators</b><em>Continuous flow</em></span></a>
-              </div>
-            </div>
-
-            <div class="mega-featured">
-              <div class="mega-featured-img"><img src="../wp-content/uploads/2023/04/Electric-ICU-Bed-3-Function-EHB-03-768x768.jpg" alt="Hospital equipment"></div>
-              <h3>Need Help Choosing Equipment?</h3>
-              <p>Talk with our product specialists and receive recommendations based on your hospital requirements.</p>
-              <a href="../index.html%3Fp=6.html" class="mega-btn-primary">Talk to an Expert →</a>
-              <a href="../index.html%3Fp=6.html" class="mega-btn-secondary">Download Catalogue</a>
-              <div class="mega-trust">
-                <span>Export Worldwide</span>
-                <span>Trusted by Hospitals</span>
-                <span>ISO Certified</span>
-              </div>
-            </div>
-          </div>
-
-          <a href="../index.html%3Fp=982.html" class="mega-viewall">
-            <span><b>Browse Complete Medical Catalogue</b><small>View All Products</small></span>
-            <span class="mega-viewall-arrow">→</span>
-          </a>
-        </div>
+        <div class="mega" id="productsMega"></div>
       </li>
       <li>
         <a href="../index.html%3Fp=7833.html">Child Monitoring <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg><span class="underline"></span></a>
-        <div class="mega-simple">
-          <a href="../index.html%3Fp=7764.html">Child Growth Monitoring System</a>
-          <a href="../index.html%3Fp=7758.html">Child Health Monitoring System</a>
-        </div>
+        <div class="mega-simple"><a href="../child-growth-monitoring/index.html">View Child Growth Monitoring products</a></div>
       </li>
       <li><a href="../index.html%3Fp=6.html">Contact <span class="underline"></span></a></li>
     </ul>
@@ -727,26 +652,7 @@ table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:l
 
     <div class="mobile-accordion">
       <button class="mobile-accordion-head" aria-expanded="false">Products <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
-      <div class="mobile-accordion-body">
-        <h6>Baby Care Equipments</h6>
-        <a href="../index.html%3Fp=3494.html">Infant Radiant Warmer</a>
-        <a href="../index.html%3Fp=3605.html">Infant Incubator</a>
-        <a href="../index.html%3Fp=3334.html">LED Phototherapy Unit</a>
-        <a href="../digital-fetal-doppler/index.html">Fetal Doppler</a>
-        <a href="../digital-baby-weighing-scale-p-016/index.html">Digital Baby Weighing Scale</a>
-        <h6>Hospital Furniture</h6>
-        <a href="../index.html%3Fp=998.html">Electric ICU Beds</a>
-        <a href="../index.html%3Fp=1004.html">Pediatric Beds</a>
-        <a href="../index.html%3Fp=1010.html">Gynecological Tables</a>
-        <a href="../index.html%3Fp=1012.html">Patient Transfer Trolleys</a>
-        <a href="../index.html%3Fp=1022.html">Ward Equipment</a>
-        <h6>Electromedicals</h6>
-        <a href="../index.html%3Fp=6080.html">Infusion Pumps</a>
-        <a href="../index.html%3Fp=989.html">Electro Surgical Units</a>
-        <a href="../index.html%3Fp=6222.html">BP Apparatus</a>
-        <a href="../index.html%3Fp=7188.html">Respiratory Devices</a>
-        <a href="../index.html%3Fp=7003.html">Oxygen Concentrators</a>
-      </div>
+      <div class="mobile-accordion-body" id="mobileProductsBody"></div>
     </div>
 
     <div class="mobile-accordion">
@@ -776,42 +682,6 @@ function updateProgress(){
   scrollProgress.style.width = pct + '%';
 }
 window.addEventListener('scroll', updateProgress);
-
-// products mega menu: live search + tag chip filtering
-(function () {
-  const mega = document.getElementById('productsMega');
-  if (!mega) return;
-  const searchInput = document.getElementById('megaSearchInput');
-  const chips = document.querySelectorAll('#megaChips .mega-chip');
-  const categories = mega.querySelectorAll('.mega-category');
-  let activeTag = 'all';
-
-  function applyFilter() {
-    const query = searchInput.value.trim().toLowerCase();
-    categories.forEach(cat => {
-      let visibleCount = 0;
-      cat.querySelectorAll('.mega-product').forEach(prod => {
-        const tags = (prod.dataset.tags || '').split(' ');
-        const matchesTag = activeTag === 'all' || tags.includes(activeTag);
-        const matchesQuery = !query || prod.dataset.name.includes(query);
-        const show = matchesTag && matchesQuery;
-        prod.classList.toggle('mega-hidden', !show);
-        if (show) visibleCount++;
-      });
-      cat.classList.toggle('mega-empty', visibleCount === 0);
-    });
-  }
-
-  searchInput.addEventListener('input', applyFilter);
-  chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      chips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      activeTag = chip.dataset.tag;
-      applyFilter();
-    });
-  });
-})();
 
 // mega menu: hover-intent with close delay so it never vanishes mid-move
 (function () {
@@ -885,10 +755,26 @@ document.querySelectorAll('.mobile-accordion-head').forEach(head => {
 });
 
 // sticky navbar shrink
-const navWrap = document.getElementById('navWrap');
-window.addEventListener('scroll', () => {
-  if(navWrap) navWrap.classList.toggle('scrolled', window.scrollY > 40);
-});
+(function(){
+  var _scrollProgress = document.getElementById('scrollProgress');
+  var _navWrap = document.getElementById('navWrap');
+  var _ticking = false;
+  function _onScroll(){
+    var h = document.documentElement;
+    var y = window.scrollY;
+    if (_scrollProgress) {
+      var pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      _scrollProgress.style.width = pct + '%';
+    }
+    if (_navWrap) _navWrap.classList.toggle('scrolled', y > 40);
+    var _backToTop = document.getElementById('backToTop');
+    if (_backToTop) _backToTop.classList.toggle('show', y > 600);
+    _ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!_ticking) { requestAnimationFrame(_onScroll); _ticking = true; }
+  }, { passive: true });
+})();
 })();
 </script>
 
@@ -901,7 +787,7 @@ window.addEventListener('scroll', () => {
 						
 						
 						
-						<div class="container"><div class="page-title-inner"><div class="page-title-title"><h1 style="color:#ffffff;">  Child Health Monitoring System</h1></div></div></div>
+						<div class="container"><div class="page-title-inner"><div class="page-title-title"><h1 style="color:#ffffff;">  Child Health Monitoring System</h1></div><div style="display:flex;gap:12px;flex-wrap:wrap;"><a class="pw-page-brochure-btn" href="../wp-content/uploads/2025/08/Final-17th-July1.pdf" target="_blank" rel="noopener" download style="display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:11px 22px;border-radius:999px;background:#ffffff;color:#155EEF;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.12);"><svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download Brochure</a></div></div></div>
 						<div class="breadcrumbs-container"><div class="container"><div class="breadcrumbs"><span><a href="../index.php.html" itemprop="url"><span itemprop="title">Home</span></a></span> <span class="divider"><span class="bc-devider"></span></span> <span><a href="../index.html%3Fp=7833.html" itemprop="url"><span itemprop="title">Child Growth Monitoring</span></a></span> <span class="divider"><span class="bc-devider"></span></span> <span class="current">Child Health Monitoring System</span></div><!-- .breadcrumbs --></div></div>
 					</div>
 <div class="block-content">
@@ -917,529 +803,297 @@ window.addEventListener('scroll', () => {
 							
 											</div><!-- .container -->
 
-					<div class="fullwidth-content">		<div data-elementor-type="wp-page" data-elementor-id="7758" class="elementor elementor-7758">
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-ac0ced6 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ac0ced6" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-90cf080" data-id="90cf080" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-57aa615 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-heading" data-id="57aa615" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Child Health Monitoring System</h2>				</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-7ead9d4 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7ead9d4" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-8462bd5" data-id="8462bd5" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-92c058b flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-spacer" data-id="92c058b" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-ef3f258 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="ef3f258" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p><strong>AI-Powered Height Estimation</strong> Estimate a student’s height using <strong>AI-based image processing</strong> through the device camera, eliminating the need for manual measurement.</p>							</div>
-										</div>
-				</div>
-				<div class="elementor-element elementor-element-e553423 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-spacer" data-id="e553423" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-594eaa0 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="594eaa0" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p><strong>Two-Factor Authentication (2FA)</strong> Secure login on both the <strong>Web Dashboard</strong> and <strong>Mobile Application</strong> using <strong>Two-Factor Authentication</strong> to ensure only authorized users can access the system.</p>							</div>
-										</div>
-				</div>
-				<div class="elementor-element elementor-element-b52044c flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-spacer" data-id="b52044c" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-d26aa39 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="d26aa39" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p><strong>Task Assignment &amp; Notifications for Workers</strong> Enable administrators to <strong>assign tasks</strong> directly to Anganwadi workers and keep them informed through <strong>real-time  mobile app notifications</strong>. This ensures efficient task distribution and immediate communication of important updates.</p>							</div>
-										</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6cbf2b9" data-id="6cbf2b9" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-5fdca40 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-image" data-id="5fdca40" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img width="683" height="1024" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/Child-Health-Monitoring-System-1-683x1024.jpg" class="attachment-large size-large wp-image-7999" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/Child-Health-Monitoring-System-1-683x1024.jpg 683w, https://www.medi-waves.com/wp-content/uploads/2025/08/Child-Health-Monitoring-System-1-200x300.jpg 200w, https://www.medi-waves.com/wp-content/uploads/2025/08/Child-Health-Monitoring-System-1-768x1152.jpg 768w, https://www.medi-waves.com/wp-content/uploads/2025/08/Child-Health-Monitoring-System-1.jpg 800w" sizes="(max-width: 683px) 100vw, 683px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b07"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b07')</script><noscript><img width="683" height="1024" src="../wp-content/uploads/2025/08/Child-Health-Monitoring-System-1-683x1024.jpg" class="attachment-large size-large wp-image-7999" alt="" srcset="../wp-content/uploads/2025/08/Child-Health-Monitoring-System-1-683x1024.jpg 683w, ../wp-content/uploads/2025/08/Child-Health-Monitoring-System-1-200x300.jpg 200w, ../wp-content/uploads/2025/08/Child-Health-Monitoring-System-1-768x1152.jpg 768w, ../wp-content/uploads/2025/08/Child-Health-Monitoring-System-1.jpg 800w" sizes="(max-width: 683px) 100vw, 683px" /></noscript>															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-a0a4f7c" data-id="a0a4f7c" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-9dd32cc flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-spacer" data-id="9dd32cc" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-dd82e49 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="dd82e49" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p><strong>Growth Monitoring Dashboard</strong><br />A comprehensive <strong>Web Dashboard</strong> displays students&#8217; growth data through <strong>charts and visualizations</strong>, allowing for easy analysis and reporting.</p>							</div>
-										</div>
-				</div>
-				<div class="elementor-element elementor-element-e20e8a7 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-spacer" data-id="e20e8a7" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-92aa633 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="92aa633" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p><strong>QR Code-Based Student Identification</strong><br />Each student is assigned a unique QR code. <strong>Scanning the QR code</strong> allows instant access to their <strong>health and growth details</strong>, even from outside the app</p>							</div>
-										</div>
-				</div>
-				<div class="elementor-element elementor-element-023a08c flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-spacer" data-id="023a08c" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-168752c flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="168752c" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p><strong>BLE-Based Weight Measurement</strong><br />Utilize <strong>Bluetooth Low Energy (BLE)</strong> connected weight machines to <strong>automatically calculate and record the weight</strong> of children during health checkups.</p>							</div>
-										</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-af912e1 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="af912e1" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-43fda59" data-id="43fda59" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-b8240c2 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-heading" data-id="b8240c2" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Web Dashboard</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-3244fa8 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="3244fa8" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p>Provides a centralized platfrom for administrators to monitor Anganwadi centers, track worker performance, and coordinate effectively. </p>							</div>
-										</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-df22dcb elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="df22dcb" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-59c3b4a" data-id="59c3b4a" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-264f4ee flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-image" data-id="264f4ee" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img width="1024" height="683" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/Web-Dashboard-1024x683.jpg" class="attachment-large size-large wp-image-8039" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/Web-Dashboard-1024x683.jpg 1024w, https://www.medi-waves.com/wp-content/uploads/2025/08/Web-Dashboard-300x200.jpg 300w, https://www.medi-waves.com/wp-content/uploads/2025/08/Web-Dashboard-768x512.jpg 768w, https://www.medi-waves.com/wp-content/uploads/2025/08/Web-Dashboard.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b1a"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b1a')</script><noscript><img width="1024" height="683" src="../wp-content/uploads/2025/08/Web-Dashboard-1024x683.jpg" class="attachment-large size-large wp-image-8039" alt="" srcset="../wp-content/uploads/2025/08/Web-Dashboard-1024x683.jpg 1024w, ../wp-content/uploads/2025/08/Web-Dashboard-300x200.jpg 300w, ../wp-content/uploads/2025/08/Web-Dashboard-768x512.jpg 768w, ../wp-content/uploads/2025/08/Web-Dashboard.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></noscript>															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-87f7f73" data-id="87f7f73" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-3598afb flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="3598afb" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td width="64" height="20"><img class="wp-image-8052 aligncenter" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/Monitoring-150x150.jpg" alt="" width="100" height="100" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/Monitoring-150x150.jpg 150w, https://www.medi-waves.com/wp-content/uploads/2025/08/Monitoring.jpg 200w" sizes="(max-width: 100px) 100vw, 100px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b22"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b22')</script><noscript><img class="wp-image-8052 aligncenter" src="../wp-content/uploads/2025/08/Monitoring-150x150.jpg" alt="" width="100" height="100" srcset="../wp-content/uploads/2025/08/Monitoring-150x150.jpg 150w, ../wp-content/uploads/2025/08/Monitoring.jpg 200w" sizes="(max-width: 100px) 100vw, 100px" /></noscript></td>
-<td width="64">
-<p><strong><span style="text-decoration: underline;">Monitoring</span></strong></p>
-<p>Visualizes child growth trends using intuitive graphs, enabling easy monitoring and timely health insights.</p>
-</td>
-</tr>
-</tbody>
-</table>							</div>
-										</div>
-				</div>
-				<div class="elementor-element elementor-element-b6e837d flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="b6e837d" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td width="64" height="20"><img class="aligncenter wp-image-8056" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/Assigning-Tasks.jpg" alt="" width="100" height="100" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/Assigning-Tasks.jpg 200w, https://www.medi-waves.com/wp-content/uploads/2025/08/Assigning-Tasks-150x150.jpg 150w" sizes="(max-width: 100px) 100vw, 100px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b28"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b28')</script><noscript><img class="aligncenter wp-image-8056" src="../wp-content/uploads/2025/08/Assigning-Tasks.jpg" alt="" width="100" height="100" srcset="../wp-content/uploads/2025/08/Assigning-Tasks.jpg 200w, ../wp-content/uploads/2025/08/Assigning-Tasks-150x150.jpg 150w" sizes="(max-width: 100px) 100vw, 100px" /></noscript></td>
-<td width="64">
-<p><span style="text-decoration: underline;"><strong>Assigning tasks</strong></span></p>
-<p>Assign specific children to individual Anganwadi workers for targeted nutrition plans and focused follow-up actions.</p>
-</td>
-</tr>
-</tbody>
-</table>							</div>
-										</div>
-				</div>
-				<div class="elementor-element elementor-element-04e4db3 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="04e4db3" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td width="64" height="20"><img class="aligncenter wp-image-8063" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/Sync-Data.jpg" alt="" width="100" height="100" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/Sync-Data.jpg 200w, https://www.medi-waves.com/wp-content/uploads/2025/08/Sync-Data-150x150.jpg 150w" sizes="(max-width: 100px) 100vw, 100px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b2d"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b2d')</script><noscript><img class="aligncenter wp-image-8063" src="../wp-content/uploads/2025/08/Sync-Data.jpg" alt="" width="100" height="100" srcset="../wp-content/uploads/2025/08/Sync-Data.jpg 200w, ../wp-content/uploads/2025/08/Sync-Data-150x150.jpg 150w" sizes="(max-width: 100px) 100vw, 100px" /></noscript></td>
-<td width="64">
-<p><span style="text-decoration: underline;"><strong>Sync Data</strong></span></p>
-<p>All collected data is securely transmitted to government-approved storage systems, ensuring privacy and compliance on a scheduled basis.</p>
-</td>
-</tr>
-</tbody>
-</table>							</div>
-										</div>
-				</div>
-				<div class="elementor-element elementor-element-ce371f2 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="ce371f2" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<table border="0" width="100%" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td width="64" height="20"><img class="aligncenter wp-image-8070" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/Notification.jpg" alt="" width="100" height="100" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/Notification.jpg 200w, https://www.medi-waves.com/wp-content/uploads/2025/08/Notification-150x150.jpg 150w" sizes="(max-width: 100px) 100vw, 100px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b33"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b33')</script><noscript><img class="aligncenter wp-image-8070" src="../wp-content/uploads/2025/08/Notification.jpg" alt="" width="100" height="100" srcset="../wp-content/uploads/2025/08/Notification.jpg 200w, ../wp-content/uploads/2025/08/Notification-150x150.jpg 150w" sizes="(max-width: 100px) 100vw, 100px" /></noscript></td>
-<td width="64">
-<p><span style="text-decoration: underline;"><strong>Notification</strong></span></p>
-<p>Sends timely reminders, health tips, and growth-related advice to caregivers and Anganwadi workers for better follow-up care.</p>
-</td>
-</tr>
-</tbody>
-</table>							</div>
-										</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-9c5ff76 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9c5ff76" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-e7a8d40" data-id="e7a8d40" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-e93ed9b flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="e93ed9b" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<h3>Mobile Application</h3>
-<p>Allows workes to track and update child growth data, manage assigned tasks, and monitor progress.</p>							</div>
-										</div>
-				</div>
-				<div class="elementor-element elementor-element-0ebaeb7 elementor-widget-divider--view-line flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-divider" data-id="0ebaeb7" data-element_type="widget" data-widget_type="divider.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-divider">
-			<span class="elementor-divider-separator">
-						</span>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-b3a8a96 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="b3a8a96" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<h5>Child Growth Monitor</h5>
-<ul>
-<li><strong>Anganwadi Specific Login.</strong></li>
-<li><strong>AI Height Estimation.</strong></li>
-<li><strong>Body Mass index. (BMI)</strong></li>
-<li><strong>Leader Boards for workers.</strong></li>
-</ul>							</div>
-										</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-e3c5d01" data-id="e3c5d01" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-accbdb9 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-image" data-id="accbdb9" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img width="500" height="500" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/Mobile-Application.jpg" class="attachment-large size-large wp-image-8074" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/Mobile-Application.jpg 500w, https://www.medi-waves.com/wp-content/uploads/2025/08/Mobile-Application-300x300.jpg 300w, https://www.medi-waves.com/wp-content/uploads/2025/08/Mobile-Application-150x150.jpg 150w, https://www.medi-waves.com/wp-content/uploads/2025/08/Mobile-Application-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b39"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b39')</script><noscript><img width="500" height="500" src="../wp-content/uploads/2025/08/Mobile-Application.jpg" class="attachment-large size-large wp-image-8074" alt="" srcset="../wp-content/uploads/2025/08/Mobile-Application.jpg 500w, ../wp-content/uploads/2025/08/Mobile-Application-300x300.jpg 300w, ../wp-content/uploads/2025/08/Mobile-Application-150x150.jpg 150w, ../wp-content/uploads/2025/08/Mobile-Application-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" /></noscript>															</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-4bfdc8d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4bfdc8d" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-f6b543e" data-id="f6b543e" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-88639ff flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-image" data-id="88639ff" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img width="500" height="500" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/AI-Height-Estimation.jpg" class="attachment-large size-large wp-image-8084" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/AI-Height-Estimation.jpg 500w, https://www.medi-waves.com/wp-content/uploads/2025/08/AI-Height-Estimation-300x300.jpg 300w, https://www.medi-waves.com/wp-content/uploads/2025/08/AI-Height-Estimation-150x150.jpg 150w, https://www.medi-waves.com/wp-content/uploads/2025/08/AI-Height-Estimation-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b40"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b40')</script><noscript><img width="500" height="500" src="../wp-content/uploads/2025/08/AI-Height-Estimation.jpg" class="attachment-large size-large wp-image-8084" alt="" srcset="../wp-content/uploads/2025/08/AI-Height-Estimation.jpg 500w, ../wp-content/uploads/2025/08/AI-Height-Estimation-300x300.jpg 300w, ../wp-content/uploads/2025/08/AI-Height-Estimation-150x150.jpg 150w, ../wp-content/uploads/2025/08/AI-Height-Estimation-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" /></noscript>															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-339adf1" data-id="339adf1" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-6db5f75 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="6db5f75" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<h4>AI Height Estimation</h4>
-<p><strong>Estimating height using camera input with our AI model</strong></p>
-<p>The person&#8217;s height is estimated using an camera input beside an Marker (240mm) fixed on a straight wall for accurate scale reference.</p>							</div>
-										</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-9479eda" data-id="9479eda" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-6b9be81 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-image" data-id="6b9be81" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img width="500" height="500" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/AI-Height-Estimation-1.jpg" class="attachment-large size-large wp-image-8085" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/AI-Height-Estimation-1.jpg 500w, https://www.medi-waves.com/wp-content/uploads/2025/08/AI-Height-Estimation-1-300x300.jpg 300w, https://www.medi-waves.com/wp-content/uploads/2025/08/AI-Height-Estimation-1-150x150.jpg 150w, https://www.medi-waves.com/wp-content/uploads/2025/08/AI-Height-Estimation-1-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b47"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b47')</script><noscript><img width="500" height="500" src="../wp-content/uploads/2025/08/AI-Height-Estimation-1.jpg" class="attachment-large size-large wp-image-8085" alt="" srcset="../wp-content/uploads/2025/08/AI-Height-Estimation-1.jpg 500w, ../wp-content/uploads/2025/08/AI-Height-Estimation-1-300x300.jpg 300w, ../wp-content/uploads/2025/08/AI-Height-Estimation-1-150x150.jpg 150w, ../wp-content/uploads/2025/08/AI-Height-Estimation-1-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" /></noscript>															</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-0c501d5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0c501d5" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-086a588" data-id="086a588" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-474e2a8 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-image" data-id="474e2a8" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img width="500" height="500" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/BLE-Weight-Machine.jpg" class="attachment-large size-large wp-image-8092" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/BLE-Weight-Machine.jpg 500w, https://www.medi-waves.com/wp-content/uploads/2025/08/BLE-Weight-Machine-300x300.jpg 300w, https://www.medi-waves.com/wp-content/uploads/2025/08/BLE-Weight-Machine-150x150.jpg 150w, https://www.medi-waves.com/wp-content/uploads/2025/08/BLE-Weight-Machine-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b60"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b60')</script><noscript><img width="500" height="500" src="../wp-content/uploads/2025/08/BLE-Weight-Machine.jpg" class="attachment-large size-large wp-image-8092" alt="" srcset="../wp-content/uploads/2025/08/BLE-Weight-Machine.jpg 500w, ../wp-content/uploads/2025/08/BLE-Weight-Machine-300x300.jpg 300w, ../wp-content/uploads/2025/08/BLE-Weight-Machine-150x150.jpg 150w, ../wp-content/uploads/2025/08/BLE-Weight-Machine-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" /></noscript>															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-3da234e" data-id="3da234e" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-ffbe6f0 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="ffbe6f0" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<h3>BLE Weight Machine</h3>
-<p><strong>Communicating BLE Weight Machine with our app</strong></p>
-<p>The candidates&#8217;s weight is used with height to calculate his bmi and then the data is being stored in centralized server.</p>							</div>
-										</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-2b2a6dd" data-id="2b2a6dd" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-cd72183 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-image" data-id="cd72183" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img width="500" height="500" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/BLE-Weight-Machine-1.jpg" class="attachment-large size-large wp-image-8093" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/BLE-Weight-Machine-1.jpg 500w, https://www.medi-waves.com/wp-content/uploads/2025/08/BLE-Weight-Machine-1-300x300.jpg 300w, https://www.medi-waves.com/wp-content/uploads/2025/08/BLE-Weight-Machine-1-150x150.jpg 150w, https://www.medi-waves.com/wp-content/uploads/2025/08/BLE-Weight-Machine-1-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b67"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b67')</script><noscript><img width="500" height="500" src="../wp-content/uploads/2025/08/BLE-Weight-Machine-1.jpg" class="attachment-large size-large wp-image-8093" alt="" srcset="../wp-content/uploads/2025/08/BLE-Weight-Machine-1.jpg 500w, ../wp-content/uploads/2025/08/BLE-Weight-Machine-1-300x300.jpg 300w, ../wp-content/uploads/2025/08/BLE-Weight-Machine-1-150x150.jpg 150w, ../wp-content/uploads/2025/08/BLE-Weight-Machine-1-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" /></noscript>															</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-e26528e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e26528e" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-95e52ba" data-id="95e52ba" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-4fa72a6 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-heading" data-id="4fa72a6" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Tasks Screen and Notifications.</h2>				</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-db1c2f5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="db1c2f5" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-f8a1a89" data-id="f8a1a89" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-fa992ca flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-spacer" data-id="fa992ca" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-2dd4f06 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="2dd4f06" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p><strong>Upcoming Tasks</strong></p>
-<p>Get a clear view of upcoming tasks to plan work in advance.</p>							</div>
-										</div>
-				</div>
-				<div class="elementor-element elementor-element-3e29dfa flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="3e29dfa" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p><strong>Daily Specific Tasks</strong></p>
-<p>Displays daily tasks based on selected date for easy viewing and completion by Anganwadi workers.</p>							</div>
-										</div>
-				</div>
-				<div class="elementor-element elementor-element-275258a flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="275258a" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p><strong>Completed Tasks</strong></p>
-<p>Worker can track the completed tasks.</p>							</div>
-										</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-616d474" data-id="616d474" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-bcd2208 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-image" data-id="bcd2208" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img width="500" height="500" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/Tasks-Screen-and-Notifications.jpg" class="attachment-large size-large wp-image-8100" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/Tasks-Screen-and-Notifications.jpg 500w, https://www.medi-waves.com/wp-content/uploads/2025/08/Tasks-Screen-and-Notifications-300x300.jpg 300w, https://www.medi-waves.com/wp-content/uploads/2025/08/Tasks-Screen-and-Notifications-150x150.jpg 150w, https://www.medi-waves.com/wp-content/uploads/2025/08/Tasks-Screen-and-Notifications-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b70"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b70')</script><noscript><img width="500" height="500" src="../wp-content/uploads/2025/08/Tasks-Screen-and-Notifications.jpg" class="attachment-large size-large wp-image-8100" alt="" srcset="../wp-content/uploads/2025/08/Tasks-Screen-and-Notifications.jpg 500w, ../wp-content/uploads/2025/08/Tasks-Screen-and-Notifications-300x300.jpg 300w, ../wp-content/uploads/2025/08/Tasks-Screen-and-Notifications-150x150.jpg 150w, ../wp-content/uploads/2025/08/Tasks-Screen-and-Notifications-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" /></noscript>															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-e58801d" data-id="e58801d" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-4f00bc8 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-spacer" data-id="4f00bc8" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-203fba2 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="203fba2" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p><strong>Notifications</strong></p>
-<p>Notifications which are created by an admin for anganwadi workers.</p>							</div>
-										</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-f71981c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f71981c" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-623d1e0" data-id="623d1e0" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-de5c487 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-heading" data-id="de5c487" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Student Details</h2>				</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-f7b74e4 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f7b74e4" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6b4d947" data-id="6b4d947" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-9c42180 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-spacer" data-id="9c42180" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-fb22021 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="fb22021" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p><strong>Current Health Status</strong></p>
-<p>The current health status of student will be displayed according to the lasted data.</p>							</div>
-										</div>
-				</div>
-				<div class="elementor-element elementor-element-b875f5b flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="b875f5b" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p><strong>Previous Scans</strong></p>
-<p>Display all the scans that an anganwadi worker did for a particular student.</p>							</div>
-										</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-cbe855f" data-id="cbe855f" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-b81f47f flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-image" data-id="b81f47f" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img width="500" height="500" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/Student-Details.jpg" class="attachment-large size-large wp-image-8113" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/Student-Details.jpg 500w, https://www.medi-waves.com/wp-content/uploads/2025/08/Student-Details-300x300.jpg 300w, https://www.medi-waves.com/wp-content/uploads/2025/08/Student-Details-150x150.jpg 150w, https://www.medi-waves.com/wp-content/uploads/2025/08/Student-Details-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b79"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b79')</script><noscript><img width="500" height="500" src="../wp-content/uploads/2025/08/Student-Details.jpg" class="attachment-large size-large wp-image-8113" alt="" srcset="../wp-content/uploads/2025/08/Student-Details.jpg 500w, ../wp-content/uploads/2025/08/Student-Details-300x300.jpg 300w, ../wp-content/uploads/2025/08/Student-Details-150x150.jpg 150w, ../wp-content/uploads/2025/08/Student-Details-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" /></noscript>															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-868c3de" data-id="868c3de" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-cc0293e flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-spacer" data-id="cc0293e" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-ef78274 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="ef78274" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<p><b>Student Card</b></p>
-<p>When the student&#8217;s QR code is scanned externally, their Health Card will be shown.</p>							</div>
-										</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-d6bbed1 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d6bbed1" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-03fcbf8" data-id="03fcbf8" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-1434013 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-heading" data-id="1434013" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Leaderboards</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-d6cfa4c flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-spacer" data-id="d6cfa4c" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-92d3625 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="92d3625" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<h5><strong>Highlights top performers over the month based on total points earned from student scans.</strong></h5>							</div>
-										</div>
-				</div>
-				<div class="elementor-element elementor-element-7d295eb flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-id="7d295eb" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-												<div class="elementor-text-editor elementor-clearfix">
-						<h5><strong>Ranks workers based on scans completed each week to encourage consistent performance.</strong></h5>							</div>
-										</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-4813dc8" data-id="4813dc8" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-b1aead0 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-image" data-id="b1aead0" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img width="500" height="500" data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/2025/08/Leaderboards.jpg" class="attachment-large size-large wp-image-8138" alt="" data-tgpli-srcset="https://www.medi-waves.com/wp-content/uploads/2025/08/Leaderboards.jpg 500w, https://www.medi-waves.com/wp-content/uploads/2025/08/Leaderboards-300x300.jpg 300w, https://www.medi-waves.com/wp-content/uploads/2025/08/Leaderboards-150x150.jpg 150w, https://www.medi-waves.com/wp-content/uploads/2025/08/Leaderboards-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705b6e66b81"  /><script>window.tgpQueue.add('tgpli-6a705b6e66b81')</script><noscript><img width="500" height="500" src="../wp-content/uploads/2025/08/Leaderboards.jpg" class="attachment-large size-large wp-image-8138" alt="" srcset="../wp-content/uploads/2025/08/Leaderboards.jpg 500w, ../wp-content/uploads/2025/08/Leaderboards-300x300.jpg 300w, ../wp-content/uploads/2025/08/Leaderboards-150x150.jpg 150w, ../wp-content/uploads/2025/08/Leaderboards-256x256.jpg 256w" sizes="(max-width: 500px) 100vw, 500px" /></noscript>															</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-e333b3b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e333b3b" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b284870" data-id="b284870" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-94ba8b8 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styledbutton" data-id="94ba8b8" data-element_type="widget" data-settings="{&quot;thegem_button_skin&quot;:&quot;flat&quot;,&quot;add_icon&quot;:&quot;yes&quot;}" data-widget_type="thegem-styledbutton.default">
-				<div class="elementor-widget-container">
-					
-<div class="gem-button-container gem-widget-button">
+<style>
+.chms{--c-navy:#0B1F3A;--c-blue:#155EEF;--c-teal:#22B8CF;--c-gray-700:#475467;--c-gray-500:#6B7A8D;--c-gray-100:#F5FAFC;--c-gray-200:#E4EAF0;--c-radius:24px;--c-shadow:0 20px 50px -12px rgba(11,31,58,.14);font-family:'Inter',sans-serif;color:var(--c-navy);overflow-x:hidden;}
+.chms *{box-sizing:border-box;}
+.chms h1,.chms h2,.chms h3,.chms h4{font-family:'Plus Jakarta Sans','Manrope',sans-serif !important;text-transform:none !important;color:var(--c-navy);font-weight:800;letter-spacing:-.02em;margin:0;line-height:1.2;}
+.chms p{color:var(--c-gray-700);line-height:1.75;font-size:15.5px;margin:0;}
+.chms .chms-wrap{max-width:1240px;margin:0 auto;padding:0 24px;}
+.chms section{padding:76px 0;position:relative;}
+.chms .chms-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--c-blue);background:rgba(21,94,239,.08);padding:7px 16px;border-radius:999px;margin-bottom:16px;}
+.chms .chms-head{max-width:680px;margin:0 auto 48px;text-align:center;}
+.chms .chms-head h2{font-size:clamp(26px,3.4vw,38px);}
+.chms .chms-head p{margin-top:14px;font-size:16px;}
+.chms .chms-btn{display:inline-flex;align-items:center;gap:9px;padding:14px 28px;border-radius:999px;font-weight:700;font-size:14.5px;font-family:'Manrope',sans-serif;text-decoration:none;transition:all .3s cubic-bezier(.22,1,.36,1);border:none;cursor:pointer;}
+.chms .chms-btn-primary{background:linear-gradient(120deg,#155EEF 0%,#22B8CF 100%);color:#fff;box-shadow:0 10px 26px rgba(21,94,239,.32);}
+.chms .chms-btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(21,94,239,.4);}
+.chms .chms-btn-outline{background:#fff;color:var(--c-navy);border:1.5px solid var(--c-gray-200);}
+.chms .chms-btn-outline:hover{border-color:var(--c-blue);color:var(--c-blue);transform:translateY(-3px);}
 
-		<a class="gem-button gem-button-size-small gem-button-text-weight-bold gem-button-style-flat" href="../wp-content/uploads/2025/08/Final-17th-July1.pdf">
-		<span class="gem-inner-wrapper-btn">
-							<span class="gem-button-icon">
-					<i aria-hidden="true" class="far fa-file-pdf"></i>				</span>
-						<span class="gem-text-button">
-				Child Health Monitoring System			</span>
-		</span>
-	</a>
+/* ---- Overview ---- */
+.block-content{padding-top:0 !important;}
+.chms-overview{padding-top:24px;}
+.chms-overview-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
+.chms-overview h1.chms-title{font-size:clamp(28px,3.6vw,42px);margin-bottom:20px;}
+.chms-overview .chms-lead{font-size:17px;margin-bottom:28px;}
+.chms-stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:32px;}
+.chms-stat{flex:1;min-width:120px;}
+.chms-stat b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;color:var(--c-blue);}
+.chms-stat span{font-size:13px;color:var(--c-gray-500);font-weight:600;}
+.chms-overview-media{position:relative;display:flex;justify-content:center;}
+.chms-overview-media img{max-width:290px;width:100%;border-radius:28px;box-shadow:var(--c-shadow);}
+.chms-overview-media::before{content:"";position:absolute;top:-40px;right:-20px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(21,94,239,.14),transparent 70%);z-index:-1;}
 
-	
-</div>				</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
-				</div>
-		</div>
+/* ---- Feature grid ---- */
+.chms-features{background:var(--c-gray-100);}
+.chms-feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.chms-feat-card{background:#fff;border-radius:20px;padding:32px 26px;box-shadow:0 8px 24px rgba(11,31,58,.06);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s;}
+.chms-feat-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(11,31,58,.12);}
+.chms-feat-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,rgba(21,94,239,.12),rgba(34,184,207,.12));display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px;}
+.chms-feat-card h4{font-size:17px;margin-bottom:10px;}
+.chms-feat-card p{font-size:14.5px;}
+
+/* ---- Dark band (Web Dashboard) ---- */
+.chms-dark{background:linear-gradient(160deg,var(--c-navy),#123A63);color:#fff;}
+.chms-dark .chms-eyebrow{background:rgba(255,255,255,.1);color:#8FC1FF;}
+.chms-dark-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center;}
+.chms-dark h2{color:#fff;font-size:clamp(24px,3vw,34px);margin-bottom:16px;}
+.chms-dark>.chms-wrap>.chms-dark-grid>div>p{color:rgba(255,255,255,.72);}
+.chms-dark-list{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px;}
+.chms-dark-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px;}
+.chms-dark-item .ic{width:36px;height:36px;border-radius:10px;background:rgba(21,94,239,.25);display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:12px;}
+.chms-dark-item h4{color:#fff;font-size:14.5px;margin-bottom:6px;}
+.chms-dark-item p{color:rgba(255,255,255,.6);font-size:13px;line-height:1.6;}
+.chms-dark-media img{width:100%;border-radius:20px;box-shadow:0 30px 60px rgba(0,0,0,.35);}
+
+/* ---- Mobile app overview ---- */
+.chms-mobile-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center;}
+.chms-mobile-media{display:flex;justify-content:center;}
+.chms-mobile-media img{max-width:280px;width:100%;border-radius:26px;box-shadow:var(--c-shadow);}
+.chms-checklist{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px;}
+.chms-checklist li{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px;color:var(--c-navy);}
+.chms-checklist .tick{width:24px;height:24px;border-radius:50%;background:linear-gradient(120deg,#155EEF,#22B8CF);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;flex:none;}
+
+/* ---- Alternating feature rows ---- */
+.chms-rows{background:var(--c-gray-100);}
+.chms-row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:64px;}
+.chms-row:last-child{margin-bottom:0;}
+.chms-row.rev .chms-row-media{order:2;}
+.chms-row.rev .chms-row-text{order:1;}
+.chms-row-media{display:flex;justify-content:center;}
+.chms-row-media img{max-width:340px;width:100%;border-radius:22px;box-shadow:var(--c-shadow);background:#fff;}
+.chms-row-media.two{gap:14px;}
+.chms-row-media.two img{max-width:200px;}
+.chms-row-tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c-teal);margin-bottom:10px;}
+.chms-row h3{font-size:23px;margin-bottom:14px;}
+
+/* ---- Leaderboard ---- */
+.chms-leader-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;}
+.chms-leader-media{display:flex;justify-content:center;}
+.chms-leader-media img{max-width:260px;width:100%;border-radius:24px;box-shadow:var(--c-shadow);}
+.chms-leader-cards{display:grid;gap:18px;}
+.chms-leader-card{background:#fff;border-radius:18px;padding:22px 24px;box-shadow:0 8px 24px rgba(11,31,58,.06);display:flex;gap:16px;align-items:flex-start;}
+.chms-leader-card .ic{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(21,94,239,.12),rgba(34,184,207,.12));display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;}
+.chms-leader-card p{font-size:14.5px;font-weight:600;color:var(--c-navy);line-height:1.6;}
+
+/* ---- CTA ---- */
+.chms-cta{background:linear-gradient(120deg,#155EEF 0%,#22B8CF 100%);border-radius:32px;margin:0 24px 90px;padding:56px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;max-width:1192px;margin-left:auto;margin-right:auto;}
+.chms-cta h3{color:#fff;font-size:clamp(22px,2.6vw,30px);max-width:520px;}
+.chms-cta p{color:rgba(255,255,255,.85);margin-top:10px;}
+.chms-cta .chms-btn-primary{background:#fff;color:var(--c-blue);box-shadow:0 10px 26px rgba(0,0,0,.18);}
+.chms-cta .chms-btn-primary:hover{color:var(--c-blue-dark,#0D47C7);}
+
+@media (max-width:900px){
+  .chms-overview-grid,.chms-dark-grid,.chms-mobile-grid,.chms-row,.chms-leader-grid{grid-template-columns:1fr !important;}
+  .chms-row.rev .chms-row-media,.chms-row.rev .chms-row-text{order:initial;}
+  .chms-feat-grid{grid-template-columns:repeat(2,1fr);}
+  .chms-dark-list{grid-template-columns:1fr;}
+  .chms-cta{flex-direction:column;text-align:center;padding:40px 28px;}
+}
+@media (max-width:560px){
+  .chms-feat-grid{grid-template-columns:1fr;}
+  .chms section{padding:56px 0;}
+}
+</style>
+
+<div class="chms">
+
+  <!-- OVERVIEW -->
+  <section class="chms-overview">
+    <div class="chms-wrap chms-overview-grid">
+      <div>
+        <div class="chms-eyebrow">● Digital Anganwadi Care</div>
+        <h1 class="chms-title">Smarter Child Health Monitoring, Built for the Field</h1>
+        <p class="chms-lead">A complete AI-powered ecosystem — mobile app + web dashboard — that helps Anganwadi workers measure, track and act on every child's growth, without manual paperwork or guesswork.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="../wp-content/uploads/2025/08/Final-17th-July1.pdf" target="_blank" rel="noopener" class="chms-btn chms-btn-primary">⬇ Download Brochure</a>
+          <a href="../contact/index.html" class="chms-btn chms-btn-outline">Talk to Our Team →</a>
+        </div>
+        <div class="chms-stats">
+          <div class="chms-stat"><b>AI</b><span>Height Estimation</span></div>
+          <div class="chms-stat"><b>BLE</b><span>Weight Sync</span></div>
+          <div class="chms-stat"><b>2FA</b><span>Secure Access</span></div>
+          <div class="chms-stat"><b>QR</b><span>Student ID</span></div>
+        </div>
+      </div>
+      <div class="chms-overview-media">
+        <img src="../wp-content/uploads/2025/08/Mobile-Application.jpg" alt="Child Health Monitoring App Dashboard" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE FEATURES -->
+  <section class="chms-features">
+    <div class="chms-wrap">
+      <div class="chms-head">
+        <div class="chms-eyebrow">Core Capabilities</div>
+        <h2>Everything a Health Worker Needs, in One App</h2>
+        <p>Six purpose-built features that remove friction from field-level child health screening.</p>
+      </div>
+      <div class="chms-feat-grid">
+        <div class="chms-feat-card">
+          <div class="chms-feat-icon">📏</div>
+          <h4>AI-Powered Height Estimation</h4>
+          <p>Estimate a student's height using AI-based image processing through the device camera — no manual measurement required.</p>
+        </div>
+        <div class="chms-feat-card">
+          <div class="chms-feat-icon">⚖️</div>
+          <h4>BLE-Based Weight Measurement</h4>
+          <p>Connect Bluetooth Low Energy weight machines to automatically capture and record a child's weight during checkups.</p>
+        </div>
+        <div class="chms-feat-card">
+          <div class="chms-feat-icon">🔐</div>
+          <h4>Two-Factor Authentication</h4>
+          <p>Secure login on both the Web Dashboard and Mobile App ensures only authorized users can access sensitive child data.</p>
+        </div>
+        <div class="chms-feat-card">
+          <div class="chms-feat-icon">📋</div>
+          <h4>Task Assignment & Notifications</h4>
+          <p>Administrators assign tasks directly to Anganwadi workers and keep them updated through real-time mobile notifications.</p>
+        </div>
+        <div class="chms-feat-card">
+          <div class="chms-feat-icon">📊</div>
+          <h4>Growth Monitoring Dashboard</h4>
+          <p>A comprehensive web dashboard visualizes student growth data through charts, making analysis and reporting effortless.</p>
+        </div>
+        <div class="chms-feat-card">
+          <div class="chms-feat-icon">🔳</div>
+          <h4>QR Code-Based Student ID</h4>
+          <p>Each student gets a unique QR code — scan it for instant access to health and growth details, even outside the app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEB DASHBOARD -->
+  <section class="chms-dark">
+    <div class="chms-wrap chms-dark-grid">
+      <div>
+        <div class="chms-eyebrow">Web Dashboard</div>
+        <h2>Centralized Command for Every Anganwadi Center</h2>
+        <p>Gives administrators a single platform to monitor centers, track worker performance and coordinate care effectively.</p>
+        <div class="chms-dark-list">
+          <div class="chms-dark-item"><div class="ic">📈</div><h4>Monitoring</h4><p>Visualizes child growth trends using intuitive graphs for timely health insights.</p></div>
+          <div class="chms-dark-item"><div class="ic">📝</div><h4>Assigning Tasks</h4><p>Assign specific children to workers for targeted nutrition plans and follow-ups.</p></div>
+          <div class="chms-dark-item"><div class="ic">🔄</div><h4>Sync Data</h4><p>Data is securely transmitted to government-approved storage on a scheduled basis.</p></div>
+          <div class="chms-dark-item"><div class="ic">🔔</div><h4>Notification</h4><p>Sends timely reminders, health tips and growth advice to caregivers and workers.</p></div>
+        </div>
+      </div>
+      <div class="chms-dark-media">
+        <img src="../wp-content/uploads/2025/08/Web-Dashboard-1024x683.jpg" alt="Growth Monitoring Web Dashboard" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE APPLICATION OVERVIEW -->
+  <section>
+    <div class="chms-wrap chms-mobile-grid">
+      <div class="chms-mobile-media">
+        <img src="../wp-content/uploads/2025/08/Mobile-Application.jpg" alt="Mobile Application Dashboard" loading="lazy">
+      </div>
+      <div>
+        <div class="chms-eyebrow">Mobile Application</div>
+        <h2>Built for Anganwadi Workers on the Move</h2>
+        <p>Lets workers track and update child growth data, manage assigned tasks and monitor progress — right from their phone.</p>
+        <ul class="chms-checklist">
+          <li><span class="tick">✓</span> Anganwadi-specific login</li>
+          <li><span class="tick">✓</span> AI height estimation</li>
+          <li><span class="tick">✓</span> Body Mass Index (BMI) calculation</li>
+          <li><span class="tick">✓</span> Leaderboards for workers</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALTERNATING FEATURE ROWS -->
+  <section class="chms-rows">
+    <div class="chms-wrap">
+
+      <div class="chms-row">
+        <div class="chms-row-media two" style="display:flex;">
+          <img src="../wp-content/uploads/2025/08/AI-Height-Estimation.jpg" alt="AI Height Estimation Step 1" loading="lazy">
+          <img src="../wp-content/uploads/2025/08/AI-Height-Estimation-1.jpg" alt="AI Height Estimation Step 2" loading="lazy">
+        </div>
+        <div class="chms-row-text">
+          <span class="chms-row-tag">AI Height Estimation</span>
+          <h3>Accurate Height, No Measuring Tape</h3>
+          <p>Height is estimated using the phone camera alongside a fixed 240mm marker on a straight wall, giving an accurate scale reference for every scan — fast, consistent and contactless.</p>
+        </div>
+      </div>
+
+      <div class="chms-row rev">
+        <div class="chms-row-media">
+          <img src="../wp-content/uploads/2025/08/BLE-Weight-Machine.jpg" alt="BLE Weight Machine Integration" loading="lazy">
+        </div>
+        <div class="chms-row-text">
+          <span class="chms-row-tag">BLE Weight Machine</span>
+          <h3>Weight, Synced Automatically</h3>
+          <p>The app communicates directly with a BLE-enabled weight machine. Weight is combined with height to calculate BMI, and the data is stored securely on a centralized server.</p>
+        </div>
+      </div>
+
+      <div class="chms-row">
+        <div class="chms-row-media">
+          <img src="../wp-content/uploads/2025/08/Tasks-Screen-and-Notifications.jpg" alt="Tasks Screen and Notifications" loading="lazy">
+        </div>
+        <div class="chms-row-text">
+          <span class="chms-row-tag">Tasks & Notifications</span>
+          <h3>Every Task, Right on Schedule</h3>
+          <p>Workers get a clear view of upcoming and daily tasks, can track what's completed, and receive admin-created notifications the moment they're sent.</p>
+        </div>
+      </div>
+
+      <div class="chms-row rev">
+        <div class="chms-row-media">
+          <img src="../wp-content/uploads/2025/08/Student-Details.jpg" alt="Student Health Details" loading="lazy">
+        </div>
+        <div class="chms-row-text">
+          <span class="chms-row-tag">Student Details</span>
+          <h3>Every Child's Health, One Scan Away</h3>
+          <p>View current health status from the latest data, browse previous scans for a student, and show a digital Health Card the instant a QR code is scanned — even outside the app.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LEADERBOARDS -->
+  <section>
+    <div class="chms-wrap chms-leader-grid">
+      <div class="chms-leader-media">
+        <img src="../wp-content/uploads/2025/08/Leaderboards.jpg" alt="Worker Leaderboards" loading="lazy">
+      </div>
+      <div>
+        <div class="chms-eyebrow">Leaderboards</div>
+        <h2 style="margin-bottom:22px;">Motivating Workers Through Friendly Competition</h2>
+        <div class="chms-leader-cards">
+          <div class="chms-leader-card"><div class="ic">🏆</div><p>Highlights top performers over the month based on total points earned from student scans.</p></div>
+          <div class="chms-leader-card"><div class="ic">📅</div><p>Ranks workers based on scans completed each week to encourage consistent performance.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="chms-cta">
+    <div>
+      <h3>Bring Smarter Child Health Monitoring to Your District</h3>
+      <p>Talk to our team about deploying the app and dashboard for your Anganwadi network.</p>
+    </div>
+    <a href="../contact/index.html" class="chms-btn chms-btn-primary">Request a Quote →</a>
+  </div>
+
+</div>
 					<div class="container">
 											</div><!-- .container -->
 
@@ -1665,5 +1319,8 @@ var thegem_menu_data = {"ajax_url":"https:\/\/www.medi-waves.com\/wp-admin\/admi
   link.setAttribute('href', url);
 })();
 </script>
+<script src="/assets/js/products-menu.js" defer></script>
+<script src="/assets/js/search-index.js" defer></script>
+<script src="/assets/js/site-search.js" defer></script>
 </body>
 </html>

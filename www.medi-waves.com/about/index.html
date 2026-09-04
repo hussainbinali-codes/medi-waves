@@ -478,6 +478,8 @@ table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:to
 table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:left;}
 @media (max-width:600px){table th,table td{padding:6px 8px;font-size:13.5px;}}
 </style>
+<link rel="stylesheet" href="/assets/css/products-menu.css">
+<link rel="stylesheet" href="/assets/css/site-search.css">
 </head>
 <body>
 
@@ -495,88 +497,11 @@ table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:l
       <li><a href="/about/" class="active">About <span class="underline"></span></a></li>
       <li>
         <a href="/hospital-furniture/">Products <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg><span class="underline"></span></a>
-        <div class="mega" id="productsMega">
-          <div class="mega-search-row">
-            <div class="mega-search">
-              <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <input type="text" id="megaSearchInput" placeholder="Search products…" autocomplete="off" aria-label="Search products">
-            </div>
-            <div class="mega-chips" id="megaChips">
-              <button class="mega-chip active" data-tag="all">Popular</button>
-              <button class="mega-chip" data-tag="new">New Arrivals</button>
-              <button class="mega-chip" data-tag="best">Best Sellers</button>
-              <button class="mega-chip" data-tag="icu">ICU</button>
-              <button class="mega-chip" data-tag="neonatal">Neonatal</button>
-              <button class="mega-chip" data-tag="surgical">Surgical</button>
-            </div>
-          </div>
-
-          <div class="mega-columns" id="megaColumns">
-            <div class="mega-category">
-              <div class="mega-cat-top">
-                <div><h4>Baby Care Equipments</h4><p>Warmers &amp; neonatal monitoring</p></div>
-              </div>
-              <div class="mega-products">
-                <a class="mega-product" href="/infant-care/radiant-warmer-p-001a/" data-tags="new best neonatal" data-name="infant radiant warmer"><span class="mega-product-arrow">→</span><span><b>Infant Radiant Warmer</b><em>Servo-controlled heating</em></span></a>
-                <a class="mega-product" href="/infant-care/infant-incubator-p-002/" data-tags="best neonatal" data-name="infant incubator"><span class="mega-product-arrow">→</span><span><b>Infant Incubator</b><em>Climate-controlled care</em></span></a>
-                <a class="mega-product" href="/infant-care/led-phototherapy-unit-p-003/" data-tags="neonatal" data-name="led phototherapy unit"><span class="mega-product-arrow">→</span><span><b>LED Phototherapy Unit</b><em>Jaundice management</em></span></a>
-                <a class="mega-product" href="/digital-fetal-doppler/" data-tags="neonatal" data-name="fetal doppler"><span class="mega-product-arrow">→</span><span><b>Fetal Doppler</b><em>Prenatal monitoring</em></span></a>
-                <a class="mega-product" href="/digital-baby-weighing-scale-p-016/" data-tags="neonatal" data-name="digital baby weighing scale"><span class="mega-product-arrow">→</span><span><b>Digital Baby Weighing Scale</b><em>Precision measurement</em></span></a>
-              </div>
-            </div>
-
-            <div class="mega-category">
-              <div class="mega-cat-top">
-                <div><h4>Hospital Furniture</h4><p>ICU beds &amp; patient furniture</p></div>
-              </div>
-              <div class="mega-products">
-                <a class="mega-product" href="/hospital-furniture/electric-beds/" data-tags="best icu" data-name="electric icu beds"><span class="mega-product-arrow">→</span><span><b>Electric ICU Beds</b><em>3 &amp; 4-function electric</em></span></a>
-                <a class="mega-product" href="/pediatric-bed/" data-tags="neonatal" data-name="pediatric beds"><span class="mega-product-arrow">→</span><span><b>Pediatric Beds</b><em>Height adjustable</em></span></a>
-                <a class="mega-product" href="/gynecological-tables/" data-tags="surgical" data-name="gynecological tables"><span class="mega-product-arrow">→</span><span><b>Gynecological Tables</b><em>Hydraulic tilt</em></span></a>
-                <a class="mega-product" href="/patient-transfer-trolley/" data-tags="icu" data-name="patient transfer trolleys"><span class="mega-product-arrow">→</span><span><b>Patient Transfer Trolleys</b><em>Mobile, easy-clean</em></span></a>
-                <a class="mega-product" href="/ward-equipments/" data-tags="icu" data-name="ward equipment"><span class="mega-product-arrow">→</span><span><b>Ward Equipment</b><em>Lockers, chairs, trolleys</em></span></a>
-              </div>
-            </div>
-
-            <div class="mega-category">
-              <div class="mega-cat-top">
-                <div><h4>Electromedicals</h4><p>Diagnostics &amp; surgical devices</p></div>
-              </div>
-              <div class="mega-products">
-                <a class="mega-product" href="/infusion-pumps/" data-tags="best icu" data-name="infusion pumps"><span class="mega-product-arrow">→</span><span><b>Infusion Pumps</b><em>Volumetric &amp; syringe</em></span></a>
-                <a class="mega-product" href="/electro-surgical-unit/" data-tags="new best surgical" data-name="electro surgical units"><span class="mega-product-arrow">→</span><span><b>Electro Surgical Units</b><em>Bipolar/monopolar cutting</em></span></a>
-                <a class="mega-product" href="/mercury-free-sphygmomanometer/" data-tags="" data-name="bp apparatus"><span class="mega-product-arrow">→</span><span><b>BP Apparatus</b><em>Digital &amp; manual</em></span></a>
-                <a class="mega-product" href="/respiretory/" data-tags="icu" data-name="respiratory devices"><span class="mega-product-arrow">→</span><span><b>Respiratory Devices</b><em>Critical care support</em></span></a>
-                <a class="mega-product" href="/oxygen-concentrator/" data-tags="new icu" data-name="oxygen concentrators"><span class="mega-product-arrow">→</span><span><b>Oxygen Concentrators</b><em>Continuous flow</em></span></a>
-              </div>
-            </div>
-
-            <div class="mega-featured">
-              <div class="mega-featured-img"><img src="/wp-content/uploads/2023/04/Electric-ICU-Bed-3-Function-EHB-03-768x768.jpg" alt="Hospital equipment"></div>
-              <h3>Need Help Choosing Equipment?</h3>
-              <p>Talk with our product specialists and receive recommendations based on your hospital requirements.</p>
-              <a href="/contact/" class="mega-btn-primary">Talk to an Expert →</a>
-              <a href="/wp-content/uploads/catalogues/Furniture_Cat.pdf" target="_blank" rel="noopener" class="mega-btn-secondary">Download Catalogue</a>
-              <div class="mega-trust">
-                <span>Export Worldwide</span>
-                <span>Trusted by Hospitals</span>
-                <span>ISO Certified</span>
-              </div>
-            </div>
-          </div>
-
-          <a href="/hospital-furniture/" class="mega-viewall">
-            <span><b>Browse Complete Medical Catalogue</b><small>View All Products</small></span>
-            <span class="mega-viewall-arrow">→</span>
-          </a>
-        </div>
+        <div class="mega" id="productsMega"></div>
       </li>
       <li>
         <a href="/child-growth-monitoring/">Child Monitoring <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg><span class="underline"></span></a>
-        <div class="mega-simple">
-          <a href="/child-growth-monitoring/child-growth-monitoring-system/">Child Growth Monitoring System</a>
-          <a href="/child-growth-monitoring/child-health-monitoring-system/">Child Health Monitoring System</a>
-        </div>
+        <div class="mega-simple"><a href="/child-growth-monitoring/">View Child Growth Monitoring products</a></div>
       </li>
       <li><a href="/contact/">Contact <span class="underline"></span></a></li>
     </ul>
@@ -603,26 +528,7 @@ table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:l
 
     <div class="mobile-accordion">
       <button class="mobile-accordion-head" aria-expanded="false">Products <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
-      <div class="mobile-accordion-body">
-        <h6>Baby Care Equipments</h6>
-        <a href="/infant-care/radiant-warmer-p-001a/">Infant Radiant Warmer</a>
-        <a href="/infant-care/infant-incubator-p-002/">Infant Incubator</a>
-        <a href="/infant-care/led-phototherapy-unit-p-003/">LED Phototherapy Unit</a>
-        <a href="/digital-fetal-doppler/">Fetal Doppler</a>
-        <a href="/digital-baby-weighing-scale-p-016/">Digital Baby Weighing Scale</a>
-        <h6>Hospital Furniture</h6>
-        <a href="/hospital-furniture/electric-beds/">Electric ICU Beds</a>
-        <a href="/pediatric-bed/">Pediatric Beds</a>
-        <a href="/gynecological-tables/">Gynecological Tables</a>
-        <a href="/patient-transfer-trolley/">Patient Transfer Trolleys</a>
-        <a href="/ward-equipments/">Ward Equipment</a>
-        <h6>Electromedicals</h6>
-        <a href="/infusion-pumps/">Infusion Pumps</a>
-        <a href="/electro-surgical-unit/">Electro Surgical Units</a>
-        <a href="/mercury-free-sphygmomanometer/">BP Apparatus</a>
-        <a href="/respiretory/">Respiratory Devices</a>
-        <a href="/oxygen-concentrator/">Oxygen Concentrators</a>
-      </div>
+      <div class="mobile-accordion-body" id="mobileProductsBody"></div>
     </div>
 
     <div class="mobile-accordion">
@@ -842,13 +748,7 @@ table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:l
 
 <script>
 // scroll progress bar
-const scrollProgress = document.getElementById('scrollProgress');
-function updateProgress(){
-  const h = document.documentElement;
-  const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-  scrollProgress.style.width = pct + '%';
-}
-window.addEventListener('scroll', updateProgress);
+
 
 // hero spotlight follow
 const heroEl = document.querySelector('.page-hero');
@@ -871,42 +771,6 @@ document.querySelectorAll('.magnetic').forEach(btn => {
   });
   btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0,0)'; });
 });
-
-// products mega menu: live search + tag chip filtering
-(function () {
-  const mega = document.getElementById('productsMega');
-  if (!mega) return;
-  const searchInput = document.getElementById('megaSearchInput');
-  const chips = document.querySelectorAll('#megaChips .mega-chip');
-  const categories = mega.querySelectorAll('.mega-category');
-  let activeTag = 'all';
-
-  function applyFilter() {
-    const query = searchInput.value.trim().toLowerCase();
-    categories.forEach(cat => {
-      let visibleCount = 0;
-      cat.querySelectorAll('.mega-product').forEach(prod => {
-        const tags = (prod.dataset.tags || '').split(' ');
-        const matchesTag = activeTag === 'all' || tags.includes(activeTag);
-        const matchesQuery = !query || prod.dataset.name.includes(query);
-        const show = matchesTag && matchesQuery;
-        prod.classList.toggle('mega-hidden', !show);
-        if (show) visibleCount++;
-      });
-      cat.classList.toggle('mega-empty', visibleCount === 0);
-    });
-  }
-
-  searchInput.addEventListener('input', applyFilter);
-  chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      chips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      activeTag = chip.dataset.tag;
-      applyFilter();
-    });
-  });
-})();
 
 // mega menu: hover-intent with close delay so it never vanishes mid-move
 (function () {
@@ -980,10 +844,26 @@ document.querySelectorAll('.mobile-accordion-head').forEach(head => {
 });
 
 // sticky navbar shrink
-const navWrap = document.getElementById('navWrap');
-window.addEventListener('scroll', () => {
-  navWrap.classList.toggle('scrolled', window.scrollY > 40);
-});
+(function(){
+  var _scrollProgress = document.getElementById('scrollProgress');
+  var _navWrap = document.getElementById('navWrap');
+  var _ticking = false;
+  function _onScroll(){
+    var h = document.documentElement;
+    var y = window.scrollY;
+    if (_scrollProgress) {
+      var pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      _scrollProgress.style.width = pct + '%';
+    }
+    if (_navWrap) _navWrap.classList.toggle('scrolled', y > 40);
+    var _backToTop = document.getElementById('backToTop');
+    if (_backToTop) _backToTop.classList.toggle('show', y > 600);
+    _ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!_ticking) { requestAnimationFrame(_onScroll); _ticking = true; }
+  }, { passive: true });
+})();
 
 // scroll reveal
 const revealEls = document.querySelectorAll('.reveal');
@@ -995,7 +875,6 @@ revealEls.forEach(el => io.observe(el));
 // back to top
 const backToTop = document.getElementById('backToTop');
 if (backToTop) {
-  window.addEventListener('scroll', () => backToTop.classList.toggle('show', window.scrollY > 600));
   backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
@@ -1048,5 +927,8 @@ document.querySelectorAll('.btn').forEach(btn => {
 });
 </script>
 
+<script src="/assets/js/products-menu.js" defer></script>
+<script src="/assets/js/search-index.js" defer></script>
+<script src="/assets/js/site-search.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+/* Medi Waves Inc. - Shared "Products" dropdown component styles.
+   Loaded on every page alongside assets/js/products-menu.js.
+   Reuses the .mega scope's own --mp-* custom properties (defined inline
+   per page) so colors stay identical to the rest of the site's design. */
+
+.mega.mega { width: 320px; overflow: visible; max-height: none; }
+
+.mega-simple-list { display: flex; flex-direction: column; padding: 22px 26px; gap: 20px; }
+
+.mega-simple-group { display: flex; flex-direction: column; gap: 8px; }
+
+.mega-simple-heading {
+  font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+  font-size: 12.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--mp-muted); padding-bottom: 6px; border-bottom: 1px solid var(--mp-border);
+}
+
+.mega-simple-link {
+  font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+  font-size: 14.5px; font-weight: 600; color: var(--mp-heading); text-decoration: none;
+  padding: 4px 2px; transition: color .15s ease;
+}
+.mega-simple-link:hover, .mega-simple-link:focus-visible { color: var(--mp-blue); }
+
+.mega-simple-empty { padding: 4px 2px; font-size: 13px; color: var(--mp-muted); }
+
+.mega-simple-list-cats { gap: 4px; padding: 14px; }
+.mega-simple-cat-link {
+  font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+  font-size: 15px; font-weight: 700; color: var(--mp-heading); text-decoration: none;
+  padding: 12px 14px; border-radius: 12px; transition: color .15s ease, background .15s ease;
+}
+.mega-simple-cat-link:hover, .mega-simple-cat-link:focus-visible { color: var(--mp-blue); background: var(--mp-hover); }
+
+@media (max-width: 991px) {
+  .mega.mega { width: 100%; }
+}

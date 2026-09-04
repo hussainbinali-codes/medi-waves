@@ -373,7 +373,7 @@ var zilla_likes = {"ajaxurl":"https:\/\/www.medi-waves.com\/wp-admin\/admin-ajax
 .mw-newnav-scope .hamburger span{width:19px;height:2px;border-radius:2px;background:var(--mwnav-navy);transition:transform .3s var(--mwnav-ease),opacity .3s var(--mwnav-ease);}
 
 @media (max-width:1024px){
-  .mw-newnav-scope .nav-links,.mw-newnav-scope .mw-newnav-scope .nav-right .icon-btn{display:none;}
+  .mw-newnav-scope .nav-links,.mw-newnav-scope .nav-right .icon-btn{display:none;}
   .mw-newnav-scope .nav-cta{display:none;}
   .mw-newnav-scope .hamburger{display:flex;}
 }
@@ -848,7 +848,7 @@ section{padding:var(--space-7) 0;position:relative;}
 .cat-grid>.cat-card:nth-child(3){transition-delay:160ms;} .cat-grid>.cat-card:nth-child(4){transition-delay:240ms;}
 .cat-grid>.cat-card:nth-child(5){transition-delay:320ms;} .cat-grid>.cat-card:nth-child(6){transition-delay:400ms;}
 .cat-grid>.cat-card:nth-child(7){transition-delay:480ms;} .cat-grid>.cat-card:nth-child(8){transition-delay:560ms;}
-.cat-card:hover{transform:translateY(-8px);margin:8px;}
+.cat-card:hover{transform:translateY(-8px);}
 .cat-glow{position:absolute;inset:-24px;border-radius:36px;background:radial-gradient(circle,var(--accent),transparent 70%);
   opacity:0;filter:blur(30px);transition:opacity .4s ease;z-index:0;pointer-events:none;}
 .cat-card:hover .cat-glow{opacity:.35;}
@@ -881,7 +881,7 @@ section{padding:var(--space-7) 0;position:relative;}
 .cat-icon{width:26px;height:26px;border-radius:8px;background:color-mix(in srgb, var(--accent) 14%, white);color:var(--accent);
   display:flex;align-items:center;justify-content:center;flex:none;font-size:12px;transition:transform .4s var(--ease);}
 .cat-card:hover .cat-icon{transform:scale(1.1) rotate(-6deg);}
-.cat-panel-top h5{font-size:12.5px;color:var(--navy);font-weight:700;flex:1;min-width:0;line-height:1.2;}
+.cat-panel-top h5{font-size:12.5px;color:var(--navy);font-weight:700;flex:1;min-width:0;line-height:1.2;}.cat-card:hover .cat-panel-top h5{color:var(--accent);transition:color .18s ease;}
 .cat-count{font-size:9px;font-weight:700;color:var(--accent);background:color-mix(in srgb, var(--accent) 12%, white);
   padding:2px 6px;border-radius:999px;flex:none;}
 .cat-count b{font-family:'Plus Jakarta Sans';font-weight:800;}
@@ -1270,6 +1270,20 @@ footer ul a:hover::before{opacity:1;left:0;}
 .contact-form textarea{resize:vertical;min-height:120px;}
 .contact-form-field{margin-bottom:16px;}
 .contact-form .btn-primary{width:100%;margin-top:6px;padding:16px 30px;font-size:15.5px;}
+.mw-sent-overlay{position:fixed;inset:0;background:rgba(11,31,58,.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;padding:20px;}
+.mw-sent-overlay.open{opacity:1;visibility:visible;}
+.mw-sent-modal{background:#fff;border-radius:24px;padding:44px 40px 36px;max-width:380px;width:100%;text-align:center;position:relative;box-shadow:0 30px 70px rgba(11,31,58,.35);transform:translateY(16px) scale(.96);transition:transform .35s cubic-bezier(.22,1,.36,1);}
+.mw-sent-overlay.open .mw-sent-modal{transform:translateY(0) scale(1);}
+.mw-sent-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;border:none;background:var(--gray-100);color:var(--gray-700);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.mw-sent-close:hover{background:var(--gray-200);}
+.mw-sent-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(120deg,#155EEF,#22B8CF);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 10px 26px rgba(21,94,239,.32);}
+.mw-sent-modal h3{font-family:'Plus Jakarta Sans','Manrope',sans-serif;font-size:22px;font-weight:800;color:var(--navy);margin:0 0 10px;letter-spacing:normal;word-spacing:4px;}
+.mw-sent-modal p{color:var(--gray-700);font-size:14.5px;line-height:1.6;margin:0 0 26px;}
+.mw-sent-modal .btn-primary{width:100%;padding:13px 24px;font-size:14.5px;}
+.wpcf7-response-output{margin-top:14px;padding:12px 16px;border-radius:12px;font-size:13.5px;font-weight:600;display:none;}
+.wpcf7-response-output.show{display:block;}
+.wpcf7-response-output.error{background:rgba(229,72,77,.12);color:#ffb4b6;border:1px solid rgba(229,72,77,.3);}
+.contact-form .btn-primary[disabled]{opacity:.7;cursor:not-allowed;}
 .contact-map-card{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--gray-200);margin-top:var(--space-3);}
 .contact-map-card iframe{display:block;width:100%;height:420px;border:0;}
 </style>
@@ -1279,6 +1293,8 @@ table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:to
 table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:left;}
 @media (max-width:600px){table th,table td{padding:6px 8px;font-size:13.5px;}}
 </style>
+<link rel="stylesheet" href="/assets/css/products-menu.css">
+<link rel="stylesheet" href="/assets/css/site-search.css">
 </head>
 
 
@@ -1492,88 +1508,11 @@ table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:l
       <li><a href="/about/">About <span class="underline"></span></a></li>
       <li>
         <a href="/hospital-furniture/">Products <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg><span class="underline"></span></a>
-        <div class="mega" id="productsMega">
-          <div class="mega-search-row">
-            <div class="mega-search">
-              <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <input type="text" id="megaSearchInput" placeholder="Search products…" autocomplete="off" aria-label="Search products">
-            </div>
-            <div class="mega-chips" id="megaChips">
-              <button class="mega-chip active" data-tag="all">Popular</button>
-              <button class="mega-chip" data-tag="new">New Arrivals</button>
-              <button class="mega-chip" data-tag="best">Best Sellers</button>
-              <button class="mega-chip" data-tag="icu">ICU</button>
-              <button class="mega-chip" data-tag="neonatal">Neonatal</button>
-              <button class="mega-chip" data-tag="surgical">Surgical</button>
-            </div>
-          </div>
-
-          <div class="mega-columns" id="megaColumns">
-            <div class="mega-category">
-              <div class="mega-cat-top">
-                <div><h4>Baby Care Equipments</h4><p>Warmers &amp; neonatal monitoring</p></div>
-              </div>
-              <div class="mega-products">
-                <a class="mega-product" href="/infant-care/radiant-warmer-p-001a/" data-tags="new best neonatal" data-name="infant radiant warmer"><span class="mega-product-arrow">→</span><span><b>Infant Radiant Warmer</b><em>Servo-controlled heating</em></span></a>
-                <a class="mega-product" href="/infant-care/infant-incubator-p-002/" data-tags="best neonatal" data-name="infant incubator"><span class="mega-product-arrow">→</span><span><b>Infant Incubator</b><em>Climate-controlled care</em></span></a>
-                <a class="mega-product" href="/infant-care/led-phototherapy-unit-p-003/" data-tags="neonatal" data-name="led phototherapy unit"><span class="mega-product-arrow">→</span><span><b>LED Phototherapy Unit</b><em>Jaundice management</em></span></a>
-                <a class="mega-product" href="/digital-fetal-doppler/" data-tags="neonatal" data-name="fetal doppler"><span class="mega-product-arrow">→</span><span><b>Fetal Doppler</b><em>Prenatal monitoring</em></span></a>
-                <a class="mega-product" href="/digital-baby-weighing-scale-p-016/" data-tags="neonatal" data-name="digital baby weighing scale"><span class="mega-product-arrow">→</span><span><b>Digital Baby Weighing Scale</b><em>Precision measurement</em></span></a>
-              </div>
-            </div>
-
-            <div class="mega-category">
-              <div class="mega-cat-top">
-                <div><h4>Hospital Furniture</h4><p>ICU beds &amp; patient furniture</p></div>
-              </div>
-              <div class="mega-products">
-                <a class="mega-product" href="/hospital-furniture/electric-beds/" data-tags="best icu" data-name="electric icu beds"><span class="mega-product-arrow">→</span><span><b>Electric ICU Beds</b><em>3 &amp; 4-function electric</em></span></a>
-                <a class="mega-product" href="/pediatric-bed/" data-tags="neonatal" data-name="pediatric beds"><span class="mega-product-arrow">→</span><span><b>Pediatric Beds</b><em>Height adjustable</em></span></a>
-                <a class="mega-product" href="/gynecological-tables/" data-tags="surgical" data-name="gynecological tables"><span class="mega-product-arrow">→</span><span><b>Gynecological Tables</b><em>Hydraulic tilt</em></span></a>
-                <a class="mega-product" href="/patient-transfer-trolley/" data-tags="icu" data-name="patient transfer trolleys"><span class="mega-product-arrow">→</span><span><b>Patient Transfer Trolleys</b><em>Mobile, easy-clean</em></span></a>
-                <a class="mega-product" href="/ward-equipments/" data-tags="icu" data-name="ward equipment"><span class="mega-product-arrow">→</span><span><b>Ward Equipment</b><em>Lockers, chairs, trolleys</em></span></a>
-              </div>
-            </div>
-
-            <div class="mega-category">
-              <div class="mega-cat-top">
-                <div><h4>Electromedicals</h4><p>Diagnostics &amp; surgical devices</p></div>
-              </div>
-              <div class="mega-products">
-                <a class="mega-product" href="/infusion-pumps/" data-tags="best icu" data-name="infusion pumps"><span class="mega-product-arrow">→</span><span><b>Infusion Pumps</b><em>Volumetric &amp; syringe</em></span></a>
-                <a class="mega-product" href="/electro-surgical-unit/" data-tags="new best surgical" data-name="electro surgical units"><span class="mega-product-arrow">→</span><span><b>Electro Surgical Units</b><em>Bipolar/monopolar cutting</em></span></a>
-                <a class="mega-product" href="/mercury-free-sphygmomanometer/" data-tags="" data-name="bp apparatus"><span class="mega-product-arrow">→</span><span><b>BP Apparatus</b><em>Digital &amp; manual</em></span></a>
-                <a class="mega-product" href="/respiretory/" data-tags="icu" data-name="respiratory devices"><span class="mega-product-arrow">→</span><span><b>Respiratory Devices</b><em>Critical care support</em></span></a>
-                <a class="mega-product" href="/oxygen-concentrator/" data-tags="new icu" data-name="oxygen concentrators"><span class="mega-product-arrow">→</span><span><b>Oxygen Concentrators</b><em>Continuous flow</em></span></a>
-              </div>
-            </div>
-
-            <div class="mega-featured">
-              <div class="mega-featured-img"><img src="../wp-content/uploads/2023/04/Electric-ICU-Bed-3-Function-EHB-03-768x768.jpg" alt="Hospital equipment"></div>
-              <h3>Need Help Choosing Equipment?</h3>
-              <p>Talk with our product specialists and receive recommendations based on your hospital requirements.</p>
-              <a href="/contact/" class="mega-btn-primary">Talk to an Expert →</a>
-              <a href="/wp-content/uploads/catalogues/Furniture_Cat.pdf" target="_blank" rel="noopener" class="mega-btn-secondary">Download Catalogue</a>
-              <div class="mega-trust">
-                <span>Export Worldwide</span>
-                <span>Trusted by Hospitals</span>
-                <span>ISO Certified</span>
-              </div>
-            </div>
-          </div>
-
-          <a href="/hospital-furniture/" class="mega-viewall">
-            <span><b>Browse Complete Medical Catalogue</b><small>View All Products</small></span>
-            <span class="mega-viewall-arrow">→</span>
-          </a>
-        </div>
+        <div class="mega" id="productsMega"></div>
       </li>
       <li>
         <a href="/child-growth-monitoring/">Child Monitoring <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg><span class="underline"></span></a>
-        <div class="mega-simple">
-          <a href="/child-growth-monitoring/child-growth-monitoring-system/">Child Growth Monitoring System</a>
-          <a href="/child-growth-monitoring/child-health-monitoring-system/">Child Health Monitoring System</a>
-        </div>
+        <div class="mega-simple"><a href="/child-growth-monitoring/">View Child Growth Monitoring products</a></div>
       </li>
       <li><a href="/contact/">Contact <span class="underline"></span></a></li>
     </ul>
@@ -1601,26 +1540,7 @@ table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:l
 
     <div class="mobile-accordion">
       <button class="mobile-accordion-head" aria-expanded="false">Products <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
-      <div class="mobile-accordion-body">
-        <h6>Baby Care Equipments</h6>
-        <a href="/infant-care/radiant-warmer-p-001a/">Infant Radiant Warmer</a>
-        <a href="/infant-care/infant-incubator-p-002/">Infant Incubator</a>
-        <a href="/infant-care/led-phototherapy-unit-p-003/">LED Phototherapy Unit</a>
-        <a href="/digital-fetal-doppler/">Fetal Doppler</a>
-        <a href="/digital-baby-weighing-scale-p-016/">Digital Baby Weighing Scale</a>
-        <h6>Hospital Furniture</h6>
-        <a href="/hospital-furniture/electric-beds/">Electric ICU Beds</a>
-        <a href="/pediatric-bed/">Pediatric Beds</a>
-        <a href="/gynecological-tables/">Gynecological Tables</a>
-        <a href="/patient-transfer-trolley/">Patient Transfer Trolleys</a>
-        <a href="/ward-equipments/">Ward Equipment</a>
-        <h6>Electromedicals</h6>
-        <a href="/infusion-pumps/">Infusion Pumps</a>
-        <a href="/electro-surgical-unit/">Electro Surgical Units</a>
-        <a href="/mercury-free-sphygmomanometer/">BP Apparatus</a>
-        <a href="/respiretory/">Respiratory Devices</a>
-        <a href="/oxygen-concentrator/">Oxygen Concentrators</a>
-      </div>
+      <div class="mobile-accordion-body" id="mobileProductsBody"></div>
     </div>
 
     <div class="mobile-accordion">
@@ -1650,42 +1570,6 @@ function updateProgress(){
   scrollProgress.style.width = pct + '%';
 }
 window.addEventListener('scroll', updateProgress);
-
-// products mega menu: live search + tag chip filtering
-(function () {
-  const mega = document.getElementById('productsMega');
-  if (!mega) return;
-  const searchInput = document.getElementById('megaSearchInput');
-  const chips = document.querySelectorAll('#megaChips .mega-chip');
-  const categories = mega.querySelectorAll('.mega-category');
-  let activeTag = 'all';
-
-  function applyFilter() {
-    const query = searchInput.value.trim().toLowerCase();
-    categories.forEach(cat => {
-      let visibleCount = 0;
-      cat.querySelectorAll('.mega-product').forEach(prod => {
-        const tags = (prod.dataset.tags || '').split(' ');
-        const matchesTag = activeTag === 'all' || tags.includes(activeTag);
-        const matchesQuery = !query || prod.dataset.name.includes(query);
-        const show = matchesTag && matchesQuery;
-        prod.classList.toggle('mega-hidden', !show);
-        if (show) visibleCount++;
-      });
-      cat.classList.toggle('mega-empty', visibleCount === 0);
-    });
-  }
-
-  searchInput.addEventListener('input', applyFilter);
-  chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      chips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      activeTag = chip.dataset.tag;
-      applyFilter();
-    });
-  });
-})();
 
 // mega menu: hover-intent with close delay so it never vanishes mid-move
 (function () {
@@ -1759,10 +1643,26 @@ document.querySelectorAll('.mobile-accordion-head').forEach(head => {
 });
 
 // sticky navbar shrink
-const navWrap = document.getElementById('navWrap');
-window.addEventListener('scroll', () => {
-  if(navWrap) navWrap.classList.toggle('scrolled', window.scrollY > 40);
-});
+(function(){
+  var _scrollProgress = document.getElementById('scrollProgress');
+  var _navWrap = document.getElementById('navWrap');
+  var _ticking = false;
+  function _onScroll(){
+    var h = document.documentElement;
+    var y = window.scrollY;
+    if (_scrollProgress) {
+      var pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      _scrollProgress.style.width = pct + '%';
+    }
+    if (_navWrap) _navWrap.classList.toggle('scrolled', y > 40);
+    var _backToTop = document.getElementById('backToTop');
+    if (_backToTop) _backToTop.classList.toggle('show', y > 600);
+    _ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!_ticking) { requestAnimationFrame(_onScroll); _ticking = true; }
+  }, { passive: true });
+})();
 })();
 </script>
 
@@ -1879,6 +1779,18 @@ window.addEventListener('scroll', () => {
                 <div class="wpcf7-response-output" aria-hidden="true"></div>
               </form>
             </div>
+          </div>
+        </div>
+
+        <div class="mw-sent-overlay" id="mwSentOverlay" role="dialog" aria-modal="true" aria-labelledby="mwSentTitle">
+          <div class="mw-sent-modal">
+            <button class="mw-sent-close" id="mwSentClose" aria-label="Close">✕</button>
+            <div class="mw-sent-icon">
+              <svg viewBox="0 0 24 24" fill="none" width="30" height="30"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 id="mwSentTitle">Message Sent!</h3>
+            <p>Thanks for reaching out — our team will get back to you shortly.</p>
+            <button class="btn btn-primary" id="mwSentOk">Okay</button>
           </div>
         </div>
 
@@ -2080,5 +1992,100 @@ var thegem_menu_data = {"ajax_url":"https:\/\/www.medi-waves.com\/wp-admin\/admi
   link.setAttribute('href', url);
 })();
 </script>
+<script id="mw-contact-sent-js">
+(function(){
+  var form = document.querySelector('#wpcf7-f61-p6-o1 form');
+  var overlay = document.getElementById('mwSentOverlay');
+  if (!form || !overlay) return;
+
+  var CONTACT_API_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+    ? 'http://localhost:8081/api/contact'
+    : '/api/contact';
+
+  var submitBtn = form.querySelector('.wpcf7-submit');
+  var errorBox = form.querySelector('.wpcf7-response-output');
+  var submitBtnDefaultText = submitBtn ? submitBtn.textContent : '';
+
+  function openModal(){
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function showError(message){
+    if (!errorBox) return;
+    errorBox.textContent = message;
+    errorBox.classList.add('show', 'error');
+    errorBox.setAttribute('aria-hidden', 'false');
+  }
+  function clearError(){
+    if (!errorBox) return;
+    errorBox.textContent = '';
+    errorBox.classList.remove('show', 'error');
+    errorBox.setAttribute('aria-hidden', 'true');
+  }
+  function setLoading(isLoading){
+    if (!submitBtn) return;
+    submitBtn.disabled = isLoading;
+    submitBtn.textContent = isLoading ? 'Sending…' : submitBtnDefaultText;
+  }
+
+  document.addEventListener('submit', function(e){
+    if (e.target !== form) return;
+    e.preventDefault();
+    e.stopPropagation();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    clearError();
+    setLoading(true);
+
+    var payload = {
+      name: form.querySelector('#your-name').value,
+      email: form.querySelector('#your-email').value,
+      website: form.querySelector('#your-website').value,
+      message: form.querySelector('#your-message').value,
+    };
+
+    fetch(CONTACT_API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+      .then(function(res){
+        return res.json().then(function(data){ return { status: res.status, data: data }; });
+      })
+      .then(function(result){
+        setLoading(false);
+        if (result.data && result.data.ok) {
+          openModal();
+          form.reset();
+        } else {
+          showError((result.data && result.data.error) || 'Something went wrong. Please try again.');
+        }
+      })
+      .catch(function(){
+        setLoading(false);
+        showError('Could not reach the server. Please check your connection and try again.');
+      });
+  }, true);
+
+  document.getElementById('mwSentClose').addEventListener('click', closeModal);
+  document.getElementById('mwSentOk').addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  });
+})();
+</script>
+<script src="/assets/js/products-menu.js" defer></script>
+<script src="/assets/js/search-index.js" defer></script>
+<script src="/assets/js/site-search.js" defer></script>
 </body>
 </html>

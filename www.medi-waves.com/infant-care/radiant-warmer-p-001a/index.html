@@ -371,7 +371,7 @@ var zilla_likes = {"ajaxurl":"https:\/\/www.medi-waves.com\/wp-admin\/admin-ajax
 .mw-newnav-scope .hamburger span{width:19px;height:2px;border-radius:2px;background:var(--mwnav-navy);transition:transform .3s var(--mwnav-ease),opacity .3s var(--mwnav-ease);}
 
 @media (max-width:1024px){
-  .mw-newnav-scope .nav-links,.mw-newnav-scope .mw-newnav-scope .nav-right .icon-btn{display:none;}
+  .mw-newnav-scope .nav-links,.mw-newnav-scope .nav-right .icon-btn{display:none;}
   .mw-newnav-scope .nav-cta{display:none;}
   .mw-newnav-scope .hamburger{display:flex;}
 }
@@ -429,7 +429,7 @@ var zilla_likes = {"ajaxurl":"https:\/\/www.medi-waves.com\/wp-admin\/admin-ajax
 .elementor-widget-text-editor .elementor-text-editor{background:#F5FAFC;border:1px solid #E4EAF0;border-radius:18px;padding:22px 24px;margin-top:16px;}
 .elementor-col-50:first-child .elementor-widget-text-editor .elementor-text-editor{background:#fff;}
 .elementor-widget-text-editor .elementor-text-editor h4,.elementor-widget-text-editor .elementor-text-editor h5{font-family:'Plus Jakarta Sans','Manrope',sans-serif !important;font-size:12.5px !important;font-weight:800 !important;text-transform:uppercase;letter-spacing:.06em;color:#155EEF !important;margin:0 0 14px !important;display:flex;align-items:center;gap:9px;}
-.elementor-widget-text-editor .elementor-text-editor h4::before,.elementor-widget-text-editor .elementor-text-editor h5::before{content:"";width:22px;height:22px;border-radius:7px;background:rgba(21,94,239,.12);flex:none;}
+
 .elementor-widget-text-editor .elementor-text-editor p strong{display:block;margin:20px 0 10px;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:#22B8CF;font-weight:800;}
 .elementor-widget-text-editor .elementor-text-editor ul{list-style:none !important;margin:0 !important;padding:0 !important;display:flex;flex-direction:column;gap:9px;}
 .elementor-widget-text-editor .elementor-text-editor ul li{position:relative;padding-left:26px !important;font-size:13.6px;color:#475467;line-height:1.55;}
@@ -459,6 +459,8 @@ table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:to
 table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:left;}
 @media (max-width:600px){table th,table td{padding:6px 8px;font-size:13.5px;}}
 </style>
+<link rel="stylesheet" href="/assets/css/products-menu.css">
+<link rel="stylesheet" href="/assets/css/site-search.css">
 </head>
 
 
@@ -670,88 +672,11 @@ table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:l
       <li><a href="../../index.html%3Fp=413.html">About <span class="underline"></span></a></li>
       <li>
         <a href="../../index.html%3Fp=982.html">Products <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg><span class="underline"></span></a>
-        <div class="mega" id="productsMega">
-          <div class="mega-search-row">
-            <div class="mega-search">
-              <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <input type="text" id="megaSearchInput" placeholder="Search products…" autocomplete="off" aria-label="Search products">
-            </div>
-            <div class="mega-chips" id="megaChips">
-              <button class="mega-chip active" data-tag="all">Popular</button>
-              <button class="mega-chip" data-tag="new">New Arrivals</button>
-              <button class="mega-chip" data-tag="best">Best Sellers</button>
-              <button class="mega-chip" data-tag="icu">ICU</button>
-              <button class="mega-chip" data-tag="neonatal">Neonatal</button>
-              <button class="mega-chip" data-tag="surgical">Surgical</button>
-            </div>
-          </div>
-
-          <div class="mega-columns" id="megaColumns">
-            <div class="mega-category">
-              <div class="mega-cat-top">
-                <div><h4>Baby Care Equipments</h4><p>Warmers &amp; neonatal monitoring</p></div>
-              </div>
-              <div class="mega-products">
-                <a class="mega-product" href="../../index.html%3Fp=3494.html" data-tags="new best neonatal" data-name="infant radiant warmer"><span class="mega-product-arrow">→</span><span><b>Infant Radiant Warmer</b><em>Servo-controlled heating</em></span></a>
-                <a class="mega-product" href="../../index.html%3Fp=3605.html" data-tags="best neonatal" data-name="infant incubator"><span class="mega-product-arrow">→</span><span><b>Infant Incubator</b><em>Climate-controlled care</em></span></a>
-                <a class="mega-product" href="../../index.html%3Fp=3334.html" data-tags="neonatal" data-name="led phototherapy unit"><span class="mega-product-arrow">→</span><span><b>LED Phototherapy Unit</b><em>Jaundice management</em></span></a>
-                <a class="mega-product" href="../../digital-fetal-doppler/index.html" data-tags="neonatal" data-name="fetal doppler"><span class="mega-product-arrow">→</span><span><b>Fetal Doppler</b><em>Prenatal monitoring</em></span></a>
-                <a class="mega-product" href="../../digital-baby-weighing-scale-p-016/index.html" data-tags="neonatal" data-name="digital baby weighing scale"><span class="mega-product-arrow">→</span><span><b>Digital Baby Weighing Scale</b><em>Precision measurement</em></span></a>
-              </div>
-            </div>
-
-            <div class="mega-category">
-              <div class="mega-cat-top">
-                <div><h4>Hospital Furniture</h4><p>ICU beds &amp; patient furniture</p></div>
-              </div>
-              <div class="mega-products">
-                <a class="mega-product" href="../../index.html%3Fp=998.html" data-tags="best icu" data-name="electric icu beds"><span class="mega-product-arrow">→</span><span><b>Electric ICU Beds</b><em>3 &amp; 4-function electric</em></span></a>
-                <a class="mega-product" href="../../index.html%3Fp=1004.html" data-tags="neonatal" data-name="pediatric beds"><span class="mega-product-arrow">→</span><span><b>Pediatric Beds</b><em>Height adjustable</em></span></a>
-                <a class="mega-product" href="../../index.html%3Fp=1010.html" data-tags="surgical" data-name="gynecological tables"><span class="mega-product-arrow">→</span><span><b>Gynecological Tables</b><em>Hydraulic tilt</em></span></a>
-                <a class="mega-product" href="../../index.html%3Fp=1012.html" data-tags="icu" data-name="patient transfer trolleys"><span class="mega-product-arrow">→</span><span><b>Patient Transfer Trolleys</b><em>Mobile, easy-clean</em></span></a>
-                <a class="mega-product" href="../../index.html%3Fp=1022.html" data-tags="icu" data-name="ward equipment"><span class="mega-product-arrow">→</span><span><b>Ward Equipment</b><em>Lockers, chairs, trolleys</em></span></a>
-              </div>
-            </div>
-
-            <div class="mega-category">
-              <div class="mega-cat-top">
-                <div><h4>Electromedicals</h4><p>Diagnostics &amp; surgical devices</p></div>
-              </div>
-              <div class="mega-products">
-                <a class="mega-product" href="../../index.html%3Fp=6080.html" data-tags="best icu" data-name="infusion pumps"><span class="mega-product-arrow">→</span><span><b>Infusion Pumps</b><em>Volumetric &amp; syringe</em></span></a>
-                <a class="mega-product" href="../../index.html%3Fp=989.html" data-tags="new best surgical" data-name="electro surgical units"><span class="mega-product-arrow">→</span><span><b>Electro Surgical Units</b><em>Bipolar/monopolar cutting</em></span></a>
-                <a class="mega-product" href="../../index.html%3Fp=6222.html" data-tags="" data-name="bp apparatus"><span class="mega-product-arrow">→</span><span><b>BP Apparatus</b><em>Digital &amp; manual</em></span></a>
-                <a class="mega-product" href="../../index.html%3Fp=7188.html" data-tags="icu" data-name="respiratory devices"><span class="mega-product-arrow">→</span><span><b>Respiratory Devices</b><em>Critical care support</em></span></a>
-                <a class="mega-product" href="../../index.html%3Fp=7003.html" data-tags="new icu" data-name="oxygen concentrators"><span class="mega-product-arrow">→</span><span><b>Oxygen Concentrators</b><em>Continuous flow</em></span></a>
-              </div>
-            </div>
-
-            <div class="mega-featured">
-              <div class="mega-featured-img"><img src="../../wp-content/uploads/2023/04/Electric-ICU-Bed-3-Function-EHB-03-768x768.jpg" alt="Hospital equipment"></div>
-              <h3>Need Help Choosing Equipment?</h3>
-              <p>Talk with our product specialists and receive recommendations based on your hospital requirements.</p>
-              <a href="../../index.html%3Fp=6.html" class="mega-btn-primary">Talk to an Expert →</a>
-              <a href="../../index.html%3Fp=6.html" class="mega-btn-secondary">Download Catalogue</a>
-              <div class="mega-trust">
-                <span>Export Worldwide</span>
-                <span>Trusted by Hospitals</span>
-                <span>ISO Certified</span>
-              </div>
-            </div>
-          </div>
-
-          <a href="../../index.html%3Fp=982.html" class="mega-viewall">
-            <span><b>Browse Complete Medical Catalogue</b><small>View All Products</small></span>
-            <span class="mega-viewall-arrow">→</span>
-          </a>
-        </div>
+        <div class="mega" id="productsMega"></div>
       </li>
       <li>
         <a href="../../index.html%3Fp=7833.html">Child Monitoring <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg><span class="underline"></span></a>
-        <div class="mega-simple">
-          <a href="../../index.html%3Fp=7764.html">Child Growth Monitoring System</a>
-          <a href="../../index.html%3Fp=7758.html">Child Health Monitoring System</a>
-        </div>
+        <div class="mega-simple"><a href="../../child-growth-monitoring/index.html">View Child Growth Monitoring products</a></div>
       </li>
       <li><a href="../../index.html%3Fp=6.html">Contact <span class="underline"></span></a></li>
     </ul>
@@ -779,26 +704,7 @@ table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:l
 
     <div class="mobile-accordion">
       <button class="mobile-accordion-head" aria-expanded="false">Products <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
-      <div class="mobile-accordion-body">
-        <h6>Baby Care Equipments</h6>
-        <a href="../../index.html%3Fp=3494.html">Infant Radiant Warmer</a>
-        <a href="../../index.html%3Fp=3605.html">Infant Incubator</a>
-        <a href="../../index.html%3Fp=3334.html">LED Phototherapy Unit</a>
-        <a href="../../digital-fetal-doppler/index.html">Fetal Doppler</a>
-        <a href="../../digital-baby-weighing-scale-p-016/index.html">Digital Baby Weighing Scale</a>
-        <h6>Hospital Furniture</h6>
-        <a href="../../index.html%3Fp=998.html">Electric ICU Beds</a>
-        <a href="../../index.html%3Fp=1004.html">Pediatric Beds</a>
-        <a href="../../index.html%3Fp=1010.html">Gynecological Tables</a>
-        <a href="../../index.html%3Fp=1012.html">Patient Transfer Trolleys</a>
-        <a href="../../index.html%3Fp=1022.html">Ward Equipment</a>
-        <h6>Electromedicals</h6>
-        <a href="../../index.html%3Fp=6080.html">Infusion Pumps</a>
-        <a href="../../index.html%3Fp=989.html">Electro Surgical Units</a>
-        <a href="../../index.html%3Fp=6222.html">BP Apparatus</a>
-        <a href="../../index.html%3Fp=7188.html">Respiratory Devices</a>
-        <a href="../../index.html%3Fp=7003.html">Oxygen Concentrators</a>
-      </div>
+      <div class="mobile-accordion-body" id="mobileProductsBody"></div>
     </div>
 
     <div class="mobile-accordion">
@@ -828,42 +734,6 @@ function updateProgress(){
   scrollProgress.style.width = pct + '%';
 }
 window.addEventListener('scroll', updateProgress);
-
-// products mega menu: live search + tag chip filtering
-(function () {
-  const mega = document.getElementById('productsMega');
-  if (!mega) return;
-  const searchInput = document.getElementById('megaSearchInput');
-  const chips = document.querySelectorAll('#megaChips .mega-chip');
-  const categories = mega.querySelectorAll('.mega-category');
-  let activeTag = 'all';
-
-  function applyFilter() {
-    const query = searchInput.value.trim().toLowerCase();
-    categories.forEach(cat => {
-      let visibleCount = 0;
-      cat.querySelectorAll('.mega-product').forEach(prod => {
-        const tags = (prod.dataset.tags || '').split(' ');
-        const matchesTag = activeTag === 'all' || tags.includes(activeTag);
-        const matchesQuery = !query || prod.dataset.name.includes(query);
-        const show = matchesTag && matchesQuery;
-        prod.classList.toggle('mega-hidden', !show);
-        if (show) visibleCount++;
-      });
-      cat.classList.toggle('mega-empty', visibleCount === 0);
-    });
-  }
-
-  searchInput.addEventListener('input', applyFilter);
-  chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      chips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      activeTag = chip.dataset.tag;
-      applyFilter();
-    });
-  });
-})();
 
 // mega menu: hover-intent with close delay so it never vanishes mid-move
 (function () {
@@ -937,10 +807,26 @@ document.querySelectorAll('.mobile-accordion-head').forEach(head => {
 });
 
 // sticky navbar shrink
-const navWrap = document.getElementById('navWrap');
-window.addEventListener('scroll', () => {
-  if(navWrap) navWrap.classList.toggle('scrolled', window.scrollY > 40);
-});
+(function(){
+  var _scrollProgress = document.getElementById('scrollProgress');
+  var _navWrap = document.getElementById('navWrap');
+  var _ticking = false;
+  function _onScroll(){
+    var h = document.documentElement;
+    var y = window.scrollY;
+    if (_scrollProgress) {
+      var pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      _scrollProgress.style.width = pct + '%';
+    }
+    if (_navWrap) _navWrap.classList.toggle('scrolled', y > 40);
+    var _backToTop = document.getElementById('backToTop');
+    if (_backToTop) _backToTop.classList.toggle('show', y > 600);
+    _ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!_ticking) { requestAnimationFrame(_onScroll); _ticking = true; }
+  }, { passive: true });
+})();
 })();
 </script>
 
@@ -958,7 +844,7 @@ window.addEventListener('scroll', () => {
 						
 						
 						
-						<div class="container"><div class="page-title-inner"><div class="page-title-title"><h1 style="color:#ffffff;">  Radiant Warmer P-001A</h1></div></div></div>
+						<div class="container"><div class="page-title-inner"><div class="page-title-title"><h1 style="color:#ffffff;">  Radiant Warmer P-001A</h1></div><div style="display:flex;gap:12px;flex-wrap:wrap;"><a class="pw-page-brochure-btn" href="../../wp-content/uploads/catalogues/infant radient warmer broucher 2026.pdf" target="_blank" rel="noopener" download style="display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:11px 22px;border-radius:999px;background:#ffffff;color:#155EEF;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.12);"><svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download Brochure</a></div></div></div>
 						<div class="breadcrumbs-container"><div class="container"><div class="breadcrumbs"><span><a href="../../index.php.html" itemprop="url"><span itemprop="title">Home</span></a></span> <span class="divider"><span class="bc-devider"></span></span> <span><a href="../../index.html%3Fp=991.html" itemprop="url"><span itemprop="title">Infant Care</span></a></span> <span class="divider"><span class="bc-devider"></span></span> <span class="current">Radiant Warmer P-001A</span></div><!-- .breadcrumbs --></div></div>
 					</div>
 <div class="block-content">
@@ -979,37 +865,16 @@ window.addEventListener('scroll', () => {
 						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
 					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-f04fe4b" data-id="f04fe4b" data-element_type="column">
 			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-15fe30e flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styledimage" data-id="15fe30e" data-element_type="widget" data-settings="{&quot;thegem_elementor_preset&quot;:&quot;style-3&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;https:\/\/www.medi-waves.com\/wp-content\/uploads\/2025\/06\/IMG_9711.jpg&quot;,&quot;id&quot;:7734,&quot;size&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;source&quot;:&quot;library&quot;},&quot;image_position&quot;:&quot;left&quot;,&quot;icon_show&quot;:&quot;yes&quot;}" data-widget_type="thegem-styledimage.default">
+						<div class="elementor-element elementor-element-15fe30e flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styledimage" data-id="15fe30e" data-element_type="widget" data-settings="{&quot;thegem_elementor_preset&quot;:&quot;style-3&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;http:\/\/hardikmeditech.com\/medi-waves\/wp-content\/uploads\/2023\/05\/RadiantWarmer_new1.jpg&quot;,&quot;id&quot;:6206,&quot;size&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;source&quot;:&quot;library&quot;},&quot;image_position&quot;:&quot;left&quot;,&quot;icon_show&quot;:&quot;yes&quot;}" data-widget_type="thegem-styledimage.default">
 				<div class="elementor-widget-container">
-					
+
 <div class="styled-image-wrapper">
 			<div class="gem-image gem-wrapbox gem-wrapbox-style-3 gem-wrapbox-position-left  ">
 			<div class="gem-wrapbox-inner " >
-								<a href="../../wp-content/uploads/2025/06/IMG_9711.jpg" class="fancybox">
-										<img class="gem-wrapbox-element img-responsive "
-						 data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/elementor/thumbs/IMG_9711-r7tf5pdj4lph2x5dy16hi441p9l7q3ib9uce21v9wa.jpg"
-						 alt="IMG_9711" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705ad41ba18" ><script>window.tgpQueue.add('tgpli-6a705ad41ba18')</script><noscript><img class="gem-wrapbox-element img-responsive "
-						 src="../../wp-content/uploads/elementor/thumbs/IMG_9711-r7tf5pdj4lph2x5dy16hi441p9l7q3ib9uce21v9wa.jpg"
-						 alt="IMG_9711"></noscript>
-										<i aria-hidden="true" class="fas fa-camera"></i>				</a>
-						</div>
-		</div>
-		</div>
-
-
-	
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-aa522b0 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styledimage" data-id="aa522b0" data-element_type="widget" data-settings="{&quot;thegem_elementor_preset&quot;:&quot;style-3&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;http:\/\/hardikmeditech.com\/medi-waves\/wp-content\/uploads\/2023\/05\/RadiantWarmer_new1.jpg&quot;,&quot;id&quot;:6206,&quot;size&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;source&quot;:&quot;library&quot;},&quot;image_position&quot;:&quot;left&quot;,&quot;icon_show&quot;:&quot;yes&quot;}" data-widget_type="thegem-styledimage.default">
-				<div class="elementor-widget-container">
-					
-<div class="styled-image-wrapper">
-			<div class="gem-image gem-wrapbox gem-wrapbox-style-3 gem-wrapbox-position-left lazy-loading ">
-			<div class="gem-wrapbox-inner  lazy-loading-item"  data-ll-effect="move-up">
 								<a href="/wp-content/uploads/2023/05/RadiantWarmer_new1.jpg" class="fancybox">
 										<img class="gem-wrapbox-element img-responsive "
 						 data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/elementor/thumbs/RadiantWarmer_new1-q6zwgfpklapjszx39v0b5g6xoo9qu5plmlnsr1or8a.jpg"
-						 alt="RadiantWarmer_new1" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705ad41ba2a" ><script>window.tgpQueue.add('tgpli-6a705ad41ba2a')</script><noscript><img class="gem-wrapbox-element img-responsive "
+						 alt="RadiantWarmer_new1" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705ad41ba18" ><script>window.tgpQueue.add('tgpli-6a705ad41ba18')</script><noscript><img class="gem-wrapbox-element img-responsive "
 						 src="../../wp-content/uploads/elementor/thumbs/RadiantWarmer_new1-q6zwgfpklapjszx39v0b5g6xoo9qu5plmlnsr1or8a.jpg"
 						 alt="RadiantWarmer_new1"></noscript>
 										<i aria-hidden="true" class="fas fa-camera"></i>				</a>
@@ -1021,18 +886,39 @@ window.addEventListener('scroll', () => {
 	
 						</div>
 				</div>
-				<div class="elementor-element elementor-element-aa5fe3a flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styledimage" data-id="aa5fe3a" data-element_type="widget" data-settings="{&quot;thegem_elementor_preset&quot;:&quot;style-3&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;https:\/\/www.medi-waves.com\/wp-content\/uploads\/2025\/06\/IMG_9715.jpg&quot;,&quot;id&quot;:7736,&quot;size&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;source&quot;:&quot;library&quot;},&quot;image_position&quot;:&quot;left&quot;,&quot;icon_show&quot;:&quot;yes&quot;}" data-widget_type="thegem-styledimage.default">
+				<div class="elementor-element elementor-element-aa522b0 flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styledimage" data-id="aa522b0" data-element_type="widget" data-settings="{&quot;thegem_elementor_preset&quot;:&quot;style-3&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;https:\/\/www.medi-waves.com\/wp-content\/uploads\/2025\/06\/IMG_9715.jpg&quot;,&quot;id&quot;:7736,&quot;size&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;source&quot;:&quot;library&quot;},&quot;image_position&quot;:&quot;left&quot;,&quot;icon_show&quot;:&quot;yes&quot;}" data-widget_type="thegem-styledimage.default">
 				<div class="elementor-widget-container">
-					
+
 <div class="styled-image-wrapper">
-			<div class="gem-image gem-wrapbox gem-wrapbox-style-3 gem-wrapbox-position-left  ">
-			<div class="gem-wrapbox-inner " >
+			<div class="gem-image gem-wrapbox gem-wrapbox-style-3 gem-wrapbox-position-left lazy-loading ">
+			<div class="gem-wrapbox-inner  lazy-loading-item"  data-ll-effect="move-up">
 								<a href="../../wp-content/uploads/2025/06/IMG_9715.jpg" class="fancybox">
 										<img class="gem-wrapbox-element img-responsive "
 						 data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/elementor/thumbs/IMG_9715-r7tf6dtc2amxgs5vzbqsaxy15a8ra87c17b0j8v1ei.jpg"
-						 alt="IMG_9715" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705ad41ba30" ><script>window.tgpQueue.add('tgpli-6a705ad41ba30')</script><noscript><img class="gem-wrapbox-element img-responsive "
+						 alt="IMG_9715" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705ad41ba2a" ><script>window.tgpQueue.add('tgpli-6a705ad41ba2a')</script><noscript><img class="gem-wrapbox-element img-responsive "
 						 src="../../wp-content/uploads/elementor/thumbs/IMG_9715-r7tf6dtc2amxgs5vzbqsaxy15a8ra87c17b0j8v1ei.jpg"
 						 alt="IMG_9715"></noscript>
+										<i aria-hidden="true" class="fas fa-camera"></i>				</a>
+						</div>
+		</div>
+		</div>
+
+
+	
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-aa5fe3a flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styledimage" data-id="aa5fe3a" data-element_type="widget" data-settings="{&quot;thegem_elementor_preset&quot;:&quot;style-3&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;https:\/\/www.medi-waves.com\/wp-content\/uploads\/2025\/06\/IMG_9711.jpg&quot;,&quot;id&quot;:7734,&quot;size&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;source&quot;:&quot;library&quot;},&quot;image_position&quot;:&quot;left&quot;,&quot;icon_show&quot;:&quot;yes&quot;}" data-widget_type="thegem-styledimage.default">
+				<div class="elementor-widget-container">
+
+<div class="styled-image-wrapper">
+			<div class="gem-image gem-wrapbox gem-wrapbox-style-3 gem-wrapbox-position-left  ">
+			<div class="gem-wrapbox-inner " >
+								<a href="../../wp-content/uploads/2025/06/IMG_9711.jpg" class="fancybox">
+										<img class="gem-wrapbox-element img-responsive "
+						 data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/elementor/thumbs/IMG_9711-r7tf5pdj4lph2x5dy16hi441p9l7q3ib9uce21v9wa.jpg"
+						 alt="IMG_9711" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705ad41ba30" ><script>window.tgpQueue.add('tgpli-6a705ad41ba30')</script><noscript><img class="gem-wrapbox-element img-responsive "
+						 src="../../wp-content/uploads/elementor/thumbs/IMG_9711-r7tf5pdj4lph2x5dy16hi441p9l7q3ib9uce21v9wa.jpg"
+						 alt="IMG_9711"></noscript>
 										<i aria-hidden="true" class="fas fa-camera"></i>				</a>
 						</div>
 		</div>
@@ -1130,18 +1016,18 @@ window.addEventListener('scroll', () => {
 						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
 					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-88a6b8d" data-id="88a6b8d" data-element_type="column">
 			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-dbf30db flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styledimage" data-id="dbf30db" data-element_type="widget" data-settings="{&quot;thegem_elementor_preset&quot;:&quot;style-3&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;http:\/\/hardikmeditech.com\/medi-waves\/wp-content\/uploads\/2023\/05\/Infant-Warmer-P001A-1.jpg&quot;,&quot;id&quot;:3758,&quot;size&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;source&quot;:&quot;library&quot;},&quot;image_position&quot;:&quot;left&quot;,&quot;icon_show&quot;:&quot;yes&quot;}" data-widget_type="thegem-styledimage.default">
+						<div class="elementor-element elementor-element-dbf30db flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styledimage" data-id="dbf30db" data-element_type="widget" data-settings="{&quot;thegem_elementor_preset&quot;:&quot;style-3&quot;,&quot;image&quot;:{&quot;url&quot;:&quot;http:\/\/hardikmeditech.com\/medi-waves\/wp-content\/uploads\/2023\/05\/Infant-Warmer-P001A-2.jpg&quot;,&quot;id&quot;:5636,&quot;size&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;source&quot;:&quot;library&quot;},&quot;image_position&quot;:&quot;left&quot;,&quot;icon_show&quot;:&quot;yes&quot;}" data-widget_type="thegem-styledimage.default">
 				<div class="elementor-widget-container">
-					
+
 <div class="styled-image-wrapper">
 			<div class="gem-image gem-wrapbox gem-wrapbox-style-3 gem-wrapbox-position-left lazy-loading ">
 			<div class="gem-wrapbox-inner  lazy-loading-item"  data-ll-effect="move-up">
-								<a href="http://hardikmeditech.com/medi-waves/wp-content/uploads/2023/05/Infant-Warmer-P001A-1.jpg" class="fancybox">
+								<a href="/wp-content/uploads/2023/05/Infant-Warmer-P001A-2.jpg" class="fancybox">
 										<img class="gem-wrapbox-element img-responsive "
-						 data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/elementor/thumbs/Infant-Warmer-P001A-1-q6zwgerqego9hdygfclokyfh3aedmglvah0b9rq5ei.jpg"
-						 alt="Infant-Warmer-P001A-1" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705ad41ba3f" ><script>window.tgpQueue.add('tgpli-6a705ad41ba3f')</script><noscript><img class="gem-wrapbox-element img-responsive "
-						 src="../../wp-content/uploads/elementor/thumbs/Infant-Warmer-P001A-1-q6zwgerqego9hdygfclokyfh3aedmglvah0b9rq5ei.jpg"
-						 alt="Infant-Warmer-P001A-1"></noscript>
+						 data-tgpli-src="https://www.medi-waves.com/wp-content/uploads/elementor/thumbs/Infant-Warmer-P001A-2-q6zwgerqego9hdygfclokyfh3aedmglvah0b9rq5ei.jpg"
+						 alt="Infant-Warmer-P001A-2" data-tgpli-inited data-tgpli-image-inited id="tgpli-6a705ad41ba3f" ><script>window.tgpQueue.add('tgpli-6a705ad41ba3f')</script><noscript><img class="gem-wrapbox-element img-responsive "
+						 src="../../wp-content/uploads/elementor/thumbs/Infant-Warmer-P001A-2-q6zwgerqego9hdygfclokyfh3aedmglvah0b9rq5ei.jpg"
+						 alt="Infant-Warmer-P001A-2"></noscript>
 										<i aria-hidden="true" class="fas fa-camera"></i>				</a>
 						</div>
 		</div>
@@ -1481,5 +1367,8 @@ var thegem_menu_data = {"ajax_url":"https:\/\/www.medi-waves.com\/wp-admin\/admi
   link.setAttribute('href', url);
 })();
 </script>
+<script src="/assets/js/products-menu.js" defer></script>
+<script src="/assets/js/search-index.js" defer></script>
+<script src="/assets/js/site-search.js" defer></script>
 </body>
 </html>
