@@ -98,15 +98,15 @@
 }
 
 /* ========================================================
-   Navbar Search Input Box (Harmonized with Main Modal Input)
+   Navbar Search Input Box (Clean Seamless Pill Search)
    ======================================================== */
 .mw-nav-search-box {
-  display: flex; align-items: center; gap: 12px; height: 42px; padding: 0 16px;
-  border: 1.5px solid #EAEFF5; border-radius: 12px;
-  background: #FAFCFE; color: var(--navy, #0B1F3A);
-  min-width: 220px; max-width: 260px;
+  display: flex; align-items: center; gap: 9px; height: 38px; padding: 0 14px;
+  border: 1.5px solid #E2E8F0; border-radius: 999px;
+  background: #F8FAFC; color: var(--navy, #0B1F3A);
+  min-width: 210px; max-width: 250px;
   transition: all .2s cubic-bezier(.16, 1, .3, 1);
-  cursor: text; box-shadow: 0 1px 3px rgba(11, 31, 58, 0.04);
+  cursor: text; box-shadow: 0 1px 3px rgba(11, 31, 58, 0.03);
 }
 .mw-nav-search-box:hover {
   border-color: #CBD5E1; background: #FFFFFF;
@@ -114,22 +114,53 @@
 }
 .mw-nav-search-box:focus-within {
   border-color: var(--blue, #155EEF); background: #FFFFFF;
-  box-shadow: 0 0 0 3.5px rgba(21, 94, 239, 0.12), 0 2px 8px rgba(21, 94, 239, 0.08);
+  box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.12), 0 2px 8px rgba(21, 94, 239, 0.06);
 }
 .mw-nav-search-icon {
-  flex: none; color: var(--blue, #155EEF);
+  flex: none; color: #94A3B8; transition: color .2s ease;
+}
+.mw-nav-search-box:hover .mw-nav-search-icon,
+.mw-nav-search-box:focus-within .mw-nav-search-icon {
+  color: var(--blue, #155EEF);
 }
 
+/* Zero-out any browser default input styling, borders, or focus rectangles */
 .mw-nav-search-input {
-  flex: 1; min-width: 0; border: none; outline: none; background: transparent;
+  flex: 1; min-width: 0;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
   font-family: 'Plus Jakarta Sans', 'Manrope', -apple-system, sans-serif;
-  font-size: 15px; font-weight: 600; line-height: 1.4;
-  color: var(--navy, #0B1F3A); cursor: text; padding: 0; margin: 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--navy, #0B1F3A);
+  cursor: text;
+}
+.mw-nav-search-input:focus,
+.mw-nav-search-input:focus-visible,
+.mw-nav-search-input:active,
+.mw-nav-search-input:hover {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 .mw-nav-search-input::placeholder {
   color: #94A3B8; font-weight: 500;
 }
 
+/* On desktop where the search box is present, hide the duplicate search icon button */
+@media (min-width: 861px) {
+  #navSearchBtn {
+    display: none !important;
+  }
+}
 @media (max-width: 1100px) {
   .mw-nav-search-box { min-width: 160px; }
 }
