@@ -111,6 +111,7 @@
       "</div>" +
       '<div class="mw-search-results" id="mwSearchResults"></div>' +
       '<div class="mw-search-footer">' +
+      '<span><kbd>Ctrl</kbd>+<kbd>S</kbd> Open</span>' +
       '<span><kbd>↑</kbd> <kbd>↓</kbd> Navigate</span>' +
       '<span><kbd>↵</kbd> Select</span>' +
       '<span><kbd>esc</kbd> Close</span>' +
@@ -328,8 +329,22 @@
     }
 
     document.addEventListener("keydown", function (e) {
+      var isCtrlOrCmd = e.ctrlKey || e.metaKey;
+      var keyLower = (e.key || "").toLowerCase();
+
+      // Shortcut: Ctrl+S (or Cmd+S on Mac) opens search and focuses the input
+      if (isCtrlOrCmd && keyLower === "s") {
+        e.preventDefault();
+        if (!overlay.classList.contains("open")) {
+          open();
+        } else {
+          focusModalInput();
+        }
+        return;
+      }
+
       if (!overlay.classList.contains("open")) {
-        if ((e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "K")) {
+        if (isCtrlOrCmd && keyLower === "k") {
           e.preventDefault();
           open();
         } else if (e.key === "/") {
@@ -349,7 +364,7 @@
         return;
       }
 
-      if ((e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "K")) {
+      if (isCtrlOrCmd && keyLower === "k") {
         e.preventDefault();
         close();
         return;
