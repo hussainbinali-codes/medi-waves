@@ -1,9 +1,10 @@
-/* Medi Waves Inc. - Shared site search overlay styles.
+/* Medi Waves Inc. - Premium site search overlay & navbar search input styles.
    Loaded alongside assets/js/site-search.js on every page. */
 
 .mw-search-overlay {
   position: fixed; inset: 0; z-index: 9999; display: flex; align-items: flex-start; justify-content: center;
-  padding: 12vh 20px 20px; background: rgba(11, 31, 58, 0.45); backdrop-filter: blur(2px);
+  padding: 12vh 20px 20px; background: rgba(11, 31, 58, 0.48); backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   opacity: 0; visibility: hidden; pointer-events: none;
   transition: opacity .18s ease, visibility 0s linear .18s;
 }
@@ -13,99 +14,153 @@
 }
 
 .mw-search-panel {
-  width: 100%; max-width: 620px; background: #fff; border-radius: 18px; overflow: hidden;
-  box-shadow: 0 24px 70px rgba(11,31,58,.35);
-  transform: translateY(-14px); transition: transform .22s cubic-bezier(.22,1,.36,1);
+  width: 100%; max-width: 640px; background: #FFFFFF; border-radius: 22px; overflow: hidden;
+  box-shadow: 0 24px 64px -12px rgba(11, 31, 58, 0.35), 0 0 0 1px rgba(228, 234, 240, 0.9);
+  transform: translateY(-16px) scale(0.98);
+  transition: transform .22s cubic-bezier(.16, 1, .3, 1), opacity .18s ease;
 }
-.mw-search-overlay.open .mw-search-panel { transform: translateY(0); }
+.mw-search-overlay.open .mw-search-panel {
+  transform: translateY(0) scale(1);
+}
 
+/* Modal search input row */
 .mw-search-input-row {
-  display: flex; align-items: center; gap: 12px; padding: 18px 20px; border-bottom: 1px solid #E4EAF0;
-  color: var(--gray-700, #475467);
+  display: flex; align-items: center; gap: 14px; padding: 18px 22px;
+  background: #FAFCFE; border-bottom: 1.5px solid #EAEFF5;
+  color: var(--navy, #0B1F3A);
+}
+.mw-search-icon {
+  flex: none; color: var(--blue, #155EEF);
 }
 .mw-search-input {
-  flex: 1; border: none; outline: none; font-size: 16px; font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
-  color: var(--blue-dark, #0B1F3A); background: transparent;
+  flex: 1; border: none; outline: none; background: transparent;
+  font-size: 17px; font-weight: 600; line-height: 1.4;
+  font-family: 'Plus Jakarta Sans', 'Manrope', -apple-system, sans-serif;
+  color: var(--navy, #0B1F3A);
 }
-.mw-search-input::placeholder { color: #99A9B5; }
-.mw-search-close {
-  border: none; background: none; font-size: 22px; line-height: 1; cursor: pointer; color: #99A9B5;
-  padding: 2px 4px;
+.mw-search-input::placeholder {
+  color: #94A3B8; font-weight: 500;
 }
-.mw-search-close:hover { color: var(--blue, #155EEF); }
 
-.mw-search-results { max-height: 60vh; overflow-y: auto; padding: 8px; }
-.mw-search-hint { padding: 20px 14px; font-size: 13.5px; color: #99A9B5; text-align: center; }
+.mw-search-close {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: none; background: #EDF2F7; font-size: 18px; line-height: 1;
+  cursor: pointer; color: #64748B; padding: 6px 10px; border-radius: 999px;
+  transition: all .15s ease;
+}
+.mw-search-close:hover {
+  background: #E2E8F0; color: var(--blue, #155EEF); transform: scale(1.05);
+}
+.mw-esc-badge {
+  font-size: 10px; font-weight: 800; letter-spacing: .06em;
+  color: #64748B; font-family: inherit; line-height: 1;
+}
+
+/* Results container */
+.mw-search-results {
+  max-height: 60vh; overflow-y: auto; padding: 10px;
+}
+.mw-search-results::-webkit-scrollbar { width: 6px; }
+.mw-search-results::-webkit-scrollbar-track { background: transparent; }
+.mw-search-results::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 999px; }
+
+.mw-search-hint {
+  padding: 24px 16px; font-size: 14px; color: #94A3B8; text-align: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
 
 .mw-search-result {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  padding: 12px 14px; border-radius: 10px; text-decoration: none;
-  font-size: 14.5px; font-weight: 600; color: var(--blue-dark, #0B1F3A);
-  transition: background .12s ease;
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 13px 16px; border-radius: 12px; text-decoration: none;
+  font-size: 15px; font-weight: 600; color: var(--navy, #0B1F3A);
+  transition: all .15s ease; margin-bottom: 2px;
 }
-.mw-search-result:hover, .mw-search-result:focus-visible { background: var(--gray-100, #F5FAFC); }
-.mw-search-result mark { background: none; color: var(--blue, #155EEF); font-weight: 800; }
-.mw-search-result-arrow { color: #99A9B5; flex: none; transition: transform .15s ease, color .15s ease; }
-.mw-search-result:hover .mw-search-result-arrow { color: var(--blue, #155EEF); transform: translateX(3px); }
+.mw-search-result:hover, .mw-search-result:focus-visible {
+  background: #F0F6FD; color: var(--blue, #155EEF); transform: translateX(3px);
+}
+.mw-search-result mark {
+  background: rgba(21, 94, 239, 0.12); color: var(--blue, #155EEF);
+  font-weight: 800; border-radius: 3px; padding: 0 2px;
+}
+.mw-search-result-arrow {
+  color: #94A3B8; flex: none; font-size: 16px;
+  transition: transform .15s ease, color .15s ease;
+}
+.mw-search-result:hover .mw-search-result-arrow {
+  color: var(--blue, #155EEF); transform: translateX(3px);
+}
 
 @media (max-width: 600px) {
   .mw-search-overlay { padding: 8vh 12px 12px; }
+  .mw-search-input-row { padding: 14px 16px; }
+  .mw-search-input { font-size: 16px; }
+  .mw-esc-badge { display: none; }
 }
 
-/* Nav search box (interactive search input in navbar) */
+/* ========================================================
+   Navbar Search Input Box (Pill Shape Integrated in Navbar)
+   ======================================================== */
 .mw-nav-search-box {
-  display: flex; align-items: center; gap: 8px; height: 38px; padding: 0 12px;
-  border: 1px solid #E4EAF0; border-radius: 10px; background: var(--gray-100, #F5FAFC);
-  color: #99A9B5; min-width: 190px; max-width: 230px;
-  transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
-  cursor: text;
+  display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 14px;
+  border: 1.5px solid #E2E8F0; border-radius: 999px;
+  background: #F8FAFC; color: #64748B;
+  min-width: 200px; max-width: 240px;
+  transition: all .2s cubic-bezier(.16, 1, .3, 1);
+  cursor: text; box-shadow: 0 1px 3px rgba(11, 31, 58, 0.04);
 }
-.mw-nav-search-box:hover, .mw-nav-search-box:focus-within {
-  border-color: var(--blue, #155EEF); background: #fff;
-  box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.08);
+.mw-nav-search-box:hover {
+  border-color: #CBD5E1; background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(11, 31, 58, 0.06);
 }
-.mw-nav-search-box svg { flex: none; color: #99A9B5; }
-.mw-nav-search-box:hover svg, .mw-nav-search-box:focus-within svg { color: var(--blue, #155EEF); }
+.mw-nav-search-box:focus-within {
+  border-color: var(--blue, #155EEF); background: #FFFFFF;
+  box-shadow: 0 0 0 3.5px rgba(21, 94, 239, 0.12), 0 2px 8px rgba(21, 94, 239, 0.08);
+}
+.mw-nav-search-box svg {
+  flex: none; color: #94A3B8; transition: color .2s ease;
+}
+.mw-nav-search-box:hover svg, .mw-nav-search-box:focus-within svg {
+  color: var(--blue, #155EEF);
+}
 
 .mw-nav-search-input {
   flex: 1; min-width: 0; border: none; outline: none; background: transparent;
-  font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif; font-size: 13.5px;
-  color: var(--blue-dark, #0B1F3A); cursor: text; padding: 0; margin: 0;
+  font-family: 'Plus Jakarta Sans', 'Manrope', -apple-system, sans-serif;
+  font-size: 13.5px; font-weight: 500;
+  color: var(--navy, #0B1F3A); cursor: text; padding: 0; margin: 0;
 }
-.mw-nav-search-input::placeholder { color: #99A9B5; }
+.mw-nav-search-input::placeholder {
+  color: #94A3B8; transition: opacity .15s ease;
+}
 
 .mw-nav-search-kbd {
   display: inline-flex; align-items: center; justify-content: center;
-  font-family: inherit; font-size: 10px; font-weight: 700; color: #8C9CA9;
-  background: #EBF1F6; border: 1px solid #D6E0E9; border-radius: 4px;
-  padding: 1px 5px; height: 18px; line-height: 1; flex: none;
-  pointer-events: none;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 10px; font-weight: 700;
+  color: #64748B; background: #EDF2F7; border: 1px solid #CBD5E1;
+  border-radius: 6px; padding: 1px 6px; height: 20px; line-height: 1;
+  flex: none; pointer-events: none; letter-spacing: 0.04em;
 }
-
-.mw-nav-search-placeholder {
-  flex: 1; min-width: 0; text-align: left; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
-  font-size: 13.5px; font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
-}
-.mw-nav-search-word { display: inline-block; transition: opacity .2s ease, transform .2s ease; opacity: 1; transform: translateY(0); }
-.mw-nav-search-word.fade-out { opacity: 0; transform: translateY(-4px); }
 
 @media (max-width: 1100px) {
-  .mw-nav-search-box { min-width: 150px; }
+  .mw-nav-search-box { min-width: 155px; }
   .mw-nav-search-kbd { display: none; }
 }
 @media (max-width: 860px) {
   .mw-nav-search-box { display: none; }
 }
 
-/* Search entry point inside the mobile drawer (the header search icon/box are
-   hidden below the hamburger breakpoint, so this is the only way to search
-   on phones/tablets). */
+/* Search entry point inside the mobile drawer */
 .mw-mobile-search-trigger {
-  display: flex; align-items: center; gap: 10px; width: 100%; margin-bottom: 8px;
-  padding: 13px 14px; border: 1px solid #E4EAF0; border-radius: 12px;
-  background: var(--gray-100, #F5FAFC); color: #5f727f; cursor: pointer;
+  display: flex; align-items: center; gap: 12px; width: 100%; margin-bottom: 12px;
+  padding: 14px 16px; border: 1.5px solid #E2E8F0; border-radius: 14px;
+  background: #F8FAFC; color: #475467; cursor: pointer;
   font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif; font-size: 15px; font-weight: 600;
-  text-align: left;
+  text-align: left; transition: all .15s ease;
 }
-.mw-mobile-search-trigger svg { flex: none; color: #99A9B5; }
-.mw-mobile-search-trigger:active { background: #EEF4FB; }
+.mw-mobile-search-trigger svg { flex: none; color: #94A3B8; }
+.mw-mobile-search-trigger:active, .mw-mobile-search-trigger:hover {
+  background: #F0F6FD; border-color: var(--blue, #155EEF); color: var(--blue, #155EEF);
+}
+.mw-mobile-search-trigger:active svg, .mw-mobile-search-trigger:hover svg {
+  color: var(--blue, #155EEF);
+}

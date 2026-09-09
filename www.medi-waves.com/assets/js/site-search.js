@@ -106,9 +106,9 @@
     overlay.innerHTML =
       '<div class="mw-search-panel" role="dialog" aria-modal="true" aria-label="Site search">' +
       '<div class="mw-search-input-row">' +
-      '<svg viewBox="0 0 24 24" fill="none" width="18" height="18"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
-      '<input type="text" class="mw-search-input" placeholder="Search products, categories…" autocomplete="off" aria-label="Search" autofocus>' +
-      '<button type="button" class="mw-search-close" aria-label="Close search">&times;</button>' +
+      '<svg class="mw-search-icon" viewBox="0 0 24 24" fill="none" width="20" height="20"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>' +
+      '<input type="text" class="mw-search-input" placeholder="Search products, categories…" autocomplete="off" aria-label="Search products" autofocus>' +
+      '<button type="button" class="mw-search-close" aria-label="Close search" title="Close search"><span class="mw-esc-badge">ESC</span>&times;</button>' +
       "</div>" +
       '<div class="mw-search-results" id="mwSearchResults"></div>' +
       "</div>";
