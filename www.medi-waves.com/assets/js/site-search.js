@@ -203,6 +203,91 @@
     input.addEventListener("input", function () {
       renderResults(results, input.value.trim());
     });
+
+    // Wire up footer newsletter on any page that has it
+    initFooterNewsletter();
+  }
+
+  function initFooterNewsletter() {
+    var containers = document.querySelectorAll(".footer-newsletter");
+    containers.forEach(function (container) {
+      if (container.dataset.newsletterInited) return;
+      container.dataset.newsletterInited = "true";
+
+      var input = container.querySelector('input[type="email"], input');
+      var btn = container.querySelector("button");
+      if (!input || !btn) return;
+
+      var parent = container.parentElement;
+      var statusMsg = parent.querySelector(".footer-newsletter-status");
+      if (!statusMsg) {
+        statusMsg = document.createElement("div");
+        statusMsg.className = "footer-newsletter-status";
+        statusMsg.style.cssText = "font-size:12.5px;margin-top:8px;min-height:18px;line-height:1.4;";
+        parent.appendChild(statusMsg);
+      }
+
+      function showStatus(text, isError) {
+        statusMsg.textContent = text;
+        statusMsg.style.color = isError ? "#FF6B6B" : "#4EBE88";
+      }
+
+      var endpoint = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
+        ? "http://localhost:8081/api/newsletter"
+        : "/api/newsletter";
+
+      function submit() {
+        var email = input.value.trim();
+        if (!email) {
+          showStatus("Please enter your email address.", true);
+          input.focus();
+          return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          showStatus("Please enter a valid email address.", true);
+          input.focus();
+          return;
+        }
+
+        var origText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = "...";
+        showStatus("Subscribing...", false);
+
+        fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email, source: "footer_newsletter" })
+        })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (data && data.ok) {
+              showStatus(data.message || "Thank you for subscribing!", false);
+              input.value = "";
+            } else {
+              showStatus((data && data.error) || "Subscription failed.", true);
+            }
+          })
+          .catch(function () {
+            showStatus("Could not connect to subscription service.", true);
+          })
+          .finally(function () {
+            btn.disabled = false;
+            btn.textContent = origText;
+          });
+      }
+
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        submit();
+      });
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          submit();
+        }
+      });
+    });
   }
 
   if (document.readyState === "loading") {

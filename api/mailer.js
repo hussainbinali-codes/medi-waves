@@ -80,4 +80,37 @@ async function sendContactEmail({ name, email, website, message }) {
   }
 }
 
-module.exports = { sendContactEmail };
+/**
+ * Sends a newsletter subscription notification email.
+ */
+async function sendNewsletterEmail({ email }) {
+  const t = getTransporter();
+  if (!t) {
+    console.warn('[mailer] EMAIL_USER / EMAIL_PASS not configured — skipping newsletter email send.');
+    return { sent: false, reason: 'not_configured' };
+  }
+
+  const mailOptions = {
+    from: `"Medi Waves Website" <${EMAIL_USER}>`,
+    to: CONTACT_RECEIVER,
+    replyTo: email,
+    subject: `New Newsletter Subscriber: ${email}`,
+    text: `A new user has joined the Medi Waves newsletter:\n\nEmail: ${email}\nSubscribed At: ${new Date().toISOString()}`,
+    html: `
+      <h2>New Newsletter Subscriber</h2>
+      <p>A new user has subscribed to the Medi Waves newsletter updates:</p>
+      <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+      <p><strong>Subscribed Date:</strong> ${new Date().toUTCString()}</p>
+    `,
+  };
+
+  try {
+    await t.sendMail(mailOptions);
+    return { sent: true };
+  } catch (err) {
+    console.error('[mailer] Failed to send newsletter email:', err.message);
+    return { sent: false, reason: 'send_failed', error: err.message };
+  }
+}
+
+module.exports = { sendContactEmail, sendNewsletterEmail };

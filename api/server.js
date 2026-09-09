@@ -5,37 +5,35 @@
 require('dotenv').config();
 
 const http = require('http');
-const fs = require('fs');
-const path = require('path');
-const crypto = require('crypto');
-const { sendContactEmail } = require('./mailer');
+const { sendContactEmail, sendNewsletterEmail } = require('./mailer');
+const {
+  addSubscriber,
+  getSubscriber,
+  listSubscribers,
+  addSubmission,
+  readSubmissions,
+  SUBSCRIBERS_JSON,
+  SUBSCRIBERS_CSV,
+  SUBMISSIONS_JSON,
+  SUBMISSIONS_CSV,
+} = require('./storage');
 
 const PORT = process.env.PORT || 8081;
-const DATA_FILE = path.join(__dirname, 'submissions.json');
 
-// Allow the site's own dev origins to call this API from the browser.
+// Allow the site's own dev and prod origins to call this API from the browser.
 const ALLOWED_ORIGINS = [
+  'http://localhost:8000',
+  'http://127.0.0.1:8000',
   'http://localhost:8080',
   'http://127.0.0.1:8080',
+  'https://www.medi-waves.com',
+  'https://medi-waves.com',
 ];
-
-function readSubmissions() {
-  try {
-    const raw = fs.readFileSync(DATA_FILE, 'utf8');
-    return JSON.parse(raw);
-  } catch (err) {
-    return [];
-  }
-}
-
-function writeSubmissions(list) {
-  fs.writeFileSync(DATA_FILE, JSON.stringify(list, null, 2), 'utf8');
-}
 
 function setCors(req, res) {
   const origin = req.headers.origin;
-  if (ALLOWED_ORIGINS.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
+  if (!origin || ALLOWED_ORIGINS.includes(origin) || origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:')) {
+    res.setHeader('Access-Control-Allow-Origin', origin || '*');
   }
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -104,20 +102,15 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    const submission = {
-      id: crypto.randomUUID(),
-      name,
-      email,
-      website,
-      message,
-      submittedAt: new Date().toISOString(),
-      ip: req.socket.remoteAddress || '',
-    };
-
+    let submission;
     try {
-      const list = readSubmissions();
-      list.push(submission);
-      writeSubmissions(list);
+      submission = addSubmission({
+        name,
+        email,
+        website,
+        message,
+        ip: req.socket.remoteAddress || '',
+      });
     } catch (err) {
       console.error('Failed to persist submission:', err);
       sendJson(res, 500, { ok: false, error: 'Could not save your message. Please try again.' });
@@ -142,6 +135,105 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // -------------------------------------------------------------
+  // POST /api/newsletter (or /api/subscribe) — Join newsletter
+  // -------------------------------------------------------------
+  if ((url.pathname === '/api/newsletter' || url.pathname === '/api/subscribe') && req.method === 'POST') {
+    let body;
+    try {
+      const raw = await readBody(req, 10 * 1024);
+      body = JSON.parse(raw || '{}');
+    } catch (err) {
+      sendJson(res, 400, { ok: false, error: 'Invalid request body.' });
+      return;
+    }
+
+    const email = String(body.email || '').trim().toLowerCase().slice(0, 200);
+
+    if (!email) {
+      sendJson(res, 422, { ok: false, error: 'Email address is required.' });
+      return;
+    }
+    if (!isValidEmail(email)) {
+      sendJson(res, 422, { ok: false, error: 'Please provide a valid email address.' });
+      return;
+    }
+
+    let result;
+    try {
+      result = addSubscriber({
+        email,
+        ip: req.socket.remoteAddress || '',
+        source: body.source || 'website_footer',
+      });
+    } catch (err) {
+      console.error('Failed to persist subscriber:', err);
+      sendJson(res, 500, { ok: false, error: 'Could not save subscription. Please try again.' });
+      return;
+    }
+
+    if (!result.isNew) {
+      sendJson(res, 200, {
+        ok: true,
+        alreadySubscribed: true,
+        message: 'This email is already subscribed to our newsletter updates.',
+        subscriber: result.subscriber,
+      });
+      return;
+    }
+
+    console.log(`[newsletter] New subscriber: ${email}`);
+
+    sendNewsletterEmail({ email }).catch((err) => {
+      console.error('[newsletter] Unexpected error while sending notification:', err);
+    });
+
+    sendJson(res, 201, {
+      ok: true,
+      message: 'Thank you for subscribing to our newsletter!',
+      id: result.subscriber.id,
+      subscriber: result.subscriber,
+    });
+    return;
+  }
+
+  // -------------------------------------------------------------
+  // GET /api/newsletter (or /api/subscribers) — Get email details
+  // Supports:
+  // - /api/newsletter?email=user@example.com -> returns specific subscriber details
+  // - /api/newsletter -> returns list of all subscribers & count
+  // -------------------------------------------------------------
+  if ((url.pathname === '/api/newsletter' || url.pathname === '/api/subscribers') && req.method === 'GET') {
+    const queryEmail = url.searchParams.get('email');
+
+    if (queryEmail) {
+      const found = getSubscriber(queryEmail);
+
+      if (found) {
+        sendJson(res, 200, {
+          ok: true,
+          found: true,
+          subscriber: found,
+        });
+      } else {
+        sendJson(res, 404, {
+          ok: false,
+          found: false,
+          error: `Subscriber with email '${queryEmail}' not found.`,
+        });
+      }
+      return;
+    }
+
+    const subscribers = listSubscribers();
+    sendJson(res, 200, {
+      ok: true,
+      total: subscribers.length,
+      subscribers,
+    });
+    return;
+  }
+
   if (url.pathname === '/api/health' && req.method === 'GET') {
     sendJson(res, 200, { ok: true, status: 'up' });
     return;
@@ -151,6 +243,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Contact API listening on http://localhost:${PORT}`);
-  console.log(`Submissions are stored at ${DATA_FILE}`);
+  console.log(`Medi Waves API listening on http://localhost:${PORT}`);
+  console.log(`Submissions: ${SUBMISSIONS_JSON} & ${SUBMISSIONS_CSV}`);
+  console.log(`Subscribers: ${SUBSCRIBERS_JSON} & ${SUBSCRIBERS_CSV}`);
 });
