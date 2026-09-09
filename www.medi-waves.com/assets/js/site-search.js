@@ -57,16 +57,9 @@
     box.setAttribute("role", "search");
     box.innerHTML =
       '<svg class="mw-nav-search-icon" viewBox="0 0 24 24" fill="none" width="16" height="16"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
-      '<input type="text" class="mw-nav-search-input" placeholder="Search ' + escapeHtml(ROTATING_TERMS[0]) + '…" aria-label="Search products" autocomplete="off">';
+      '<input type="text" class="mw-nav-search-input" placeholder="Search using Ctrl+S…" aria-label="Search products" autocomplete="off">';
 
     var navInput = box.querySelector(".mw-nav-search-input");
-    var i = 0;
-    setInterval(function () {
-      i = (i + 1) % ROTATING_TERMS.length;
-      if (document.activeElement !== navInput && !navInput.value) {
-        navInput.placeholder = "Search " + ROTATING_TERMS[i] + "…";
-      }
-    }, 2500);
 
     box.addEventListener("mousedown", function (e) {
       if (e.target !== navInput) {
@@ -106,7 +99,7 @@
       '<div class="mw-search-panel" role="dialog" aria-modal="true" aria-label="Site search">' +
       '<div class="mw-search-input-row">' +
       '<svg class="mw-search-icon" viewBox="0 0 24 24" fill="none" width="20" height="20"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>' +
-      '<input type="text" class="mw-search-input" placeholder="Search products, categories…" autocomplete="off" aria-label="Search products" autofocus>' +
+      '<input type="text" class="mw-search-input" placeholder="Search using Ctrl+S…" autocomplete="off" aria-label="Search products" autofocus>' +
       '<button type="button" class="mw-search-close" aria-label="Close search" title="Close search"><span class="mw-esc-badge">ESC</span>&times;</button>' +
       "</div>" +
       '<div class="mw-search-results" id="mwSearchResults"></div>' +
