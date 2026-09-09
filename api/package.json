@@ -1,0 +1,14 @@
+{
+  "name": "medi-wave-contact-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Contact form API for medi-waves.com",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "nodemailer": "^10.0.0"
+  }
+}

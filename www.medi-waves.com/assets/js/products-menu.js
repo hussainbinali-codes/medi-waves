@@ -1,16 +1,22 @@
 /**
  * Medi Waves Inc. - Shared "Products" dropdown component.
  * Single source of truth for the desktop mega-menu and the mobile
- * drawer's Products list: 3 clickable main categories, each linking
- * to its main landing page. Included on every page via:
+ * drawer's Products list: clickable main category headings, each
+ * linking straight to its category landing page (no individual
+ * products listed here). Included on every page via:
  *   <script src="/assets/js/products-menu.js" defer></script>
  * Editing the CATEGORIES list below updates the dropdown everywhere.
  */
 (function () {
   var CATEGORIES = [
-    { name: "Baby Care Equipment", href: "/baby-care-eqiupments/" },
-    { name: "Hospital Furniture", href: "/hospital-furniture/" },
-    { name: "Electromedical Equipment", href: "/electromedical-equipment/" }
+    { name: "Infant Care & Delivery Room", href: "/baby-care-eqiupments/" },
+    { name: "Monitoring Equipments", href: "/monitoring-equipments/" },
+    { name: "Infusion Pumps", href: "/infusion-pumps/" },
+    { name: "Respiratory Care Equipments", href: "/respiratory-care-equipments/" },
+    { name: "Electro Surgical Unit", href: "/electro-surgical-unit/" },
+    { name: "Blood Pressure Monitor", href: "/blood-pressure-monitor/" },
+    { name: "Child Growth Monitoring", href: "/child-growth-monitoring/" },
+    { name: "Hospital Furniture", href: "/hospital-furniture/" }
   ];
 
   function escapeHtml(s) {

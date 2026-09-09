@@ -2,10 +2,13 @@
 // Run with: node server.js   (defaults to http://localhost:8081)
 'use strict';
 
+require('dotenv').config();
+
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { sendContactEmail } = require('./mailer');
 
 const PORT = process.env.PORT || 8081;
 const DATA_FILE = path.join(__dirname, 'submissions.json');
@@ -122,6 +125,13 @@ const server = http.createServer(async (req, res) => {
     }
 
     console.log(`[contact] New message from ${name} <${email}>`);
+
+    // Fire-and-forget: email sending never blocks or fails the API response
+    // (the submission is already safely saved above).
+    sendContactEmail({ name, email, website, message }).catch((err) => {
+      console.error('[contact] Unexpected error while sending email:', err);
+    });
+
     sendJson(res, 200, { ok: true, id: submission.id });
     return;
   }
