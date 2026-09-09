@@ -110,6 +110,11 @@
       '<button type="button" class="mw-search-close" aria-label="Close search" title="Close search"><span class="mw-esc-badge">ESC</span>&times;</button>' +
       "</div>" +
       '<div class="mw-search-results" id="mwSearchResults"></div>' +
+      '<div class="mw-search-footer">' +
+      '<span><kbd>↑</kbd> <kbd>↓</kbd> Navigate</span>' +
+      '<span><kbd>↵</kbd> Select</span>' +
+      '<span><kbd>esc</kbd> Close</span>' +
+      "</div>" +
       "</div>";
     return overlay;
   }
@@ -172,6 +177,63 @@
     var results = overlay.querySelector("#mwSearchResults");
     var closeBtn = overlay.querySelector(".mw-search-close");
 
+    var selectedIndex = -1;
+
+    function getResultItems() {
+      return Array.prototype.slice.call(results.querySelectorAll(".mw-search-result"));
+    }
+
+    function updateSelection(newIndex, shouldScroll) {
+      var items = getResultItems();
+      if (!items.length) {
+        selectedIndex = -1;
+        return;
+      }
+      if (newIndex < 0) {
+        newIndex = items.length - 1;
+      } else if (newIndex >= items.length) {
+        newIndex = 0;
+      }
+      selectedIndex = newIndex;
+
+      items.forEach(function (el, idx) {
+        if (idx === selectedIndex) {
+          el.classList.add("selected");
+          el.setAttribute("aria-selected", "true");
+          if (shouldScroll) {
+            el.scrollIntoView({ block: "nearest", behavior: "smooth" });
+          }
+        } else {
+          el.classList.remove("selected");
+          el.removeAttribute("aria-selected");
+        }
+      });
+    }
+
+    function clearSelection() {
+      selectedIndex = -1;
+      var items = getResultItems();
+      items.forEach(function (el) {
+        el.classList.remove("selected");
+        el.removeAttribute("aria-selected");
+      });
+    }
+
+    function wireResultHover() {
+      var items = getResultItems();
+      items.forEach(function (item, idx) {
+        item.addEventListener("mouseenter", function () {
+          updateSelection(idx, false);
+        });
+      });
+    }
+
+    function refreshResults() {
+      renderResults(results, input.value.trim());
+      clearSelection();
+      wireResultHover();
+    }
+
     function focusModalInput() {
       if (!input) return;
       input.focus({ preventScroll: true });
@@ -187,7 +249,7 @@
       if (typeof initialText === "string" && initialText.trim().length > 0) {
         input.value = initialText;
       }
-      renderResults(results, input.value.trim());
+      refreshResults();
 
       // Focus modal input immediately and keep focus locked ready for user input
       focusModalInput();
@@ -204,6 +266,7 @@
     function close() {
       overlay.classList.remove("open");
       document.body.style.overflow = "";
+      clearSelection();
       input.blur();
       var navInput = document.querySelector(".mw-nav-search-input");
       if (navInput) {
@@ -265,22 +328,53 @@
     }
 
     document.addEventListener("keydown", function (e) {
-      if ((e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "K")) {
-        e.preventDefault();
-        if (overlay.classList.contains("open")) close(); else open();
-      } else if (e.key === "/" && !overlay.classList.contains("open")) {
-        var activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
-        if (activeTag !== "input" && activeTag !== "textarea") {
+      if (!overlay.classList.contains("open")) {
+        if ((e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "K")) {
           e.preventDefault();
           open();
+        } else if (e.key === "/") {
+          var activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
+          if (activeTag !== "input" && activeTag !== "textarea") {
+            e.preventDefault();
+            open();
+          }
         }
-      } else if (e.key === "Escape" && overlay.classList.contains("open")) {
+        return;
+      }
+
+      // If modal IS open:
+      if (e.key === "Escape") {
+        e.preventDefault();
         close();
+        return;
+      }
+
+      if ((e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "K")) {
+        e.preventDefault();
+        close();
+        return;
+      }
+
+      var items = getResultItems();
+      if (!items.length) return;
+
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        updateSelection(selectedIndex + 1, true);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        updateSelection(selectedIndex - 1, true);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        var targetIndex = selectedIndex >= 0 ? selectedIndex : 0;
+        if (items[targetIndex]) {
+          items[targetIndex].click();
+        }
       }
     });
 
     input.addEventListener("input", function () {
-      renderResults(results, input.value.trim());
+      refreshResults();
     });
 
     // Wire up footer newsletter on any page that has it
