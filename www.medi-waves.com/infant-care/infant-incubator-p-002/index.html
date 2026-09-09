@@ -909,98 +909,52 @@ document.querySelectorAll('.mobile-accordion-head').forEach(head => {
 		.mw-details-panel {
 		  background: #ffffff;
 		  border: 1px solid #E4EAF0;
-		  border-radius: 20px;
-		  padding: 34px 36px 38px;
-		  margin-bottom: 32px;
-		  box-shadow: 0 8px 30px rgba(11,31,58,0.04);
+		  border-radius: 18px;
+		  padding: 34px 38px;
+		  margin-bottom: 30px;
+		  box-shadow: 0 6px 24px rgba(11,31,58,0.04);
 		}
-		.mw-section-heading {
+		.mw-details-panel h4 {
 		  font-family: 'Plus Jakarta Sans', sans-serif !important;
 		  font-weight: 800 !important;
 		  font-size: 22px !important;
 		  color: #0B1F3A !important;
-		  margin: 0 0 22px 0 !important;
-		  display: flex !important;
-		  align-items: center !important;
-		  gap: 12px !important;
+		  margin: 0 0 18px 0 !important;
 		  letter-spacing: -0.01em !important;
 		}
-		.mw-heading-bar {
-		  display: inline-block;
-		  width: 5px;
-		  height: 22px;
-		  background: linear-gradient(180deg, #155EEF 0%, #22B8CF 100%);
-		  border-radius: 999px;
-		  flex-shrink: 0;
-		}
-		.mw-reliable-grid {
-		  display: grid;
-		  grid-template-columns: repeat(3, 1fr);
-		  gap: 22px;
-		}
-		@media (max-width: 991px) {
-		  .mw-reliable-grid {
-		    grid-template-columns: 1fr;
-		  }
-		}
-		.mw-reliable-card {
-		  background: #F8FAFC;
-		  border: 1px solid #E8EEF5;
-		  border-radius: 16px;
-		  padding: 24px 22px;
-		  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-		  display: flex;
-		  flex-direction: column;
-		}
-		.mw-reliable-card:hover {
-		  transform: translateY(-3px);
-		  box-shadow: 0 12px 28px rgba(21,94,239,.08);
-		  border-color: #CBD5E1;
-		  background: #ffffff;
-		}
-		.mw-card-icon {
-		  width: 44px;
-		  height: 44px;
-		  border-radius: 12px;
-		  background: rgba(21,94,239,.08);
-		  color: #155EEF;
-		  display: flex;
-		  align-items: center;
-		  justify-content: center;
-		  margin-bottom: 16px;
-		  flex-shrink: 0;
-		}
-		.mw-reliable-card h4 {
-		  font-family: 'Plus Jakarta Sans', sans-serif !important;
-		  font-size: 16.5px !important;
-		  font-weight: 700 !important;
-		  color: #0B1F3A !important;
-		  margin: 0 0 10px 0 !important;
-		  line-height: 1.35 !important;
-		}
-		.mw-reliable-card p {
+		.mw-reliable-content p {
 		  font-family: 'Inter', sans-serif !important;
-		  font-size: 14px !important;
-		  line-height: 1.65 !important;
+		  font-size: 14.5px !important;
+		  line-height: 1.7 !important;
 		  color: #475467 !important;
-		  margin: 0 !important;
+		  margin: 0 0 16px 0 !important;
+		}
+		.mw-reliable-content p strong {
+		  color: #0B1F3A !important;
+		  font-family: 'Plus Jakarta Sans', sans-serif !important;
+		  font-size: 15.5px !important;
+		  display: inline-block;
+		  margin-top: 8px;
+		}
+		.mw-reliable-content p:last-child {
+		  margin-bottom: 0 !important;
 		}
 
-		/* Fixed Specification Table */
+		/* Fixed Full-Width Specification Table */
 		.mw-spec-table-wrap {
 		  width: 100%;
 		  overflow-x: auto;
 		  border: 1px solid #E4EAF0;
 		  border-radius: 14px;
 		  background: #FFFFFF;
+		  margin-top: 8px;
 		}
 		.mw-spec-table {
 		  width: 100%;
 		  border-collapse: collapse;
 		  text-align: left;
-		  font-size: 14px;
 		  font-family: 'Inter', sans-serif;
-		  min-width: 600px;
+		  font-size: 14px;
 		  margin: 0;
 		}
 		.mw-spec-table tr {
@@ -1013,59 +967,52 @@ document.querySelectorAll('.mobile-accordion-head').forEach(head => {
 		.mw-spec-table tr:hover td {
 		  background: #F8FAFC;
 		}
-		.mw-spec-head {
-		  width: 26%;
+		.mw-spec-table td {
+		  padding: 16px 24px;
+		  vertical-align: top;
+		}
+		.mw-spec-table td.mw-spec-cat {
+		  width: 28%;
 		  min-width: 200px;
-		  padding: 18px 22px;
-		  font-family: 'Plus Jakarta Sans', sans-serif !important;
-		  font-weight: 700 !important;
-		  font-size: 14.5px !important;
-		  color: #0B1F3A !important;
 		  background: #F8FAFC;
 		  border-right: 1px solid #EDF2F7;
-		  vertical-align: top;
 		}
-		.mw-spec-body {
-		  width: 74%;
-		  padding: 16px 22px;
-		  vertical-align: top;
-		}
-		.mw-spec-grid {
-		  display: grid;
-		  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-		  gap: 8px 20px;
-		}
-		.mw-spec-item {
-		  display: flex;
-		  align-items: baseline;
-		  gap: 6px;
-		  font-size: 13.5px;
-		  line-height: 1.55;
-		}
-		.mw-spec-item .lbl {
-		  font-weight: 600;
+		.mw-spec-table td.mw-spec-cat strong {
+		  font-family: 'Plus Jakarta Sans', sans-serif;
+		  font-weight: 700;
+		  font-size: 14.5px;
 		  color: #0B1F3A;
-		  white-space: nowrap;
 		}
-		.mw-spec-item .val {
+		.mw-spec-table td.mw-spec-val {
+		  width: 72%;
 		  color: #475467;
+		  line-height: 1.65;
+		}
+		.mw-spec-table td.mw-spec-val p {
+		  margin: 0 0 8px 0;
+		  font-size: 14px;
+		  line-height: 1.6;
+		  color: #475467;
+		}
+		.mw-spec-table td.mw-spec-val p:last-child {
+		  margin-bottom: 0;
+		}
+		.mw-spec-table td.mw-spec-val p strong {
+		  color: #0B1F3A;
+		  font-weight: 600;
 		}
 		@media (max-width: 767px) {
 		  .mw-details-panel {
 		    padding: 22px 18px;
-		    border-radius: 16px;
+		    border-radius: 14px;
 		  }
-		  .mw-spec-head {
-		    width: 32%;
-		    min-width: 130px;
-		    padding: 14px 14px;
-		    font-size: 13.5px !important;
+		  .mw-spec-table td.mw-spec-cat {
+		    width: 35%;
+		    min-width: 140px;
+		    padding: 12px 14px;
 		  }
-		  .mw-spec-body {
-		    padding: 14px 14px;
-		  }
-		  .mw-spec-grid {
-		    grid-template-columns: 1fr;
+		  .mw-spec-table td.mw-spec-val {
+		    padding: 12px 14px;
 		  }
 		}
 		</style>
@@ -1078,154 +1025,63 @@ document.querySelectorAll('.mobile-accordion-head').forEach(head => {
 							
 							<!-- 1. RELIABLE SECTION (FULL WIDTH) -->
 							<div class="mw-details-panel mw-reliable-panel">
-								<h3 class="mw-section-heading">
-									<span class="mw-heading-bar"></span>
-									Reliable
-								</h3>
-								<div class="mw-reliable-grid">
-									<div class="mw-reliable-card">
-										<div class="mw-card-icon">
-											<svg viewBox="0 0 24 24" fill="none" width="22" height="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-										</div>
-										<h4>Heating Source Double Protection</h4>
-										<p>It is equipped with both thermocouple and mechanical temperature switch to protect the heating source of heating system and evaporator. Thermocouple reads real time temperature and limits the temperature in a safe range by feedback the temperature value to control module. While mechanical temperatures switch is in series circuits, if the heating source temperature goes unmoral level, temperature switch cuts off the circuit physically.</p>
-									</div>
-
-									<div class="mw-reliable-card">
-										<div class="mw-card-icon">
-											<svg viewBox="0 0 24 24" fill="none" width="22" height="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
-										</div>
-										<h4>Three Channel Temperature Sensors</h4>
-										<p>There are three channel of temperature sensors in the module box. One channel is for reading hood temperature to remain the temperature at setting value. Another temperature sensor is in an individual circuit for protection only. The third sensor is used to compare the reading with other two sensors. If the reading of three sensors differ from 0.8ºC, alarm is triggered.</p>
-									</div>
-
-									<div class="mw-reliable-card">
-										<div class="mw-card-icon">
-											<svg viewBox="0 0 24 24" fill="none" width="22" height="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-										</div>
-										<h4>Alarm List</h4>
-										<p>Provides wide range of physiological and technical alarms in order to improve the treatment effect and eliminate residual risk from the device.</p>
-									</div>
+								<div class="elementor-text-editor elementor-clearfix mw-reliable-content">
+									<h4>Reliable</h4>
+									<p><strong>Heating Source Double Protection</strong></p>
+									<p>It is equipped with both thermocouple and mechanical temperature switch to protect the heating source of heating system and evaporator. Thermocouple reads real time temperature and limits the temperature in a safe range by feedback the temperature value to control module. While mechanical temperatures switch is in series circuits, if the heating source temperature goes unmoral level, temperature switch cuts off the circuit physically.</p>
+									<p><strong>Three Channel Temperature Sensors</strong></p>
+									<p>There are three channel of temperature sensors in the module box. One channel is for reading hood temperature to remain the temperature at setting value. Another temperature sensor is in an individual circuit for protection only. The third sensor is used to compare the reading with other two sensors. If the reading of three sensors differ from 0.8ºC, alarm is triggered.</p>
+									<p><strong>Alarm List</strong></p>
+									<p>Provides wide range of physiological and technical alarms in order to improve the treatment effect and eliminate residual risk from the device.</p>
 								</div>
 							</div>
 
 							<!-- 2. SPECIFICATION TABLE (FULL WIDTH & FIXED) -->
 							<div class="mw-details-panel mw-spec-panel">
-								<h3 class="mw-section-heading">
-									<span class="mw-heading-bar"></span>
-									Specification
-								</h3>
-								<div class="mw-spec-table-wrap">
-									<table class="mw-spec-table">
-										<tbody>
-											<tr>
-												<td class="mw-spec-head">Physical Attributes</td>
-												<td class="mw-spec-body">
-													<div class="mw-spec-grid">
-														<div class="mw-spec-item"><span class="lbl">Height:</span><span class="val">126.1cm to 146.1cm</span></div>
-														<div class="mw-spec-item"><span class="lbl">Width:</span><span class="val">99.7cm</span></div>
-														<div class="mw-spec-item"><span class="lbl">Depth:</span><span class="val">57.7cm</span></div>
-														<div class="mw-spec-item"><span class="lbl">Weight:</span><span class="val">80Kg</span></div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="mw-spec-head">Hood Specifications</td>
-												<td class="mw-spec-body">
-													<div class="mw-spec-grid">
-														<div class="mw-spec-item"><span class="lbl">Tubing Access Ports:</span><span class="val">10</span></div>
-														<div class="mw-spec-item"><span class="lbl">Access door size:</span><span class="val">18 x 13cm</span></div>
-														<div class="mw-spec-item"><span class="lbl">Mattress to hood height:</span><span class="val">4.8cm</span></div>
-														<div class="mw-spec-item"><span class="lbl">Soft bed mattress size:</span><span class="val">73.6 x 38.6 x 1.8cm</span></div>
-														<div class="mw-spec-item"><span class="lbl">Mattress tilt:</span><span class="val">±12º</span></div>
-														<div class="mw-spec-item"><span class="lbl">Drawer size:</span><span class="val">28.0 x 24.7cm, 28.0 x 11.3cm (x2)</span></div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="mw-spec-head">Temperature Control Modes</td>
-												<td class="mw-spec-body">
-													<div class="mw-spec-grid">
-														<div class="mw-spec-item"><span class="lbl">Temperature control modes:</span><span class="val">Skin and air temperature control mode</span></div>
-														<div class="mw-spec-item"><span class="lbl">Air mode control temperature range:</span><span class="val">20ºC – 37ºC</span></div>
-														<div class="mw-spec-item"><span class="lbl">Air mode control override temperature range:</span><span class="val">37ºC – 39ºC</span></div>
-														<div class="mw-spec-item"><span class="lbl">Air mode control accuracy:</span><span class="val">≤±1.0ºC</span></div>
-														<div class="mw-spec-item"><span class="lbl">Skin mode control temperature range:</span><span class="val">34ºC – 37ºC</span></div>
-														<div class="mw-spec-item"><span class="lbl">Skin mode control override temperature range:</span><span class="val">37ºC – 38ºC</span></div>
-														<div class="mw-spec-item"><span class="lbl">Skin temperature accuracy:</span><span class="val">±0.3ºC</span></div>
-														<div class="mw-spec-item"><span class="lbl">Dual skin temperature monitoring:</span><span class="val">Yes</span></div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="mw-spec-head">Servo Humidity Option</td>
-												<td class="mw-spec-body">
-													<div class="mw-spec-grid">
-														<div class="mw-spec-item"><span class="lbl">Humidity control range:</span><span class="val">30% – 95% RH</span></div>
-														<div class="mw-spec-item"><span class="lbl">Operating time without refilling:</span><span class="val">24 hours</span></div>
-														<div class="mw-spec-item"><span class="lbl">Reservoir capacity:</span><span class="val">1500ml</span></div>
-														<div class="mw-spec-item"><span class="lbl">Humidity display accuracy:</span><span class="val">±5% RH</span></div>
-														<div class="mw-spec-item"><span class="lbl">Humidity control accuracy:</span><span class="val">±5% RH</span></div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="mw-spec-head">Performance</td>
-												<td class="mw-spec-body">
-													<div class="mw-spec-grid">
-														<div class="mw-spec-item"><span class="lbl">Air flow velocity across mattress:</span><span class="val">&lt;10cm/sec</span></div>
-														<div class="mw-spec-item"><span class="lbl">Temperature rise time at 22ºC (72ºF) ambient:</span><span class="val">&lt;20min (From 22ºC, 50% RH to 35ºC)</span></div>
-														<div class="mw-spec-item"><span class="lbl">Temperature variability:</span><span class="val">&lt;0.2ºC</span></div>
-														<div class="mw-spec-item"><span class="lbl">Temperature overshoot:</span><span class="val">&lt;0.5ºC maximum</span></div>
-														<div class="mw-spec-item"><span class="lbl">Temperature uniformity with a level mattress:</span><span class="val">&lt;0.8ºC</span></div>
-														<div class="mw-spec-item"><span class="lbl">Operating noise level in hood:</span><span class="val">≤45dBa</span></div>
-														<div class="mw-spec-item"><span class="lbl">Carbon Dioxide (CO2) Level:</span><span class="val">&lt;0.5%</span></div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="mw-spec-head">Servo Oxygen Option</td>
-												<td class="mw-spec-body">
-													<div class="mw-spec-grid">
-														<div class="mw-spec-item"><span class="lbl">Oxygen display accuracy of full scale:</span><span class="val">±2%</span></div>
-														<div class="mw-spec-item"><span class="lbl">Oxygen control accuracy (100% calibration):</span><span class="val">±3%</span></div>
-														<div class="mw-spec-item"><span class="lbl">Oxygen control accuracy (21% calibration):</span><span class="val">±5%</span></div>
-														<div class="mw-spec-item"><span class="lbl">Oxygen control range:</span><span class="val">21% to 65%</span></div>
-														<div class="mw-spec-item"><span class="lbl">Oxygen display resolution:</span><span class="val">1%</span></div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="mw-spec-head">Scale Option</td>
-												<td class="mw-spec-body">
-													<div class="mw-spec-grid">
-														<div class="mw-spec-item"><span class="lbl">Weight range:</span><span class="val">300g to 8kg</span></div>
-														<div class="mw-spec-item"><span class="lbl">Weight display resolution:</span><span class="val">1g</span></div>
-														<div class="mw-spec-item"><span class="lbl">Weight accuracy:</span><span class="val">±10g</span></div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="mw-spec-head">Operating Environment</td>
-												<td class="mw-spec-body">
-													<div class="mw-spec-grid">
-														<div class="mw-spec-item"><span class="lbl">Temperature:</span><span class="val">20º to 30ºC</span></div>
-														<div class="mw-spec-item"><span class="lbl">Humidity:</span><span class="val">10 to 95%</span></div>
-														<div class="mw-spec-item"><span class="lbl">Air Velocity:</span><span class="val">Up to 0.3 m/sec</span></div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="mw-spec-head">Storage shipping Information</td>
-												<td class="mw-spec-body">
-													<div class="mw-spec-grid">
-														<div class="mw-spec-item"><span class="lbl">Temperature:</span><span class="val">-25º to 60ºC</span></div>
-														<div class="mw-spec-item"><span class="lbl">Humidity:</span><span class="val">0 to 95% RH</span></div>
-													</div>
-												</td>
-											</tr>
-										</tbody>
-									</table>
+								<div class="elementor-text-editor elementor-clearfix">
+									<h4>Specification</h4>
+									<div class="mw-spec-table-wrap">
+										<table class="mw-spec-table" border="0" width="100%" cellspacing="0" cellpadding="0">
+											<tbody>
+												<tr>
+													<td class="mw-spec-cat"><strong>Physical Attributes</strong></td>
+													<td class="mw-spec-val"><p><strong>Height :</strong> 126.1cm to 146.1cm</p><p><strong>Width :</strong> 99.7cm</p><p><strong>Depth :</strong> 57.7cm</p><p><strong>Weight :</strong> 80Kg</p></td>
+												</tr>
+												<tr>
+													<td class="mw-spec-cat"><strong>Hood Specifications</strong></td>
+													<td class="mw-spec-val"><p><strong>Tubing Access Ports :</strong> 10</p><p><strong>Access door size :</strong> 18 x 13cm</p><p><strong>Mattress to hood height :</strong> 4.8cm</p><p><strong>Soft bed mattress size :</strong> 73.6 x 38.6 x 1.8cm</p><p><strong>Mattress tilt :</strong> ±12º</p><p><strong>Drawer size :</strong> 28.0 x 24.7cm, 28.0 x 11.3cm (x2)</p></td>
+												</tr>
+												<tr>
+													<td class="mw-spec-cat"><strong>Temperature Control Modes</strong></td>
+													<td class="mw-spec-val"><p><strong>Temperature control modes :</strong> Skin and air temperature control mode</p><p><strong>Air mode control temperature range :</strong> 20ºC &#8211; 37ºC</p><p><strong>Air mode control override temperature range :</strong> 37ºC &#8211; 39ºC</p><p><strong>Air mode control accuracy :</strong> ≤±1.0ºC</p><p><strong>Skin mode control temperature range :</strong> 34ºC &#8211; 37ºC</p><p><strong>Skin mode control override temperature range :</strong> 37ºC &#8211; 38ºC</p><p><strong>Skin temperature accuracy :</strong> ±0.3ºC</p><p><strong>Dual skin temperature monitoring :</strong> Yes</p></td>
+												</tr>
+												<tr>
+													<td class="mw-spec-cat"><strong>Servo Humidity Option</strong></td>
+													<td class="mw-spec-val"><p><strong>Humidity control range :</strong> 30% &#8211; 95% RH</p><p><strong>Humidity control operating time without refilling :</strong> 24 hours</p><p><strong>Humidity control reservoir capacity :</strong> 1500ml</p><p><strong>Humidity display accuracy :</strong> ±5% RH</p><p><strong>Humidity control accuracy :</strong> ±5% RH</p></td>
+												</tr>
+												<tr>
+													<td class="mw-spec-cat"><strong>Performance</strong></td>
+													<td class="mw-spec-val"><p><strong>Air flow velocity across mattress :</strong> &lt;10cm/sec</p><p><strong>Temperature rise time at 22ºC (72ºF) ambient :</strong> &lt;20min (From 22ºC, 50% RH</p><p><strong>Temperature variability :</strong> to 35ºC &lt;0.2ºC</p><p><strong>Temperature overshoot :</strong> &lt;0.5ºC maximum</p><p><strong>Temperature uniformity with a level mattress :</strong> &lt;0.8ºC</p><p><strong>Operating noise level in hood :</strong> ≤45dBa</p><p><strong>Carbon Dioxide (CO2) Level :</strong> &lt;0.5%</p></td>
+												</tr>
+												<tr>
+													<td class="mw-spec-cat"><strong>Servo Oxygen Option</strong></td>
+													<td class="mw-spec-val"><p><strong>Oxygen display accuracy of full scale :</strong> ± 2%</p><p><strong>Oxygen control accuracy (100% calibration) :</strong> ± 3%</p><p><strong>Oxygen control accuracy (21% calibration) :</strong> ± 5%</p><p><strong>Oxygen control range :</strong> 21% to 65%</p><p><strong>Oxygen display resolution :</strong> 1%</p></td>
+												</tr>
+												<tr>
+													<td class="mw-spec-cat"><strong>Scale Option</strong></td>
+													<td class="mw-spec-val"><p><strong>Weight range :</strong> 300g to 8kg</p><p><strong>Weight display resolution :</strong> 1g</p><p><strong>Weight accuracy :</strong> ± 10g</p></td>
+												</tr>
+												<tr>
+													<td class="mw-spec-cat"><strong>Operating Environment</strong></td>
+													<td class="mw-spec-val"><p><strong>Temperature :</strong> 20º to 30ºC</p><p><strong>Humidity :</strong> 10 to 95%</p><p><strong>Air Velocity :</strong> Up to 0.3 m/sec</p></td>
+												</tr>
+												<tr>
+													<td class="mw-spec-cat"><strong>Storage shipping Information</strong></td>
+													<td class="mw-spec-val"><p><strong>Temperature :</strong> -25º to 60ºC</p><p><strong>Humidity :</strong> 0 to 95% RH</p></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
 								</div>
 							</div>
 
