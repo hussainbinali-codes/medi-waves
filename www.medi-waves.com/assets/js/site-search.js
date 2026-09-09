@@ -52,25 +52,50 @@
   ];
 
   function buildNavSearchBox(onOpen) {
-    var box = document.createElement("button");
-    box.type = "button";
+    var box = document.createElement("div");
     box.className = "mw-nav-search-box";
-    box.setAttribute("aria-label", "Search products");
+    box.setAttribute("role", "search");
     box.innerHTML =
       '<svg viewBox="0 0 24 24" fill="none" width="16" height="16"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
-      '<span class="mw-nav-search-placeholder"><span class="mw-nav-search-word">Search ' + escapeHtml(ROTATING_TERMS[0]) + "…</span></span>";
-    box.addEventListener("click", onOpen);
+      '<input type="text" class="mw-nav-search-input" placeholder="Search ' + escapeHtml(ROTATING_TERMS[0]) + '…" aria-label="Search products" autocomplete="off">' +
+      '<kbd class="mw-nav-search-kbd">⌘K</kbd>';
 
-    var wordEl = box.querySelector(".mw-nav-search-word");
+    var navInput = box.querySelector(".mw-nav-search-input");
     var i = 0;
     setInterval(function () {
       i = (i + 1) % ROTATING_TERMS.length;
-      wordEl.classList.add("fade-out");
-      setTimeout(function () {
-        wordEl.textContent = "Search " + ROTATING_TERMS[i] + "…";
-        wordEl.classList.remove("fade-out");
-      }, 200);
-    }, 2000);
+      if (document.activeElement !== navInput && !navInput.value) {
+        navInput.placeholder = "Search " + ROTATING_TERMS[i] + "…";
+      }
+    }, 2500);
+
+    box.addEventListener("mousedown", function (e) {
+      if (e.target !== navInput) {
+        e.preventDefault();
+        onOpen();
+      }
+    });
+    box.addEventListener("click", function (e) {
+      if (e.target !== navInput) {
+        e.preventDefault();
+        onOpen();
+      }
+    });
+
+    navInput.addEventListener("focus", function () {
+      onOpen(navInput.value);
+    });
+
+    navInput.addEventListener("click", function (e) {
+      e.stopPropagation();
+      onOpen(navInput.value);
+    });
+
+    navInput.addEventListener("input", function () {
+      var val = navInput.value;
+      navInput.value = "";
+      onOpen(val);
+    });
 
     return box;
   }
@@ -82,7 +107,7 @@
       '<div class="mw-search-panel" role="dialog" aria-modal="true" aria-label="Site search">' +
       '<div class="mw-search-input-row">' +
       '<svg viewBox="0 0 24 24" fill="none" width="18" height="18"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
-      '<input type="text" class="mw-search-input" placeholder="Search products, categories…" autocomplete="off" aria-label="Search">' +
+      '<input type="text" class="mw-search-input" placeholder="Search products, categories…" autocomplete="off" aria-label="Search" autofocus>' +
       '<button type="button" class="mw-search-close" aria-label="Close search">&times;</button>' +
       "</div>" +
       '<div class="mw-search-results" id="mwSearchResults"></div>' +
@@ -148,25 +173,57 @@
     var results = overlay.querySelector("#mwSearchResults");
     var closeBtn = overlay.querySelector(".mw-search-close");
 
-    function open() {
+    function focusModalInput() {
+      if (!input) return;
+      input.focus({ preventScroll: true });
+      if (input.value && typeof input.setSelectionRange === "function") {
+        var len = input.value.length;
+        input.setSelectionRange(len, len);
+      }
+    }
+
+    function open(initialText) {
       overlay.classList.add("open");
       document.body.style.overflow = "hidden";
+      if (typeof initialText === "string" && initialText.trim().length > 0) {
+        input.value = initialText;
+      }
       renderResults(results, input.value.trim());
-      setTimeout(function () { input.focus(); }, 10);
+
+      // Focus modal input immediately and keep focus locked ready for user input
+      focusModalInput();
+      requestAnimationFrame(function () {
+        focusModalInput();
+        requestAnimationFrame(focusModalInput);
+      });
+      setTimeout(focusModalInput, 15);
+      setTimeout(focusModalInput, 50);
+      setTimeout(focusModalInput, 120);
+      setTimeout(focusModalInput, 220);
     }
+
     function close() {
       overlay.classList.remove("open");
       document.body.style.overflow = "";
+      input.blur();
+      var navInput = document.querySelector(".mw-nav-search-input");
+      if (navInput) {
+        navInput.blur();
+        navInput.value = "";
+      }
     }
 
+    btn.addEventListener("mousedown", function (e) {
+      e.preventDefault();
+      open();
+    });
     btn.addEventListener("click", function (e) {
       e.preventDefault();
       if (overlay.classList.contains("open")) close(); else open();
     });
 
-    var navBox = buildNavSearchBox(function (e) {
-      e.preventDefault();
-      open();
+    var navBox = buildNavSearchBox(function (val) {
+      open(val);
     });
     btn.parentNode.insertBefore(navBox, btn);
 
@@ -197,9 +254,32 @@
     overlay.addEventListener("click", function (e) {
       if (e.target === overlay) close();
     });
+
+    // Clicking anywhere in the search panel (outside close button / links) refocuses the input
+    var panel = overlay.querySelector(".mw-search-panel");
+    if (panel) {
+      panel.addEventListener("click", function (e) {
+        if (!e.target.closest(".mw-search-close") && !e.target.closest(".mw-search-result")) {
+          focusModalInput();
+        }
+      });
+    }
+
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && overlay.classList.contains("open")) close();
+      if ((e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "K")) {
+        e.preventDefault();
+        if (overlay.classList.contains("open")) close(); else open();
+      } else if (e.key === "/" && !overlay.classList.contains("open")) {
+        var activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
+        if (activeTag !== "input" && activeTag !== "textarea") {
+          e.preventDefault();
+          open();
+        }
+      } else if (e.key === "Escape" && overlay.classList.contains("open")) {
+        close();
+      }
     });
+
     input.addEventListener("input", function () {
       renderResults(results, input.value.trim());
     });
