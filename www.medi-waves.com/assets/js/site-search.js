@@ -56,9 +56,8 @@
     box.className = "mw-nav-search-box";
     box.setAttribute("role", "search");
     box.innerHTML =
-      '<svg viewBox="0 0 24 24" fill="none" width="16" height="16"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
-      '<input type="text" class="mw-nav-search-input" placeholder="Search ' + escapeHtml(ROTATING_TERMS[0]) + '…" aria-label="Search products" autocomplete="off">' +
-      '<kbd class="mw-nav-search-kbd">⌘K</kbd>';
+      '<svg class="mw-nav-search-icon" viewBox="0 0 24 24" fill="none" width="18" height="18"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>' +
+      '<input type="text" class="mw-nav-search-input" placeholder="Search products, categories…" aria-label="Search products" autocomplete="off">';
 
     var navInput = box.querySelector(".mw-nav-search-input");
     var i = 0;
