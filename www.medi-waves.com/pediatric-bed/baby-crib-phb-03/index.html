@@ -610,8 +610,7 @@ table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:l
 
 <div id="page" class="layout-fullwidth header-style-4">
 
-			<a href="../../index.html%3Fp=1652.html#page" class="scroll-top-button">Scroll Top</a>
-<div class="mw-newnav-scope scroll-progress" id="scrollProgress"></div>
+			<div class="mw-newnav-scope scroll-progress" id="scrollProgress"></div>
 
 <!-- ============ MW NEW NAVBAR (ported from homepage) ============ -->
 <div class="mw-newnav-scope mw-newnav nav-wrap" id="navWrap">
@@ -1030,6 +1029,44 @@ document.querySelectorAll('.mobile-accordion-head').forEach(head => {
   </a>
   <span class="wa-fab-tooltip">Chat with us on WhatsApp</span>
 </div>
+<!-- ============ SCROLL TO TOP BUTTON (below WhatsApp) ============ -->
+<style>
+.scroll-top-button { display: none !important; }
+.scroll-top-btn{position:fixed;right:26px;bottom:30px;z-index:9998;width:52px;height:52px;border-radius:50%;background:#0B1F3A;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(11,31,58,.26);border:1.5px solid rgba(255,255,255,.18);cursor:pointer;text-decoration:none !important;opacity:0;visibility:hidden;transform:translateY(14px) scale(.92);transition:opacity .3s cubic-bezier(.22,1,.36,1),transform .3s cubic-bezier(.22,1,.36,1),visibility .3s,background .2s,box-shadow .2s;outline:none}
+.scroll-top-btn.visible{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+.scroll-top-btn:hover,.scroll-top-btn:focus-visible{background:#155EEF;color:#fff;transform:translateY(-3px) scale(1.06);box-shadow:0 16px 36px rgba(21,94,239,.42);border-color:rgba(255,255,255,.35)}
+.scroll-top-btn svg{width:22px;height:22px;display:block;transition:transform .2s ease}
+.scroll-top-btn:hover svg{transform:translateY(-2px)}
+.scroll-top-btn .st-tooltip{position:absolute;right:66px;top:50%;transform:translateY(-50%) translateX(6px);background:#fff;color:#0B1F3A;padding:8px 14px;border-radius:10px;box-shadow:0 12px 28px -6px rgba(11,31,58,.24);font-size:13px;font-weight:700;white-space:nowrap;border:1px solid #E4EAF0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s cubic-bezier(.22,1,.36,1),transform .25s cubic-bezier(.22,1,.36,1),visibility .25s;font-family:'Plus Jakarta Sans',Arial,sans-serif}
+.scroll-top-btn:hover .st-tooltip,.scroll-top-btn:focus-visible .st-tooltip{opacity:1;visibility:visible;transform:translateY(-50%) translateX(0)}
+@media (max-width:480px){
+  .wa-fab-wrap{bottom:88px !important;right:16px !important}
+  .scroll-top-btn{right:18px !important;bottom:22px !important;width:48px !important;height:48px !important}
+  .scroll-top-btn .st-tooltip{display:none}
+}
+</style>
+<a class="scroll-top-btn" id="scrollTopBtn" href="#page" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  <span class="st-tooltip">Back to top</span>
+</a>
+<script id="scroll-top-js">
+(function(){
+  var btn = document.getElementById('scrollTopBtn');
+  if(!btn) return;
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 250){
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }, { passive: true });
+})();
+</script>
+
 <script id="whatsapp-widget-js">
 (function(){
   var config = {
