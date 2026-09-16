@@ -63,6 +63,10 @@
 }
 .mw-nav-search-word { display: inline-block; transition: opacity .2s ease, transform .2s ease; opacity: 1; transform: translateY(0); }
 .mw-nav-search-word.fade-out { opacity: 0; transform: translateY(-4px); }
+.mw-nav-search-kbd {
+  flex: none; font: 11px/1 'Manrope', sans-serif; font-weight: 700; color: #99A9B5;
+  background: #fff; border: 1px solid #E4EAF0; border-radius: 5px; padding: 3px 6px;
+}
 
 @media (max-width: 1100px) {
   .mw-nav-search-box { min-width: 150px; }
