@@ -5,3 +5,11 @@ build/
 .vscode/
 .DS_Store
 api/submissions.json
+www.medi-waves.com/api/config.php
+www.medi-waves.com/api/submissions.json
+www.medi-waves.com/api/subscribers.json
+api/subscribers.json
+api/server.log
+api/submissions.csv
+cATS/
+www.medi-waves.com/wp-content/uploads/2026/09/Phototherapy-Unit-P-003DX.mp4

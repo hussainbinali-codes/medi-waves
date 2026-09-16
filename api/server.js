@@ -142,6 +142,62 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  if (url.pathname === '/api/subscribe' && req.method === 'POST') {
+    let body;
+    try {
+      const raw = await readBody(req, 4 * 1024);
+      body = JSON.parse(raw || '{}');
+    } catch (err) {
+      sendJson(res, 400, { ok: false, error: 'Invalid request body.' });
+      return;
+    }
+
+    const email = String(body.email || '').trim().slice(0, 200);
+    if (!isValidEmail(email)) {
+      sendJson(res, 422, { ok: false, error: 'Please provide a valid email address.' });
+      return;
+    }
+
+    const subFile = path.join(__dirname, 'subscribers.json');
+    let list = [];
+    try {
+      list = JSON.parse(fs.readFileSync(subFile, 'utf8'));
+    } catch (err) {
+      list = [];
+    }
+    const existing = list.find((s) => s.email.toLowerCase() === email.toLowerCase());
+    if (existing) {
+      sendJson(res, 200, { ok: true, id: existing.id, alreadySubscribed: true });
+      return;
+    }
+
+    const subscriber = {
+      id: crypto.randomUUID(),
+      email,
+      subscribedAt: new Date().toISOString(),
+      ip: req.socket.remoteAddress || '',
+    };
+    list.push(subscriber);
+    try {
+      fs.writeFileSync(subFile, JSON.stringify(list, null, 2), 'utf8');
+    } catch (err) {
+      console.error('Failed to persist subscriber:', err);
+    }
+
+    console.log(`[subscribe] New subscriber: ${email}`);
+    sendContactEmail({
+      name: 'Newsletter Subscriber',
+      email,
+      website: '',
+      message: `New newsletter signup: ${email}`,
+    }).catch((err) => {
+      console.error('[subscribe] Unexpected error while sending email:', err);
+    });
+
+    sendJson(res, 200, { ok: true, id: subscriber.id });
+    return;
+  }
+
   if (url.pathname === '/api/health' && req.method === 'GET') {
     sendJson(res, 200, { ok: true, status: 'up' });
     return;
