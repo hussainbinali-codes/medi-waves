@@ -4,9 +4,9 @@
 .mw-search-overlay {
   position: fixed; inset: 0; z-index: 9999; display: flex; align-items: flex-start; justify-content: center;
   padding: 12vh 20px 20px; background: rgba(11, 31, 58, 0.45); backdrop-filter: blur(2px);
-  opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s;
+  opacity: 0; pointer-events: none; transition: opacity .2s ease;
 }
-.mw-search-overlay.open { opacity: 1; visibility: visible; }
+.mw-search-overlay.open { opacity: 1; pointer-events: auto; }
 
 .mw-search-panel {
   width: 100%; max-width: 620px; background: #fff; border-radius: 18px; overflow: hidden;

@@ -210,6 +210,12 @@
         if (overlay.classList.contains("open")) close(); else open();
       }
     });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        var topResult = results.querySelector(".mw-search-result");
+        if (topResult) window.location.href = topResult.href;
+      }
+    });
     input.addEventListener("input", function () {
       renderResults(results, input.value.trim());
     });
