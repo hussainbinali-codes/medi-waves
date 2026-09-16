@@ -56,11 +56,9 @@
     box.type = "button";
     box.className = "mw-nav-search-box";
     box.setAttribute("aria-label", "Search products");
-    var isMac = /Mac|iPod|iPhone|iPad/.test(navigator.platform);
     box.innerHTML =
       '<svg viewBox="0 0 24 24" fill="none" width="16" height="16"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
-      '<span class="mw-nav-search-placeholder"><span class="mw-nav-search-word">Search ' + escapeHtml(ROTATING_TERMS[0]) + "…</span></span>" +
-      '<kbd class="mw-nav-search-kbd">' + (isMac ? "⌘K" : "Ctrl K") + "</kbd>";
+      '<span class="mw-nav-search-placeholder"><span class="mw-nav-search-word">Search ' + escapeHtml(ROTATING_TERMS[0]) + "…</span></span>";
     box.addEventListener("click", onOpen);
 
     var wordEl = box.querySelector(".mw-nav-search-word");
