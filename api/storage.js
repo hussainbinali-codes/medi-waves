@@ -205,6 +205,43 @@ function addSubmission({ name, email, website = '', message, ip = '' }) {
   return item;
 }
 
+// ============================================================================
+// QUOTE REQUEST STORAGE METHODS (JSON only, no CSV)
+// ============================================================================
+const QUOTES_JSON = path.join(__dirname, 'quotes.json');
+
+function readQuotes() {
+  try {
+    if (!fs.existsSync(QUOTES_JSON)) {
+      atomicWriteFileSync(QUOTES_JSON, '[]');
+      return [];
+    }
+    const raw = fs.readFileSync(QUOTES_JSON, 'utf8');
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (err) {
+    console.error('[storage] Error reading quotes.json:', err.message);
+    return [];
+  }
+}
+
+function addQuote({ name, email, equipment, message, ip = 'unknown' }) {
+  const list = readQuotes();
+  const item = {
+    id: crypto.randomUUID(),
+    name: String(name || '').trim(),
+    email: String(email || '').trim().toLowerCase(),
+    equipment: String(equipment || '').trim(),
+    message: String(message || '').trim(),
+    submittedAt: new Date().toISOString(),
+    ip,
+  };
+
+  list.push(item);
+  atomicWriteFileSync(QUOTES_JSON, JSON.stringify(list, null, 2));
+  return item;
+}
+
 module.exports = {
   // Subscribers
   addSubscriber,
@@ -218,4 +255,9 @@ module.exports = {
   readSubmissions,
   SUBMISSIONS_JSON,
   SUBMISSIONS_CSV,
+
+  // Quotes
+  addQuote,
+  readQuotes,
+  QUOTES_JSON,
 };

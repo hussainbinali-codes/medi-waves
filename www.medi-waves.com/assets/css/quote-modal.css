@@ -1,0 +1,320 @@
+/* Medi Waves - Request a Quote Modal (Matches Image 1)
+   Scoped strictly under .mw-quote-modal-* classes to prevent collisions */
+
+.mw-quote-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(11, 31, 58, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .25s ease, visibility 0s linear .25s;
+}
+
+.mw-quote-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity .25s ease, visibility 0s linear 0s;
+}
+
+.mw-quote-card {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #FFFFFF;
+  border-radius: 28px;
+  padding: 36px 38px 28px;
+  box-shadow: 0 24px 70px -10px rgba(11, 31, 58, 0.35), 0 0 0 1px rgba(228, 234, 240, 0.9);
+  transform: translateY(20px) scale(0.97);
+  transition: transform .28s cubic-bezier(.16, 1, .3, 1), opacity .25s ease;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  color: #0B1F3A;
+  box-sizing: border-box;
+}
+
+.mw-quote-backdrop.open .mw-quote-card {
+  transform: translateY(0) scale(1);
+}
+
+.mw-quote-card::-webkit-scrollbar {
+  width: 6px;
+}
+.mw-quote-card::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 999px;
+}
+
+/* Header badge & Close button */
+.mw-quote-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.mw-quote-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #EEF4FF;
+  color: #155EEF;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.mw-quote-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #155EEF;
+  box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.2);
+}
+
+.mw-quote-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #E2E8F0;
+  background: #FFFFFF;
+  color: #64748B;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all .18s ease;
+  padding: 0;
+}
+
+.mw-quote-close:hover {
+  background: #F1F5F9;
+  color: #0B1F3A;
+  transform: scale(1.06);
+}
+
+/* Title & Subtitle */
+.mw-quote-title {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0B1F3A;
+  margin: 0 0 8px 0;
+  letter-spacing: -.02em;
+}
+
+.mw-quote-desc {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #5F727F;
+  margin: 0 0 26px 0;
+  font-weight: 500;
+}
+
+/* Form Layout */
+.mw-quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mw-quote-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .mw-quote-row-2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .mw-quote-card {
+    padding: 26px 20px 22px;
+    border-radius: 20px;
+  }
+  .mw-quote-title {
+    font-size: 24px;
+  }
+}
+
+.mw-quote-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.mw-quote-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0B1F3A;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mw-quote-req {
+  color: #EF4444;
+  font-weight: 800;
+}
+
+.mw-quote-input,
+.mw-quote-select,
+.mw-quote-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #0B1F3A;
+  outline: none;
+  transition: all .2s ease;
+}
+
+.mw-quote-input::placeholder,
+.mw-quote-textarea::placeholder {
+  color: #94A3B8;
+  font-weight: 400;
+}
+
+.mw-quote-input:hover,
+.mw-quote-select:hover,
+.mw-quote-textarea:hover {
+  border-color: #CBD5E1;
+  background: #FFFFFF;
+}
+
+.mw-quote-input:focus,
+.mw-quote-select:focus,
+.mw-quote-textarea:focus {
+  border-color: #155EEF;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.12);
+}
+
+.mw-quote-select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23475467' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.mw-quote-textarea {
+  min-height: 96px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* Submit Button */
+.mw-quote-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px 24px;
+  border-radius: 999px;
+  border: none;
+  background: #155EEF;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 15.5px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 4px;
+  box-shadow: 0 8px 24px rgba(21, 94, 239, 0.32);
+  transition: all .25s ease;
+}
+
+.mw-quote-submit-btn:hover {
+  background: #0D47C7;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(21, 94, 239, 0.42);
+}
+
+.mw-quote-submit-btn:active {
+  transform: translateY(0);
+}
+
+.mw-quote-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.mw-quote-submit-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform .2s ease;
+}
+
+.mw-quote-submit-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Footer text */
+.mw-quote-footer-note {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 12.5px;
+  color: #64748B;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.mw-quote-footer-note a {
+  color: #155EEF;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.mw-quote-footer-note a:hover {
+  text-decoration: underline;
+}
+
+/* Status message banner */
+.mw-quote-status {
+  display: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.mw-quote-status.success {
+  display: block;
+  background: #ECFDF3;
+  color: #027A48;
+  border: 1px solid #A6F4C5;
+}
+
+.mw-quote-status.error {
+  display: block;
+  background: #FEF3F2;
+  color: #B42318;
+  border: 1px solid #FECDCA;
+}

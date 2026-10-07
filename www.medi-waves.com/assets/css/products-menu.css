@@ -35,3 +35,90 @@
 @media (max-width: 991px) {
   .mega.mega { width: 100%; }
 }
+
+/* ========================================================
+   Subpage Title Banner Centering (Category & Product Pages)
+   Ensures titles, breadcrumbs, and content are properly centered
+   ======================================================== */
+#page-title,
+#page-title.page-title-block,
+.page-title-block,
+.page-title-block.page-title-alignment-center {
+  text-align: center !important;
+  position: relative !important;
+}
+
+#page-title .container,
+.page-title-block .container,
+.page-title-alignment-center .container {
+  max-width: 1280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+#page-title .page-title-inner,
+.page-title-block .page-title-inner,
+.page-title-alignment-center .page-title-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+}
+
+#page-title .page-title-title,
+.page-title-block .page-title-title {
+  text-align: center !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#page-title h1,
+#page-title .page-title-title h1,
+.page-title-block h1,
+.page-title-alignment-center h1 {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+#page-title .page-title-excerpt,
+.page-title-block .page-title-excerpt {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#page-title .breadcrumbs-container,
+.page-title-block .breadcrumbs-container {
+  text-align: center !important;
+  margin-top: 10px !important;
+  width: 100% !important;
+}
+
+#page-title .breadcrumbs,
+.page-title-block .breadcrumbs {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#page-title .page-title-inner > div {
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

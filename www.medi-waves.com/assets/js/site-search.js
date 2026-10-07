@@ -269,6 +269,7 @@
       }
     }
 
+    // Search button click and shortcut listeners
     btn.addEventListener("mousedown", function (e) {
       e.preventDefault();
       open();
@@ -277,11 +278,6 @@
       e.preventDefault();
       if (overlay.classList.contains("open")) close(); else open();
     });
-
-    var navBox = buildNavSearchBox(function (val) {
-      open(val);
-    });
-    btn.parentNode.insertBefore(navBox, btn);
 
     // The nav search icon/box are hidden on mobile/tablet (below the hamburger
     // breakpoint), so give the mobile drawer its own search entry point —

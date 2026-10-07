@@ -5,20 +5,83 @@
 require('dotenv').config();
 
 const http = require('http');
-const { sendContactEmail, sendNewsletterEmail } = require('./mailer');
+const fs = require('fs');
+const path = require('path');
+const { sendContactEmail, sendNewsletterEmail, sendQuoteEmail } = require('./mailer');
 const {
   addSubscriber,
   getSubscriber,
   listSubscribers,
   addSubmission,
   readSubmissions,
+  addQuote,
+  readQuotes,
   SUBSCRIBERS_JSON,
   SUBSCRIBERS_CSV,
   SUBMISSIONS_JSON,
   SUBMISSIONS_CSV,
+  QUOTES_JSON,
 } = require('./storage');
 
 const PORT = process.env.PORT || 8081;
+const STATIC_ROOT = path.resolve(__dirname, '../www.medi-waves.com');
+
+const MIME_TYPES = {
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'application/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.gif': 'image/gif',
+  '.svg': 'image/svg+xml',
+  '.ico': 'image/x-icon',
+  '.webp': 'image/webp',
+  '.pdf': 'application/pdf',
+  '.woff': 'font/woff',
+  '.woff2': 'font/woff2',
+  '.ttf': 'font/ttf',
+  '.eot': 'application/vnd.ms-fontobject',
+  '.webmanifest': 'application/manifest+json',
+};
+
+function serveStaticFile(req, res, pathname) {
+  const safeSuffix = path.normalize(pathname).replace(/^(\.\.[\/\\])+/, '');
+  let filePath = path.join(STATIC_ROOT, safeSuffix);
+
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, 'index.html');
+  } else if (!fs.existsSync(filePath) && fs.existsSync(filePath + '.html')) {
+    filePath = filePath + '.html';
+  } else if (!fs.existsSync(filePath) && fs.existsSync(path.join(filePath, 'index.html'))) {
+    filePath = path.join(filePath, 'index.html');
+  }
+
+  if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
+    return false;
+  }
+
+  const ext = path.extname(filePath).toLowerCase();
+  const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+
+  try {
+    const stat = fs.statSync(filePath);
+    res.writeHead(200, {
+      'Content-Type': contentType,
+      'Content-Length': stat.size,
+      'Cache-Control': 'no-cache',
+    });
+    if (req.method === 'HEAD') {
+      res.end();
+      return true;
+    }
+    fs.createReadStream(filePath).pipe(res);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
 
 // Allow the site's own dev and prod origins to call this API from the browser.
 const ALLOWED_ORIGINS = [
@@ -234,9 +297,84 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // -------------------------------------------------------------
+  // POST /api/quote — Submit a new quote request
+  // -------------------------------------------------------------
+  if (url.pathname === '/api/quote' && req.method === 'POST') {
+    let body;
+    try {
+      const raw = await readBody(req, 20 * 1024);
+      body = JSON.parse(raw || '{}');
+    } catch (err) {
+      sendJson(res, 400, { ok: false, error: 'Invalid request body.' });
+      return;
+    }
+
+    const name = String(body.name || '').trim().slice(0, 200);
+    const email = String(body.email || '').trim().slice(0, 200);
+    const equipment = String(body.equipment || '').trim().slice(0, 200);
+    const message = String(body.message || '').trim().slice(0, 4000);
+
+    if (!name || !email || !equipment) {
+      sendJson(res, 400, {
+        ok: false,
+        error: 'Full Name, Official Email, and Medical Equipment category are required.',
+      });
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      sendJson(res, 400, { ok: false, error: 'Please provide a valid email address.' });
+      return;
+    }
+
+    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
+
+    let item;
+    try {
+      item = addQuote({ name, email, equipment, message, ip });
+    } catch (err) {
+      console.error('Failed to persist quote:', err);
+      sendJson(res, 500, { ok: false, error: 'Could not save quote request. Please try again.' });
+      return;
+    }
+
+    console.log(`[quote] New quote request from: ${name} (${email}) for ${equipment}`);
+
+    sendQuoteEmail({ name, email, equipment, message }).catch((err) => {
+      console.error('[quote] Unexpected error while sending notification:', err);
+    });
+
+    sendJson(res, 200, {
+      ok: true,
+      message: 'Thank you! Your quote request has been sent to our sales team.',
+      id: item.id,
+    });
+    return;
+  }
+
+  // -------------------------------------------------------------
+  // GET /api/quote — List quotes
+  // -------------------------------------------------------------
+  if (url.pathname === '/api/quote' && req.method === 'GET') {
+    const quotes = readQuotes();
+    sendJson(res, 200, {
+      ok: true,
+      total: quotes.length,
+      quotes,
+    });
+    return;
+  }
+
   if (url.pathname === '/api/health' && req.method === 'GET') {
     sendJson(res, 200, { ok: true, status: 'up' });
     return;
+  }
+
+  // Fallback: serve static site files (HTML, CSS, JS, assets) for local development
+  if (req.method === 'GET' || req.method === 'HEAD') {
+    const served = serveStaticFile(req, res, url.pathname);
+    if (served) return;
   }
 
   sendJson(res, 404, { ok: false, error: 'Not found.' });

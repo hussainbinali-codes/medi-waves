@@ -6,5 +6,13 @@
     "status": "active",
     "ip": "::1",
     "source": "footer_newsletter"
+  },
+  {
+    "id": "d86e9d5e-edf5-412f-bddc-70b825ea6a31",
+    "email": "newstest@hospital.com",
+    "subscribedAt": "2026-10-07T08:20:35.906Z",
+    "status": "active",
+    "ip": "::1",
+    "source": "website_footer"
   }
 ]

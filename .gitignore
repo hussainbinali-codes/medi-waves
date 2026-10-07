@@ -8,3 +8,5 @@ api/submissions.json
 api/submissions.csv
 api/subscribers.json
 api/subscribers.csv
+
+deploy/*.zip

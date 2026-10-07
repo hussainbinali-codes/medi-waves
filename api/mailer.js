@@ -17,6 +17,9 @@ const nodemailer = require('nodemailer');
 const EMAIL_USER = process.env.EMAIL_USER || '';
 const EMAIL_PASS = process.env.EMAIL_PASS || '';
 const CONTACT_RECEIVER = process.env.CONTACT_RECEIVER || EMAIL_USER;
+const SMTP_HOST = process.env.SMTP_HOST || '';
+const SMTP_PORT = Number(process.env.SMTP_PORT) || 587;
+const SMTP_SECURE = process.env.SMTP_SECURE === 'true' || SMTP_PORT === 465;
 
 let transporter = null;
 
@@ -25,13 +28,25 @@ function getTransporter() {
     return null;
   }
   if (!transporter) {
-    transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: EMAIL_USER,
-        pass: EMAIL_PASS,
-      },
-    });
+    if (SMTP_HOST) {
+      transporter = nodemailer.createTransport({
+        host: SMTP_HOST,
+        port: SMTP_PORT,
+        secure: SMTP_SECURE,
+        auth: {
+          user: EMAIL_USER,
+          pass: EMAIL_PASS,
+        },
+      });
+    } else {
+      transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: EMAIL_USER,
+          pass: EMAIL_PASS,
+        },
+      });
+    }
   }
   return transporter;
 }
@@ -113,4 +128,48 @@ async function sendNewsletterEmail({ email }) {
   }
 }
 
-module.exports = { sendContactEmail, sendNewsletterEmail };
+/**
+ * Sends a Request Quote notification email.
+ */
+async function sendQuoteEmail({ name, email, equipment, message }) {
+  const t = getTransporter();
+  if (!t) {
+    console.warn('[mailer] EMAIL_USER / EMAIL_PASS not configured — skipping quote email send.');
+    return { sent: false, reason: 'not_configured' };
+  }
+
+  const mailOptions = {
+    from: `"Medi Waves Website" <${EMAIL_USER}>`,
+    to: CONTACT_RECEIVER,
+    replyTo: email,
+    subject: `New Quote Request: ${equipment} (${name})`,
+    text: [
+      `Name / Hospital: ${name}`,
+      `Email: ${email}`,
+      `Requested Equipment: ${equipment}`,
+      '',
+      'Requirements & Specifications:',
+      message || '(None specified)',
+    ].join('\n'),
+    html: `
+      <h2>New Quote Request Received</h2>
+      <p><strong>Full Name / Hospital:</strong> ${name}</p>
+      <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+      <p><strong>Equipment Category:</strong> ${equipment}</p>
+      <p><strong>Requirements & Specifications:</strong></p>
+      <p>${String(message || 'None specified').replace(/\n/g, '<br>')}</p>
+      <hr>
+      <small>Sent from Medi Waves Inc. Website Quote Modal</small>
+    `,
+  };
+
+  try {
+    await t.sendMail(mailOptions);
+    return { sent: true };
+  } catch (err) {
+    console.error('[mailer] Failed to send quote email:', err.message);
+    return { sent: false, reason: 'send_failed', error: err.message };
+  }
+}
+
+module.exports = { sendContactEmail, sendNewsletterEmail, sendQuoteEmail };

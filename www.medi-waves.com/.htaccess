@@ -16,6 +16,12 @@
   RewriteCond %{HTTP_HOST} !^www\.medi-waves\.com$ [NC]
   RewriteCond %{HTTP_HOST} ^(www\.)?medi-waves\.com$ [NC]
   RewriteRule ^ https://www.medi-waves.com%{REQUEST_URI} [L,R=301]
+
+  # Route /api/* requests directly to backend handlers in public_html
+  RewriteRule ^api/quote/?$ api/quote.php [L,QSA]
+  RewriteRule ^api/contact/?$ api/contact.php [L,QSA]
+  RewriteRule ^api/newsletter/?$ api/newsletter.php [L,QSA]
+  RewriteRule ^api/subscribe/?$ api/newsletter.php [L,QSA]
 </IfModule>
 
 # Custom 404 page

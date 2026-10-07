@@ -1,0 +1,5 @@
+# Protect JSON data files and CSVs from direct browser browsing
+<FilesMatch "\.(json|csv|log)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
