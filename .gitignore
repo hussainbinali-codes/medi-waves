@@ -1,12 +1,81 @@
+# ==============================================================================
+# DEPENDENCIES
+# ==============================================================================
 node_modules/
+*/node_modules/
+
+# ==============================================================================
+# ENVIRONMENT VARIABLES & SECRETS
+# ==============================================================================
 .env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# ==============================================================================
+# BUILD ARTIFACTS & COMPRESSED ARCHIVES (Heavy zip bundles)
+# ==============================================================================
 dist/
 build/
-.vscode/
-.DS_Store
+*.zip
+deploy/*.zip
+build-mediwaves.zip
+
+# ==============================================================================
+# DYNAMIC DATABASE & FORM SUBMISSION FILES (User / Client Data)
+# ==============================================================================
 api/submissions.json
 api/submissions.csv
 api/subscribers.json
 api/subscribers.csv
+api/quotes.json
+api/quotes.csv
+api/*.csv
 
-deploy/*.zip
+# ==============================================================================
+# OPERATING SYSTEM & EDITOR FILES
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# ==============================================================================
+# BACKUPS & TEMPORARY FILES
+# ==============================================================================
+*.bak
+*.backup
+*.tmp
+*.temp
+*.save
+*.swp
+*.swo
+*~
+
+# ==============================================================================
+# PYTHON CACHE & SCRIPTS
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# ==============================================================================
+# LOGS & DIAGNOSTICS
+# ==============================================================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
