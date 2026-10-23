@@ -168,6 +168,8 @@
     mountDropdown();
     mountUtilityBar();
     sanitizeNavbar();
+    ensureStylesheet("/assets/css/quote-modal.css");
+    ensureScript("/assets/js/quote-modal.js");
   }
 
   if (document.readyState === "loading") {

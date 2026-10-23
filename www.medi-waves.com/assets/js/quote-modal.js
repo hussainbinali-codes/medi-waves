@@ -1,9 +1,18 @@
 /**
- * Medi Waves - Request a Quote Modal Controller (Matches Image 1)
- * Replaces redirection to /contact/ sitewide.
+ * Medi Waves - Request a Quote Modal Controller
+ * Sitewide handler ensuring EVERY "Request Quote" / "Request a Quote" button
+ * opens the interactive quote modal instead of navigating away.
  */
 (function () {
   var MODAL_ID = "mwQuoteModalBackdrop";
+
+  // Auto-inject quote-modal.css if not present
+  if (!document.querySelector('link[href*="quote-modal.css"]')) {
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "/assets/css/quote-modal.css";
+    document.head.appendChild(link);
+  }
 
   function getApiEndpoint() {
     var host = window.location.hostname;
@@ -84,6 +93,66 @@
     return el;
   }
 
+  function matchCategory(hint) {
+    if (!hint) return "";
+    var q = String(hint).toLowerCase();
+    var select = document.getElementById("mwQuoteCategory");
+    if (!select) return "";
+
+    // 1. Direct match on option value
+    for (var i = 0; i < select.options.length; i++) {
+      var val = select.options[i].value;
+      if (val && (val.toLowerCase() === q || q.indexOf(val.toLowerCase()) !== -1 || val.toLowerCase().indexOf(q) !== -1)) {
+        return val;
+      }
+    }
+
+    // 2. Intelligent keyword mapping
+    if (q.match(/infant|baby|warmer|incubator|phototherapy|resuscitator|infantometer|fetal|bilirubin/)) {
+      return "Infant Care & Delivery Room";
+    }
+    if (q.match(/monitor|doppler|ecg|pulse|oximeter|defibrillator/)) {
+      return "Monitoring Equipments";
+    }
+    if (q.match(/pump|syringe/)) {
+      return "Infusion Pumps";
+    }
+    if (q.match(/respirat|cpap|bipap|oxygen|hfnc|suction|concentrator/)) {
+      return "Respiratory Care Equipments";
+    }
+    if (q.match(/electro|zeus|cautery|diathermy/)) {
+      return "Electro Surgical Unit";
+    }
+    if (q.match(/pressure|sphygmo|bp\b/)) {
+      return "Blood Pressure Monitor";
+    }
+    if (q.match(/growth|scale|weighing/)) {
+      return "Child Growth Monitoring";
+    }
+    if (q.match(/bed|trolley|table|chair|stretcher|couch|furniture|cart|stand|locker|stool/)) {
+      return "Hospital Furniture";
+    }
+    return "";
+  }
+
+  function detectPageProduct() {
+    // Look for product heading
+    var h1 = document.querySelector(".page-title-title h1, h1");
+    if (h1) {
+      var txt = (h1.textContent || "").trim();
+      if (txt && txt.toLowerCase() !== "medi waves" && txt.toLowerCase() !== "home") {
+        return txt;
+      }
+    }
+    // Look for breadcrumb current
+    var bcCurrent = document.querySelector(".breadcrumbs .current, .breadcrumb .active");
+    if (bcCurrent) {
+      var bcTxt = (bcCurrent.textContent || "").trim();
+      if (bcTxt) return bcTxt;
+    }
+    return "";
+  }
+
   function openModal(prefillEquipment) {
     var modal = ensureModal();
     var status = document.getElementById("mwQuoteStatus");
@@ -93,16 +162,23 @@
       status.style.display = "none";
     }
 
-    if (prefillEquipment) {
-      var select = document.getElementById("mwQuoteCategory");
-      if (select) {
-        for (var i = 0; i < select.options.length; i++) {
-          if (select.options[i].value.toLowerCase() === String(prefillEquipment).toLowerCase()) {
-            select.selectedIndex = i;
-            break;
-          }
+    var detectedProduct = detectPageProduct();
+    var hint = prefillEquipment || detectedProduct;
+    var matchedCat = matchCategory(hint);
+
+    var select = document.getElementById("mwQuoteCategory");
+    if (select && matchedCat) {
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === matchedCat) {
+          select.selectedIndex = i;
+          break;
         }
       }
+    }
+
+    var reqTextarea = document.getElementById("mwQuoteRequirements");
+    if (reqTextarea && !reqTextarea.value.trim() && detectedProduct) {
+      reqTextarea.value = "Request for quote and product specifications for: " + detectedProduct;
     }
 
     modal.classList.add("open");
@@ -219,7 +295,7 @@
               setStatus((data && data.error) || "Could not submit quote request. Please try again.", "error");
             }
           })
-          .catch(function (err) {
+          .catch(function () {
             setStatus("Network error. Please try again or email sales@medi-waves.com directly.", "error");
           })
           .finally(function () {
@@ -237,68 +313,59 @@
     }
   }
 
-  // Intercept all "Request Quote" buttons sitewide so they trigger the modal instead of redirecting
-  function interceptQuoteButtons() {
-    var triggers = document.querySelectorAll(
-      '.nav-cta, .mobile-drawer-cta a, [data-open-quote-modal], a[href*="contact"], a[href*="quote"], button'
-    );
+  // Helper to determine if an element is a quote button
+  function isQuoteTrigger(el) {
+    if (!el || el.nodeType !== 1) return false;
+    if (el.hasAttribute("data-open-quote-modal")) return true;
+    if (el.classList.contains("nav-cta") || el.classList.contains("pd-quote-btn") || el.classList.contains("pw-hero-quote-btn")) return true;
 
-    triggers.forEach(function (btn) {
-      if (btn.dataset.quoteIntercepted) return;
-      var text = (btn.textContent || "").trim().toLowerCase();
-      var isQuoteBtn =
-        btn.classList.contains("nav-cta") ||
-        btn.hasAttribute("data-open-quote-modal") ||
-        text.indexOf("request quote") !== -1 ||
-        text.indexOf("request a quote") !== -1 ||
-        text.indexOf("get a quote") !== -1;
+    var text = (el.textContent || "").trim().toLowerCase();
+    var href = (el.getAttribute("href") || "").toLowerCase();
 
-      if (isQuoteBtn) {
-        btn.dataset.quoteIntercepted = "true";
-        btn.addEventListener("click", function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          // Close mobile drawer if open
-          var drawer = document.getElementById("mobileDrawer");
-          var scrim = document.getElementById("mobileScrim");
-          if (drawer && drawer.classList.contains("open")) {
-            drawer.classList.remove("open");
-          }
-          if (scrim && scrim.classList.contains("open")) {
-            scrim.classList.remove("open");
-          }
-          var prefill = btn.getAttribute("data-equipment") || "";
-          openModal(prefill);
-        });
-      }
-    });
+    // Check common quote button phrasings
+    if (
+      text.indexOf("request quote") !== -1 ||
+      text.indexOf("request a quote") !== -1 ||
+      text.indexOf("get a quote") !== -1 ||
+      text.indexOf("get quote") !== -1
+    ) {
+      return true;
+    }
+
+    // Check link pointing to contact that mentions quote
+    if (href.indexOf("contact") !== -1 && text.indexOf("quote") !== -1) {
+      return true;
+    }
+
+    return false;
   }
 
-  // Delegated document-level listener guarantees immediate opening for any quote button
-  document.addEventListener("click", function (e) {
-    var trigger = e.target.closest("[data-open-quote-modal], .nav-cta");
-    if (!trigger) {
-      var btn = e.target.closest("a, button");
-      if (btn) {
-        var txt = (btn.textContent || "").trim().toLowerCase();
-        if (txt === "request quote" || txt === "request a quote" || txt === "get a quote") {
-          trigger = btn;
-        }
-      }
-    }
-    if (trigger) {
-      e.preventDefault();
-      e.stopPropagation();
-      var drawer = document.getElementById("mobileDrawer");
-      var scrim = document.getElementById("mobileScrim");
-      if (drawer && drawer.classList.contains("open")) drawer.classList.remove("open");
-      if (scrim && scrim.classList.contains("open")) scrim.classList.remove("open");
-      var prefill = trigger.getAttribute("data-equipment") || "";
-      openModal(prefill);
-    }
-  });
+  // Capture phase document-level listener guarantees 100% intercept BEFORE any link navigation
+  document.addEventListener(
+    "click",
+    function (e) {
+      var target = e.target;
+      var trigger = target.closest("a, button, [data-open-quote-modal], .nav-cta, .pd-quote-btn, .pw-hero-quote-btn");
+      if (!trigger) return;
 
-  // Expose global helper
+      if (isQuoteTrigger(trigger)) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // Close mobile drawer if open
+        var drawer = document.getElementById("mobileDrawer");
+        var scrim = document.getElementById("mobileScrim");
+        if (drawer && drawer.classList.contains("open")) drawer.classList.remove("open");
+        if (scrim && scrim.classList.contains("open")) scrim.classList.remove("open");
+
+        var prefill = trigger.getAttribute("data-equipment") || trigger.getAttribute("data-product") || "";
+        openModal(prefill);
+      }
+    },
+    true // useCapture = true ensures intercept before other click handlers or native link following
+  );
+
+  // Expose global helpers
   window.openQuoteModal = openModal;
   window.closeQuoteModal = closeModal;
 
