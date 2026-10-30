@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="gold2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#FFF2A3"/>
+      <stop offset="100%" stop-color="#AA771C"/>
+    </linearGradient>
+    <pattern id="guilloche2" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 0 20 Q 10 0, 20 20 T 40 20" fill="none" stroke="#e2e8f0" stroke-width="0.8" opacity="0.6"/>
+      <path d="M 0 20 Q 10 40, 20 20 T 40 20" fill="none" stroke="#e2e8f0" stroke-width="0.8" opacity="0.6"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="560" rx="16" fill="url(#bg2)"/>
+  <rect x="16" y="16" width="768" height="528" rx="12" fill="url(#guilloche2)"/>
+
+  <!-- Ornate Double Borders -->
+  <rect x="24" y="24" width="752" height="512" rx="10" fill="none" stroke="#0B1F3A" stroke-width="3"/>
+  <rect x="32" y="32" width="736" height="496" rx="8" fill="none" stroke="url(#gold2)" stroke-width="1.8"/>
+  <rect x="38" y="38" width="724" height="484" rx="6" fill="none" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="4 3"/>
+
+  <!-- Corner Ornaments -->
+  <path d="M 38 70 L 70 38 M 38 80 L 80 38 M 38 90 L 90 38" stroke="url(#gold2)" stroke-width="1.5"/>
+  <path d="M 762 70 L 730 38 M 762 80 L 720 38 M 762 90 L 710 38" stroke="url(#gold2)" stroke-width="1.5"/>
+  <path d="M 38 490 L 70 522 M 38 480 L 80 522 M 38 470 L 90 522" stroke="url(#gold2)" stroke-width="1.5"/>
+  <path d="M 762 490 L 730 522 M 762 480 L 720 522 M 762 470 L 710 522" stroke="url(#gold2)" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <g transform="translate(400, 95)" text-anchor="middle">
+    <!-- Star Quality Badge -->
+    <circle cx="0" cy="-25" r="24" fill="#0B1F3A"/>
+    <path d="M 0 -36 L 3 -28 L 12 -28 L 5 -23 L 8 -15 L 0 -20 L -8 -15 L -5 -23 L -12 -28 L -3 -28 Z" fill="url(#gold2)"/>
+    
+    <text y="14" font-family="'Plus Jakarta Sans', 'Arial Black', sans-serif" font-size="13" font-weight="800" fill="#0B1F3A" letter-spacing="4">STANDARDS &amp; QUALITY CERTIFICATION</text>
+    <text y="44" font-family="'Plus Jakarta Sans', Georgia, serif" font-size="28" font-weight="800" fill="#0B1F3A" letter-spacing="1">CERTIFICATE OF CONFORMITY</text>
+    <line x1="-140" y1="56" x2="140" y2="56" stroke="url(#gold2)" stroke-width="2"/>
+  </g>
+
+  <!-- Body Content -->
+  <g transform="translate(400, 205)" text-anchor="middle">
+    <text y="0" font-family="'Inter', sans-serif" font-size="13" fill="#64748b" letter-spacing="1.5" text-transform="uppercase">This certifies that the Quality Management System of</text>
+    <text y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="800" fill="#0B1F3A" letter-spacing="0.5">MEDI WAVES INC.</text>
+    <text y="54" font-family="'Inter', sans-serif" font-size="12" fill="#475467">Plot No. 12, Functional Industrial Estate, Patparganj, Delhi - 110092, India</text>
+    
+    <text y="88" font-family="'Inter', sans-serif" font-size="13" fill="#64748b">has been audited and found to meet all standard requirements of</text>
+    
+    <!-- ISO 9001 Highlight Box -->
+    <rect x="-180" y="104" width="360" height="42" rx="21" fill="rgba(11,31,58,0.06)" stroke="#0B1F3A" stroke-width="1.5"/>
+    <text y="131" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#0B1F3A" letter-spacing="1">ISO 9001:2015</text>
+    
+    <text y="174" font-family="'Inter', sans-serif" font-size="12.5" font-weight="600" fill="#0B1F3A">Scope: Manufacturing &amp; Global Export of Medical, Hospital &amp; Surgical Equipment</text>
+    <text y="194" font-family="'Inter', sans-serif" font-size="11.5" fill="#475467">Encompassing Design, Assembly, Testing, Customer Support &amp; Calibration</text>
+  </g>
+
+  <!-- Gold Seal -->
+  <g transform="translate(140, 445)">
+    <circle cx="0" cy="0" r="44" fill="url(#gold2)" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.15))"/>
+    <circle cx="0" cy="0" r="38" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#AA771C" stroke-width="1.2"/>
+    <text y="-6" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#0B1F3A" letter-spacing="1">CERTIFIED</text>
+    <text y="8" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#0B1F3A">ISO 9001</text>
+    <text y="20" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="700" fill="#0B1F3A">ASSURED</text>
+    <!-- Ribbon tails -->
+    <path d="M -16 38 L -24 64 L -8 56 L 0 64 L -4 38 Z" fill="#AA771C"/>
+    <path d="M 16 38 L 24 64 L 8 56 L 0 64 L 4 38 Z" fill="#D4AF37"/>
+  </g>
+
+  <!-- Signatures and Details -->
+  <g transform="translate(400, 455)">
+    <text x="-90" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" fill="#64748b">Certificate No: <tspan font-weight="700" fill="#0B1F3A">MWI-QMS-9001</tspan></text>
+    <text x="-90" y="16" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" fill="#64748b">Accreditation Code: <tspan font-weight="700" fill="#0B1F3A">IAF-MLA-742</tspan></text>
+    <text x="-90" y="32" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" fill="#64748b">Current Validity: <tspan font-weight="700" fill="#155EEF">2024 – 2027</tspan></text>
+
+    <!-- Signatures -->
+    <g transform="translate(190, 10)">
+      <path d="M -60 2 Q -25 -14 -5 2 T 35 -10 T 60 4" fill="none" stroke="#0B1F3A" stroke-width="1.8"/>
+      <line x1="-70" y1="12" x2="70" y2="12" stroke="#94a3b8" stroke-width="1"/>
+      <text y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#0B1F3A">Lead Auditor</text>
+      <text y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#64748b">Certification Directorate</text>
+    </g>
+  </g>
+</svg>
+

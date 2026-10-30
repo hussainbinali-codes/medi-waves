@@ -95,11 +95,11 @@ const ALLOWED_ORIGINS = [
 
 function setCors(req, res) {
   const origin = req.headers.origin;
-  if (!origin || ALLOWED_ORIGINS.includes(origin) || origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:')) {
-    res.setHeader('Access-Control-Allow-Origin', origin || '*');
-  }
+  // Always allow the requesting origin for local dev (localhost, 127.0.0.1, 192.168.*, etc.) & configured domains
+  res.setHeader('Access-Control-Allow-Origin', origin || '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+  res.setHeader('Access-Control-Max-Age', '86400');
 }
 
 function sendJson(res, status, body) {
@@ -172,7 +172,7 @@ const server = http.createServer(async (req, res) => {
         email,
         website,
         message,
-        ip: req.socket.remoteAddress || '',
+        ip: (req.socket ? req.socket.remoteAddress : '') || '',
       });
     } catch (err) {
       console.error('Failed to persist submission:', err);
@@ -226,7 +226,7 @@ const server = http.createServer(async (req, res) => {
     try {
       result = addSubscriber({
         email,
-        ip: req.socket.remoteAddress || '',
+        ip: (req.socket ? req.socket.remoteAddress : '') || '',
         source: body.source || 'website_footer',
       });
     } catch (err) {
@@ -328,7 +328,7 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
+    const ip = req.headers['x-forwarded-for'] || (req.socket ? req.socket.remoteAddress : '') || 'unknown';
 
     let item;
     try {
@@ -380,7 +380,7 @@ const server = http.createServer(async (req, res) => {
   sendJson(res, 404, { ok: false, error: 'Not found.' });
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`Medi Waves API listening on http://localhost:${PORT}`);
   console.log(`Submissions: ${SUBMISSIONS_JSON} & ${SUBMISSIONS_CSV}`);
   console.log(`Subscribers: ${SUBSCRIBERS_JSON} & ${SUBSCRIBERS_CSV}`);

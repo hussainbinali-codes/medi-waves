@@ -7,5 +7,23 @@
     "message": "Need 5 units",
     "submittedAt": "2026-10-07T08:19:55.506Z",
     "ip": "::1"
+  },
+  {
+    "id": "afb811cf-1070-450a-9e10-79ebba632597",
+    "name": "Testing",
+    "email": "testing290@gmail.com",
+    "equipment": "Child Growth Monitoring",
+    "message": "Request for quote and product specifications for: Monitoring Equipments akdhjflk",
+    "submittedAt": "2026-10-30T10:10:17.359Z",
+    "ip": "192.168.1.17"
+  },
+  {
+    "id": "7272cdbb-cd54-49ba-8935-27361457f260",
+    "name": "Dr. Anita Desai",
+    "email": "anita@carehospital.org",
+    "equipment": "OT / Surgical Equipment",
+    "message": "Requesting quote for surgical units.",
+    "submittedAt": "2026-10-30T10:14:51.810Z",
+    "ip": "192.168.1.17"
   }
 ]
