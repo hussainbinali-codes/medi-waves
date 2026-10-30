@@ -370,22 +370,118 @@ section{padding:var(--space-7) 0;position:relative;}
 .about-copy .eyebrow{margin-bottom:14px;}
 @media (max-width:900px){.about-split{grid-template-columns:1fr;}.about-visual{margin-bottom:40px;}.about-badge{left:10px;bottom:-14px;}}
 
-.value-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3);}
-.value-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:32px;
-  transition:all .35s var(--ease);position:relative;overflow:hidden;}
-.value-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;
-  background:var(--grad-brand-2);background-size:200% auto;
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s var(--ease);pointer-events:none;}
-.value-card:hover{box-shadow:0 30px 60px -16px rgba(11,31,58,.22);transform:translateY(-8px);}
-.value-card:hover::before{opacity:1;}
-.value-ic{width:50px;height:50px;border-radius:14px;background:var(--gray-100);color:var(--blue);
-  display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;transition:all .35s var(--ease);}
-.value-card:hover .value-ic{background:var(--grad-brand);color:#fff;transform:rotate(-6deg) scale(1.08);}
-.value-card h3{font-size:19px;margin-bottom:10px;}
-.value-card p{font-size:14.5px;}
-@media (max-width:760px){.value-grid{grid-template-columns:1fr;}}
+/* ============ WHY BENTO ============ */
+.why-bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(128px, auto);
+  gap: 12px;
+}
+.why-bento-visual {
+  grid-column: span 2;
+  grid-row: span 2;
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: linear-gradient(150deg, var(--navy), #123A63);
+  box-shadow: 0 20px 44px -16px rgba(11, 31, 58, .35);
+}
+.why-bento-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .4;
+  filter: saturate(0) brightness(1.15);
+}
+.why-bento-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(200deg, rgba(21, 94, 239, .3), transparent 60%), linear-gradient(0deg, rgba(11, 31, 58, .75), transparent 50%);
+}
+.why-bento-visual-txt {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  right: 20px;
+  z-index: 2;
+  color: #fff;
+}
+.why-bento-visual-txt b {
+  font-family: 'Plus Jakarta Sans';
+  font-size: 30px;
+  display: block;
+  background: linear-gradient(120deg, #fff, var(--teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform: translateZ(0);
+  isolation: isolate;
+}
+.why-bento-visual-txt span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, .72);
+  font-weight: 600;
+}
+.why-item {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(11, 31, 58, .04);
+}
+.why-item-top {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.why-item-ic {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--gray-100);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  font-size: 14px;
+}
+.why-item h3 {
+  font-size: 13.5px;
+  line-height: 1.25;
+}
+.why-item p {
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--gray-500);
+  margin-top: 4px;
+  opacity: 1;
+}
+@media (max-width:980px) {
+  .why-bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .why-bento-visual {
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 16/8;
+  }
+}
+@media (max-width:560px) {
+  .why-bento {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+  }
+}
 
 .about-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);}
 .gallery-frame{border-radius:var(--radius-md);overflow:hidden;aspect-ratio:4/3;background:var(--gray-100);
@@ -584,24 +680,70 @@ table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:l
   </div>
 </section>
 
-<!-- ============ WHY CHOOSE US ============ -->
-<section style="background:linear-gradient(180deg,#fff 0%,#F6FBFF 45%,#fff 100%);">
+<!-- ============ WHY MEDI WAVES ============ -->
+<section id="why" style="background:linear-gradient(180deg,#fff 0%,#F6FBFF 45%,#fff 100%);">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow">100% Genuine Quality Products</div>
-      <h2>We Provide 100% Genuine Quality Products.</h2>
-      <p>We are devoted to providing a one-stop sales model to customers; we give more importance to customer satisfaction.</p>
+      <div class="eyebrow">Why Medi Waves</div>
+      <h2>Quality You Can Trust, Built to Last</h2>
+      <p>Since 2000, Medi Waves makes high-quality medical equipment in its own factory with strict safety and quality checks.</p>
     </div>
-    <div class="value-grid">
-      <div class="value-card reveal">
-        <div class="value-ic">🎯</div>
-        <h3>We are Professional</h3>
-        <p>Our vision is providing world-class products and service, improving the health-care system worldwide to the top level. Wish you will enjoy our products and service in the near future.</p>
+
+    <div class="why-bento reveal">
+      <div class="why-bento-visual">
+        <img src="/wp-content/uploads/2023/05/Factory1.jpg" width="523" height="259" alt="Manufacturing facility" loading="lazy">
+        <div class="why-bento-visual-txt">
+          <b>25+</b>
+          <span>Years of manufacturing excellence at HSIIDC Kundli, Sonepat</span>
+        </div>
       </div>
-      <div class="value-card reveal">
-        <div class="value-ic">🤝</div>
-        <h3>We are Trusted</h3>
-        <p>Our success has been mainly achieved by following the corporate philosophy of being firmly committed to "Integrity is the base, Customer is the first."</p>
+      <div class="why-item">
+        <div class="why-item-top"><span class="why-item-ic">⚙️</span>
+          <h3>Precision Engineering</h3>
+        </div>
+        <p>In-house tooling ensures every unit meets exact clinical specifications.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item-top"><span class="why-item-ic">✔️</span>
+          <h3>Quality Assurance</h3>
+        </div>
+        <p>Tested against international and national standards before dispatch.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item-top"><span class="why-item-ic">🌍</span>
+          <h3>Global Export</h3>
+        </div>
+        <p>Delivering to hospitals, governments &amp; NGOs across 50+ countries.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item-top"><span class="why-item-ic">🛠️</span>
+          <h3>Custom Manufacturing</h3>
+        </div>
+        <p>Configurations tailored to your facility's clinical requirements.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item-top"><span class="why-item-ic">🤝</span>
+          <h3>Trusted Relationships</h3>
+        </div>
+        <p>Long-standing partnerships built on consistent, reliable delivery.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item-top"><span class="why-item-ic">📞</span>
+          <h3>Technical Support</h3>
+        </div>
+        <p>Dedicated support for installation, servicing &amp; spare parts.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item-top"><span class="why-item-ic">🏭</span>
+          <h3>Own Manufacturing Unit</h3>
+        </div>
+        <p>State-of-the-art facility — full control over production quality.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item-top"><span class="why-item-ic">💙</span>
+          <h3>Customer First</h3>
+        </div>
+        <p>"Integrity is the base, Customer is the first" — our founding ethos.</p>
       </div>
     </div>
   </div>
