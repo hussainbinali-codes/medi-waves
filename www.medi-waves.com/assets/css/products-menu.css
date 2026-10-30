@@ -308,35 +308,60 @@ body .block-content,
    Brochure & Download Buttons (Black & Grey Gradient + Hover)
    ======================================================== */
 
-/* Product Detail Page - "Download Brochure" Button */
+/* Product Detail Page & Sitewide In-Page - "Download Brochure" / "Download" Buttons */
 .pw-page-brochure-btn,
 body .pw-page-brochure-btn,
-a.pw-page-brochure-btn {
+a.pw-page-brochure-btn,
+a.gem-button[href*=".pdf"],
+a.gem-button[href*="catalogues"],
+a.gem-button[href*="Brochure"],
+a.gem-button[href*="brochure"],
+.gem-button-container a[href*=".pdf"],
+.gem-button-container a[href*="catalogues"],
+.gem-widget-button a[href*=".pdf"],
+.gem-widget-button a[href*="catalogues"],
+.cgms-btn.cgms-btn-primary,
+.chms-btn.chms-btn-primary,
+a[download] {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
   font-size: 15.5px !important;
   font-weight: 800 !important;
   color: #FFFFFF !important;
   background: linear-gradient(135deg, #2D3139 0%, #111317 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
   padding: 13px 28px !important;
   border-radius: 999px !important;
   display: inline-flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 10px !important;
   text-decoration: none !important;
   transition: all .25s cubic-bezier(.22, 1, .36, 1) !important;
   cursor: pointer !important;
   letter-spacing: .02em !important;
+  line-height: normal !important;
 }
 
 .pw-page-brochure-btn:hover,
 body .pw-page-brochure-btn:hover,
-a.pw-page-brochure-btn:hover {
+a.pw-page-brochure-btn:hover,
+a.gem-button[href*=".pdf"]:hover,
+a.gem-button[href*="catalogues"]:hover,
+a.gem-button[href*="Brochure"]:hover,
+a.gem-button[href*="brochure"]:hover,
+.gem-button-container a[href*=".pdf"]:hover,
+.gem-button-container a[href*="catalogues"]:hover,
+.gem-widget-button a[href*=".pdf"]:hover,
+.gem-widget-button a[href*="catalogues"]:hover,
+.cgms-btn.cgms-btn-primary:hover,
+.chms-btn.chms-btn-primary:hover,
+a[download]:hover {
   background: linear-gradient(135deg, #444C59 0%, #1D2128 100%) !important;
   color: #FFFFFF !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
 }
 
 .pw-page-brochure-btn svg,
@@ -346,6 +371,43 @@ body .pw-page-brochure-btn svg {
   width: 17px !important;
   height: 17px !important;
   flex: none !important;
+}
+
+/* Inner elements, text, and icons for all TheGem download buttons */
+a.gem-button[href*=".pdf"] .gem-inner-wrapper-btn,
+a.gem-button[href*="catalogues"] .gem-inner-wrapper-btn,
+.gem-widget-button a[href*=".pdf"] .gem-inner-wrapper-btn,
+.gem-widget-button a[href*="catalogues"] .gem-inner-wrapper-btn {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  color: #FFFFFF !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+}
+
+a.gem-button[href*=".pdf"] .gem-text-button,
+a.gem-button[href*="catalogues"] .gem-text-button,
+.gem-widget-button a[href*=".pdf"] .gem-text-button,
+.gem-widget-button a[href*="catalogues"] .gem-text-button,
+a.gem-button[href*=".pdf"] *,
+a.gem-button[href*="catalogues"] * {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 15.5px !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+}
+
+a.gem-button[href*=".pdf"] .gem-button-icon,
+a.gem-button[href*=".pdf"] i,
+a.gem-button[href*="catalogues"] .gem-button-icon,
+a.gem-button[href*="catalogues"] i {
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  margin: 0 !important;
 }
 
 /* Category Card - Download Brochure Button */
@@ -391,7 +453,89 @@ body .cat-dl-btn svg {
 }
 
 /* ========================================================
-   Sitewide Mobile-Responsive Footer
+   Sitewide Mobile-Responsive Footer & Typography
+   Ensures footer text exactly matches the modern body text font ('Inter')
+   ======================================================== */
+footer,
+footer p,
+footer li,
+footer a,
+footer span,
+footer div,
+footer input,
+.footer-grid,
+.footer-bottom,
+.footer-bottom * {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+footer h3,
+.footer-logo,
+footer .footer-logo,
+footer .footer-newsletter button {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  letter-spacing: -0.01em !important;
+}
+
+footer p {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  margin: 0 0 16px 0 !important;
+}
+
+footer ul {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+footer ul li {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+footer ul li a {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13.5px !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease, padding-left 0.2s ease !important;
+}
+
+footer ul li a:hover {
+  color: #FFFFFF !important;
+}
+
+footer h3 {
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #FFFFFF !important;
+  margin-bottom: 18px !important;
+}
+
+.footer-bottom {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  line-height: 1.6 !important;
+}
+
+.footer-bottom a {
+  font-family: 'Inter', sans-serif !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  text-decoration: none !important;
+}
+
+.footer-bottom a:hover {
+  color: #FFFFFF !important;
+}
    Ensures the 5-column desktop footer transitions cleanly on tablets & phones
    ======================================================== */
 footer {
@@ -593,3 +737,83 @@ footer .container {
   }
 }
 
+
+
+/* ========================================================
+   Elementor Product Detail Grid (Side-by-Side Layout)
+   Ensures product images and details display side-by-side
+   across all column types (col-33 / col-66 / col-50)
+   ======================================================== */
+.elementor-container .elementor-row,
+.elementor-container.elementor-column-gap-thegem .elementor-row,
+body .elementor-container .elementor-row {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100% !important;
+  gap: 44px !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+}
+
+@media (min-width: 861px) {
+  .elementor-container .elementor-col-33,
+  .elementor-container.elementor-column-gap-thegem .elementor-col-33,
+  body .elementor-col-33 {
+    flex: 0 0 calc(38% - 22px) !important;
+    max-width: calc(38% - 22px) !important;
+    width: calc(38% - 22px) !important;
+    min-width: 280px !important;
+  }
+
+  .elementor-container .elementor-col-66,
+  .elementor-container.elementor-column-gap-thegem .elementor-col-66,
+  body .elementor-col-66 {
+    flex: 1 1 calc(62% - 22px) !important;
+    max-width: calc(62% - 22px) !important;
+    width: calc(62% - 22px) !important;
+    min-width: 320px !important;
+  }
+
+  .elementor-container .elementor-col-50,
+  .elementor-container.elementor-column-gap-thegem .elementor-col-50,
+  body .elementor-col-50 {
+    flex: 1 1 calc(50% - 22px) !important;
+    max-width: calc(50% - 22px) !important;
+    width: calc(50% - 22px) !important;
+    min-width: 320px !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .elementor-container .elementor-row,
+  .elementor-container.elementor-column-gap-thegem .elementor-row,
+  body .elementor-container .elementor-row {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .elementor-container .elementor-col-33,
+  .elementor-container.elementor-column-gap-thegem .elementor-col-33,
+  .elementor-container .elementor-col-66,
+  .elementor-container.elementor-column-gap-thegem .elementor-col-66,
+  .elementor-container .elementor-col-50,
+  .elementor-container.elementor-column-gap-thegem .elementor-col-50,
+  body .elementor-col-33,
+  body .elementor-col-66,
+  body .elementor-col-50 {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+.elementor-col-33 .elementor-widget-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+}
+
+.elementor-col-33 .styled-image-wrapper {
+  position: static !important;
+}

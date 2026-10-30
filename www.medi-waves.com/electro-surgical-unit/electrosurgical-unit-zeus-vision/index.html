@@ -377,6 +377,98 @@ table th,table td{padding:8px 12px;border:1px solid rgba(0,0,0,.12);text-align:l
 <link rel="stylesheet" href="/assets/css/site-search.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="/assets/css/quote-modal.css">
+<style id="pd-redesign-css">
+.block-content{padding-top:40px !important;}
+#page-title{padding-top:56px !important;padding-bottom:30px !important;}
+.elementor-widget-wrap:empty{display:none !important;}
+.elementor-column:has(> .elementor-widget-wrap:empty){display:none !important;}
+.elementor-top-section:has(.elementor-widget-wrap:empty):not(:has(.elementor-widget-thegem-styledimage)){padding:0 !important;min-height:0 !important;}
+.elementor-container.elementor-column-gap-thegem{display:flex !important;flex-wrap:wrap;gap:0;background:#fff;border-radius:24px;box-shadow:0 2px 8px rgba(11,31,58,.05),0 24px 60px -32px rgba(11,31,58,.16);border:1px solid #E4EAF0;padding:36px;max-width:1280px;margin:0 auto 36px;}
+.elementor-container.elementor-column-gap-thegem .elementor-row{display:flex !important;flex-direction:row !important;gap:44px !important;width:100% !important;flex-wrap:wrap !important;align-items:flex-start !important;}
+.elementor-container.elementor-column-gap-thegem .elementor-col-50{flex:1 1 calc(50% - 22px) !important;min-width:340px !important;max-width:calc(50% - 22px) !important;box-sizing:border-box !important;}
+.elementor-container.elementor-column-gap-thegem .elementor-col-100{flex:1 1 100% !important;width:100% !important;max-width:100% !important;}
+.styled-image-wrapper{position:sticky;top:120px;}
+.gem-image.gem-wrapbox{border-radius:20px;overflow:hidden;background:#F5FAFC;border:1px solid #E4EAF0;box-shadow:0 20px 50px -28px rgba(11,31,58,.22);position:relative;transition:box-shadow .35s ease;}
+.gem-image.gem-wrapbox:hover{box-shadow:0 28px 64px -28px rgba(21,94,239,.3);}
+.gem-wrapbox-inner{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;}
+.gem-wrapbox-element{width:100%;height:100%;object-fit:contain;padding:18px;transition:transform .6s cubic-bezier(.16,1,.3,1);}
+.gem-image.gem-wrapbox:hover .gem-wrapbox-element{transform:scale(1.04);}
+.elementor-widget-heading .elementor-heading-title{font-family:'Plus Jakarta Sans','Manrope',sans-serif !important;font-size:clamp(24px,3vw,32px) !important;font-weight:800 !important;color:#0B1F3A !important;letter-spacing:-.01em;line-height:1.22;margin:0 0 20px !important;position:relative;padding-bottom:16px;}
+.elementor-widget-heading .elementor-heading-title::after{content:"";position:absolute;left:0;bottom:0;width:56px;height:4px;border-radius:4px;background:linear-gradient(120deg,#155EEF,#22B8CF);}
+.elementor-widget-text-editor .elementor-text-editor{background:#F5FAFC;border:1px solid #E4EAF0;border-radius:18px;padding:22px 24px;margin-top:10px;}
+.elementor-widget-text-editor .elementor-text-editor h4,.elementor-widget-text-editor .elementor-text-editor h5{font-family:'Plus Jakarta Sans','Manrope',sans-serif !important;font-size:12.5px !important;font-weight:800 !important;text-transform:uppercase;letter-spacing:.06em;color:#155EEF !important;margin:0 0 12px !important;}
+.elementor-widget-text-editor .elementor-text-editor p strong{display:block;margin:16px 0 10px;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:#22B8CF;font-weight:800;}
+.elementor-widget-text-editor .elementor-text-editor ul{list-style:none !important;margin:0 !important;padding:0 !important;display:flex;flex-direction:column;gap:8px;}
+.elementor-widget-text-editor .elementor-text-editor ul li{position:relative;padding-left:24px !important;font-size:13.6px;color:#475467;line-height:1.55;}
+.elementor-widget-text-editor .elementor-text-editor ul li::before{content:"u{2713}";position:absolute;left:0;top:2px;width:16px;height:16px;border-radius:50%;background:#155EEF;color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1;}
+
+/* Tables styling */
+.elementor-widget-html table,
+.elementor-text-editor table,
+table {
+  width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border: 1px solid #E4EAF0 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  margin: 16px 0 24px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13.5px !important;
+}
+
+.elementor-widget-html table th,
+.elementor-text-editor table th,
+table th {
+  background: #F8FAFC !important;
+  color: #0B1F3A !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 700 !important;
+  padding: 12px 18px !important;
+  text-align: left !important;
+  border-bottom: 2px solid #E4EAF0 !important;
+  font-size: 13.5px !important;
+}
+
+.elementor-widget-html table td,
+.elementor-text-editor table td,
+table td {
+  padding: 11px 18px !important;
+  border-bottom: 1px solid #E4EAF0 !important;
+  color: #475467 !important;
+  font-size: 13.5px !important;
+}
+
+.elementor-widget-html table tr:last-child td,
+.elementor-text-editor table tr:last-child td,
+table tr:last-child td {
+  border-bottom: none !important;
+}
+
+.elementor-widget-html table tr:hover td,
+.elementor-text-editor table tr:hover td,
+table tr:hover td {
+  background: #F8FBFF !important;
+}
+
+.elementor-widget-html table caption,
+caption {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #0B1F3A !important;
+  text-align: left !important;
+  padding: 8px 4px !important;
+  margin-top: 10px !important;
+}
+
+@media (max-width:900px){
+  .styled-image-wrapper{position:static !important;}
+  .elementor-container.elementor-column-gap-thegem{padding:20px !important;border-radius:18px !important;}
+  .elementor-container.elementor-column-gap-thegem .elementor-row{flex-direction:column !important;gap:26px !important;}
+  .elementor-container.elementor-column-gap-thegem .elementor-col-50{flex:1 1 100% !important;max-width:100% !important;}
+}
+</style>
 </head>
 
 
@@ -755,7 +847,7 @@ document.querySelectorAll('.mobile-accordion-head').forEach(head => {
 						
 						
 						<div class="container"><div class="page-title-inner"><div class="page-title-title"><h1 style="color:#ffffff;">  Electrosurgical Unit &#8211; Zeus Vision</h1></div></div></div>
-						<div class="breadcrumbs-container"><div class="container"><div class="breadcrumbs"><span><a href="/" itemprop="url"><span itemprop="title">Home</span></a></span> <span class="divider"><span class="bc-devider"></span></span> <span><a href="../../index.html%3Fp=989.html" itemprop="url"><span itemprop="title">Electro Surgical Unit</span></a></span> <span class="divider"><span class="bc-devider"></span></span> <span class="current">Electrosurgical Unit &#8211; Zeus Vision</span></div><!-- .breadcrumbs --></div></div>
+						<div class="breadcrumbs-container"><div class="container"><div class="breadcrumbs"><span><a href="/" itemprop="url"><span itemprop="title">Home</span></a></span> <span class="divider"><span class="bc-devider"></span></span> <span><a href="..//electro-surgical-unit/" itemprop="url"><span itemprop="title">Electro Surgical Unit</span></a></span> <span class="divider"><span class="bc-devider"></span></span> <span class="current">Electrosurgical Unit &#8211; Zeus Vision</span></div><!-- .breadcrumbs --></div></div>
 					</div>
 <div class="block-content">
 	<div class="container">
@@ -771,21 +863,66 @@ document.querySelectorAll('.mobile-accordion-head').forEach(head => {
 						
 								<div data-elementor-type="wp-page" data-elementor-id="7625" class="elementor elementor-7625">
 						<section class="elementor-section elementor-top-section elementor-element elementor-element-4fb5b180 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4fb5b180" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4c59e163" data-id="4c59e163" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-30d62dcf flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-heading" data-id="30d62dcf" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h4 class="elementor-heading-title elementor-size-default">Electro surgical unit - ZEUS vision</h4>				</div>
-				</div>
-				<div class="elementor-element elementor-element-c0180ab flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-image" data-id="c0180ab" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" width="768" height="411" src="../../wp-content/uploads/2025/06/Zeus_Vision_MWI-3-768x411.png" class="attachment-medium_large size-medium_large wp-image-7634" alt="" srcset="../../wp-content/uploads/2025/06/Zeus_Vision_MWI-3-768x411.png 768w, ../../wp-content/uploads/2025/06/Zeus_Vision_MWI-3-300x161.png 300w, ../../wp-content/uploads/2025/06/Zeus_Vision_MWI-3-1024x548.png 1024w, ../../wp-content/uploads/2025/06/Zeus_Vision_MWI-3.png 1220w" sizes="(max-width: 768px) 100vw, 768px" />															</div>
-				</div>
+	<div class="elementor-container elementor-column-gap-thegem">
+		<div class="elementor-row">
+			<!-- LEFT COLUMN: Image in Card Frame -->
+			<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7072486f" data-id="7072486f" data-element_type="column">
+				<div class="elementor-widget-wrap elementor-element-populated">
+					<div class="elementor-element elementor-element-c0180ab flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-image" data-id="c0180ab" data-element_type="widget" data-widget_type="image.default">
+						<div class="elementor-widget-container">
+							<div class="styled-image-wrapper">
+								<div class="gem-image gem-wrapbox gem-wrapbox-style-3">
+									<div class="gem-wrapbox-inner">
+										<img loading="lazy" width="768" height="411" src="../wp-content/uploads/2025/06/Zeus_Vision_MWI-3-768x411.png" class="gem-wrapbox-element img-responsive" alt="Electro surgical unit - ZEUS vision">
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
+				</div>
+			</div>
+
+			<!-- RIGHT COLUMN: Title, Highlights & Action Buttons -->
+			<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4c59e163" data-id="4c59e163" data-element_type="column">
+				<div class="elementor-widget-wrap elementor-element-populated">
+					<div class="elementor-element elementor-element-30d62dcf flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-heading" data-id="30d62dcf" data-element_type="widget" data-widget_type="heading.default">
+						<div class="elementor-widget-container">
+							<h2 class="elementor-heading-title elementor-size-default">Electro surgical unit - ZEUS vision</h2>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-desc flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-text-editor" data-element_type="widget" data-widget_type="text-editor.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-text-editor elementor-clearfix">
+								<h4>Description &amp; Highlights</h4>
+								<p>The ZEUS Vision is an advanced surgical generator featuring a 7-inch TFT color LCD touch screen interface for precise RF output control across cutting, coagulation, and bipolar modes.</p>
+								<p><strong>Standard Function &amp; Features :</strong></p>
+								<ul>
+									<li>7-inch TFT LCD touch screen with 5 functional front keys</li>
+									<li>Pure Cut, Blend 1, Blend 2, and Blend 3 cutting modes</li>
+									<li>Contact Coagulation and Spray Coagulation modes</li>
+									<li>Bipolar Standard, Auto Start, Forced, Cut, and Blend modes</li>
+									<li>Return Electrode Monitoring (REM) burn prevention system</li>
+									<li>99 user programmable memory channels for surgical workflows</li>
+									<li>Dual monopolar outputs (M1, M2) with twin-button remote handle support</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- Download Brochure & Quote Action Buttons -->
+					<div class="gem-button-container" style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:22px;">
+						<a class="gem-button gem-button-size-medium gem-button-text-weight-bold" href="../wp-content/uploads/2025/06/Zeus_Vision_MWI.pdf" download>
+							<span class="gem-inner-wrapper-btn">
+								<span class="gem-button-icon"><i aria-hidden="true" class="fas fa-file-pdf"></i></span>
+								<span class="gem-text-button">Download Brochure</span>
+							</span>
+						</a>
+						<button type="button" class="btn btn-primary" data-open-quote-modal style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;padding:12px 26px;border-radius:999px;background:linear-gradient(120deg,#155EEF 0%,#22B8CF 100%);color:#fff;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(21,94,239,.32);">Request Quote</button>
+					</div>
+				</div>
+			</div>
 		</div>
-					</div></div>
-		</section>
+	</div>
+</section>
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-1ebf422 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1ebf422" data-element_type="section">
 						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
 					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f417a31" data-id="f417a31" data-element_type="column">
@@ -1097,31 +1234,7 @@ document.querySelectorAll('.mobile-accordion-head').forEach(head => {
 		</div>
 					</div></div>
 		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-16f6621e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="16f6621e" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-thegem"><div class="elementor-row">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2d521c14" data-id="2d521c14" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-3fbd604f flex-horizontal-align-default flex-horizontal-align-tablet-default flex-horizontal-align-mobile-default flex-vertical-align-default flex-vertical-align-tablet-default flex-vertical-align-mobile-default elementor-widget elementor-widget-thegem-styledbutton" data-id="3fbd604f" data-element_type="widget" data-settings="{&quot;thegem_button_skin&quot;:&quot;outline&quot;,&quot;add_icon&quot;:&quot;yes&quot;}" data-widget_type="thegem-styledbutton.default">
-				<div class="elementor-widget-container">
-					
-<div class="gem-button-container gem-widget-button">
-
-		<a class="gem-button gem-button-size-medium gem-button-text-weight-bold gem-button-style-outline gem-button-border-3" href="../../wp-content/uploads/2025/06/Zeus_Vision_MWI.pdf">
-		<span class="gem-inner-wrapper-btn">
-							<span class="gem-button-icon">
-					<i aria-hidden="true" class="fas fa-file-pdf"></i>				</span>
-						<span class="gem-text-button">
-				Download			</span>
-		</span>
-	</a>
-
-	
-</div>				</div>
-				</div>
-					</div>
-		</div>
-					</div></div>
-		</section>
+				
 				</div>
 		
 											</div><!-- .entry-content -->

@@ -14,11 +14,23 @@
     document.head.appendChild(link);
   }
 
+  function isLocalDev() {
+    var host = window.location.hostname;
+    return (
+      host === "localhost" ||
+      host === "127.0.0.1" ||
+      /^192\.168\./.test(host) ||
+      /^10\./.test(host) ||
+      /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host) ||
+      /\.local$/.test(host)
+    );
+  }
+
   function getApiEndpoint() {
     var host = window.location.hostname;
     var port = window.location.port;
-    if ((host === "localhost" || host === "127.0.0.1") && port !== "8081") {
-      return "http://localhost:8081/api/quote";
+    if (isLocalDev() && port !== "8081") {
+      return window.location.protocol + "//" + host + ":8081/api/quote";
     }
     return "/api/quote";
   }
@@ -269,20 +281,49 @@
           submitBtn.innerHTML = '<span>Submitting Quote Request...</span>';
         }
 
-        fetch(getApiEndpoint(), {
+        var endpoint = getApiEndpoint();
+        var payload = {
+          name: name,
+          email: email,
+          equipment: equipment,
+          message: message
+        };
+
+        fetch(endpoint, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: name,
-            email: email,
-            equipment: equipment,
-            message: message
-          })
+          body: JSON.stringify(payload)
         })
           .then(function (res) {
+            if (!res.ok) {
+              if (isLocalDev()) {
+                return {
+                  ok: false,
+                  error: "API backend is not running on port 8081. Run 'cd api && node server.js' in your terminal."
+                };
+              }
+              if (res.status === 404 && endpoint === "/api/quote") {
+                return fetch("/api/quote.php", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(payload)
+                }).then(function (res2) {
+                  return res2.json().catch(function () { return { ok: false, error: "Server returned invalid response." }; });
+                });
+              }
+            }
             return res.json().catch(function () {
               return { ok: false, error: "Server returned invalid response." };
             });
+          })
+          .catch(function (err) {
+            if (isLocalDev()) {
+              return {
+                ok: false,
+                error: "API backend is not reachable on port 8081. Start the API server with 'cd api && node server.js'."
+              };
+            }
+            return { ok: false, error: "Network error. Please check your connection." };
           })
           .then(function (data) {
             if (data && data.ok) {

@@ -1926,8 +1926,16 @@ document.querySelectorAll('.mobile-accordion-head').forEach(head => {
   var overlay = document.getElementById('mwSentOverlay');
   if (!form || !overlay) return;
 
-  var CONTACT_API_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
-    ? 'http://localhost:8081/api/contact'
+  var isLocalDev = (
+    location.hostname === 'localhost' ||
+    location.hostname === '127.0.0.1' ||
+    /^192\.168\./.test(location.hostname) ||
+    /^10\./.test(location.hostname) ||
+    /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(location.hostname) ||
+    /\.local$/.test(location.hostname)
+  );
+  var CONTACT_API_URL = (isLocalDev && location.port !== '8081')
+    ? location.protocol + '//' + location.hostname + ':8081/api/contact'
     : '/api/contact';
 
   var submitBtn = form.querySelector('.wpcf7-submit');
