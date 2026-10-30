@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
 /* Medi Waves Inc. - Shared "Products" dropdown component styles.
    Loaded on every page alongside assets/js/products-menu.js.
    Reuses the .mega scope's own --mp-* custom properties (defined inline
@@ -37,15 +39,229 @@
 }
 
 /* ========================================================
-   Subpage Title Banner Centering (Category & Product Pages)
-   Ensures titles, breadcrumbs, and content are properly centered
+   Sitewide Category Sidebar, Breadcrumbs & Page Title H1
+   Fixes typography, font-weights, links, and separators
    ======================================================== */
-#page-title,
-#page-title.page-title-block,
-.page-title-block,
-.page-title-block.page-title-alignment-center {
+
+/* --- Screen 1: Sidebar Product Categories --- */
+.pw-sidebar {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.pw-side-head,
+body .pw-side-head {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: #0B1F3A !important;
+  text-transform: uppercase !important;
+  letter-spacing: .05em !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+}
+
+.pw-cat-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  margin-top: 12px !important;
+  list-style: none !important;
+  padding: 0 !important;
+}
+
+.pw-cat-link,
+a.pw-cat-link,
+body .pw-cat-link,
+body a.pw-cat-link {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #344054 !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 9px 12px 9px 13px !important;
+  border-radius: 12px !important;
+  border-left: 3px solid transparent !important;
+  transition: all .2s ease !important;
+  line-height: 1.4 !important;
+}
+
+.pw-cat-link:hover,
+body a.pw-cat-link:hover,
+.pw-cat-link:focus,
+body a.pw-cat-link:focus {
+  color: #155EEF !important;
+  text-decoration: none !important;
+  background: #F2F4F7 !important;
+  transform: translateX(3px) !important;
+}
+
+.pw-cat-link.active,
+body a.pw-cat-link.active {
+  color: #155EEF !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  background: rgba(21, 94, 239, 0.08) !important;
+  border-left-color: #155EEF !important;
+}
+
+.pw-cat-link *,
+a.pw-cat-link *,
+.pw-cat-link:hover *,
+.pw-cat-link.active * {
+  text-decoration: none !important;
+}
+
+.pw-cat-name {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.pw-cat-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: #D0D5DD !important;
+  flex: none !important;
+  transition: background .2s ease !important;
+}
+
+.pw-cat-link.active .pw-cat-dot,
+.pw-cat-link:hover .pw-cat-dot {
+  background: #155EEF !important;
+}
+
+.pw-side-search input {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13.5px !important;
+  color: #0B1F3A !important;
+}
+
+.pw-side-search input::placeholder {
+  color: #98A2B3 !important;
+}
+
+/* --- Screen 2: Breadcrumbs & Divider --- */
+body .breadcrumbs-container,
+.breadcrumbs-container {
+  margin-top: 6px !important;
+  margin-bottom: 0 !important;
   text-align: center !important;
-  position: relative !important;
+}
+
+body .breadcrumbs,
+.breadcrumbs {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #475467 !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body .breadcrumbs a,
+body .breadcrumbs a span,
+.breadcrumbs a,
+.breadcrumbs a span {
+  font-family: 'Inter', sans-serif !important;
+  color: #155EEF !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  font-size: 13.5px !important;
+  transition: color .2s ease !important;
+}
+
+body .breadcrumbs a:hover,
+body .breadcrumbs a:hover span,
+.breadcrumbs a:hover,
+.breadcrumbs a:hover span {
+  color: #0D47C7 !important;
+  text-decoration: underline !important;
+}
+
+body .breadcrumbs .divider,
+body .breadcrumbs .bc-devider,
+.breadcrumbs .divider,
+.breadcrumbs .bc-devider {
+  display: inline-flex !important;
+  align-items: center !important;
+  color: #98A2B3 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 13.5px !important;
+  margin: 0 4px !important;
+}
+
+body .breadcrumbs .bc-devider:empty::before,
+.breadcrumbs .bc-devider:empty::before {
+  content: "/" !important;
+  color: #98A2B3 !important;
+  font-size: 13.5px !important;
+  display: inline-block !important;
+}
+
+body .breadcrumbs .current,
+.breadcrumbs .current {
+  font-family: 'Inter', sans-serif !important;
+  color: #0B1F3A !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+/* --- Screen 2: Page Title & H1 Tag --- */
+#page-title {
+  background: transparent !important;
+  padding-top: 20px !important;
+  padding-bottom: 8px !important;
+  text-align: center !important;
+  border: none !important;
+  margin: 0 !important;
+}
+
+#page-title::before,
+#page-title::after {
+  display: none !important;
+}
+
+#page-title h1,
+#page-title .page-title-title h1,
+.page-title-title h1,
+#page-title .title-rich-content,
+h1.page-title {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: clamp(28px, 4vw, 40px) !important;
+  font-weight: 800 !important;
+  color: #0B1F3A !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  text-shadow: none !important;
+  text-transform: none !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+}
+
+#page-title .page-title-title h1 *,
+.page-title-title h1 * {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+  text-decoration: none !important;
 }
 
 #page-title .container,
@@ -81,46 +297,97 @@
   margin-right: auto !important;
 }
 
-#page-title h1,
-#page-title .page-title-title h1,
-.page-title-block h1,
-.page-title-alignment-center h1 {
-  text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  display: block !important;
-  width: 100% !important;
+body .block-content,
+.block-content {
+  padding-top: 20px !important;
+  margin-top: 0 !important;
 }
 
-#page-title .page-title-excerpt,
-.page-title-block .page-title-excerpt {
-  text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+
+/* ========================================================
+   Brochure & Download Buttons (Black & Grey Gradient + Hover)
+   ======================================================== */
+
+/* Product Detail Page - "Download Brochure" Button */
+.pw-page-brochure-btn,
+body .pw-page-brochure-btn,
+a.pw-page-brochure-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 15.5px !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  background: linear-gradient(135deg, #2D3139 0%, #111317 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
+  padding: 13px 28px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  transition: all .25s cubic-bezier(.22, 1, .36, 1) !important;
+  cursor: pointer !important;
+  letter-spacing: .02em !important;
 }
 
-#page-title .breadcrumbs-container,
-.page-title-block .breadcrumbs-container {
-  text-align: center !important;
-  margin-top: 10px !important;
-  width: 100% !important;
+.pw-page-brochure-btn:hover,
+body .pw-page-brochure-btn:hover,
+a.pw-page-brochure-btn:hover {
+  background: linear-gradient(135deg, #444C59 0%, #1D2128 100%) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
 }
 
-#page-title .breadcrumbs,
-.page-title-block .breadcrumbs {
+.pw-page-brochure-btn svg,
+body .pw-page-brochure-btn svg {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+  width: 17px !important;
+  height: 17px !important;
+  flex: none !important;
+}
+
+/* Category Card - Download Brochure Button */
+.cat-dl-btn,
+body .cat-dl-btn,
+span.cat-dl-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  background: linear-gradient(135deg, #2D3139 0%, #111317 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22) !important;
+  padding: 7px 16px !important;
+  border-radius: 999px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  flex-wrap: wrap !important;
-  text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  gap: 7px !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: all .25s cubic-bezier(.22, 1, .36, 1) !important;
+  cursor: pointer !important;
+  letter-spacing: .02em !important;
 }
 
-#page-title .page-title-inner > div {
-  justify-content: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+.cat-dl-btn:hover,
+body .cat-dl-btn:hover,
+span.cat-dl-btn:hover {
+  background: linear-gradient(135deg, #444C59 0%, #1D2128 100%) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35) !important;
+}
+
+.cat-dl-btn svg,
+body .cat-dl-btn svg {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+  width: 14px !important;
+  height: 14px !important;
+  flex: none !important;
 }
 
 /* ========================================================
