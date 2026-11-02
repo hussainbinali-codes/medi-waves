@@ -23,6 +23,9 @@ build/
 *.zip
 deploy/*.zip
 build-mediwaves.zip
+scratch/
+.claude/
+.gemini/
 
 # ==============================================================================
 # DYNAMIC DATABASE & FORM SUBMISSION FILES (User / Client Data)
