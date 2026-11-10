@@ -53,7 +53,14 @@ foreach ($folder in $foldersToPack) {
         # Check excluded extensions
         if ($excludeExts -contains $file.Extension.ToLower()) { continue }
 
-        $entryName = $relPath.Replace('\', '/')
+        # Compute entry name relative to the target webroot (public_html)
+        $subPath = $file.FullName.Substring($folderPath.Length).TrimStart('\', '/').Replace('\', '/')
+        if ($folder -eq 'www.medi-waves.com') {
+            $entryName = $subPath
+        } else {
+            $entryName = "$folder/$subPath"
+        }
+
         [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $file.FullName, $entryName, [System.IO.Compression.CompressionLevel]::Optimal) | Out-Null
         $fileCount++
 
