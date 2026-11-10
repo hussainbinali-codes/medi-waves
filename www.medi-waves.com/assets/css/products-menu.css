@@ -305,7 +305,7 @@ body .block-content,
 
 
 /* ========================================================
-   Brochure & Download Buttons (Black & Grey Gradient + Hover)
+   Brochure & Download Buttons (Green WhatsApp Style)
    ======================================================== */
 
 /* Product Detail Page & Sitewide In-Page - "Download Brochure" / "Download" Buttons */
@@ -327,9 +327,9 @@ a[download] {
   font-size: 15.5px !important;
   font-weight: 800 !important;
   color: #FFFFFF !important;
-  background: linear-gradient(135deg, #2D3139 0%, #111317 100%) !important;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
   border: 1px solid rgba(255, 255, 255, 0.22) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.38) !important;
   padding: 13px 28px !important;
   border-radius: 999px !important;
   display: inline-flex !important;
@@ -357,10 +357,10 @@ a.gem-button[href*="brochure"]:hover,
 .cgms-btn.cgms-btn-primary:hover,
 .chms-btn.chms-btn-primary:hover,
 a[download]:hover {
-  background: linear-gradient(135deg, #444C59 0%, #1D2128 100%) !important;
+  background: linear-gradient(135deg, #2AE970 0%, #159C8D 100%) !important;
   color: #FFFFFF !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.52) !important;
   border-color: rgba(255, 255, 255, 0.35) !important;
 }
 
@@ -418,9 +418,9 @@ span.cat-dl-btn {
   font-size: 13.5px !important;
   font-weight: 800 !important;
   color: #FFFFFF !important;
-  background: linear-gradient(135deg, #2D3139 0%, #111317 100%) !important;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
   border: 1px solid rgba(255, 255, 255, 0.18) !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22) !important;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35) !important;
   padding: 7px 16px !important;
   border-radius: 999px !important;
   display: inline-flex !important;
@@ -437,10 +437,10 @@ span.cat-dl-btn {
 .cat-dl-btn:hover,
 body .cat-dl-btn:hover,
 span.cat-dl-btn:hover {
-  background: linear-gradient(135deg, #444C59 0%, #1D2128 100%) !important;
+  background: linear-gradient(135deg, #2AE970 0%, #159C8D 100%) !important;
   color: #FFFFFF !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35) !important;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45) !important;
 }
 
 .cat-dl-btn svg,
